@@ -138,11 +138,11 @@
                         <div class="top-menu">
                             <ul class="nav navbar-nav navbar-left">
                                 
-                                <!--
+                                
                                 <li>		
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
                                 </li>
-                                
+                                <!--
                                 <li>
                                     <a href="#cd-nav" class="waves-effect waves-button waves-classic cd-nav-trigger"><i class="fa fa-diamond"></i></a>
                                 </li>
@@ -336,15 +336,18 @@
                                
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Document Details</p><span class="arrow"></span></a>
+                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-layers"></span><p>Document Details</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'document_control/add_document';?>">Add Document</a></li>
                                 <li><a href="<?php echo base_url().'document_control/view_document';?>">View Document</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Forms</p><span class="arrow"></span></a>
+                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-note"></span><p>Sales Management</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
-                                <li><a href="form-elements.html">Form Elements</a></li>
+                                
+                                <li><a href="<?php echo base_url().'sales_management/add_lead';?>">Add Lead</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/view_lead';?>">View Lead</a></li>
+                                    
                                 <li><a href="form-wizard.html">Form Wizard</a></li>
                                 <li><a href="form-upload.html">File Upload</a></li>
                                 <li><a href="form-image-crop.html">Image Crop</a></li>

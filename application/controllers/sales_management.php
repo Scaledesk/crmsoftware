@@ -33,7 +33,7 @@ public function do_add_lead()
   public function view_lead()
   {
       $data['title']='Lead  Details';
-      $data['h']=$this->sales_model->view_leads_details();
+      $data['h']=$this->sales_model->view_lead_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_lead.php',$data);
       $this->load->view('templates/footer.php'); 

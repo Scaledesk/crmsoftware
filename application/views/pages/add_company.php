@@ -1,10 +1,19 @@
 
 <div id="main-wrapper" class="container">
                     <div class="row">
-                        <div class="col-md-9 center">
+                        <div class="col-md-10 center">
                             <div class="panel panel-white">
-                                <div class="panel-heading clearfix">
-                                    <h4 class="panel-title">Add Company</h4>
+                                <div class="panel-body">
+                    
+                                     <div id="rootwizard">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i><b>Add Company Details</b></a></li>
+                                            
+                                        </ul>
+                          
+                                    
+                                        
+                                        <form id="wizardForm" action="<?=(base_url().'company_control/do_add_company')?>" method="post">
 
                                     <?php 
                             error_reporting(0);
@@ -13,79 +22,66 @@
                                echo $msg;
                             }?>
 
-                                </div>
-                                <div class="panel-body">
-                                    
+                                            <div class="tab-content">
+                                                <div class="tab-pane active fade in" id="tab1">
+                                                    <div class="row m-b-lg">
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputName">Name</label>
+                                                                    <input type="text" class="form-control" name="name" id="exampleInputName" placeholder="Enter the Name" required="">
+                                                                </div>
+                                                                
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputEmail">Address</label>
+                                                                    <textarea class="form-control" placeholder="Enter the Address" name="address" required="" ></textarea>
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputPassword1">Phone Number1</label>
+                                                                    <input type="text" class="form-control" name="phone1" id="exampleInputPassword1" placeholder="Phone Number1" required="">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputPassword2">Phone Number2</label>
+                                                                    <input type="text" class="form-control" name="phone2" id="exampleInputPassword2" placeholder="Phone Number2" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            
+                                                            <div class="form-group col-md-12">
+                                                                    <label for="exampleInputName">Email Id </label>
+                                                                    <input type="email" class="form-control" name="email" id="exampleInputName" placeholder="Email Id" required="">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputName">Fax Number </label>
+                                                                    <input type="text" class="form-control" name="faxno" id="exampleInputName" placeholder="Fax Number" required="">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputName">Domain Name</label>
+                                                                    <input type="text" class="form-control" name="domain" id="exampleInputName" placeholder="Domain Name" required="">
+                                                                </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <label for="exampleInputName">Description of Company </label>
+                                                                    <textarea class="form-control" name="description" placeholder="Description of Company" required=""></textarea>
+                                                                </div>
+                                                        
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                                    <label for="exampleInputName">Relation With our Company </label>
+                                                                    <input type="text" class="form-control" name="relation" id="exampleInputName" placeholder="Relation With our Company" required="">
+                                                                </div>
 
-                                    <form class="form-horizontal" action="<?=(base_url().'company_control/do_add_company')?>" method="post">
-                                        
-                                        
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Name</label>
-                                            <div class="col-sm-4 center">
-                                                <input type="text" class="form-control" id="input-success" name="name">
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                
+                                                  <div class="col-md-6 center">
+                                                <button type="submit" class="btn btn-success btn-block m-t-xs">Submit</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Address</label>
-                                            <div class="col-sm-4 center">
-                                                <textarea class="form-control" name="address"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Phone Number1</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="input-success" name="phone1">
-                                            </div>
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Phon Number2</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="input-success" name="phone2">
-                                            </div>
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Email Id</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="input-success" name="email">
-                                            </div>
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Fax Number</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="input-success" name="faxno">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Domain Name</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="input-success" name="domain">
-                                            </div>
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Desciption of Company</label>
-                                            <div class="col-sm-4">
-                                                <textarea class="form-control" name="description"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="input-success" class="col-sm-4 control-label">Relation With our Company</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" class="form-control" id="input-success" name="relation">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group has-success">
-                                            
-                                            <div class="col-sm-4 center">
-                                                <button type="submit" class="btn btn-success btn-block m-t-xs">Add Company</button>
-                                            </div>
-                                        </div>
-
-                                        </div>
-                                        
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
