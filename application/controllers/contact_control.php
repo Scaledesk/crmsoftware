@@ -11,7 +11,7 @@ class contact_control extends CI_Controller {
   
  public function add_contact()
 {
-    $data['title']='Add Contact Details';
+      $data['title']='Add Contact Details';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_contact.php');
       $this->load->view('templates/footer.php');
@@ -21,7 +21,7 @@ public function do_add_contact()
 {
   if($this->contact_model->add_contact())
     {
-      $data['msg']="Contact  Record Added";
+      $data['msg']="Contact Record Added";
       $this->load->view('templates/header.php');
       $this->load->view('pages/add_contact.php',$data);
       $this->load->view('templates/footer.php');
@@ -31,7 +31,7 @@ public function do_add_contact()
 
   public function view_contact()
   {
-      $data['title']='View Contact Details';
+      $data['title']='Contact Details';
       $data['h']=$this->contact_model->view_contact_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_contact.php',$data);
