@@ -14,7 +14,14 @@ parent::__construct();
 		'lead_name'=>$this->input->post('lead_name'),
 		'lead_generate_date'=>$this->input->post('lead_generate_date'),
 		'lead_source'=>$this->input->post('lead_source'),
-		'lead_service'=>$this->input->post('lead_service')
+		'lead_service'=>$this->input->post('lead_service'),
+		'designation'=>$this->input->post('designation'),
+		'company_name'=>$this->input->post('company_name'),
+		'phone'=>$this->input->post('phone'),
+		'email'=>$this->input->post('email'),
+		'fax_number'=>$this->input->post('fax_number'),
+		'contact_description'=>$this->input->post('description'),
+		'company_relation'=>$this->input->post('relation')
 		);
 		$this->db->insert('leads',$data);
 		return true;	

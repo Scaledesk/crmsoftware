@@ -1,6 +1,6 @@
 
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
+		
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css"> 
 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -17,7 +17,7 @@
 
 <div id="main-wrapper" class="container">
                     <div class="row">
-                        <div class="col-md-8 center">
+                        <div class="col-md-12 center">
                             <div class="panel panel-white">
                                 <div class="panel-body">
                                      <div id="rootwizard">
@@ -38,7 +38,7 @@
                                             <div class="tab-content">
                                                 <div class="tab-pane active fade in" id="tab1">
                                                     <div class="row m-b-lg">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Add Lead</label>
@@ -59,38 +59,38 @@
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Designation</label>
-                                                                    <input type="text" class="form-control" name="" id="exampleInputPassword2" placeholder="Designation">
-                                                                </div>>
+                                                                    <input type="text" class="form-control" name="designation" id="exampleInputPassword2" placeholder="Designation" value="<?php echo $h[0]->designation;?>">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             
                                                            <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Company Name</label>
-                                                                    <input type="text" class="form-control" name="" id="exampleInputPassword2" placeholder="Company Name">
+                                                                    <input type="text" class="form-control" name="company_name" id="exampleInputPassword2" placeholder="Company Name" value="<?php echo $h[0]->company_name;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Phone Number</label>
-                                                                    <input type="text" class="form-control" name="" id="exampleInputPassword2" placeholder="Phone Number">
+                                                                    <input type="text" class="form-control" name="phone" id="exampleInputPassword2" placeholder="Phone Number" value="<?php echo $h[0]->phone;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Email Address</label>
-                                                                    <input type="email" class="form-control" name="" id="exampleInputPassword2" placeholder="Email Address">
+                                                                    <input type="email" class="form-control" name="email" id="exampleInputPassword2" placeholder="Email Address" value="<?php echo $h[0]->email;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Fax Number</label>
-                                                                    <input type="text" class="form-control" name="" id="exampleInputPassword2" placeholder="Fax Number">
+                                                                    <input type="text" class="form-control" name="fax_number" id="exampleInputPassword2" placeholder="Fax Number" value="<?php echo $h[0]->fax_number;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Description</label>
-                                                                    <input type="text" class="form-control" name="" id="exampleInputPassword2" placeholder="Description">
+                                                                    <input type="text" class="form-control" name="description" id="exampleInputPassword2" placeholder="Description" value="<?php echo $h[0]->contact_description;?>">
                                                                 </div>
                                                         
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Relation With Our Company</label>
-                                                                    <input type="text" class="form-control" name="" id="exampleInputPassword2" placeholder="Relation With Our Company">
+                                                                    <input type="text" class="form-control" name="relation" id="exampleInputPassword2" placeholder="Relation With Our Company" value="<?php echo $h[0]->company_relation;?>">
                                                                 </div>
 
                                                         </div>
