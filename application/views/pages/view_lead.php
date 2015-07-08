@@ -16,6 +16,7 @@
                                                 <th>Lead Source</th>
                                                 <th>Lead Service</th>
                                                 <th>Action</th>
+                                                <th>Comment</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -26,6 +27,7 @@
                                                 <th>Lead Source</th>
                                                 <th>Lead Service</th>
                                                 <th>Action</th>
+                                                <th>Comment</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
