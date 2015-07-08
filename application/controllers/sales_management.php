@@ -16,6 +16,24 @@ class sales_management extends CI_Controller {
       $this->load->view('templates/footer.php');
 
 }
+public function add_lead_comment()
+{
+  $data['title']="Add Comment";
+  $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/add_comment.php');
+  $this->load->view('templates/footer.php');
+
+}
+public function do_add_comment()
+{
+    if($this->sales_model->add_comment())
+         {
+           $data['msg']="comment saved";
+           $this->load->view('templates/header.php');
+           $this->load->view('pages/view_lead.php',$data);
+           $this->load->view('templates/footer.php');
+         }
+}
 public function do_add_lead()
 {
           

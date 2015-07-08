@@ -45,7 +45,9 @@
                                                 <td><?php echo $row->lead_service; ?></td>
                                                 <td><a href="<?php echo base_url().'sales_management/editlead/'.$row->lead_id; ?> ">Edit</a>|
                                                     <a href="<?php echo base_url().'sales_management/deletelead/'.$row->lead_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                                    <span class="icon-fa-comment-o"></span>
                                                 </td>
+
                                             </tr>
 
                                             <?php } ?>
