@@ -23,6 +23,16 @@ public function add_order()
       $this->load->view('pages/add_order.php');
       $this->load->view('templates/footer.php');  
 }
+public function do_add_order()
+{
+  if($this->sales->add_order())
+  {
+          $data['msg']=" Order saved";
+           $this->load->view('templates/header.php');
+           $this->load->view('pages/add_order.php',$data);
+           $this->load->view('templates/footer.php');
+  }
+}
 
 public function do_add_comment()
 {
