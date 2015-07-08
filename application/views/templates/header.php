@@ -32,6 +32,11 @@
         <link href="<?php echo base_url().'assets\plugins\bootstrap-datepicker\css\datepicker3.css';?>" rel="stylesheet" type="text/css">
         <!--data table css-End-->
 
+        <!--for date-picker css-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <!--end -date picker-->
+
         
         <!-- Theme Styles -->
         <link href="<?php echo base_url().'assets\css\modern.min.css';?>" rel="stylesheet" type="text/css">
