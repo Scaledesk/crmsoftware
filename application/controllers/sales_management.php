@@ -97,6 +97,13 @@ public function deletelead($id)
     redirect(base_url().'sales_management/view_lead');
   }
 }
+public function deleteorder($id)
+{
+  if($this->sales_model->deleteorder($id))
+  {
+    redirect(base_url().'sales_management/view_order');
+  } 
+}
 
 
 
