@@ -44,9 +44,8 @@
                                                 <td><a href="<?php echo base_url().'sales_management/editlead/'.$row->lead_id; ?> ">Edit</a>|
                                                     <a href="<?php echo base_url().'sales_management/deletelead/'.$row->lead_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                                                 </td>
-<<<<<<< HEAD
 
-=======
+
                                                 <td>
                                                 
                                                 <span  class="fa fa-comment-o" data-toggle="modal" data-target=".bs-example-modal-lg"></span>
@@ -68,7 +67,6 @@
                                                 </div>
                                             </div>
                                                 </td>
->>>>>>> origin/master
                                             </tr>
 
                                             <?php } ?>
