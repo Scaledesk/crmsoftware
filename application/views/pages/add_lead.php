@@ -92,9 +92,3 @@
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
-
-                <?php
-            include_once("footer.php")
-
-
-                ?>
