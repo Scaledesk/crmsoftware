@@ -41,12 +41,11 @@ public function do_add_lead()
 
   public function editlead($id)
 {
-
   $this->load->database();
   $data['title']='Update Lead Details';
   $data['h']=$this->sales_model->editlead($id);
   $this->load->view('templates/header.php',$data);
-  $this->load->view('pages/edit_lead.php',$data);
+  $this->load->view('pages/add_lead.php',$data);
   $this->load->view('templates/footer.php');
 }
 
