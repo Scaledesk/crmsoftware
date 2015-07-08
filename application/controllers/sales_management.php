@@ -67,7 +67,16 @@ public function do_add_lead()
       $this->load->view('templates/footer.php'); 
   }
 
-  public function editlead($id)
+  public function view_order()
+  {
+      $data['title']='Order  Details';
+      $data['h']=$this->sales_model->view_lead_details();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/view_order.php',$data);
+      $this->load->view('templates/footer.php'); 
+  }
+
+public function editlead($id)
 {
   $this->load->database();
   $data['title']='Update Lead Details';
@@ -75,6 +84,29 @@ public function do_add_lead()
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/add_lead.php',$data);
   $this->load->view('templates/footer.php');
+}
+
+public function editorder($id)
+{
+  $this->load->database();
+  $data['title']='Update Order Details';
+  $data['h']=$this->sales_model->editorder($id);
+  $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/add_order.php',$data);
+  $this->load->view('templates/footer.php');
+}
+
+public function do_edit_order($id)
+{
+  $this->load->database();
+  if($this->sales_model->do_editorder($id))
+  {
+    redirect(base_url().'sales_management/view_order');
+  }
+  else{
+    echo "record not updated";
+  }
+
 }
 
 public function do_edit_lead($id)
