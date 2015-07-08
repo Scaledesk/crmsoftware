@@ -46,6 +46,27 @@
                                                 <td><a href="<?php echo base_url().'sales_management/editlead/'.$row->lead_id; ?> ">Edit</a>|
                                                     <a href="<?php echo base_url().'sales_management/deletelead/'.$row->lead_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                                                 </td>
+                                                <td>
+                                                
+                                                <span  class="fa fa-comment-o" data-toggle="modal" data-target=".bs-example-modal-lg"></span>
+                                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myLargeModalLabel">Modal title</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<br><br>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-success">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                </td>
                                             </tr>
 
                                             <?php } ?>
