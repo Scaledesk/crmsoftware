@@ -14,8 +14,7 @@ parent::__construct();
 		'lead_name'=>$this->input->post('lead_name'),
 		'lead_generate_date'=>$this->input->post('lead_generate_date'),
 		'lead_source'=>$this->input->post('lead_source'),
-		'lead_service'=>$this->input->post('lead_service'),
-		'lead_service'=>$this->input->post('contact')
+		'lead_service'=>$this->input->post('lead_service')
 		);
 		$this->db->insert('leads',$data);
 		return true;	
