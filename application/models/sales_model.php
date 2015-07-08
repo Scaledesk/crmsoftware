@@ -73,6 +73,11 @@ parent::__construct();
 		$query = $this->db->get('leads');  
     	return $query;
 	}
+	public function view_order_details()
+	{
+		$query = $this->db->get('order_details');  
+    	return $query;
+	}
 
 	public function editlead($id)
 	{
