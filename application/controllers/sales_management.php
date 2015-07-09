@@ -19,7 +19,7 @@ class sales_management extends CI_Controller {
 public function add_order()
 {
       $data['title']='Add order';
-      $data['h']=$this->sales_model->getordertitle();
+      $data['h']=$this->sales_model->getleadname();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_order.php',$data);
       $this->load->view('templates/footer.php');  

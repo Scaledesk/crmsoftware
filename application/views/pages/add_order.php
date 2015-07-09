@@ -23,7 +23,7 @@
                                         
                                         <div class="form-group col-md-12">
                                             <label>Order Cast</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" name="order_cast" placeholder="Order Cast" required="">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" name="order_cost" placeholder="Order Cast" required>
                                         </div>
 
                                       </div> 
@@ -52,7 +52,13 @@
                                         <div class="form-group col-md-12">
                                             <label>Lead Name</label>
                                             <select  class="form-control" id="exampleInputEmail1" name="lead_id" required="">
-                                                <option>select Lead Name</option></select>
+                                                <option value="0">-select-</option>
+                                                <?php
+                                                foreach ($h->result() as $row) 
+                                                { ?>
+                                                    <option value="<?php echo $row->lead_id; ?>"><?php echo $row->lead_name; ?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
 
                                         
