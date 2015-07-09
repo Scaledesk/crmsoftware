@@ -18,6 +18,8 @@
                                             <label>Select order id</label>
                                             <select  class="form-control" id="exampleInputEmail1" name="order_id" required="">
                                                 <option value="0">-select-</option>
+                                                <option value="0">Paid</option>
+                                                <option value="0">Unpaid</option>
                                             <?php
                                             foreach ($k->result() as $row) 
                                             { ?>
