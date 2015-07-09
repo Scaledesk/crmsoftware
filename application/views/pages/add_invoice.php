@@ -1,3 +1,9 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+
+
 <div id="main-wrapper" class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -19,17 +25,9 @@
                                         <?php } ?>
                                                 
                                             </select>
-                                        </div></br></br>
-                                         
-                                            
-                                        <div class="form-group col-md-12" id="container">
-
-                                                        <!--<div class="col-md-12">
-                                                           
-                                                        </div>-->
+                                        </div></br>
+                                        <form action="" name="" method="">
                                                         <div class="col-md-6">
-
-                                                           <form action="" name="" method=""> 
                                                             
                                                            <div class="form-group col-md-12"></br></br></br></br>
                                                                     <label for="exampleInputName">Due Date </label>
@@ -77,10 +75,20 @@
                                                 <button type="submit" class="btn btn-success btn-block m-t-xs">Submit</button>
                                                 </div>
                                             </div>
+                                        </form>
+                                         
+                                            
+                                        
+                                                        
+                                                
+                                                
+                                                
+                                                  
+                                            
 
 
                                         
-                <script type="text/javascript">
+                                    <script type="text/javascript">
                                  $('input[name~=date1]').each(function(){
                                         $(this).datepicker({dateFormat:'dd-mm-yy'});
                                     });</script>
