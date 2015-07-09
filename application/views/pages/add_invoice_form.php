@@ -42,22 +42,22 @@
                             </div>  
                                                      </div>
                                                         </div>
-														<div class="col-md-6">
+													<!--<div class="col-md-6">
                                                             
                                                            <div class="form-group col-md-12"></br></br></br></br>
                                                                     <label for="exampleInputName">Due Date </label>
                                                                     <input type="text" class="form-control" name="date1" id="exampleInputName" placeholder="Due Date" required="">
-                                                                </div>
+                                                             </div>
 																<div class="form-group col-md-12">
-																<label>Status</label>
-																<select  class="form-control" id="exampleInputEmail1" name="" required="">
-																<option value="0">-select Status-</option>
+																	<label>Status</label>
+																	<select  class="form-control" id="exampleInputEmail1" name="" required="">
+																	<option value="0">-select Status-</option>
                                                 
-																</select>
-															</div>
-                                                        
-                                                        </div>
-														<div class="col-md-6">
+																	</select>
+																</div>
+                                                        	</div>
+                                                    </div>-->
+														<!--<div class="col-md-6">
                                                             
                                                            <div class="form-group col-md-12"></br></br></br></br>
                                                                     <label for="exampleInputName">Total Amount </label>
@@ -69,8 +69,8 @@
                                                                 </div>
 																
                                                         
-                                                        </div>
-														<div class="col-md-12">
+                                                        </div>-->
+														<!--<div class="col-md-12">
                                                             
                                                            <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Amount Due </label>
@@ -82,11 +82,11 @@
                                                         
 
                                                     </div>
-                                                </div>
+                                                </div>-->
                                                 
                                                 
                                                 
-                                                  <div class="col-md-6 center">
+                                                 <!-- <div class="col-md-6 center">
                                                 <button type="submit" class="btn btn-success btn-block m-t-xs">Submit</button>
                                                 </div>
                                             </div>
@@ -94,5 +94,5 @@
 				<script type="text/javascript">
                                  $('input[name~=date1],input[name~=date2]').each(function(){
                                         $(this).datepicker({dateFormat:'dd-mm-yy'});
-                                    });</script>
+                                    });</script>-->
 				
