@@ -23,7 +23,7 @@
                                         
                                         <div class="form-group col-md-12">
                                             <label>Order Cast</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" name="order_cost" placeholder="Order Cast" required>
+                                            <input type="text" class="form-control" id="" name="order_cost" placeholder="Order Cast" required>
                                         </div>
 
                                       </div> 

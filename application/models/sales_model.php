@@ -33,8 +33,7 @@ parent::__construct();
 	}
 	public function add_order()
 	{
-		echo $this->input->post('order_cost');
-		die;
+		
 		$data=array(
 			'order_title'=>$this->input->post('order_title'),
 			'client_name'=>$this->input->post('client_name'),
