@@ -8,7 +8,7 @@
                                     <h4 class="panel-title">List of Contact Detail</h4>
                                 </div>
                                 <div class="panel-body">
-                                   <div class="table-responsive">
+                               <div class="table-responsive">
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
