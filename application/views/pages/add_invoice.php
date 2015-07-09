@@ -18,8 +18,7 @@
                                             <label>Select order id</label>
                                             <select  class="form-control" id="exampleInputEmail1" name="order_id" required="">
                                                 <option value="0">-select-</option>
-                                                <option value="0">Paid</option>
-                                                <option value="0">Unpaid</option>
+                                                
                                             <?php
                                             foreach ($k->result() as $row) 
                                             { ?>
@@ -28,7 +27,7 @@
                                                 
                                             </select>
                                         </div></br>
-                                        <form action="" name="" method="">
+                                        
                                                         <div class="col-md-6">
                                                             
                                                            <div class="form-group col-md-12"></br></br></br></br>
@@ -37,8 +36,10 @@
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                 <label>Status</label>
-                                                                <select  class="form-control" id="exampleInputEmail1" name="" required="">
-                                                                <option value="0">-select Status-</option>
+                                                                <select  class="form-control" id="exampleInputEmail1" name="status" required="">
+                                                                <option value="select">-select Status-</option>
+                                                                <option value="Paid">Paid</option>
+                                                                <option value="Unpaid">Unpaid</option>
                                                 
                                                                 </select>
                                                             </div>
@@ -48,11 +49,11 @@
                                                             
                                                            <div class="form-group col-md-12"></br></br></br></br>
                                                                     <label for="exampleInputName">Total Amount </label>
-                                                                    <input type="text" class="form-control" name="relation" id="exampleInputName" placeholder="Total Amount" required="">
+                                                                    <input type="text" class="form-control" name="total_amount" id="exampleInputName" placeholder="Total Amount" required="">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Amount Paid </label>
-                                                                    <input type="text" class="form-control" name="" id="exampleInputName" placeholder="Amount paid" required="">
+                                                                    <input type="text" class="form-control" name="amount_paid" id="exampleInputName" placeholder="Amount paid" required="">
                                                                 </div>
                                                                 
                                                         
@@ -61,7 +62,7 @@
                                                             
                                                            <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Amount Due </label>
-                                                                    <input type="text" class="form-control" name="" id="exampleInputName" placeholder="Amount Due" required="">
+                                                                    <input type="text" class="form-control" name="amount_due" id="exampleInputName" placeholder="Amount Due" required="">
                                                                 </div>
                                                                 
                                                         
