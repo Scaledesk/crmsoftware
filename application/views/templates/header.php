@@ -348,7 +348,11 @@
                                 <li><a href="form-x-editable.html">X-editable</a></li>
                             </ul>
                         </li>
-                        
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calender</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo base_url().'sales_management/calender';?>">event calender</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div><!-- Page Sidebar Inner -->
             </div><!-- Page Sidebar -->
