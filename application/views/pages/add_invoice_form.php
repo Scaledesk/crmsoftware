@@ -1,31 +1,4 @@
-<?php
-include_once("header.php")
-?>
 
-
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-
-
-
-<div id="main-wrapper" class="container">
-                    <div class="row">
-                        <div class="col-md-10 center">
-                            <div class="panel panel-white">
-                                <div class="panel-body">
-                    
-                                     <div id="rootwizard">
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i><b>Add Invoices Form</b></a></li>
-                                            
-                                        </ul>
-                                                                                                    
-                                                                         
-
-                                            <div class="tab-content">
-                                                <div class="tab-pane active fade in" id="tab1">
-                                                    <div class="row m-b-lg">
                                                         <div class="col-md-12">
                                                             <div class="row">
                                                               <div class="panel panel-white">
@@ -44,7 +17,7 @@ include_once("header.php")
 																<th>Column heading</th>
 															</tr>
 														</thead>
-													<tbody>
+													    <tbody>
 																<tr class="active">
 																<th scope="row">1</th>
 																<td>Column content</td>
@@ -61,14 +34,7 @@ include_once("header.php")
 																	<td>Column content</td>
 																	<td>Column content</td>
 																</tr>
-														<tr class="info">
-															<th scope="row">5</th>
-															<td>Column content</td>
-															<td>Column content</td>
-															<td>Column content</td>
-															<td>Column content</td>
-															<td>Column content</td>
-														</tr>                                     
+														                                   
                                             
                                         </tbody>
                                     </table>
@@ -76,8 +42,7 @@ include_once("header.php")
                             </div>  
                                                      </div>
                                                         </div>
-														<form action="" name="" method="">
-                                                        <div class="col-md-6">
+														<div class="col-md-6">
                                                             
                                                            <div class="form-group col-md-12"></br></br></br></br>
                                                                     <label for="exampleInputName">Due Date </label>
@@ -125,19 +90,9 @@ include_once("header.php")
                                                 <button type="submit" class="btn btn-success btn-block m-t-xs">Submit</button>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- Row -->
-                </div><!-- Main Wrapper -->
+                                        
 				<script type="text/javascript">
                                  $('input[name~=date1],input[name~=date2]').each(function(){
                                         $(this).datepicker({dateFormat:'dd-mm-yy'});
                                     });</script>
 				
-				
-				<?php
-include_once("footer.php")
-?>

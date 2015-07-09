@@ -94,7 +94,7 @@ public function do_add_lead()
 
   public function loadinvoice()
   {
-    $this->load->view('pages/manage_invoice.php');
+    $this->load->view('pages/add_invoice_form.php');
   }
 public function add_invoice()
   {
@@ -104,6 +104,13 @@ public function add_invoice()
       $this->load->view('pages/add_invoice.php',$data);
       $this->load->view('templates/footer.php');
   }
+public function do_add_invoice()
+{
+  if($this->sales_model->add_invoice())
+  {
+
+  }
+}
 public function editlead($id)
 {
   $this->load->database();

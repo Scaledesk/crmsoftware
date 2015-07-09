@@ -15,7 +15,7 @@
                                             <?php
                                             foreach ($k->result() as $row) 
                                             { ?>
-                                                <option value="<?php echo $row->order_id; ?>"><?php echo $row->order_title; ?></option>
+                                                   <option value="<?php echo $row->order_id; ?>"><?php echo $row->order_title; ?></option>
                                         <?php } ?>
                                                 
                                             </select>
