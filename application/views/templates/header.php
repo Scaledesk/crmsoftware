@@ -343,8 +343,8 @@
                                 <li><a href="<?php echo base_url().'sales_management/view_lead';?>">View Lead</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/add_order';?>">Add Order</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/view_order';?>">View Order</a></li>
-                                <li><a href="form-image-crop.html">Image Crop</a></li>
-                                <li><a href="form-select2.html">Select2</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/manage_invoice';?>">Manage Invoice</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/add_invoice';?>">Add Invoice</a></li>
                                 <li><a href="form-x-editable.html">X-editable</a></li>
                             </ul>
                         </li>
