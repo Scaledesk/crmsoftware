@@ -95,7 +95,9 @@ public function do_add_lead()
 
   public function loadinvoice()
   {
-    $this->load->view('pages/add_invoice_form.php');
+    $id=$this->input->post('id');
+    $data['k']=$this->sales_model->view_invoices($id);
+    $this->load->view('pages/add_invoice_form.php',$data);
   }
 public function add_invoice()
   {

@@ -40,7 +40,7 @@ parent::__construct();
 	{
 		$data=array(
 			'order_id'=>$this->input->post('order_id'),
-			'due_date'=>$this->input->post('due'),
+			'due_date'=>$this->input->post('due_date'),
 			'total_amount'=>$this->input->post('total_amount'),
 			'amount_paid'=>$this->input->post('amount_paid'),
 			'amount_due'=>$this->input->post('amount_due'),
@@ -131,7 +131,7 @@ parent::__construct();
 		$query = $this->db->get('order_details');  
     	return $query;
 	}
-	public function getinvoice()
+	public function getinvoice($id)
 	{
 		$this->db->where("invoice_id",$id);
   		$query=$this->db->get("crm_invoice");
