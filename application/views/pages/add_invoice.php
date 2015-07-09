@@ -5,7 +5,7 @@
                                 <div class="panel-body">
                                   <center><label><h2>Add invoice</h2></label></center>  
                                 <div class="row m-b-lg">
-                                <form action="" method="post">    
+                                <form action="<?=(base_url().'sales_management/do_add_invoice')?>" method="post">    
                                 <div class="col-md-12 center">
                                     
                                         <div class="form-group col-md-4 center">

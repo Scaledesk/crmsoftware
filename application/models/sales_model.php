@@ -36,6 +36,34 @@ parent::__construct();
 		$query=$this->db->get("leads");
   		return $query;
 	}
+	public function add_invoice()
+	{
+		$data=array(
+			'order_id'=>$this->input->post('order_id'),
+			'due_date'=>$this->input->post('due'),
+			'total_amount'=>$this->input->post('total_amount'),
+			'amount_paid'=>$this->input->post('amount_paid'),
+			'amount_due'=>$this->input->post('amount_due'),
+			'status'=>$this->input->post('status')
+			);
+		$this->db->insert('crm_invoice',$data);
+		return true;
+
+	}
+	public function edit_invoice()
+	{
+		$data=array(
+			'order_id'=>$this->input->post('order_id'),
+			'due_date'=>$this->input->post('due'),
+			'total_amount'=>$this->input->post('total_amount'),
+			'amount_paid'=>$this->input->post('amount_paid'),
+			'amount_due'=>$this->input->post('amount_due'),
+			'status'=>$this->input->post('status')
+			);
+		$this->db->where("invoice_id",$id);
+		$this->db->update('crm_invoice',$data);
+		return true;		
+	}
 	public function add_order()
 	{
 		
@@ -54,6 +82,14 @@ parent::__construct();
 	{
 		$this->db->where("order_id",$id);
   		if($this->db->delete("order_details"))
+  		{
+  			return true;
+  		}		
+	}
+	public function deleteinvoice($id)
+	{
+		$this->db->where("invoice_id",$id);
+  		if($this->db->delete("crm_invoice"))
   		{
   			return true;
   		}		
@@ -84,10 +120,22 @@ parent::__construct();
 		$query = $this->db->get('leads');  
     	return $query;
 	}
+	public function view_invoices($id)
+	{
+		$this->db->where('order_id',$id);
+		$query = $this->db->get('crm_invoice');  
+    	return $query;
+	}
 	public function view_order_details()
 	{
 		$query = $this->db->get('order_details');  
     	return $query;
+	}
+	public function getinvoice()
+	{
+		$this->db->where("invoice_id",$id);
+  		$query=$this->db->get("crm_invoice");
+  		return $query->result();
 	}
 
 	public function editlead($id)

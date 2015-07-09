@@ -108,9 +108,36 @@ public function do_add_invoice()
 {
   if($this->sales_model->add_invoice())
   {
-
+    redirect('base_url().sales_management/manage_invoice')
   }
 }
+public function editinvoice($id)
+{
+  $data['title']='Add Invoice';
+    $data['k']=$this->sales_model->getorder();
+    $data['h']=$this->sales_model->getinvoice($id);
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_invoice.php',$data);
+      $this->load->view('templates/footer.php');
+}
+public function do_edit_invoice($id)
+{
+  $this->load->database();
+  if($this->sales_model->do_edit_invoice($id))
+  {
+    redirect(base_url().'sales_management/manage_invoice');
+  }
+  else{
+    echo "record not updated";
+  }
+
+}
+/*public function view_invoice($id)
+{
+  $data['h']=$this->sales_model->view_invoice($id);
+  $this->load->view();
+
+}*/
 public function editlead($id)
 {
   $this->load->database();
