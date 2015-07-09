@@ -87,7 +87,7 @@ public function do_add_lead()
   }
 public function add_invoice()
   {
-    $data['title']='Manage Invoice';
+    $data['title']='Add Invoice';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_invoice.php');
       $this->load->view('templates/footer.php');
