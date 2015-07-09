@@ -91,11 +91,17 @@ public function do_add_lead()
       $this->load->view('pages/manage_invoice.php');
       $this->load->view('templates/footer.php');
   }
+
+  public function loadinvoice()
+  {
+    $this->load->view('pages/manage_invoice.php');
+  }
 public function add_invoice()
   {
     $data['title']='Add Invoice';
+    $data['k']=$this->sales_model->getorder();
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/add_invoice.php');
+      $this->load->view('pages/add_invoice.php',$data);
       $this->load->view('templates/footer.php');
   }
 public function editlead($id)

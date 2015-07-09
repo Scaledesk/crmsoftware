@@ -26,6 +26,11 @@ parent::__construct();
 		$this->db->insert('leads',$data);
 		return true;	
 	}
+	public function getorder()
+	{
+		$query=$this->db->get("order_details");
+  		return $query;
+  	}
 	public function getleadname()
 	{
 		$query=$this->db->get("leads");
