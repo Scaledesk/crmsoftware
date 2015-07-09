@@ -32,8 +32,8 @@ parent::__construct();
 			'order_title'=>$this->input->post('order_title'),
 			'client_name'=>$this->input->post('client_name'),
 			'order_cost'=>$this->input->post('order_cost'),
-			'starting_date'=>$this->input->post('starting_date'),
-			'proposed_ending_date'=>$this->input->post('ending_date'),
+			'starting_date'=>$this->input->post('date1'),
+			'proposed_ending_date'=>$this->input->post('date2'),
 			'lead_id'=>$this->input->post('lead_id')
 			);
 		$this->db->insert('order_details',$data);
