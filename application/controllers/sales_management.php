@@ -87,8 +87,9 @@ public function do_add_lead()
   public function manage_invoice()
   {
     $data['title']='Manage Invoice';
+    $data['k']=$this->sales_model->getorder();
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/manage_invoice.php');
+      $this->load->view('pages/manage_invoice.php',$data);
       $this->load->view('templates/footer.php');
   }
 
@@ -108,7 +109,7 @@ public function do_add_invoice()
 {
   if($this->sales_model->add_invoice())
   {
-    redirect('base_url().sales_management/manage_invoice')
+    redirect('base_url().sales_management/manage_invoice');
   }
 }
 public function editinvoice($id)

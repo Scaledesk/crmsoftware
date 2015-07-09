@@ -10,7 +10,7 @@
                                     
                                         <div class="form-group col-md-4 center">
                                             <label>Select order id</label>
-                                            <select  class="form-control" id="exampleInputEmail1" name="order_id" onchange="loadinvoice(this)" required="">
+                                            <select  class="form-control" id="exampleInputEmail1" name="order_id" required="">
                                                 <option value="0">-select-</option>
                                             <?php
                                             foreach ($k->result() as $row) 
@@ -81,7 +81,7 @@
 
                                         
                 <script type="text/javascript">
-                                 $('input[name~=date1],input[name~=date2]').each(function(){
+                                 $('input[name~=date1]').each(function(){
                                         $(this).datepicker({dateFormat:'dd-mm-yy'});
                                     });</script>
                 
@@ -103,22 +103,3 @@
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
-
-
-
-
-                <script>
-
-                function loadinvoice()
-                {
-                    //alert(obj.value);
-                     $.ajax({
-                    'url' : "<?php echo base_url().'sales_management/loadinvoice'; ?>",
-                    'success' : function(data){
-                     var container = $('#container'); //jquery selector (get element by id)
-                       container.html(data);
-                    }
-                    });
-                }
-
-                </script>

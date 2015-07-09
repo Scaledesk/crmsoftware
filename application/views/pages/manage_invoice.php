@@ -10,9 +10,13 @@
                                     
                                         <div class="form-group col-md-12">
                                             <label>Select order invoice</label>
-                                            <select  class="form-control" id="exampleInputEmail1" name="lead_id" required="">
+                                            <select  class="form-control" id="exampleInputEmail1" name="order_id" required="" onchange="loadinvoice(this)">
                                                 <option value="0">-select-</option>
-                                                
+                                            <?php
+                                            foreach ($k->result() as $row) 
+                                            { ?>
+                                                   <option value="<?php echo $row->order_id; ?>"><?php echo $row->order_title; ?></option>
+                                        <?php } ?>
                                             </select>
                                         </div>
                                         </div> 
@@ -26,12 +30,12 @@
 
                                     <!--containner-start-->
 
-                                        <div class="col-md-8 center">
+                                        <div class="col-md-12 center">
 
                                             
-                                        <div class="form-group col-md-12">
+                                        <div class="form-group col-md-12" id="invoiceview">
 
-                                            Start Matter here
+                                            
                                         </div>
                                             
                                         </div>
@@ -49,3 +53,19 @@
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
+
+                  <script>
+
+                function loadinvoice()
+                {
+                    //alert(obj.value);
+                     $.ajax({
+                    'url' : "<?php echo base_url().'sales_management/loadinvoice'; ?>",
+                    'success' : function(data){
+                     var container = $('#invoiceview'); //jquery selector (get element by id)
+                       container.html(data);
+                    }
+                    });
+                }
+
+                </script>
