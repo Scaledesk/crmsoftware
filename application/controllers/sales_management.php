@@ -77,11 +77,11 @@ public function do_add_lead()
       $this->load->view('templates/footer.php'); 
   }
 
-  public function calender()
+  public function calendar()
   {
       $data['title']='Manage Event';
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/calender.php');
+      $this->load->view('pages/calendar.php');
       $this->load->view('templates/footer.php');
   }
   public function manage_invoice()

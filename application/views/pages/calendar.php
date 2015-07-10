@@ -1,6 +1,5 @@
             
 
-
             <div class="page-inner">
                 <div class="page-breadcrumb">
                     <ol class="breadcrumb container">
@@ -36,15 +35,11 @@
                         <div class="col-md-8">
                             <div class="panel panel-white">
                                 <div class="panel-body">
-                                    <div id="calendar"></div>
+                                    <div id="calendar" class="fc fc-ltr fc-unthemed"></div>
                                 </div>
                             </div>
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
-                <div class="page-footer">
-                    <div class="container">
-                        <p class="no-s">2015 &copy; Modern by Steelcoders.</p>
-                    </div>
-                </div>
+                
             </div>
