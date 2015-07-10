@@ -170,5 +170,16 @@ parent::__construct();
   		}
 
 	}
+	public function add_reminder()
+	{
+		$data=array(
+			'invoice_id'=>$this->input->post('invoice_id'),
+			'reminder_title'=>$this->input->post('title'),
+			'reminder_description'=>$this->input->post('description'),
+			'reminder_date'=>$this->input->post('r_date')	
+			);
+		$this->db->insert('invoice_reminder',$data);
+		return true;
+	}
 
 }

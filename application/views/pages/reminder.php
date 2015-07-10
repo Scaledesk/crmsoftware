@@ -6,28 +6,39 @@
                                                               
                                 <center><label><h2>Reminder</h2></label></center>  
                                 <div class="row">
-                                    <form id="wizardForm" action="" method="post">
+                                    <form id="wizardForm" action="<?=(base_url().'sales_management/do_addreminder')?>" method="post">
                            
                                 <div class="col-md-6 center">
                                     
                                         <div class="form-group col-md-12">
-                                            <label>Reminder Title</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" name="" placeholder="Reminder Title" required="" value="<?php echo $h[0]->order_title; ?>">
+                                            <label>Invoice Id</label>
+                                            <input type="text" class="form-control" id="" name="invoice_id" placeholder="Reminder Title" required="" value="<?php echo $k[0]->invoice_id; ?>" readonly>
                                         </div>
+
+                                        <div class="form-group col-md-12">
+                                            <label>Due Date</label>
+                                            <input type="text" class="form-control" id="title" name="title" placeholder="Reminder Title" required="" value="<?php echo $k[0]->due_date; ?>" readonly>
+                                        </div>    
+
+                                        <div class="form-group col-md-12">
+                                            <label>Reminder Title</label>
+                                            <input type="text" class="form-control" id="title" name="title" placeholder="Reminder Title" required="" value="">
+                                        </div>
+
 										<div class="form-group col-md-12">
                                             <label>Reminder Description</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" name="" placeholder="Reminder Description" required="" value="<?php echo $h[0]->order_title; ?>">
+                                            <textarea name="description" class="form-control"></textarea>
                                         </div>
 																			
                                         <div class="form-group col-md-12">
-                                            <label>Due Date</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword2" name="date1" value="" placeholder="Due date" required="">
+                                            <label>Reminder Date</label>
+                                            <input type="text" class="form-control" id="r_date" name="r_date" value="" placeholder="Reminder Date" required="">
                                         </div>
-										<center> <button type="submit" class="btn btn-info">Submit</button><center> 
+										<center> <button type="submit" class="btn btn-info">Add Reminder</button><center> 
 									</div> 
                                         
 									<script type="text/javascript">
-                                 $('input[name~=date1]').each(function(){
+                                 $('input[name~=r_date]').each(function(){
                                         $(this).datepicker({dateFormat:'yy-mm-dd'});
                                     });</script>
 
