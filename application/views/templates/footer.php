@@ -84,11 +84,7 @@
         <script src="<?php echo base_url().'assets\plugins\datatables\js\jquery.datatables.min.js';?>"></script>
         <script src="<?php echo base_url().'assets\plugins\x-editable\bootstrap3-editable\js\bootstrap-editable.js';?>"></script>
         <script src="<?php echo base_url().'assets\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js';?>"></script>
-        <!-- Datepickee -->
-          <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-          <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <!-- Datepickee end -->
-
+        
         <script src="<?php echo base_url().'assets\js\pages\table-data.js';?>"></script>
         <!--data table jquery-end-->
 

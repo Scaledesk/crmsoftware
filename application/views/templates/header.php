@@ -19,10 +19,10 @@
         <link href="<?php echo base_url().'assets\plugins\uniform\css\uniform.default.min.css';?>" rel="stylesheet">
         <link href="<?php echo base_url().'assets\plugins\bootstrap\css\bootstrap.min.css';?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets\plugins\fontawesome\css\font-awesome.css';?>" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url().'assets\plugins\line-icons\simple-line-icons.css';?>" rel="stylesheet" type="text/css">	
-        <link href="<?php echo base_url().'assets\plugins\waves\waves.min.css';?>" rel="stylesheet" type="text/css">	
+        <link href="<?php echo base_url().'assets\plugins\line-icons\simple-line-icons.css';?>" rel="stylesheet" type="text/css">   
+        <link href="<?php echo base_url().'assets\plugins\waves\waves.min.css';?>" rel="stylesheet" type="text/css">    
         <link href="<?php echo base_url().'assets\plugins\switchery\switchery.min.css';?>" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url().'assets\plugins\3d-bold-navigation\css\style.css';?>" rel="stylesheet" type="text/css">	
+        <link href="<?php echo base_url().'assets\plugins\3d-bold-navigation\css\style.css';?>" rel="stylesheet" type="text/css">   
         <link href="<?php echo base_url().'assets\plugins\slidepushmenus\css\component.css';?>" rel="stylesheet" type="text/css">
 
         <!--data table css-->
@@ -31,11 +31,6 @@
         <link href="<?php echo base_url().'assets\plugins\x-editable\bootstrap3-editable\css\bootstrap-editable.css';?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets\plugins\bootstrap-datepicker\css\datepicker3.css';?>" rel="stylesheet" type="text/css">
         <!--data table css-End-->
-
-        <!--for date-picker css-->
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
-        <!--end -date picker-->
 
         
         <!-- Theme Styles -->
@@ -67,7 +62,7 @@
                 <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
                 <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
             </div>
-		</nav>
+        </nav>
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
             <h3><span class="pull-left">Sandra Smith</span> <a href="javascript:void(0);" class="pull-right" id="closeRight2"><i class="fa fa-angle-right"></i></a></h3>
             <div class="slimscroll chat">
@@ -116,7 +111,7 @@
                     <input type="text" class="form-control" placeholder="Say something">
                 </form>
             </div>
-		</nav>
+        </nav>
         <form class="search-form" action="#" method="GET">
             <div class="input-group">
                 <input type="text" name="search" class="form-control search-input" placeholder="Search...">
@@ -144,14 +139,14 @@
                             <ul class="nav navbar-nav navbar-left">
                                 
                                 
-                                <li>		
+                                <li>        
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
                                 </li>
                                 <!--
                                 <li>
                                     <a href="#cd-nav" class="waves-effect waves-button waves-classic cd-nav-trigger"><i class="fa fa-diamond"></i></a>
                                 </li>
-                                <li>		
+                                <li>        
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic toggle-fullscreen"><i class="fa fa-expand"></i></a>
                                 </li>-->
                                 <li class="dropdown">
@@ -196,7 +191,7 @@
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li>	
+                                <li>    
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
                                 </li>
                                 <li class="dropdown">
@@ -304,7 +299,11 @@
                                         <li role="presentation"><a href="login.html"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                                     </ul>
                                 </li>
-                                
+                                <li>
+                                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic" id="showRight">
+                                        <i class="fa fa-comments"></i>
+                                    </a>
+                                </li>
                             </ul><!-- Nav -->
                         </div><!-- Top Menu -->
                     </div>
@@ -315,42 +314,100 @@
                     <ul class="menu accordion-menu">
                         <li class="nav-heading"><span>Navigation</span></li>
                         <li><a href="<?php echo base_url();?>"><span class="menu-icon icon-speedometer"></span><p>Dashboard</p></a></li>
-                        
+                        <li><a href="profile.html"><span class="menu-icon icon-user"></span><p>Profile</p></a></li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-envelope-open"></span><p>Mailbox</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="inbox.html">Inbox</a></li>
+                                <li><a href="message-view.html">View Message</a></li>
+                                <li><a href="compose.html">Compose</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-heading"><span>Features</span></li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-briefcase"></span><p>Company Details</p><span class="arrow"></span></a>
+                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-briefcase"></span><p>Company Details</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'company_control/add_company';?>">Add Company</a></li>
                                 <li><a href="<?php echo base_url().'company_control/view_company';?>">View Company</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Contact Details</p><span class="arrow"></span></a>
+                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-layers"></span><p>Contact Details</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'contact_control/add_contact';?>">Add Contact</a></li>
                                 <li><a href="<?php echo base_url().'contact_control/view_contact';?>">View Contact</a></li>
                                
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Document Details</p><span class="arrow"></span></a>
+                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-layers"></span><p>Document Details</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'document_control/add_document';?>">Add Document</a></li>
                                 <li><a href="<?php echo base_url().'document_control/view_document';?>">View Document</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Sales Management</p><span class="arrow"></span></a>
+                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-note"></span><p>Sales Management</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 
                                 <li><a href="<?php echo base_url().'sales_management/add_lead';?>">Add Lead</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/view_lead';?>">View Lead</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/add_order';?>">Add Order</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/view_order';?>">View Order</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/manage_invoice';?>">Manage Invoice</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/add_invoice';?>">Add Invoice</a></li>
+                                    
+                                <li><a href="form-wizard.html">Form Wizard</a></li>
+                                <li><a href="form-upload.html">File Upload</a></li>
+                                <li><a href="form-image-crop.html">Image Crop</a></li>
+                                <li><a href="form-select2.html">Select2</a></li>
                                 <li><a href="form-x-editable.html">X-editable</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calender</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-bar-chart"></span><p>Charts</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'sales_management/calender';?>">event calender</a></li>
+                                <li><a href="charts-sparkline.html">Sparkline</a></li>
+                                <li><a href="charts-rickshaw.html">Rickshaw</a></li>
+                                <li><a href="charts-morris.html">Morris</a></li>
+                                <li><a href="charts-flotchart.html">Flotchart</a></li>
+                                <li><a href="charts-chartjs.html">Chart.js</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-user"></span><p>Login</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="login.html">Login Form</a></li>
+                                <li><a href="login-alt.html">Login Alt</a></li>
+                                <li><a href="register.html">Register Form</a></li>
+                                <li><a href="register-alt.html">Register Alt</a></li>
+                                <li><a href="forgot.html">Forgot Password</a></li>
+                                <li><a href="lock-screen.html">Lock Screen</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-pointer"></span><p>Maps</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="maps-google.html">Google Maps</a></li>
+                                <li><a href="maps-vector.html">Vector Maps</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-present"></span><p>Extra</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="404.html">404 Page</a></li>
+                                <li><a href="500.html">500 Page</a></li>
+                                <li><a href="invoice.html">Invoice</a></li>
+                                <li><a href="calendar.html">Calendar</a></li>
+                                <li><a href="pricing-tables.html">Pricing Tables</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="timeline.html">Timeline</a></li>
+                                <li><a href="search.html">Search Results</a></li>
+                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-folder"></span><p>Levels</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li class="droplink"><a href="#"><p>Level 1.1</p><span class="arrow"></span></a>
+                                    <ul class="sub-menu">
+                                        <li class="droplink"><a href="#"><p>Level 2.1</p><span class="arrow"></span></a>
+                                            <ul class="sub-menu">
+                                                <li><a href="#">Level 3.1</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Level 2.2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Level 1.2</a></li>
                             </ul>
                         </li>
                     </ul>
