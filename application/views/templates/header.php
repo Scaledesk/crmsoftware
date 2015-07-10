@@ -315,36 +315,40 @@
                         <li class="nav-heading"><span>Navigation</span></li>
                         <li><a href="<?php echo base_url();?>"><span class="menu-icon icon-speedometer"></span><p>Dashboard</p></a></li>
                        
-                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-briefcase"></span><p>Company Details</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-briefcase"></span><p>Company Details</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'company_control/add_company';?>">Add Company</a></li>
                                 <li><a href="<?php echo base_url().'company_control/view_company';?>">View Company</a></li>
                             </ul>
                         </li>
-                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-layers"></span><p>Contact Details</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Contact Details</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'contact_control/add_contact';?>">Add Contact</a></li>
                                 <li><a href="<?php echo base_url().'contact_control/view_contact';?>">View Contact</a></li>
                                
                             </ul>
                         </li>
-                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-layers"></span><p>Document Details</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Document Details</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'document_control/add_document';?>">Add Document</a></li>
                                 <li><a href="<?php echo base_url().'document_control/view_document';?>">View Document</a></li>
                             </ul>
                         </li>
-                        <li class="droplink active open"><a href="#"><span class="menu-icon icon-note"></span><p>Sales Management</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Sales Management</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 
                                 <li><a href="<?php echo base_url().'sales_management/add_lead';?>">Add Lead</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/view_lead';?>">View Lead</a></li>
-                                    
-                                <li><a href="form-wizard.html">Form Wizard</a></li>
-                                <li><a href="form-upload.html">File Upload</a></li>
-                                <li><a href="form-image-crop.html">Image Crop</a></li>
-                                <li><a href="form-select2.html">Select2</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/add_order';?>">Add Order</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/view_order';?>">View Order</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/manage_invoice';?>">Manage Invoice</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/add_invoice';?>">Add Invoice</a></li>
                                 <li><a href="form-x-editable.html">X-editable</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calendar</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo base_url().'sales_management/calendar';?>">event calendar</a></li>
                             </ul>
                         </li>
                         

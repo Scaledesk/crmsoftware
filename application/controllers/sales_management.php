@@ -116,11 +116,11 @@ public function do_add_invoice()
 }
 public function editinvoice($id)
 {
-  $data['title']='Add Invoice';
-    $data['k']=$this->sales_model->getorder();
+  $data['title']='Update Invoice';
+   // $data['k']=$this->sales_model->getorder();
     $data['h']=$this->sales_model->getinvoice($id);
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/add_invoice.php',$data);
+      $this->load->view('pages/update_invoice.php',$data);
       $this->load->view('templates/footer.php');
 }
 public function do_edit_invoice($id)
