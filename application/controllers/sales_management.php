@@ -223,6 +223,22 @@ public function do_addreminder()
   }
 }
 
+public function sendreminder()
+{
+
+  $data['remider']=$this->sales_model->getreminder();
+  foreach ($reminder as $k => $v) {
+    
+  }
+  $data['invoice']=$this->sales_model->getinvoice();
+  $this->email->from('javed@weboforce.com', 'JavedAhamad');
+  $this->email->to('javedahamad4@gmail.com');
+  $this->email->subject('New Usre Registered');
+  $this->email->message('Testing the email class.');
+  $this->email->send();
+
+}
+
 
 
 }

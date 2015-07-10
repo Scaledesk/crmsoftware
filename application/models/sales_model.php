@@ -182,4 +182,11 @@ parent::__construct();
 		return true;
 	}
 
+	public function getreminder()
+	{
+		$query=$this->db->get("invoice_reminder");
+  		return $query;
+	}
+	
+
 }
