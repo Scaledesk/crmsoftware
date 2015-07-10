@@ -6,6 +6,7 @@ class sales_management extends CI_Controller {
   parent::__construct();
   $this->load->model('sales_model');
   $this->load->helper(array('form','url'));
+  $this->load->library('email');
  }
  public function add_lead()
 {
@@ -227,16 +228,28 @@ public function sendreminder()
 {
 
   $data['remider']=$this->sales_model->getreminder();
-  foreach ($reminder as $k => $v) {
-    
+  foreach ($reminder->result() as $row) {
+    if($row->reminder_date==date('Y-m-d'))
+    {
+       // $data['invoice']=$this->sales_model->getinvoice();
+        $invoice_id=$row->invoice_id;
+        $this->email->from('javed@weboforce.com', 'JavedAhamad');
+        $this->email->to('javedahamad4@gmail.com');
+        $this->email->subject('Invoice Due Date');
+        $this->email->message('Dear sir, invoice due date come regarding invoice number  ');
+        if($this->email->send())
+        {
+          $this->sales_model->deletereminder($reminder_id);
+        }    
+    }
   }
-  $data['invoice']=$this->sales_model->getinvoice();
+  /*$data['invoice']=$this->sales_model->getinvoice();
   $this->email->from('javed@weboforce.com', 'JavedAhamad');
   $this->email->to('javedahamad4@gmail.com');
   $this->email->subject('New Usre Registered');
   $this->email->message('Testing the email class.');
   $this->email->send();
-
+*/
 }
 
 

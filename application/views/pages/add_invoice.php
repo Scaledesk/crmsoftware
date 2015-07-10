@@ -81,6 +81,7 @@
                                         </form>
                                          
                                             
+                                            <a href="<?php echo base_url().'sales_management/deleteinvoice/'.$row->invoice_id; ?>">Send Reminder</a>|
                                         
                                                         
                                                 
