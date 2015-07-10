@@ -111,7 +111,7 @@ public function do_add_invoice()
 {
   if($this->sales_model->add_invoice())
   {
-    redirect(base_url().'sales_management/manage_invoice');
+    redirect('base_url().sales_management/manage_invoice');
   }
 }
 public function editinvoice($id)
@@ -193,13 +193,6 @@ public function deletelead($id)
   if($this->sales_model->deletelead($id))
   {
     redirect(base_url().'sales_management/view_lead');
-  }
-}
-public function deleteinvoice($id)
-{
-  if($this->sales_model->deleteinvoice($id))
-  {
-    redirect(base_url().'sales_management/manage_invoice');
   }
 }
 public function deleteorder($id)

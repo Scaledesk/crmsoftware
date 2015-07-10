@@ -93,7 +93,7 @@
                                         
                                     <script type="text/javascript">
                                  $('input[name~=date1]').each(function(){
-                                        $(this).datepicker({dateFormat:'yy-mm-dd'});
+                                        $(this).datepicker({dateFormat:'dd-mm-yy'});
                                     });</script>
                 
 

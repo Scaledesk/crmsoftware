@@ -56,13 +56,11 @@
 
                   <script>
 
-                function loadinvoice(obj)
+                function loadinvoice()
                 {
                     //alert(obj.value);
                      $.ajax({
                     'url' : "<?php echo base_url().'sales_management/loadinvoice'; ?>",
-                    'type' : 'POST', //the way you want to send data to your URL
-                    'data' : {'id' : obj.value},
                     'success' : function(data){
                      var container = $('#invoiceview'); //jquery selector (get element by id)
                        container.html(data);
