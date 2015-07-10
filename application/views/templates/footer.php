@@ -89,13 +89,6 @@
           <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <!-- Datepickee end -->
 
-        <!--calendar-jquery-->
-        <script src="<?php echo base_url().'assets\plugins\fullcalendar\lib\moment.min.js';?>"></script>
-        <script src="<?php echo base_url().'assets\plugins\fullcalendar\fullcalendar.min.js';?>"></script>
-        <script src="<?php echo base_url().'assets\js\modern.min.js';?>"></script>
-        <script src="<?php echo base_url().'assets\js\pages\calendar.js';?>"></script>
-        <!--calendar--jquery end-->
-
         <script src="<?php echo base_url().'assets\js\pages\table-data.js';?>"></script>
         <!--data table jquery-end-->
 

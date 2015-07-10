@@ -34,12 +34,8 @@
 
         <!--for date-picker css-->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <link rel="<?php echo base_url().'stylesheet" href="/resources/demos/style.css';?>">
+        <link rel="stylesheet" href="/resources/demos/style.css">
         <!--end -date picker-->
-        <!--calendar css-->
-        <link href="<?php echo base_url().'assets\plugins\fullcalendar\fullcalendar.min.css';?>" rel="stylesheet" type="text/css">
-        
-        <!--end calender-->
 
         
         <!-- Theme Styles -->
@@ -352,9 +348,9 @@
                                 <li><a href="form-x-editable.html">X-editable</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calendar</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calender</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'sales_management/calendar';?>">event calendar</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/calender';?>">event calender</a></li>
                             </ul>
                         </li>
                     </ul>
