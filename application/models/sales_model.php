@@ -40,7 +40,7 @@ parent::__construct();
 	{
 		$data=array(
 			'order_id'=>$this->input->post('order_id'),
-			'due_date'=>$this->input->post('due_date'),
+			'due_date'=>$this->input->post('date1'),
 			'total_amount'=>$this->input->post('total_amount'),
 			'amount_paid'=>$this->input->post('amount_paid'),
 			'amount_due'=>$this->input->post('amount_due'),
