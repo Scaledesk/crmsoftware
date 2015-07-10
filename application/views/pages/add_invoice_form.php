@@ -36,7 +36,7 @@
 																<td> <?php echo $row->status; ?> </td>
 																<td>
 																	<a href="<?php echo base_url().'sales_management/editinvoice/'.$row->invoice_id; ?>">Edit</a>|
-                                                    <a href="<?php echo base_url().'sales_management/deleteinvoice/'.$row->invoice_id; ?>"  OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                                    <a href="<?php echo base_url().'sales_management/deleteinvoice/'.$row->invoice_id; ?>"  OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>|
                                                     <a href="<?php echo base_url().'sales_management/addreminder/'.$row->invoice_id; ?>">Add Reminder</a>
 																</td>	
 														       </tr>

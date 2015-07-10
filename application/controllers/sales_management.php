@@ -77,11 +77,11 @@ public function do_add_lead()
       $this->load->view('templates/footer.php'); 
   }
 
-  public function calender()
+  public function calendar()
   {
       $data['title']='Manage Event';
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/calender.php');
+      $this->load->view('pages/calendar.php');
       $this->load->view('templates/footer.php');
   }
   public function manage_invoice()
@@ -201,6 +201,25 @@ public function deleteorder($id)
   {
     redirect(base_url().'sales_management/view_order');
   } 
+}
+
+public function addreminder($id)
+{
+      $data['title']='Add reminder';
+      $data['k']=$this->sales_model->getinvoice($id);
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_reminder.php',$data);
+      $this->load->view('templates/footer.php');
+}
+public function do_addreminder()
+{
+  if($this->sales_model->add_reminder())
+  {
+          $data['msg']=" Reminder saved";
+           $this->load->view('templates/header.php');
+           $this->load->view('pages/add_order.php',$data);
+           $this->load->view('templates/footer.php');
+  }
 }
 
 
