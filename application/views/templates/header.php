@@ -343,7 +343,7 @@
                                 <li><a href="<?php echo base_url().'sales_management/view_order';?>">View Order</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/manage_invoice';?>">Manage Invoice</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/add_invoice';?>">Add Invoice</a></li>
-                                <li><a href="form-x-editable.html">X-editable</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/view_reminder';?>">View Reminder</a></li>
                             </ul>
                         </li>
                         <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calendar</p><span class="arrow"></span></a>

@@ -268,6 +268,15 @@ public function sendreminder()
 */
 }
 
+public function view_reminder()
+{
+      $data['title']='View  Reminder';
+      $data['h']=$this->sales_model->getorder();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/view_reminder.php',$data);
+      $this->load->view('templates/footer.php'); 
+}
+
 
 
 }
