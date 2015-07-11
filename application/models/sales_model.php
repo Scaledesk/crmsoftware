@@ -193,6 +193,15 @@ parent::__construct();
 		$query=$this->db->get("invoice_reminder");
   		return $query;	
 	}
+	public function add_supplier_category()
+	{
+		$data=array(
+			'category_name'=>$this->input->post('category_name'),
+			'category_description'=>$this->input->post('category_description')
+			);
+		$this->db->insert('supplier_category',$data);
+		return true;	
+	}
 
 
 }

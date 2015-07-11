@@ -289,6 +289,25 @@ public function loadreminder()
     $this->load->view('pages/showreminder.php',$data);
 }
 
+public function add_supplier_category()
+{
+      $data['title']='Add Supplier Category';
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_supplier_category.php');
+      $this->load->view('templates/footer.php');  
+}
+public function do_add_supplier_category()
+{
+  if($this->sales_model->add_supplier_category())
+  {
+    $data['title']='Add Supplier Category';
+    $data['msg']='Supplier category saved';
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_supplier_category.php',$data);
+      $this->load->view('templates/footer.php');     
+  }
+}
+
 
 
 }
