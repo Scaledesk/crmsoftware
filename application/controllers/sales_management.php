@@ -276,6 +276,18 @@ public function view_reminder()
       $this->load->view('pages/view_reminder.php',$data);
       $this->load->view('templates/footer.php'); 
 }
+public function loadreminderinvoice()
+{
+    $id=$this->input->post('id');
+    $data['i']=$this->sales_model->view_invoices($id);
+    $this->load->view('pages/selectinvoice.php',$data);
+}
+public function loadreminder()
+{
+  $id=$this->input->post('id');
+  $data['k']=$this->sales_model->view_reminder($id);
+    $this->load->view('pages/showreminder.php',$data);
+}
 
 
 

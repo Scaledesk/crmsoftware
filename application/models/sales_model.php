@@ -187,6 +187,12 @@ parent::__construct();
 		$query=$this->db->get("invoice_reminder");
   		return $query;
 	}
+	public function view_reminder($id)
+	{
+		$this->db->where('invoice_id',$id);
+		$query=$this->db->get("invoice_reminder");
+  		return $query;	
+	}
 
 
 }
