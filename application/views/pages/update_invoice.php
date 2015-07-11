@@ -7,7 +7,7 @@
                                 <div class="panel-body">
                                 <center><label><h2>Upadate Invoice</h2></label></center>  
                                 <div class="row m-b-lg">
-                                <form id="wizardForm" action="" method="post">
+                                <form id="wizardForm" action="<?=(base_url().'sales_management/do_edit_invoice/'.$h[0]->invoice_id)?>" method="post">
                            
                                 <div class="col-md-6">
                                     
