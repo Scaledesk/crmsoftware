@@ -8,7 +8,7 @@ class sales_management extends CI_Controller {
   $this->load->helper(array('form','url'));
   $this->load->library('email');
  }
- public function add_lead()
+public function add_lead()
 {
 
     $data['title']='Add Leads';
@@ -102,8 +102,8 @@ public function do_add_lead()
   }
 public function add_invoice()
   {
-    $data['title']='Add Invoice';
-    $data['k']=$this->sales_model->getorder();
+      $data['title']='Add Invoice';
+      $data['k']=$this->sales_model->getorder();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_invoice.php',$data);
       $this->load->view('templates/footer.php');
