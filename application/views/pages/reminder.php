@@ -32,7 +32,7 @@
 																			
                                         <div class="form-group col-md-12">
                                             <label>Reminder Date</label>
-                                            <input type="text" class="form-control" id="r_date" name="r_date" value="" placeholder="Reminder Date" required="">
+                                            <input type="text" class="form-control date-picker" id="r_date" name="r_date" value="" placeholder="Reminder Date" required="">
                                         </div>
 										<center> <button type="submit" class="btn btn-info">Add Reminder</button><center> 
 									</div> 
