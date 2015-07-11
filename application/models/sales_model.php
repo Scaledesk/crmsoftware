@@ -203,5 +203,57 @@ parent::__construct();
 		return true;	
 	}
 
+	public function add_supplier()
+	{
+		$data=array(
+			'supplier_name'=>$this->input->post('supplier_name'),
+			'supplier_address'=>$this->input->post('supplier_address'),
+			'supplier_phone1'=>$this->input->post('supplier_phone1'),
+			'supplier_phone2'=>$this->input->post('supplier_phone2'),
+			'supplier_email'=>$this->input->post('supplier_email'),
+			'supplier_faxno'=>$this->input->post('supplier_faxno'),
+			'supplier_description'=>$this->input->post('supplier_description'),
+			'category_id'=>$this->input->post('category_id')
+			);
+		$this->db->insert('supplier_details',$data);
+		return true;	 
+	}
+
+	public function editsupplier($id)
+	{
+		$this->db->where("supplier_id",$id);
+  		$query=$this->db->get("supplier_details");
+  		return $query->result();
+	}
+	public function do_editorder($id)
+	{	
+		$data=array(
+			'supplier_name'=>$this->input->post('supplier_name'),
+			'supplier_address'=>$this->input->post('supplier_address'),
+			'supplier_phone1'=>$this->input->post('supplier_phone1'),
+			'supplier_phone2'=>$this->input->post('supplier_phone2'),
+			'supplier_email'=>$this->input->post('supplier_email'),
+			'supplier_faxno'=>$this->input->post('supplier_faxno'),
+			'supplier_description'=>$this->input->post('supplier_description'),
+			'category_id'=>$this->input->post('category_id')
+			);
+		$this->db->where('supplier_id', $id);
+		$this->db->update('supplier_details',$data);
+		return true;
+	}
+
+	public function deletesupplier($id)
+	{
+		$this->db->where("supplier_id",$id);
+  		if($this->db->delete("supplier_details"))
+  		{
+  			return true;
+  		}
+  		else
+  		{
+  			return false;
+  		}
+
+	}
 
 }
