@@ -36,7 +36,7 @@
                                                                 
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputEmail">Lead Date</label>
-                                                                    <input type="text" class="form-control" id="datepicker1" placeholder="Lead Date" required="" name="lead_generate_date" value="<?php echo $h[0]->lead_generate_date;?>">
+                                                                    <input type="text" class="form-control date-picker" id="datepicker1" placeholder="Lead Date" required="" name="lead_generate_date" value="<?php echo $h[0]->lead_generate_date;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword1">Lead Source</label>
