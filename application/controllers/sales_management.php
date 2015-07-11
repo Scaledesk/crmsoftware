@@ -228,10 +228,17 @@ public function sendreminder()
 {
 
   $data['remider']=$this->sales_model->getreminder();
-  foreach ($reminder->result() as $row) {
-    if($row->reminder_date==date('Y-m-d'))
+  $f=0;
+  foreach ($data['remider']->result() as $row) {
+    /*echo ($row->reminder_date==date('Y-m-d'));
+    die;*/
+    echo strtotime($row->reminder_date)==strtotime(date('Y-m-d'));
+    die;
+    if(strtotime($row->reminder_date)==strtotime(date('Y-m-d')))
     {
        // $data['invoice']=$this->sales_model->getinvoice();
+        echo $row->reminder_id;
+        die;
         $invoice_id=$row->invoice_id;
         $this->email->from('javed@weboforce.com', 'JavedAhamad');
         $this->email->to('javedahamad4@gmail.com');
@@ -239,10 +246,21 @@ public function sendreminder()
         $this->email->message('Dear sir, invoice due date come regarding invoice number  ');
         if($this->email->send())
         {
-          $this->sales_model->deletereminder($reminder_id);
+          $this->sales_model->deletereminder($row->reminder_id);
+          $f=1;
         }    
     }
   }
+  if($f==1)
+  {
+    echo "reminder send";
+
+  }
+  else
+  {
+    echo "reminder not send";
+  }
+
   /*$data['invoice']=$this->sales_model->getinvoice();
   $this->email->from('javed@weboforce.com', 'JavedAhamad');
   $this->email->to('javedahamad4@gmail.com');
