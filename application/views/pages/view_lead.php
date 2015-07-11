@@ -54,18 +54,20 @@
                                             <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog modal-lg">
                                                     <div class="modal-content">
-                                                        <form action="" name="" method="post" >
+                                                       
                                                         <div class="modal-header">
 
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
                                                             <h4 class="modal-title" id="myLargeModalLabel">Add Comment</h4>
                                                         </div>
-                                                        <div class="modal-body">
-                                                            <textarea class="form-control"></textarea>
+                                                         <form action="" name="" method="post" >
+                                                            <div class="modal-body">
+                                                            <textarea class="form-control" comment></textarea>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                             <button type="button" class="btn btn-success">Submit</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            
                                                         </div>
                                                         </form>
                                                     </div>
