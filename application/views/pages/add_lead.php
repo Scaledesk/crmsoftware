@@ -1,6 +1,17 @@
 
 		
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css"> 
 
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  
+  <script>
+  $(function() {
+    $( "#datepicker1,#datepicker2,#datepicker3" ).datepicker({ dateFormat: 'yy-mm-dd' });
+  });
+  </script>
 
 
 
@@ -36,7 +47,7 @@
                                                                 
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputEmail">Lead Date</label>
-                                                                    <input type="text" class="form-control date-picker" id="datepicker1" placeholder="Lead Date" required="" name="lead_generate_date" value="<?php echo $h[0]->lead_generate_date;?>">
+                                                                    <input type="text" class="form-control" id="datepicker1" placeholder="Lead Date" required="" name="lead_generate_date" value="<?php echo $h[0]->lead_generate_date;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword1">Lead Source</label>

@@ -1,4 +1,5 @@
-
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 
 
@@ -31,7 +32,7 @@
                                                             
                                                            <div class="form-group col-md-12"></br></br></br></br>
                                                                     <label for="exampleInputName">Due Date </label>
-                                                                    <input type="text" class="form-control date-picker" name="date1" id="exampleInputName" placeholder="Due Date" required="">
+                                                                    <input type="text" class="form-control" name="date1" id="exampleInputName" placeholder="Due Date" required="">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                 <label>Status</label>
@@ -92,12 +93,19 @@
 
                                         
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <script type="text/javascript">
                                  $('input[name~=date1]').each(function(){
                                         $(this).datepicker({dateFormat:'yy-mm-dd'});
                                     });</script>
 =======
                                     
+>>>>>>> origin/master
+=======
+                                    <script type="text/javascript">
+                                 $('input[name~=date1]').each(function(){
+                                        $(this).datepicker({dateFormat:'dd-mm-yy'});
+                                    });</script>
 >>>>>>> origin/master
                 
 
