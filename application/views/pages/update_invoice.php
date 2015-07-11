@@ -17,7 +17,7 @@
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Due Date</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->due_date; ?>" placeholder="Due date" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->due_date; ?>" placeholder="Due date" required="">
                                         </div>
                                         
                                         <div class="form-group col-md-12">
