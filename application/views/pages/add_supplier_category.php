@@ -9,6 +9,9 @@
                                     <form id="wizardForm" action="<?=(base_url().'sales_management/do_add_supplier_category')?>" method="post">
                            
                                 <div class="col-md-6 center">
+                                        <div class="form-group col-md-12">
+                                            <p><?php if($msg!='') echo $msg; ?>
+                                        </div>
                                     
                                         <div class="form-group col-md-12">
                                             <label>Category Name</label>

@@ -349,6 +349,7 @@
                         <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Supplier Management</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'sales_management/add_supplier_category';?>">Add Supplier Category</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/add_supplier';?>">Add Supplier Details</a></li>
                             </ul>
                         </li>
                         <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calendar</p><span class="arrow"></span></a>

@@ -230,7 +230,7 @@ parent::__construct();
   		$query=$this->db->get("supplier_details");
   		return $query->result();
 	}
-	public function do_editorder($id)
+	public function do_editsupplier($id)
 	{	
 		$data=array(
 			'supplier_name'=>$this->input->post('supplier_name'),
