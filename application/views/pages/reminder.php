@@ -37,10 +37,7 @@
 										<center> <button type="submit" class="btn btn-info">Add Reminder</button><center> 
 									</div> 
                                         
-									<script type="text/javascript">
-                                 $('input[name~=r_date]').each(function(){
-                                        $(this).datepicker({dateFormat:'yy-mm-dd'});
-                                    });</script>
+									
 
 								
                                 </form>
