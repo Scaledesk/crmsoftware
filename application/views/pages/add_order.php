@@ -1,5 +1,4 @@
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 
 
 <div id="main-wrapper" class="container">
@@ -56,12 +55,12 @@
                                             
                                         <div class="form-group col-md-12">
                                             <label>Starting date</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail2" name="date1" value="<?php echo $h[0]->starting_date; ?>" placeholder="Enter Your Starting" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputEmail2" name="date1" value="<?php echo $h[0]->starting_date; ?>" placeholder="Enter Your Starting" required="">
                                         </div>
 
                                         <div class="form-group col-md-12">
                                             <label>Ending Date</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->proposed_ending_date; ?>" placeholder="Enter Your Ending date" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->proposed_ending_date; ?>" placeholder="Enter Your Ending date" required="">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Lead Name</label>
@@ -87,10 +86,7 @@
                                             <center><button type="submit" class="btn btn-info">Submit</button></center>       
                                       <?php  } ?>
 
-                                        <script type="text/javascript">
-                                 $('input[name~=date1],input[name~=date2]').each(function(){
-                                        $(this).datepicker({dateFormat:'yy-mm-dd'});
-                                    });</script>
+                                        
 
 
                                 </form>
