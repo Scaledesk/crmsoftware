@@ -35,8 +35,8 @@
                                         </div>
                                         
                                         <div class="form-group col-md-12">
-                                            <label>Order Cast</label>
-                                            <input type="text" class="form-control" id="" value="<?php echo $h[0]->order_cost; ?>" name="order_cost" placeholder="Order Cast" required>
+                                            <label>Order Cost</label>
+                                            <input type="text" class="form-control" id="" value="<?php echo $h[0]->order_cost; ?>" name="order_cost" placeholder="Order Cost" required>
                                         </div>
 
                                       </div> 
