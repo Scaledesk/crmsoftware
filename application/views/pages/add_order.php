@@ -55,12 +55,12 @@
                                             
                                         <div class="form-group col-md-12">
                                             <label>Start date</label>
-                                            <input type="text" class="form-control date-picker" id="exampleInputEmail2" name="date1" value="<?php echo $h[0]->starting_date; ?>" placeholder="Enter Your Starting" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputEmail2" name="date1" value="<?php echo $h[0]->starting_date; ?>" placeholder="Enter Start date" required="">
                                         </div>
 
                                         <div class="form-group col-md-12">
                                             <label>End Date</label>
-                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->proposed_ending_date; ?>" placeholder="Enter Your Ending date" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->proposed_ending_date; ?>" placeholder="Enter End date" required="">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Lead Name</label>
