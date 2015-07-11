@@ -309,5 +309,63 @@ public function do_add_supplier_category()
 }
 
 
+public function add_supplier()
+{
+      $data['title']='Add Supplier';
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_supplier.php');
+      $this->load->view('templates/footer.php');  
+}
+public function do_add_supplier()
+{
+  if($this->sales_model->add_supplier())
+  {
+    $data['title']='Add Supplier';
+    $data['msg']='Supplier details saved';
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_supplier.php',$data);
+      $this->load->view('templates/footer.php');     
+  }
+}
+
+public function view_supplier()
+{
+    $data['title']='View  Supplier';
+      $data['h']=$this->sales_model->getsupplier();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/view_supplier.php',$data);
+      $this->load->view('templates/footer.php');
+}
+
+public function editsupplier($id)
+{
+  $this->load->database();
+  $data['title']='Update Supplier Details';
+  $data['h']=$this->sales_model->editsupplier($id);
+  $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/add_supplier.php',$data);
+  $this->load->view('templates/footer.php');
+}
+
+public function do_editsupplier($id)
+{
+  $this->load->database();
+  if($this->sales_model->do_editsupplier($id))
+  {
+    redirect(base_url().'sales_management/view_supplier');
+  }
+  else{
+    echo "server error";
+  }
+
+}
+
+public function deletesupplier($id)
+{
+  if($this->sales_model->deletesupplier($id))
+  {
+    redirect(base_url().'sales_management/view_supplier');
+  }
+}
 
 }

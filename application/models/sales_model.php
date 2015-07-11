@@ -218,6 +218,11 @@ parent::__construct();
 		$this->db->insert('supplier_details',$data);
 		return true;	 
 	}
+	public function getsupplier()
+	{
+		$query=$this->db->get("supplier_details");
+  		return $query;
+	}
 
 	public function editsupplier($id)
 	{
