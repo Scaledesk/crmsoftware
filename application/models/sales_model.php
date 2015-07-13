@@ -283,6 +283,32 @@ parent::__construct();
   		$query=$this->db->get("quote_details");
   		return $query->result();
 	}
+	public function do_editquote_file($id,$rename)
+	{
+		$upload_quote= base_url().'application/quote/'.$rename;
+		$data=array(
+			'supplier_id'=>$this->input->post('supplier_id'),
+			'supplier_for'=>$this->input->post('supplier_for'),
+			'upload_quote'=>$upload_quote,
+			'quote_description'=>$this->input->post('quote_description')
+			);
+		$this->db->where("quote_id",$id);
+		$this->db->update('quote_details',$data);
+		return true;	
+	}
+
+	public function do_editquote($id)
+	{
+		//$upload_quote= base_url().'application/quote/'.$rename;
+		$data=array(
+			'supplier_id'=>$this->input->post('supplier_id'),
+			'supplier_for'=>$this->input->post('supplier_for'),
+			'quote_description'=>$this->input->post('quote_description')
+			);
+		$this->db->where("quote_id",$id);
+		$this->db->update('quote_details',$data);
+		return true;	
+	}
 
 	public function deletequote($id)
 	{

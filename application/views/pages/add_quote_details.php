@@ -16,8 +16,8 @@
 															<form id="wizardForm" method="post" action="<?=(base_url().'sales_management/add_quote_details')?>" enctype="multypart/form-data">
                                                                 <div class="form-group col-md-12">
                                                                     <label>Spplier Name</label>
-																	<select  class="form-control" id="supplier_name" name="supplier_name" required="">
-                                                                <option value="select">-select name-</option>
+																	<select  class="form-control" id="supplier_name" name="supplier_id" required="">
+                                                                <option value="select">-select supplier-</option>
                                                                 <option value="Paid">1</option>
                                                                 <option value="Unpaid">2</option>
                                                 
