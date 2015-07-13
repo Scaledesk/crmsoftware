@@ -23,7 +23,7 @@ public function add_order()
       $data['k']=$this->sales_model->getleadname();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_order.php',$data);
-      $this->load->view('templates/footer.php');  
+      $this->load->view('templates/footer.php');
 }
 public function do_add_order()
 {
@@ -48,7 +48,7 @@ public function do_add_comment()
 }
 public function do_add_lead()
 {
-          
+
           if($this->sales_model->add_lead())
          {
            $data['msg']="Lead Aded Added";
@@ -56,17 +56,15 @@ public function do_add_lead()
            $this->load->view('pages/add_lead.php',$data);
            $this->load->view('templates/footer.php');
          }
-  
+
 }
-
-
   public function view_lead()
   {
       $data['title']='Lead  Details';
       $data['h']=$this->sales_model->view_lead_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_lead.php',$data);
-      $this->load->view('templates/footer.php'); 
+      $this->load->view('templates/footer.php');
   }
 
   public function view_order()
@@ -75,7 +73,7 @@ public function do_add_lead()
       $data['h']=$this->sales_model->view_order_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_order.php',$data);
-      $this->load->view('templates/footer.php'); 
+      $this->load->view('templates/footer.php');
   }
 
   public function calendar()
@@ -201,7 +199,7 @@ public function deleteorder($id)
   if($this->sales_model->deleteorder($id))
   {
     redirect(base_url().'sales_management/view_order');
-  } 
+  }
 }
 
 public function addreminder($id)
@@ -232,7 +230,7 @@ public function sendreminder()
   $tdate=date('Y-m-d',mktime(0,0,0));
   foreach ($data['remider']->result() as $row) {
     $r_date=date($row->reminder_date,mktime(0,0,0));
-    
+
     if(strtotime($r_date)==strtotime($tdate))
     {
        //$data['invoice']=$this->sales_model->getinvoice();
@@ -246,7 +244,7 @@ public function sendreminder()
           //echo "reminder send";
           //$this->sales_model->deletereminder($row->reminder_id);
           $f=1;
-        }    
+        }
     }
   }
   if($f==1)
@@ -274,7 +272,7 @@ public function view_reminder()
       $data['h']=$this->sales_model->getorder();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_reminder.php',$data);
-      $this->load->view('templates/footer.php'); 
+      $this->load->view('templates/footer.php');
 }
 public function loadreminderinvoice()
 {
@@ -294,7 +292,7 @@ public function add_supplier_category()
       $data['title']='Add Supplier Category';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier_category.php');
-      $this->load->view('templates/footer.php');  
+      $this->load->view('templates/footer.php');
 }
 public function do_add_supplier_category()
 {
@@ -304,7 +302,7 @@ public function do_add_supplier_category()
     $data['msg']='Supplier category saved';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier_category.php',$data);
-      $this->load->view('templates/footer.php');     
+      $this->load->view('templates/footer.php');
   }
 }
 
@@ -314,7 +312,7 @@ public function add_supplier()
       $data['title']='Add Supplier';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier.php');
-      $this->load->view('templates/footer.php');  
+      $this->load->view('templates/footer.php');
 }
 public function do_add_supplier()
 {
@@ -324,7 +322,7 @@ public function do_add_supplier()
     $data['msg']='Supplier details saved';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier.php',$data);
-      $this->load->view('templates/footer.php');     
+      $this->load->view('templates/footer.php');
   }
 }
 
