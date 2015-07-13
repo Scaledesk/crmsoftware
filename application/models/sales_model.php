@@ -265,4 +265,17 @@ parent::__construct();
 
 	}
 
+	public function add_quote_details($rename)
+	{	
+		$upload_quote= base_url().'application/quote/'.$rename;
+		$data=array(
+			'supplier_id'=>$this->input->post('supplier_id'),
+			'supplier_for'=>$this->input->post('supplier_for'),
+			'upload_quote'=>$upload_quote,
+			'quote_description'=>$this->input->post('quote_description')
+			);
+		$this->db->insert('quote_details',$data);
+		return true;	
+	}
+
 }
