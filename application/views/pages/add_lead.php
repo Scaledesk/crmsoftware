@@ -76,7 +76,7 @@
                                                                 </div>
                                                         
                                                         </div>
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-12" style="padding-left: 0px;padding-right: 15px;">
                                                             <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Relation With Company</label>
                                                                     <input type="text" class="form-control" name="relation" id="exampleInputPassword2" placeholder="Relation With Company" value="<?php echo $h[0]->company_relation;?>">
