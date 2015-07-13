@@ -268,6 +268,7 @@ parent::__construct();
 	public function add_quote_details($rename)
 	{	
 		$upload_quote= base_url().'application/quote/'.$rename;
+
 		$data=array(
 			'supplier_id'=>$this->input->post('supplier_id'),
 			'supplier_for'=>$this->input->post('supplier_for'),
@@ -308,6 +309,11 @@ parent::__construct();
 		$this->db->where("quote_id",$id);
 		$this->db->update('quote_details',$data);
 		return true;	
+	}
+	public function getquote()
+	{
+		$query=$this->db->get("quote_details");
+  		return $query;
 	}
 
 	public function deletequote($id)
