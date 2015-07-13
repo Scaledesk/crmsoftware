@@ -6,7 +6,7 @@
                                                               
                                 <center><label><h2>Add Contractor</h2></label></center>  
                                 <div class="row">
-                                    <form id="wizardForm" action="<?=(base_url().'sales_management/add_contractor')?>" method="post">
+                                    <form id="wizardForm" action="<?=(base_url().'sales_management/do_add_contractor')?>" method="post">
                            
 														<div class="col-md-10 center">
                                     
