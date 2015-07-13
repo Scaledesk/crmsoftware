@@ -15,7 +15,7 @@ parent::__construct();
 		'document_name'=>$this->input->post('document_name'),
 		'document_type'=>$this->input->post('document_type'),
 		'document_description'=>$this->input->post('document_description'),
-		'categary_id'=>$this->input->post('categary_id'),
+		'document_category_id'=>$this->input->post('categary_id'),
 		'document_file'=>$document_file
 		);
 		$this->db->insert('document',$data);
@@ -32,7 +32,7 @@ parent::__construct();
 	{
 		
 		$this->db->where("document_id",$id);
-  		$query=$this->db->get("document_details");
+  		$query=$this->db->get("document");
   		return $query->result();
 	}
 
@@ -40,17 +40,16 @@ parent::__construct();
 	{
 
 		$data=array(
-		'name'=>$this->input->post('name'),
-		'designation'=>$this->input->post('designation'),
-		'company'=>$this->input->post('c_name'),
-		'phone'=>$this->input->post('phone'),
-		'email'=>$this->input->post('email'),
-		'fax_number'=>$this->input->post('fax'),
-		'contact_description'=>$this->input->post('description'),
-		'company_relation'=>$this->input->post('company_relation')
+		$document_file = base_url().'application/upload/'.$rename;
+		$data=array(
+		'document_name'=>$this->input->post('document_name'),
+		'document_type'=>$this->input->post('document_type'),
+		'document_description'=>$this->input->post('document_description'),
+		'document_category_id'=>$this->input->post('categary_id'),
+		'document_file'=>$document_file
 		);
 		$this->db->where('document_id', $id);
-		$this->db->update('document_details',$data);
+		$this->db->update('document',$data);
 		return true;
 			
 	}
@@ -58,7 +57,7 @@ parent::__construct();
 	public function deletedocument($id)
 	{
 		$this->db->where("document_id",$id);
-  		if($this->db->delete("document_details"))
+  		if($this->db->delete("document"))
   		{
   			return true;
   		}
