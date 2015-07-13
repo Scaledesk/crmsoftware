@@ -329,7 +329,7 @@ public function do_add_supplier()
 }
 public function view_supplier()
 {
-    $data['title']='View  Supplier';
+      $data['title']='View  Supplier';
       $data['h']=$this->sales_model->getsupplier();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_supplier.php',$data);
@@ -366,6 +366,85 @@ public function deletesupplier($id)
   {
     redirect(base_url().'sales_management/view_supplier');
   }
+}
+
+public function add_quote_details()
+{
+      $data['title']='Add Quote Details';
+      $data['h']=$this->sales_model->getsupplier();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_quote_details.php',$data);
+      $this->load->view('templates/footer.php');
+}
+public function do_add_quote_details()
+{
+
+  $config['upload_path'] = APPPATH.'/quote/'; 
+  $config['allowed_types'] = 'pdf';
+  $config['max_size'] = '1024';
+  $this->load->library('upload',$config);
+  //echo APPPATH;
+  //echo $_FILES['document_file']['name'];
+  //echo "<pre/>";
+  //print_r($_FILES);
+  //die;
+   $rename=time().$_FILES['quote_file']['name'];
+   $_FILES['quote_file']['name']=$rename;
+  if ($this->upload->do_upload('quote_file')==False)
+        {
+           echo 'upload error';
+        }
+        else
+        {
+          if($this->sales_model->add_quote_details($rename))
+          {
+            $data['title']='Add Quote Details';
+            $data['msg']='Quote details saved';
+            $data['h']=$this->sales_model->getsupplier();
+            $this->load->view('templates/header.php',$data);
+            $this->load->view('pages/add_quote_details.php',$data);
+            $this->load->view('templates/footer.php');
+          }
+        }
+  }
+public function editquote($id)
+{
+  $this->load->database();
+  $data['title']='Update Quote Details';
+ $data['h']=$this->sales_model->getsupplier();
+  $data['k']=$this->sales_model->editquote($id);
+  $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/add_quote_details.php',$data);
+  $this->load->view('templates/footer.php');
+}
+
+public function do_editquote($id)
+{
+  $this->load->database();
+  if($this->sales_model->do_editquote($id))
+  {
+    redirect(base_url().'sales_management/view_quote');
+  }
+  else{
+    echo "server error";
+  }
+
+}
+
+public function deletequote($id)
+{
+  if($this->sales_model->deletequote($id))
+  {
+    redirect(base_url().'sales_management/view_quote');
+  }
+}
+public function view_quote()
+{
+  $data['title']='View  Quote Details';
+      $data['h']=$this->sales_model->getquote();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/view_quote.php',$data);
+      $this->load->view('templates/footer.php');
 }
 
 }
