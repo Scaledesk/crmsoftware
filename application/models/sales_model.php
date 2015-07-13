@@ -277,5 +277,11 @@ parent::__construct();
 		$this->db->insert('quote_details',$data);
 		return true;	
 	}
+	public function editquote($id)
+	{
+		$this->db->where("quote_id",$id);
+  		$query=$this->db->get("quote_details");
+  		return $query->result();
+	}
 
 }
