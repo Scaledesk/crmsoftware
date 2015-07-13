@@ -10,9 +10,9 @@
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
-                                                <th>Sr. No.</th>
+                                                <th>S No.</th>
                                                 <th>Supplier Name</th>
-                                                <th>Supplied For</th>
+                                                <th>Supplier For</th>
                                                 <th>Quote Description</th>
                                                 <th>Download Quote</th>
                                                 <th>Action</th>
@@ -20,9 +20,9 @@
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Sr. No.</th>
+                                                <th>S No.</th>
                                                 <th>Supplier Name</th>
-                                                <th>Supplied For</th>
+                                                <th>Supplier For</th>
                                                 <th>Quote Description</th>
                                                 <th>Download Quote</th>
                                                 <th>Action</th>

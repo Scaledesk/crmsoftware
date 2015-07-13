@@ -20,24 +20,24 @@
                                                             <div class="row">
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Document Name</label>
-                                                                    <input type="text" class="form-control" name="document_name" id="exampleInputName" placeholder="Dacument Name">
+                                                                    <input type="text" class="form-control" name="document_name" id="exampleInputName" placeholder="Document Name">
                                                                 </div>
                                                                 
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputEmail">Type of Document</label>
-                                                                    <input type="text" class="form-control" name="document_type" id="exampleInputEmail" placeholder="Type of Dacument">
+                                                                    <input type="text" class="form-control" name="document_type" id="" placeholder="Type of Document">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label for="exampleInputPassword1">Description of Dacument</label>
-                                                                    <input type="text" class="form-control" name="document_description" id="exampleInputPassword1" placeholder="Description of Dacument">
+                                                                    <label for="exampleInputPassword1">Description of Document</label>
+                                                                    <input type="text" class="form-control" name="document_description" id="" placeholder="Description of Document">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Category</label>
-                                                                    <input type="text" class="form-control" name="categary_id" id="" placeholder="Categary Id">
+                                                                    <input type="text" class="form-control" name="categary_id" id="" placeholder="Categary Name">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label>Category</label>
-                                                                    <select  class="form-control" id="categary_id" name="categary_id" placeholder="Category" required="">
+                                                                    <select  class="form-control" id="categary_id" name="categary_id"  required="">
                                                                 <option value="Select">Select name</option>
                                                                 <option>1</option>
                                                                 <option>2</option>
