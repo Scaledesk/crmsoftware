@@ -21,9 +21,9 @@
                                                                     ?>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label>Spplier Name</label>
+                                                                    <label>Spplier</label>
 																	<select  class="form-control" id="supplier_name" name="supplier_id" required="">
-                                                                <option value="select">-select supplier-</option>
+                                                                <option value="select">Select supplier</option>
                                                                 <?php 
                                                                 foreach ($h->result() as $row) 
                                                                  { ?>
