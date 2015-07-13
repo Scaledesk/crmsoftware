@@ -6,7 +6,7 @@
                                                               
                                 <center><label><h2>Add Contractor</h2></label></center>  
                                 <div class="row">
-                                    <form id="wizardForm" action="" method="post">
+                                    <form id="wizardForm" action="<?=(base_url().'sales_management/add_quote_details')?>" method="post">
                            
 														<div class="col-md-10 center">
                                     
