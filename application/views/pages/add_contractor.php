@@ -11,9 +11,9 @@
 														<div class="col-md-10 center">
                                     
 															<div class="form-group col-md-12">
-                                                                    <label>Spplier Name</label>
+                                                                    <label>Supplier Name</label>
 																	<select  class="form-control" id="supplier_name" name="supplier_id" required="">
-                                                                <option value="select">-select name-</option>
+                                                                <option value="select">Select Name</option>
                                                                  <?php 
                                                                  foreach ($h->result() as $row) {
                                                                  ?>   
@@ -23,8 +23,8 @@
                                                                 </select>
                                                                 </div>
 																	<div class="form-group col-md-12">
-                                                                    <label for="exampleInputName">Description</label>
-                                                                    <textarea class="form-control" name="description" id="description" placeholder="Description" required="" style="margin: 0px -0.5px 0px 0px; height: 150px; width: 393px;"></textarea>
+                                                                    <label for="exampleInputName">Contractor Description</label>
+                                                                    <textarea class="form-control" name="description" id="description" placeholder="Contractor Description" required="" style="margin: 0px -0.5px 0px 0px; height: 150px; width: 393px;"></textarea>
                                                                 </div>
 																			
                                         
