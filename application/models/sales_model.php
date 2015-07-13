@@ -284,4 +284,17 @@ parent::__construct();
   		return $query->result();
 	}
 
+	public function deletequote($id)
+	{
+		$this->db->where("quote_id",$id);
+  		if($this->db->delete("quote_details"))
+  		{
+  			return true;
+  		}
+  		else
+  		{
+  			return false;
+  		}		
+	}
+
 }

@@ -411,7 +411,7 @@ public function editquote($id)
 {
   $this->load->database();
   $data['title']='Update Quote Details';
- $data['h']=$this->sales_model->getsupplier();
+  $data['h']=$this->sales_model->getsupplier();
   $data['k']=$this->sales_model->editquote($id);
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/add_quote_details.php',$data);
