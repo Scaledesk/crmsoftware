@@ -69,10 +69,10 @@ parent::__construct();
 		
 		$data=array(
 			'order_title'=>$this->input->post('order_title'),
-			'client_name'=>$this->input->post('client_name'),
+			'order_client_name'=>$this->input->post('client_name'),
 			'order_cost'=>$this->input->post('order_cost'),
-			'starting_date'=>$this->input->post('date1'),
-			'proposed_ending_date'=>$this->input->post('date2'),
+			'order_start_date'=>$this->input->post('date1'),
+			'order_proposed_end_date'=>$this->input->post('date2'),
 			'lead_id'=>$this->input->post('lead_id')
 			);
 		$this->db->insert('order_details',$data);
@@ -104,10 +104,10 @@ parent::__construct();
 	{
 		$data=array(
 			'order_title'=>$this->input->post('order_title'),
-			'client_name'=>$this->input->post('client_name'),
+			'order_client_name'=>$this->input->post('client_name'),
 			'order_cost'=>$this->input->post('order_cost'),
-			'starting_date'=>$this->input->post('starting_date'),
-			'proposed_ending_date'=>$this->input->post('ending_date'),
+			'order_start_date'=>$this->input->post('starting_date'),
+			'order_proposed_end_date'=>$this->input->post('ending_date'),
 			'lead_id'=>$this->input->post('lead_id')
 			);
 		$this->db->where('order_id', $id);
@@ -271,8 +271,8 @@ parent::__construct();
 
 		$data=array(
 			'supplier_id'=>$this->input->post('supplier_id'),
-			'supplier_for'=>$this->input->post('supplier_for'),
-			'upload_quote'=>$upload_quote,
+			'quote_supplier_for'=>$this->input->post('supplier_for'),
+			'quote_upload'=>$upload_quote,
 			'quote_description'=>$this->input->post('quote_description')
 			);
 		$this->db->insert('quote_details',$data);
@@ -289,8 +289,8 @@ parent::__construct();
 		$upload_quote= base_url().'application/quote/'.$rename;
 		$data=array(
 			'supplier_id'=>$this->input->post('supplier_id'),
-			'supplier_for'=>$this->input->post('supplier_for'),
-			'upload_quote'=>$upload_quote,
+			'quote_supplier_for'=>$this->input->post('supplier_for'),
+			'quote_upload'=>$upload_quote,
 			'quote_description'=>$this->input->post('quote_description')
 			);
 		$this->db->where("quote_id",$id);
@@ -303,7 +303,7 @@ parent::__construct();
 		//$upload_quote= base_url().'application/quote/'.$rename;
 		$data=array(
 			'supplier_id'=>$this->input->post('supplier_id'),
-			'supplier_for'=>$this->input->post('supplier_for'),
+			'quote_supplier_for'=>$this->input->post('supplier_for'),
 			'quote_description'=>$this->input->post('quote_description')
 			);
 		$this->db->where("quote_id",$id);

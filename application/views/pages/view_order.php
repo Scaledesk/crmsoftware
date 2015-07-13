@@ -42,10 +42,10 @@
                                             <tr>
                                                 <td><?php echo $i;?></td>
                                                 <td><?php echo $row->order_title; ?></td>
-                                                <td><?php echo $row->client_name; ?></td>
+                                                <td><?php echo $row->order_client_name; ?></td>
                                                 <td><?php echo $row->order_cost; ?></td>
-                                                <td><?php echo $row->starting_date; ?></td>
-                                                <td><?php echo $row->proposed_ending_date; ?></td>
+                                                <td><?php echo $row->order_start_date; ?></td>
+                                                <td><?php echo $row->order_proposed_end_date; ?></td>
                                                 <td><?php echo $row->lead_id; ?></td>
                                                 <td><a href="<?php echo base_url().'sales_management/editorder/'.$row->order_id; ?> ">Edit</a>|
                                                     <a href="<?php echo base_url().'sales_management/deleteorder/'.$row->order_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>

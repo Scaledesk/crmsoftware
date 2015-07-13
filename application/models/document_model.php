@@ -39,7 +39,6 @@ parent::__construct();
 	public function do_editdocument($id)
 	{
 
-		$data=array(
 		$document_file = base_url().'application/upload/'.$rename;
 		$data=array(
 		'document_name'=>$this->input->post('document_name'),

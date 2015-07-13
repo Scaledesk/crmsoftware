@@ -38,9 +38,9 @@
                                             <tr>
                                                 <td><?php echo $i;?></td>
                                                 <td><?php echo $row->supplier_id; ?></td>
-                                                <td><?php echo $row->supplier_for; ?></td>
+                                                <td><?php echo $row->quote_supplier_for; ?></td>
                                                 <td><?php echo $row->quote_description; ?></td>
-                                                <td><a href="<?php echo $row->upload_quote; ?>">Download</a></td>
+                                                <td><a href="<?php echo $row->quote_upload; ?>">Download</a></td>
                                                 <td><a href="<?php echo base_url().'sales_management/editquote/'.$row->quote_id; ?> ">Edit</a>|
                                                     <a href="<?php echo base_url().'sales_management/deletequote/'.$row->quote_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                                                 </td>
