@@ -310,8 +310,9 @@ public function do_add_supplier_category()
 public function add_supplier()
 {
       $data['title']='Add Supplier';
+      $data['h']=$this->sales_model->getsupplier_category();
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/add_supplier.php');
+      $this->load->view('pages/add_supplier.php',$data);
       $this->load->view('templates/footer.php');
 }
 public function do_add_supplier()
@@ -320,12 +321,12 @@ public function do_add_supplier()
   {
     $data['title']='Add Supplier';
     $data['msg']='Supplier details saved';
+    $data['h']=$this->sales_model->getsupplier_category();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier.php',$data);
       $this->load->view('templates/footer.php');
   }
 }
-
 public function view_supplier()
 {
     $data['title']='View  Supplier';
@@ -339,7 +340,8 @@ public function editsupplier($id)
 {
   $this->load->database();
   $data['title']='Update Supplier Details';
-  $data['h']=$this->sales_model->editsupplier($id);
+  $data['h']=$this->sales_model->getsupplier_category();
+  $data['k']=$this->sales_model->editsupplier($id);
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/add_supplier.php',$data);
   $this->load->view('templates/footer.php');

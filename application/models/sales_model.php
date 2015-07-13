@@ -223,7 +223,6 @@ parent::__construct();
 		$query=$this->db->get("supplier_details");
   		return $query;
 	}
-
 	public function editsupplier($id)
 	{
 		$this->db->where("supplier_id",$id);
@@ -245,6 +244,11 @@ parent::__construct();
 		$this->db->where('supplier_id', $id);
 		$this->db->update('supplier_details',$data);
 		return true;
+	}
+	public function getsupplier_category()
+	{
+		$query=$this->db->get('supplier_category');
+		return $query;
 	}
 
 	public function deletesupplier($id)
