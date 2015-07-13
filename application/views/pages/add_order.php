@@ -65,7 +65,7 @@
                                         <div class="form-group col-md-12">
                                             <label>Lead Name</label>
                                             <select  class="form-control" id="exampleInputEmail1" name="lead_id" required="">
-                                                <option value="0">-select-</option>
+                                                <option value="0">Select</option>
                                                 <?php
                                                 foreach ($k->result() as $row) 
                                                 { ?>
