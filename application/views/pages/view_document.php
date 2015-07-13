@@ -16,7 +16,7 @@
                                                 <th>Document Name</th>
                                                 <th>Document Type</th>
                                                 <th>Document Description</th>
-                                                <th>categary_id</th>
+                                                <th>Document categary</th>
                                                 <th>Document</th>
                                                 <th>Action</th>
                                             </tr>
@@ -27,7 +27,7 @@
                                                 <th>Document Name</th>
                                                 <th>Document Type</th>
                                                 <th>Document Description</th>
-                                                <th>categary_id</th>
+                                                <th>Document categary</th>
                                                 <th>Document</th>
                                                 <th>Action</th>
                                             </tr>
@@ -44,7 +44,7 @@
                                                 <td><?php echo $row->document_name; ?></td>
                                                 <td><?php echo $row->document_type; ?></td>
                                                 <td><?php echo $row->document_description; ?></td>
-                                                <td><?php echo $row->categary_id; ?></td>
+                                                <td><?php echo $row->document_categary_id; ?></td>
                                                 <td><a href="<?php echo $row->document_file; ?>">Download</a></td>
                                                 <td><a href="<?php echo base_url().'document_control/editdocument/'.$row->document_id; ?> ">Edit</a>|
                                                     <a href="<?php echo base_url().'document_control/deletedocument/'.$row->document_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
