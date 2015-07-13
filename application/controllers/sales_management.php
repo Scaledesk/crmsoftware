@@ -383,11 +383,6 @@ public function do_add_quote_details()
   $config['allowed_types'] = 'pdf';
   $config['max_size'] = '1024';
   $this->load->library('upload',$config);
-  //echo APPPATH;
-  //echo $_FILES['document_file']['name'];
-  //echo "<pre/>";
-  //print_r($_FILES);
-  //die;
    $rename=time().$_FILES['quote_file']['name'];
    $_FILES['quote_file']['name']=$rename;
   if ($this->upload->do_upload('quote_file')==False)
@@ -421,13 +416,35 @@ public function editquote($id)
 public function do_editquote($id)
 {
   $this->load->database();
-  if($this->sales_model->do_editquote($id))
+  if($_FILES!='')
   {
-    redirect(base_url().'sales_management/view_quote');
+  $config['upload_path'] = APPPATH.'/quote/'; 
+  $config['allowed_types'] = 'pdf';
+  $config['max_size'] = '1024';
+  $this->load->library('upload',$config);
+   $rename=time().$_FILES['quote_file']['name'];
+   $_FILES['quote_file']['name']=$rename;
+     if ($this->upload->do_upload('quote_file')==False)
+        {
+           echo 'upload error';
+        }
+        else
+        {
+          if($this->sales_model->do_editquote_file($id,$rename))
+           {
+             redirect(base_url().'sales_management/view_quote');
+           }
+        }
+  
   }
   else{
-    echo "server error";
-  }
+    if($this->sales_model->do_editquote($id))
+    {
+     redirect(base_url().'sales_management/view_quote');
+    }
+   }  
+
+  
 
 }
 
@@ -438,7 +455,7 @@ public function deletequote($id)
     redirect(base_url().'sales_management/view_quote');
   }
 }
-public function view_quote()
+public function view_quote_details()
 {
   $data['title']='View  Quote Details';
       $data['h']=$this->sales_model->getquote();
