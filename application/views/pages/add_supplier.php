@@ -35,12 +35,12 @@
 																	<textarea class="form-control" placeholder="Supplier Address" id="supplier_address" name="supplier_address" required="" style="margin: 0px -0.078125px 0px 0px; height: 100px; width: 420px;"><?php echo $k[0]->supplier_address; ?></textarea>
 																</div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label>Supplier Phone1</label>
-                                                                    <input type="number" class="form-control" name="supplier_phone1" id="supplier_phone1" placeholder="Supplier Phone1" required="" value="<?php echo $k[0]->supplier_phone1; ?>">
+                                                                    <label>Supplier Phone one</label>
+                                                                    <input type="number" class="form-control" name="supplier_phone1" id="supplier_phone1" placeholder="Supplier Phone one" required="" value="<?php echo $k[0]->supplier_phone1; ?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label>Supplier Phone2</label>
-                                                                    <input type="number" class="form-control" name="supplier_phone2" id="supplier_phone2" placeholder="Supplier Phone2" required="" value="<?php echo $k[0]->supplier_phone2; ?>">
+                                                                    <label>Supplier Phone two</label>
+                                                                    <input type="number" class="form-control" name="supplier_phone2" id="supplier_phone2" placeholder="Supplier Phone two" required="" value="<?php echo $k[0]->supplier_phone2; ?>">
                                                                 
 																</div>
                                                             </div>
@@ -48,8 +48,8 @@
                                                         <div class="col-md-6">
                                                             
                                                                 <div class="form-group col-md-12">
-                                                                    <label>Supplier Email</label>
-                                                                    <input type="email" class="form-control" name="supplier_email" id="supplier_email" placeholder="Supplier Email" required="" value="<?php echo $k[0]->supplier_email; ?>">
+                                                                    <label>Supplier Email Address</label>
+                                                                    <input type="email" class="form-control" name="supplier_email" id="supplier_email" placeholder="Supplier Email Address" required="" value="<?php echo $k[0]->supplier_email; ?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label>Supplier Fax</label>
@@ -60,7 +60,7 @@
 																	<textarea class="form-control" placeholder="Supplier Description" id="supplier_description" name="supplier_description" required="" style="margin: 0px -0.078125px 0px 0px; height: 100px; width: 392px;"><?php echo $k[0]->supplier_description; ?></textarea>
 																</div>
 																<div class="form-group col-md-12">
-                                                                    <label>Category Id</label>
+                                                                    <label>Category Name</label>
                                                                     <select class="form-control" required="" name="category_id" >
 																	<option>Select Category</option>
 																	 <?php
