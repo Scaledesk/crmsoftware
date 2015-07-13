@@ -21,7 +21,7 @@
                                                                     ?>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label>Spplier</label>
+                                                                    <label>Supplier</label>
 																	<select  class="form-control" id="supplier_name" name="supplier_id" required="">
                                                                 <option value="select">Select supplier</option>
                                                                 <?php 
