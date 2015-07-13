@@ -10,7 +10,7 @@
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
-                                                <th>Sr. No.</th>
+                                                <th>S No.</th>
                                                 <th>Order Title</th>
                                                 <th>Client Name</th>
                                                 <th>Cost</th>
@@ -22,7 +22,7 @@
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Sr. No.</th>
+                                                <th>S No.</th>
                                                 <th>Order Title</th>
                                                 <th>Client Name</th>
                                                 <th>Cost</th>
