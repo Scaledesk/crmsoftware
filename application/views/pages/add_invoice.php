@@ -16,7 +16,7 @@
                                         <div class="form-group col-md-4 center">
                                             <label>Select order id</label>
                                             <select  class="form-control" id="exampleInputEmail1" name="order_id" required="">
-                                                <option value="0">-select-</option>
+                                                <option value="0">Select</option>
                                                 
                                             <?php
                                             foreach ($k->result() as $row) 
@@ -36,7 +36,7 @@
                                                                 <div class="form-group col-md-12">
                                                                 <label>Status</label>
                                                                 <select  class="form-control" id="exampleInputEmail1" name="status" required="">
-                                                                <option value="select">-select Status-</option>
+                                                                <option value="select">Select Status</option>
                                                                 <option value="Paid">Paid</option>
                                                                 <option value="Unpaid">Unpaid</option>
                                                 
