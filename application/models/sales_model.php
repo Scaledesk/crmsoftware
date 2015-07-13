@@ -329,4 +329,16 @@ parent::__construct();
   		}		
 	}
 
+	public function add_contractor()
+	{
+		$data=array(
+			'supplier_id'=>$this->input->post('supplier_id'),
+			'description'=>$this->input->post('description')
+			);
+		$this->db->insert('contractor',$data);
+		return true;
+	}
+
+
+
 }

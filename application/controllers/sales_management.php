@@ -471,4 +471,25 @@ public function view_quote_details()
       $this->load->view('templates/footer.php');
 }
 
+public function add_contractor()
+{
+  $data['title']='Add  Contractor Details';
+      $data['h']=$this->sales_model->getsupplier();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_contractor.php',$data);
+      $this->load->view('templates/footer.php'); 
+}
+public function do_add_contractor()
+{
+  if($this->sales_model->add_contractor())
+  {
+    $data['title']='Add Contractor Details';
+    $data['msg']='Contractor details saved';
+    $data['h']=$this->sales_model->getsupplier();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_contractor.php',$data);
+      $this->load->view('templates/footer.php');
+  }
+}
+
 }
