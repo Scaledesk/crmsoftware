@@ -37,20 +37,20 @@
                                                                     <textarea class="form-control" placeholder="Enter the Address" name="address" required="" ></textarea>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label for="exampleInputPassword1">Phone Number1</label>
-                                                                    <input type="text" class="form-control" name="phone1" id="exampleInputPassword1" placeholder="Phone Number1" required="">
+                                                                    <label for="exampleInputPassword1">Phone Number one</label>
+                                                                    <input type="text" class="form-control" name="phone1" id="exampleInputPassword1" placeholder="Phone Number one" required="">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label for="exampleInputPassword2">Phone Number2</label>
-                                                                    <input type="text" class="form-control" name="phone2" id="exampleInputPassword2" placeholder="Phone Number2" required="">
+                                                                    <label for="exampleInputPassword2">Phone Number two</label>
+                                                                    <input type="text" class="form-control" name="phone2" id="exampleInputPassword2" placeholder="Phone Number two" required="">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             
                                                             <div class="form-group col-md-12">
-                                                                    <label for="exampleInputName">Email Id </label>
-                                                                    <input type="email" class="form-control" name="email" id="exampleInputName" placeholder="Email Id" required="">
+                                                                    <label for="exampleInputName">Email Address </label>
+                                                                    <input type="email" class="form-control" name="email" id="exampleInputName" placeholder="Email Address" required="">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Fax Number </label>
@@ -67,8 +67,8 @@
                                                         
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                                    <label for="exampleInputName">Relation With our Company </label>
-                                                                    <input type="text" class="form-control" name="relation" id="exampleInputName" placeholder="Relation With our Company" required="">
+                                                                    <label for="exampleInputName">Relation With Company </label>
+                                                                    <input type="text" class="form-control" name="relation" id="exampleInputName" placeholder="Relation With  Company" required="">
                                                                 </div>
 
                                                     </div>
