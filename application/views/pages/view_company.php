@@ -12,29 +12,29 @@
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
-                                                <th>Sr. No.</th>
+                                                <th>S No.</th>
                                                 <th>Name</th>
                                                 <th>Address</th>
                                                 <th>Phone Number</th>
-                                                <th>Email</th>
-                                                <th>Fax Number</th>
+                                                <th>&nbspEmail</th>
+                                                <th>Fax</th>
                                                 <th>Domain Name</th>
                                                 <th>Company Description</th>
-                                                <th>Our Relation</th>
+                                                <th>Relation</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Sr. No.</th>
+                                                <th>S No.</th>
                                                 <th>Name</th>
                                                 <th>Address</th>
                                                 <th>Phone Number</th>
-                                                <th>Email</th>
-                                                <th>Fax Number</th>
+                                                <th>&nbspEmail</th>
+                                                <th>Fax</th>
                                                 <th>Domain Name</th>
                                                 <th>Company Description</th>
-                                                <th>Our Relation</th>
+                                                <th>Relation</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
