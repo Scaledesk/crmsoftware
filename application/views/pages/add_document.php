@@ -33,11 +33,11 @@
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Category</label>
-                                                                    <input type="text" class="form-control" name="categary_id" id="" placeholder="Categary Id">
+                                                                    <input type="text" class="form-control" name="categary_id" id="" placeholder="Categary Name">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label>Category</label>
-                                                                    <select  class="form-control" id="categary_id" name="categary_id" placeholder="Category Name" required="">
+                                                                    <select  class="form-control" id="categary_id" name="categary_id"  required="">
                                                                 <option value="Select">Select name</option>
                                                                 <option>1</option>
                                                                 <option>2</option>
