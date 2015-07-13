@@ -15,7 +15,7 @@
                                                 <th>Client Name</th>
                                                 <th>Cost</th>
                                                 <th>Start Date</th>
-                                                <th>Ending Date</th>
+                                                <th>End Date</th>
                                                 <th>Lead</th>
                                                 <th>Action</th>
                                             </tr>
@@ -27,7 +27,7 @@
                                                 <th>Client Name</th>
                                                 <th>Cost</th>
                                                 <th>Start Date</th>
-                                                <th>Ending Date</th>
+                                                <th>End Date</th>
                                                 <th>Lead</th>
                                                 <th>Action</th>
                                             </tr>
