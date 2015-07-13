@@ -13,14 +13,24 @@
                                                     <div class="row m-b-lg">
                                                         <div class="col-md-12">
                                                             <div class="row">
-															<form id="wizardForm" method="post" action="<?=(base_url().'sales_management/add_quote_details')?>" enctype="multypart/form-data">
+															<form id="wizardForm" method="post" action="<?=(base_url().'sales_management/do_add_quote_details')?>" enctype="multipart/form-data">
+                                                                <div class="form-group col-md-12">
+                                                                    <?php 
+                                                                    if($msg!='')
+                                                                        echo $msg;
+                                                                    ?>
+                                                                </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label>Spplier Name</label>
 																	<select  class="form-control" id="supplier_name" name="supplier_id" required="">
                                                                 <option value="select">-select supplier-</option>
-                                                                <option value="Paid">1</option>
-                                                                <option value="Unpaid">2</option>
-                                                
+                                                                <?php 
+                                                                foreach ($h->result() as $row) 
+                                                                 { ?>
+
+                                                                <option value="<?php echo $row->supplier_id; ?>"><?php echo $row->supplier_name; ?></option>
+
+                                                               <?php } ?>
                                                                 </select>
                                                                 </div>
                                                                 
@@ -35,7 +45,7 @@
                                                                 </div>
 																<div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Upload Quote </label>
-                                                                    <input type="file" class="form-control" name="upload_quote" id="upload_quote" placeholder="Fax Number" required="">
+                                                                    <input type="file" class="form-control" name="quote_file" id="quote_file"  required="">
                                                                 </div>
                                                             </div>
                                                         </div>

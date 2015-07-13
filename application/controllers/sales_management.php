@@ -383,11 +383,18 @@ public function do_add_quote_details()
   $config['allowed_types'] = 'pdf';
   $config['max_size'] = '1024';
   $this->load->library('upload',$config);
+  //echo '<pre />';
+  //var_dump($_FILES);
+  //die;
+ /*echo $_FILES['quote_file']['name'];
+ die;*/
    $rename=time().$_FILES['quote_file']['name'];
+
    $_FILES['quote_file']['name']=$rename;
   if ($this->upload->do_upload('quote_file')==False)
         {
            echo 'upload error';
+           die;
         }
         else
         {
