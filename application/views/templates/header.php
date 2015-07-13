@@ -352,7 +352,7 @@
                                 <li><a href="<?php echo base_url().'sales_management/add_supplier';?>">Add Supplier Details</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/view_supplier';?>">View Supplier Details</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/add_quote_details';?>">Add Quote Details</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/view_quote_details';?>">View Details</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/view_quote_details';?>">View Quote Details</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/add_contractor';?>">Add Contractor</a></li>
 
                             </ul>
