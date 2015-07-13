@@ -11,14 +11,14 @@ parent::__construct();
 	public function add_contact()
 	{
 		$data=array(
-		'name'=>$this->input->post('name'),
-		'designation'=>$this->input->post('designation'),
-		'company'=>$this->input->post('c_name'),
-		'phone'=>$this->input->post('phone'),
-		'email'=>$this->input->post('email'),
-		'fax_number'=>$this->input->post('fax'),
+		'contact_name'=>$this->input->post('name'),
+		'contact_designation'=>$this->input->post('designation'),
+		'contact_company'=>$this->input->post('c_name'),
+		'contact_phone'=>$this->input->post('phone'),
+		'contact_email'=>$this->input->post('email'),
+		'contact_fax_number'=>$this->input->post('fax'),
 		'contact_description'=>$this->input->post('description'),
-		'company_relation'=>$this->input->post('company_relation')
+		'contact_company_relation'=>$this->input->post('company_relation')
 		);
 		$this->db->insert('contact_details',$data);
 		return true;	
@@ -42,14 +42,14 @@ parent::__construct();
 	{
 
 		$data=array(
-		'name'=>$this->input->post('name'),
-		'designation'=>$this->input->post('designation'),
-		'company'=>$this->input->post('c_name'),
-		'phone'=>$this->input->post('phone'),
-		'email'=>$this->input->post('email'),
-		'fax_number'=>$this->input->post('fax'),
+		'contact_name'=>$this->input->post('name'),
+		'contact_designation'=>$this->input->post('designation'),
+		'contact_company'=>$this->input->post('c_name'),
+		'contact_phone'=>$this->input->post('phone'),
+		'contact_email'=>$this->input->post('email'),
+		'contact_fax_number'=>$this->input->post('fax'),
 		'contact_description'=>$this->input->post('description'),
-		'company_relation'=>$this->input->post('company_relation')
+		'contact_company_relation'=>$this->input->post('company_relation')
 		);
 		$this->db->where('contact_id', $id);
 		$this->db->update('contact_details',$data);

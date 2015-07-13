@@ -12,29 +12,29 @@
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
-                                                <th>S No.</th>
+                                                <th>Sr. No.</th>
                                                 <th>Name</th>
                                                 <th>Designation</th>
                                                 <th>Company</th>
                                                 <th>Phone Number</th>
-                                                <th>&nbspEmail</th>
-                                                <th>Fax</th>
+                                                <th>Email</th>
+                                                <th>Fax Number</th>
                                                 <th>Contact Description</th>
-                                                <th>Relation</th>
+                                                <th>Our Relation</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>S No.</th>
+                                                <th>Sr. No.</th>
                                                 <th>Name</th>
                                                 <th>Designation</th>
                                                 <th>Company</th>
                                                 <th>Phone Number</th>
-                                                <th>&nbspEmail</th>
-                                                <th>Fax</th>
+                                                <th>Email</th>
+                                                <th>Fax Number</th>
                                                 <th>Contact Description</th>
-                                                <th>Relation</th>
+                                                <th>Our Relation</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -47,15 +47,16 @@
 
                                             <tr>
                                                 <td><?php echo $i;?></td>
-                                                <td><?php echo $row->name; ?></td>
-                                                <td><?php echo $row->Designation; ?></td>
-                                                <td><?php echo $row->company; ?></td>
-                                                <td><?php echo $row->phone; ?></td>
-                                                <td><?php echo $row->email; ?></td>
-                                                <td><?php echo $row->fax_number; ?></td>
+                                                <td><?php echo $row->contact_name; ?></td>
+                                                <td><?php echo $row->contact_designation; ?></td>
+                                                <td><?php echo $row->contact_company; ?></td>
+                                                <td><?php echo $row->contact_phone; ?></td>
+                                                <td><?php echo $row->contact_email; ?></td>
+                                                <td><?php echo $row->contact_fax_number; ?></td>
                                                 <td><?php echo $row->contact_description; ?></td>
-                                                <td><?php echo $row->company_relation; ?></td>
+                                                <td><?php echo $row->contact_company_relation; ?></td>
                                                 <td><a href="<?php echo base_url().'contact_control/editcontact/'.$row->contact_id; ?> ">Edit</a>|
+                                      
                                                     <a href="<?php echo base_url().'contact_control/deletecontact/'.$row->contact_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                                                 </td>
                                             </tr>

@@ -29,11 +29,11 @@
 																<tr class="active">
 																<th scope="row"><?php echo $i++; ?></th>
 																<td><?php echo $row->invoice_id; ?></td>
-																<td><?php echo $row->due_date; ?></td>
-																<td><?php echo $row->total_amount; ?></td>
-																<td><?php echo $row->amount_paid; ?></td>
-																<td><?php echo $row->amount_due; ?></td>
-																<td> <?php echo $row->status; ?> </td>
+																<td><?php echo $row->invoice_due_date; ?></td>
+																<td><?php echo $row->invoice_total_amount; ?></td>
+																<td><?php echo $row->invoice_amount_paid; ?></td>
+																<td><?php echo $row->invoice_amount_due; ?></td>
+																<td> <?php echo $row->invoice_status; ?> </td>
 																<td>
 																	<a href="<?php echo base_url().'sales_management/editinvoice/'.$row->invoice_id; ?>">Edit</a>|
                                                     <a href="<?php echo base_url().'sales_management/deleteinvoice/'.$row->invoice_id; ?>"  OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>|

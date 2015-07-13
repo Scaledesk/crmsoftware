@@ -40,11 +40,11 @@ parent::__construct();
 	{
 		$data=array(
 			'order_id'=>$this->input->post('order_id'),
-			'due_date'=>$this->input->post('date1'),
-			'total_amount'=>$this->input->post('total_amount'),
-			'amount_paid'=>$this->input->post('amount_paid'),
-			'amount_due'=>$this->input->post('amount_due'),
-			'status'=>$this->input->post('status')
+			'invoice_due_date'=>$this->input->post('date1'),
+			'invoice_total_amount'=>$this->input->post('total_amount'),
+			'invoice_amount_paid'=>$this->input->post('amount_paid'),
+			'invoice_amount_due'=>$this->input->post('amount_due'),
+			'invoice_status'=>$this->input->post('status')
 			);
 		$this->db->insert('crm_invoice',$data);
 		return true;
@@ -54,11 +54,11 @@ parent::__construct();
 	{
 		$data=array(
 			'order_id'=>$this->input->post('order_id'),
-			'due_date'=>$this->input->post('due'),
-			'total_amount'=>$this->input->post('total_amount'),
-			'amount_paid'=>$this->input->post('amount_paid'),
-			'amount_due'=>$this->input->post('amount_due'),
-			'status'=>$this->input->post('status')
+			'invoice_due_date'=>$this->input->post('due'),
+			'invoice_total_amount'=>$this->input->post('total_amount'),
+			'invoice_amount_paid'=>$this->input->post('amount_paid'),
+			'invoice_amount_due'=>$this->input->post('amount_due'),
+			'invoice_status'=>$this->input->post('status')
 			);
 		$this->db->where("invoice_id",$id);
 		$this->db->update('crm_invoice',$data);
@@ -333,7 +333,7 @@ parent::__construct();
 	{
 		$data=array(
 			'supplier_id'=>$this->input->post('supplier_id'),
-			'description'=>$this->input->post('description')
+			'contractor_description'=>$this->input->post('description')
 			);
 		$this->db->insert('contractor',$data);
 		return true;
