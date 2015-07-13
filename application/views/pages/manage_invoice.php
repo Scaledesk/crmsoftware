@@ -11,7 +11,7 @@
                                         <div class="form-group col-md-12">
                                             <label>Select order invoice</label>
                                             <select  class="form-control" id="exampleInputEmail1" name="order_id" required="" onchange="loadinvoice(this)">
-                                                <option value="0">-select-</option>
+                                                <option value="0">select</option>
                                             <?php
                                             foreach ($k->result() as $row) 
                                             { ?>
