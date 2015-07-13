@@ -30,7 +30,7 @@
                                             <input type="text" class="form-control" id="exampleInputEmail1" name="order_title" placeholder="Title" required="" value="<?php echo $h[0]->order_title; ?>">
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <label>Name of Client</label>
+                                            <label>Client Name</label>
                                             <input type="text" class="form-control" value="<?php echo $h[0]->client_name; ?>" id="exampleInputPassword1" name="client_name" placeholder="Name of Client" required="">
                                         </div>
                                         
@@ -55,12 +55,12 @@
                                             
                                         <div class="form-group col-md-12">
                                             <label>Start date</label>
-                                            <input type="text" class="form-control date-picker" id="exampleInputEmail2" name="date1" value="<?php echo $h[0]->starting_date; ?>" placeholder="Enter Start date" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputEmail2" name="date1" value="<?php echo $h[0]->starting_date; ?>" placeholder="Start date" required="">
                                         </div>
 
                                         <div class="form-group col-md-12">
                                             <label>End Date</label>
-                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->proposed_ending_date; ?>" placeholder="Enter End date" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->proposed_ending_date; ?>" placeholder="End date" required="">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Lead Name</label>
