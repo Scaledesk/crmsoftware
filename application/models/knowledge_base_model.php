@@ -1,0 +1,58 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Knowledge_base_model extends CI_Model {
+public function __construct()
+{
+parent::__construct();
+$this->load->database();
+}
+
+	
+	public function add_category()
+	{
+		
+
+		$data=array(
+		'knowledge_parent_id'=>$this->input->post('knowledge_parent_id'),
+		'knowledge_category_name'=>$this->input->post('knowledge_category_name'),
+		'knowledge_category_description'=>$this->input->post('knowledge_category_description')
+		);
+		$this->db->insert('knowledge_category',$data);
+		return true;	
+	}
+	public function get_category()
+	{
+		$query=$this->db->get("knowledge_category");
+  		return $query;
+  	}
+  	public function edit_ticket($id)
+  	{
+  		$this->db->where('ticket_id',$id);
+  		$query=$this->db->get('ticket_details');
+  		return $query->result();
+  	}
+	public function do_edit_ticket($id)
+	{
+		$data=array(
+		'ticket_name'=>$this->input->post('ticket_name'),
+		'ticket_raiser'=>$this->input->post('ticket_raiser'),
+		'ticket_description'=>$this->input->post('ticket_description'),
+		'ticket_category'=>$this->input->post('ticket_category'),
+		'ticket_admin_comment'=>$this->input->post('ticket_admin_comment'),
+		'ticket_raised_date'=>date('Y-m-d',strtotime($this->input->post('ticket_raised_date'))),
+		'ticket_closed_date'=>date('Y-m-d',strtotime($this->input->post('ticket_closed_date'))),
+		'ticket_resolution'=>$this->input->post('ticket_resolution')
+		);
+		$this->db->where("ticket_id",$id);
+		$this->db->update('ticket_details',$data);
+		return true;		
+	}
+	public function delete_ticket($id)
+	{
+		$this->db->where("ticket_id",$id);
+  		if($this->db->delete("ticket_details"))
+  		{
+  			return true;
+  		}		
+	}
+	
+}
