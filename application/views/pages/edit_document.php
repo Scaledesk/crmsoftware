@@ -35,6 +35,7 @@
                                                                     <label for="exampleInputPassword2">Categary </label>
                                                                   <select  class="form-control" required id="categary_id" name="categary_id"  required="">
                                                                 <option value="">Select</option>
+                                                                <?php 
                                                                 foreach($k->result() as $row)
                                                                 { ?>
                                                                     <option value="<?php echo $row->document_category_id; ?>" <?php if($row->document_category_id==$h[0]->document_category_id) echo 'selected'; ?> ><?php echo $row->document_category_name; ?></option>

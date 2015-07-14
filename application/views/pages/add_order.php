@@ -31,7 +31,7 @@
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Client Name</label>
-                                            <input type="text" class="form-control" value="<?php echo $h[0]->client_name; ?>" id="exampleInputPassword1" name="client_name" placeholder="Name of Client" required="">
+                                            <input type="text" class="form-control" value="<?php echo $h[0]->order_client_name; ?>" id="exampleInputPassword1" name="client_name" placeholder="Name of Client" required="">
                                         </div>
                                         
                                         <div class="form-group col-md-12">
@@ -55,12 +55,12 @@
                                             
                                         <div class="form-group col-md-12">
                                             <label>Start date</label>
-                                            <input type="text" class="form-control date-picker" id="exampleInputEmail2" name="date1" value="<?php echo $h[0]->starting_date; ?>" placeholder="Start date" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputEmail2" name="date1" value="<?php echo $h[0]->order_start_date; ?>" placeholder="Start date" required="">
                                         </div>
 
                                         <div class="form-group col-md-12">
                                             <label>End Date</label>
-                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->proposed_ending_date; ?>" placeholder="End date" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->order_proposed_end_date; ?>" placeholder="End date" required="">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Lead Name</label>
@@ -69,7 +69,7 @@
                                                 <?php
                                                 foreach ($k->result() as $row) 
                                                 { ?>
-                                                    <option value="<?php echo $row->lead_id; if($h[0]->lead_id==$row->lead_id) echo "selected"; ?>"><?php echo $row->lead_name; ?></option>
+                                                    <option value="<?php echo $row->lead_id; ?>" <?php if($h[0]->lead_id==$row->lead_id) echo "selected"; ?> ><?php echo $row->lead_name; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>

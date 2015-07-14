@@ -48,7 +48,7 @@
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Designation</label>
-                                                                    <input type="text" class="form-control" name="designation" id="exampleInputPassword2" placeholder="Designation" value="<?php echo $h[0]->designation;?>">
+                                                                    <input type="text" class="form-control" name="designation" id="exampleInputPassword2" placeholder="Designation" value="<?php echo $h[0]->lead_designation;?>">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -56,30 +56,30 @@
                                                             
                                                            <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Company Name</label>
-                                                                    <input type="text" class="form-control" name="company_name" id="exampleInputPassword2" placeholder="Company Name" value="<?php echo $h[0]->company_name;?>">
+                                                                    <input type="text" class="form-control" name="company_name" id="exampleInputPassword2" placeholder="Company Name" value="<?php echo $h[0]->lead_company_name;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Phone Number</label>
-                                                                    <input type="text" class="form-control" name="phone" id="exampleInputPassword2" placeholder="Phone Number" value="<?php echo $h[0]->phone;?>">
+                                                                    <input type="text" class="form-control" name="phone" id="exampleInputPassword2" placeholder="Phone Number" value="<?php echo $h[0]->lead_phone;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Email Address</label>
-                                                                    <input type="email" class="form-control" name="email" id="exampleInputPassword2" placeholder="Email Address" value="<?php echo $h[0]->email;?>">
+                                                                    <input type="email" class="form-control" name="email" id="exampleInputPassword2" placeholder="Email Address" value="<?php echo $h[0]->lead_email;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Fax</label>
-                                                                    <input type="text" class="form-control" name="fax_number" id="exampleInputPassword2" placeholder="Fax" value="<?php echo $h[0]->fax_number;?>">
+                                                                    <input type="text" class="form-control" name="fax_number" id="exampleInputPassword2" placeholder="Fax" value="<?php echo $h[0]->lead_fax_number;?>">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Description</label>
-                                                                    <input type="text" class="form-control" name="description" id="exampleInputPassword2" placeholder="Description" value="<?php echo $h[0]->contact_description;?>">
+                                                                    <input type="text" class="form-control" name="description" id="exampleInputPassword2" placeholder="Description" value="<?php echo $h[0]->lead_contact_description;?>">
                                                                 </div>
                                                         
                                                         </div>
                                                         <div class="col-md-12" style="padding-left: 0px;padding-right: 15px;">
                                                             <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Relation With Company</label>
-                                                                    <input type="text" class="form-control" name="relation" id="exampleInputPassword2" placeholder="Relation With Company" value="<?php echo $h[0]->company_relation;?>">
+                                                                    <input type="text" class="form-control" name="relation" id="exampleInputPassword2" placeholder="Relation With Company" value="<?php echo $h[0]->lead_company_relation;?>">
                                                                 </div>
 
                                                         </div>

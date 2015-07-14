@@ -17,12 +17,12 @@
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Due Date</label>
-                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->due_date; ?>" placeholder="Due date" required="">
+                                            <input type="text" class="form-control date-picker" id="exampleInputPassword2" name="date2" value="<?php echo $h[0]->invoice_due_date; ?>" placeholder="Due date" required="">
                                         </div>
                                         
                                         <div class="form-group col-md-12">
                                             <label>Total Amount</label>
-                                            <input type="text" class="form-control" id="total_amount" value="<?php echo $h[0]->total_amount; ?>" name="total_amount"  placeholder="Total Amount" required>
+                                            <input type="text" class="form-control" id="total_amount" value="<?php echo $h[0]->invoice_total_amount; ?>" name="total_amount"  placeholder="Total Amount" required>
                                         </div>
 
                                       </div> 
@@ -34,18 +34,18 @@
 
                                         <div class="form-group col-md-12">
                                             <label>Amount paid</label>
-                                            <input type="text" class="form-control" id="amount_paid" name="amount_paid" onchange="changedue(this);" placeholder="Amount paid" required="" value="<?php echo $h[0]->amount_paid; ?>">
+                                            <input type="text" class="form-control" id="amount_paid" name="amount_paid" onchange="changedue(this);" placeholder="Amount paid" required="" value="<?php echo $h[0]->invoice_amount_paid; ?>">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Amount Due</label>
-                                            <input type="text" class="form-control" id="amount_due" name="amount_due" placeholder="Amount Due" required="" value="<?php echo $h[0]->amount_due; ?>">
+                                            <input type="text" class="form-control" id="amount_due" name="amount_due" placeholder="Amount Due" required="" value="<?php echo $h[0]->invoice_amount_due; ?>">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>Status</label>
                                              <select  class="form-control" id="exampleInputEmail1" name="status" required="">
                                                                 <option value="select">-select Status-</option>
-                                                                <option value="Paid" <?php if($h[0]->status=='Paid') echo 'selected'; ?> >Paid</option>
-                                                                <option value="Unpaid" <?php if($h[0]->status=='Unpaid') echo 'selected'; ?> >Unpaid</option>
+                                                                <option value="Paid" <?php if($h[0]->invoice_status=='Paid') echo 'selected'; ?> >Paid</option>
+                                                                <option value="Unpaid" <?php if($h[0]->invoice_status=='Unpaid') echo 'selected'; ?> >Unpaid</option>
                                                 
                                                                 </select>
                                         </div>

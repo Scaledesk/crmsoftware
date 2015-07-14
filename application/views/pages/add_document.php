@@ -39,9 +39,10 @@
                                                                     <label>Category</label>
                                                                     <select  class="form-control" required id="categary_id" name="categary_id"  required="">
                                                                 <option value="">Select</option>
+                                                                <?php 
                                                                 foreach($k->result() as $row)
                                                                 { ?>
-                                                                    <option value="<?php echo $row->document_category_id; ?>" ><?php echo $row->document_category_name; ?></option>                                                                <?php } ?>
+                                                                    <option value="<?php echo $row->document_category_id; ?>" ><?php echo $row->document_category_name; ?></option>
                                                                 
                                                                <?php } ?>
                                                                 </select>
