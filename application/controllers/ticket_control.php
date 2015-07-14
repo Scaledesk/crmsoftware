@@ -32,7 +32,7 @@ public function view_ticket()
       $data['title']='View  Ticket';
       $data['h']=$this->Ticket_model->get_ticket();
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/view_ticket.php',$data);
+      $this->load->view('pages/view_ticket_details.php',$data);
       $this->load->view('templates/footer.php');
 }
 
@@ -49,7 +49,7 @@ public function edit_ticket($id)
 public function do_edit_ticket($id)
 {
   $this->load->database();
-  if($this->sales_model->do_edit_ticket($id))
+  if($this->Ticket_model->do_edit_ticket($id))
   {
     redirect(base_url().'Ticket_control/view_ticket');
   }
