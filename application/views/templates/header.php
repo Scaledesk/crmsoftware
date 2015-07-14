@@ -363,6 +363,13 @@
                                 <li><a href="<?php echo base_url().'Ticket_control/view_ticket';?>">View Ticket</a></li>
                             </ul>
                         </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Knowledge</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo base_url().'Knowledge_base_control/add_category';?>">Add category</a></li>
+                                <li><a href="<?php echo base_url().'Knowledge_base_control/add_knowledge_base';?>">Add Knowledge Base</a></li>
+                                <li><a href="<?php echo base_url().'Knowledge_base_control/view_knowledge_base';?>">View Knowledge Base</a></li>
+                            </ul>
+                        </li>
                         <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calendar</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'sales_management/calendar';?>">event calendar</a></li>
