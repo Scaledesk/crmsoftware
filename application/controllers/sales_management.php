@@ -210,9 +210,29 @@ public function addreminder($id)
       $this->load->view('pages/reminder.php',$data);
       $this->load->view('templates/footer.php');
 }
+public function editreminder($id)
+{
+ $data['title']='Update reminder';
+      $data['k']=$this->sales_model->getinvoice($id);
+      $data['h']=$this->sales_model->get_reminder($id);
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/reminder.php',$data);
+      $this->load->view('templates/footer.php');
+}
 public function do_addreminder()
 {
   if($this->sales_model->add_reminder())
+  {
+          $data['title']='Manage Invoice';
+          $data['k']=$this->sales_model->getorder();
+           $this->load->view('templates/header.php');
+           $this->load->view('pages/manage_invoice.php',$data);
+           $this->load->view('templates/footer.php');
+  }
+}
+public function do_editreminder($id)
+{
+  if($this->sales_model->editreminder($id))
   {
           $data['title']='Manage Invoice';
           $data['k']=$this->sales_model->getorder();

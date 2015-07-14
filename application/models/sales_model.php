@@ -181,6 +181,18 @@ parent::__construct();
 		$this->db->insert('invoice_reminder',$data);
 		return true;
 	}
+	public function editreminder($id)
+	{
+		$data=array(
+			'invoice_id'=>$this->input->post('invoice_id'),
+			'reminder_title'=>$this->input->post('title'),
+			'reminder_description'=>$this->input->post('description'),
+			'reminder_date'=>$this->input->post('r_date')	
+			);
+		$this->db->where('reminder_id',$id);
+		$this->db->update('invoice_reminder',$data);
+		return true;	
+	}
 
 	public function getreminder()
 	{
@@ -338,7 +350,12 @@ parent::__construct();
 		$this->db->insert('contractor',$data);
 		return true;
 	}
-
+	public function get_reminder($id)
+	{
+		$this->db->where("reminder_id",$id);
+		$query=$this->db->get('invoice_reminder');
+		return $query->result();	
+	}
 
 
 }

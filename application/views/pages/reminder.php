@@ -4,10 +4,20 @@
                             <div class="panel panel-white">
                                 <div class="panel-body">
                                                               
-                                <center><label><h2>Reminder</h2></label></center>  
-                                <div class="row">
+                                
+                                    <?php 
+                                    if($h!='')
+                                    { ?>
+                                    <center><label><h2>Update Reminder</h2></label></center>  
+                                        <div class="row">
+                                        <form id="wizardForm" action="<?=(base_url().'sales_management/do_editreminder'.$h[0]->reminder_id)?>" method="post">
+                                   <?php  } 
+                                   else
+                                   { ?>
+                                  <center><label><h2>Add Reminder</h2></label></center>  
+                                  <div class="row">
                                     <form id="wizardForm" action="<?=(base_url().'sales_management/do_addreminder')?>" method="post">
-                           
+                                  <?php } ?>
                                 <div class="col-md-6 center">
                                     
                                         <div class="form-group col-md-12">
@@ -22,19 +32,26 @@
 
                                         <div class="form-group col-md-12">
                                             <label>Reminder Title</label>
-                                            <input type="text" class="form-control" id="title" name="title" placeholder="Reminder Title" required="" value="">
+                                            <input type="text" class="form-control" id="title" name="title" placeholder="Reminder Title" required="" value="<?php echo $h[0]->reminder_title; ?>">
                                         </div>
 
 										<div class="form-group col-md-12">
                                             <label>Reminder Description</label>
-                                            <textarea name="description" class="form-control"></textarea>
+                                            <textarea name="description" class="form-control"><?php echo $h[0]->reminder_description; ?></textarea>
                                         </div>
 																			
                                         <div class="form-group col-md-12">
                                             <label>Reminder Date</label>
-                                            <input type="text" class="form-control date-picker" id="r_date" name="r_date" value="" placeholder="Reminder Date" required="">
+                                            <input type="text" class="form-control date-picker" id="r_date" name="r_date" value="<?php echo $h[0]->reminder_date; ?>" placeholder="Reminder Date" required="">
                                         </div>
-										<center> <button type="submit" class="btn btn-info">Add Reminder</button><center> 
+                                        <?php if($h!='')
+                                        { ?>
+                                           <center> <button type="submit" class="btn btn-info">Update Reminder</button><center>  
+                                       <?php }
+                                       else
+                                       { ?>
+                                            <center> <button type="submit" class="btn btn-info">Add Reminder</button><center> 
+                                        <?php } ?>
 									</div> 
                                         
 									

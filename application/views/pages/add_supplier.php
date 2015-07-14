@@ -4,18 +4,20 @@
                             <div class="panel panel-white">
                                 <div class="panel-body">
                                      <div id="rootwizard">
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i><b>Add Supplier</b></a></li>
-                                        </ul>
-                          
-                                    
+                                        
                                         <?php 
                                         error_reporting(0);
                                         if($k!='')
                                             { ?>
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i><b>Update Supplier</b></a></li>
+                                        </ul>
                                         <form id="wizardForm" method="post" action="<?=(base_url().'sales_management/do_editsupplier/'.$k[0]->supplier_id)?>">
                                         <?php } 
                                         else { ?>
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i><b>Add Supplier</b></a></li>
+                                        </ul>
 
                                             <form id="wizardForm" method="post" action="<?=(base_url().'sales_management/do_add_supplier')?>">
                                         <?php } ?>
