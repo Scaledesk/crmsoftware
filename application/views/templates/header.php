@@ -357,6 +357,12 @@
 
                             </ul>
                         </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Ticket Management</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo base_url().'Ticket_control/add_ticket';?>">Add Ticket</a></li>
+                                <li><a href="<?php echo base_url().'Ticket_control/view_ticket';?>">View Ticket</a></li>
+                            </ul>
+                        </li>
                         <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calendar</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'sales_management/calendar';?>">event calendar</a></li>
