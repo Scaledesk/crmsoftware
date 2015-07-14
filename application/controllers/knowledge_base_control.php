@@ -10,8 +10,9 @@ class Knowledge_base_control extends CI_Controller {
 {
 
     $data['title']='Add Category';
+    $data['h']=$this->Knowledge_base_model->get_category();
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/add_knowledge_category.php');
+      $this->load->view('pages/add_knowledge_category.php',$data);
       $this->load->view('templates/footer.php');
 
 }
@@ -21,18 +22,42 @@ public function do_add_category()
   {
     $data['title']='Add Category';
     $data['msg']='Category detail saved';
-	 $this->load->view('templates/header.php',$data);
+    $data['h']=$this->Knowledge_base_model->get_category();
+  	 $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_knowledge_category.php',$data);
       $this->load->view('templates/footer.php');
   }
 }
 
-public function view_ticket()
+public function add_knowledge_base()
 {
-      $data['title']='View  Ticket';
-      $data['h']=$this->Ticket_model->get_ticket();
+
+    $data['title']='Add Knowledge Base Details';
+    $data['h']=$this->Knowledge_base_model->get_category();
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/view_ticket_details.php',$data);
+      $this->load->view('pages/add_knowledge_base.php',$data);
+      $this->load->view('templates/footer.php');
+
+}
+public function do_add_knowledge_base()
+{
+  if($this->Knowledge_base_model->add_knowledge_base())
+  {
+    $data['title']='Add Knowledge Base Details';
+    $data['msg']='Knowledge Base detail saved';
+    $data['h']=$this->Knowledge_base_model->get_category();
+     $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_knowledge_base.php',$data);
+      $this->load->view('templates/footer.php');
+  }
+}
+
+public function view_knowledge_base()
+{
+      $data['title']='View  Knowledge Base Details';
+      $data['h']=$this->Ticket_model->get_knowledge_base();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/view_knowledge_base.php',$data);
       $this->load->view('templates/footer.php');
 }
 
