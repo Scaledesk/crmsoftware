@@ -17,7 +17,7 @@ class Ticket_control extends CI_Controller {
 }
 public function do_add_ticket()
 {
-  if($this->ticket_model->add_ticket())
+  if($this->Ticket_model->add_ticket())
   {
     $data['title']='Add Ticket';
     $data['msg']='Ticket details saved';

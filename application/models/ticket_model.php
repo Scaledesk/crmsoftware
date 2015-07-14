@@ -10,17 +10,15 @@ $this->load->database();
 	public function add_ticket()
 	{
 		$data=array(
-		'lead_name'=>$this->input->post('lead_name'),
-		'lead_generate_date'=>$this->input->post('lead_generate_date'),
-		'lead_source'=>$this->input->post('lead_source'),
-		'lead_service'=>$this->input->post('lead_service'),
-		'lead_designation'=>$this->input->post('designation'),
-		'lead_company_name'=>$this->input->post('company_name'),
-		'lead_phone'=>$this->input->post('phone'),
-		'lead_email'=>$this->input->post('email'),
-		'lead_fax_number'=>$this->input->post('fax_number'),
-		'lead_contact_description'=>$this->input->post('description'),
-		'lead_company_relation'=>$this->input->post('relation')
+		'ticket_name'=>$this->input->post('ticket_name'),
+		'ticket_raiser'=>$this->input->post('ticket_raiser'),
+		'ticket_description'=>$this->input->post('ticket_description'),
+		'ticket_category'=>$this->input->post('ticket_category'),
+		'ticket_admin_comment'=>$this->input->post('designation'),
+		'lead_company_name'=>$this->input->post('ticket_admin_comment'),
+		'ticket_raised_date'=>$this->input->post('ticket_raised_date'),
+		'ticket_closed_date'=>$this->input->post('ticket_closed_date'),
+		'ticket_resolution'=>$this->input->post('ticket_resolution')
 		);
 		$this->db->insert('ticket_details',$data);
 		return true;	
@@ -39,13 +37,16 @@ $this->load->database();
 	public function do_edit_ticket()
 	{
 		$data=array(
-			'order_id'=>$this->input->post('order_id'),
-			'invoice_due_date'=>$this->input->post('due'),
-			'invoice_total_amount'=>$this->input->post('total_amount'),
-			'invoice_amount_paid'=>$this->input->post('amount_paid'),
-			'invoice_amount_due'=>$this->input->post('amount_due'),
-			'invoice_status'=>$this->input->post('status')
-			);
+		'ticket_name'=>$this->input->post('ticket_name'),
+		'ticket_raiser'=>$this->input->post('ticket_raiser'),
+		'ticket_description'=>$this->input->post('ticket_description'),
+		'ticket_category'=>$this->input->post('ticket_category'),
+		'ticket_admin_comment'=>$this->input->post('designation'),
+		'lead_company_name'=>$this->input->post('ticket_admin_comment'),
+		'ticket_raised_date'=>$this->input->post('ticket_raised_date'),
+		'ticket_closed_date'=>$this->input->post('ticket_closed_date'),
+		'ticket_resolution'=>$this->input->post('ticket_resolution')
+		);
 		$this->db->where("ticket_id",$id);
 		$this->db->update('ticket_details',$data);
 		return true;		

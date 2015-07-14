@@ -1,10 +1,10 @@
 <div id="main-wrapper" class="container">
                     <div class="row">
-                       <center> <h2>Ticket Management</h2></center>
+                       <center> <h2>Add Ticket</h2></center>
                         <div class="col-md-6 center">
 
                                         <div class="col-md-6">
-                                            <form class="m-t-md" action="#">
+                                            <form class="m-t-md" action="<?=(base_url().'Ticket_control/do_add_ticket')?>" method="post">
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" name="ticket_name" id="" placeholder="Ticket Name" required="">
                                                 </div>
@@ -31,7 +31,7 @@
                                                 <textarea class="form-control" name="ticket_admin_comment" id="" placeholder="Admin Comments" maxlength='500' required=""></textarea>
                                          		</div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control date-picker" name="ticket_raiser_date" id="" placeholder="Ticket Raised date" required="">
+                                                    <input type="text" class="form-control date-picker" name="ticket_raised_date" id="" placeholder="Ticket Raised date" required="">
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control date-picker" name="Ticket_closed_date" id="" placeholder="Ticket closed date" required="">
@@ -40,9 +40,9 @@
                                             
                                            
 															<select  class="form-control" id="" name=" ticket_resolution">
-                                                                <option value="select">Select</option>
-                                                                <option>Yes</option>
-                                                                <option>No</option>
+                                                                <option value="">Select</option>
+                                                                <option value="Yes">Yes</option>
+                                                                <option Calue="No">No</option>
                                                 
                                                             </select>
 												</div>
