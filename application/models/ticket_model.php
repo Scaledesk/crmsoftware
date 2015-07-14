@@ -9,15 +9,16 @@ $this->load->database();
 	
 	public function add_ticket()
 	{
+		
+
 		$data=array(
 		'ticket_name'=>$this->input->post('ticket_name'),
 		'ticket_raiser'=>$this->input->post('ticket_raiser'),
 		'ticket_description'=>$this->input->post('ticket_description'),
 		'ticket_category'=>$this->input->post('ticket_category'),
-		'ticket_admin_comment'=>$this->input->post('designation'),
-		'lead_company_name'=>$this->input->post('ticket_admin_comment'),
-		'ticket_raised_date'=>$this->input->post('ticket_raised_date'),
-		'ticket_closed_date'=>$this->input->post('ticket_closed_date'),
+		'ticket_admin_comment'=>$this->input->post('ticket_admin_comment'),
+		'ticket_raised_date'=>date('Y-m-d',strtotime($this->input->post('ticket_raised_date'))),
+		'ticket_closed_date'=>date('Y-m-d',strtotime($this->input->post('ticket_closed_date'))),
 		'ticket_resolution'=>$this->input->post('ticket_resolution')
 		);
 		$this->db->insert('ticket_details',$data);

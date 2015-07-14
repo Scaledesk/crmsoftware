@@ -31,10 +31,10 @@
                                                 <textarea class="form-control" name="ticket_admin_comment" id="" placeholder="Admin Comments" maxlength='500' required=""></textarea>
                                          		</div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control date-picker" name="ticket_raised_date" id="" placeholder="Ticket Raised date" required="">
+                                                    <input type="text" class="form-control date-picker" name="ticket_raised_date" id="1" placeholder="Ticket Raised date" required="">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control date-picker" name="Ticket_closed_date" id="" placeholder="Ticket closed date" required="">
+                                                    <input type="text" class="form-control date-picker" name="ticket_closed_date" id="2" placeholder="Ticket Raised date" required="">
                                                 </div>
                                                 <div class="form-group">
                                             
