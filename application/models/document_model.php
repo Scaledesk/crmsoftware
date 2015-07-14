@@ -21,6 +21,11 @@ parent::__construct();
 		$this->db->insert('document',$data);
 		return true;	
 	}
+	public function getcategory()
+	{
+		$query = $this->db->get('document_category');  
+    	return $query;	
+	}
 
 	public function view_document_details()
 	{

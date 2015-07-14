@@ -13,16 +13,16 @@
                                         <div class="col-md-6">
                                             <form class="m-t-md" action="<?=(base_url().'contact_control/do_edit_contact/'.$h[0]->contact_id)?>" method="post">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Name" required="" name="name" value="<?php echo $h[0]->name;?>">
+                                                    <input type="text" class="form-control" placeholder="Name" required="" name="name" value="<?php echo $h[0]->contact_name;?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Designation" required="" name="designation" value="<?php echo $h[0]->designation;?>">
+                                                    <input type="text" class="form-control" placeholder="Designation" required="" name="designation" value="<?php echo $h[0]->contact_designation;?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Company Name" required="" name="c_name" value="<?php echo $h[0]->company;?>">
+                                                    <input type="text" class="form-control" placeholder="Company Name" required="" name="c_name" value="<?php echo $h[0]->contact_company;?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Phone Number" required="" name="phone" value="<?php echo $h[0]->phone;?>">
+                                                    <input type="text" class="form-control" placeholder="Phone Number" required="" name="phone" value="<?php echo $h[0]->contact_phone;?>">
                                                 </div>
                                                 
                                                 
@@ -34,16 +34,16 @@
                                                     
                                                 
                                                 <div class="form-group">
-                                                    <input type="email" class="form-control" placeholder="Email" required="" name="email" value="<?php echo $h[0]->email;?>">
+                                                    <input type="email" class="form-control" placeholder="Email" required="" name="email" value="<?php echo $h[0]->contact_email;?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Fax Number" required="" name="fax" value="<?php echo $h[0]->fax_number;?>">
+                                                    <input type="text" class="form-control" placeholder="Fax Number" required="" name="fax" value="<?php echo $h[0]->contact_fax_number;?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" class="form-control" placeholder="Description" required="" name="description" value="<?php echo $h[0]->contact_description;?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Relation With Compnay" required="" name="company_relation" value="<?php echo $h[0]->company_relation;?>">
+                                                    <input type="text" class="form-control" placeholder="Relation With Compnay" required="" name="company_relation" value="<?php echo $h[0]->contact_company_relation;?>">
                                                 </div>
                                             </div>
                                             </div>

@@ -37,11 +37,13 @@
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label>Category</label>
-                                                                    <select  class="form-control" id="categary_id" name="categary_id"  required="">
-                                                                <option value="Select">Select name</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                
+                                                                    <select  class="form-control" required id="categary_id" name="categary_id"  required="">
+                                                                <option value="">Select</option>
+                                                                foreach($k->result() as $row)
+                                                                { ?>
+                                                                    <option value="<?php echo $row->document_category_id; ?>" ><?php echo $row->document_category_name; ?></option>                                                                <?php } ?>
+                                                                
+                                                               <?php } ?>
                                                                 </select>
                                                                 </div>
                                                             </div>

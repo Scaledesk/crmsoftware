@@ -12,6 +12,7 @@ class document_control extends CI_Controller {
 {
 
     $data['title']='Add Document';
+    $data['k']=$this->document_model->getcategory();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_document.php');
       $this->load->view('templates/footer.php');
@@ -64,6 +65,7 @@ public function do_add_document()
 
   $this->load->database();
   $data['title']='Edit document Details';
+  $data['k']=$this->document_model->getcategory();
   $data['h']=$this->document_model->editdocument($id);
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/edit_document.php',$data);
@@ -73,7 +75,7 @@ public function do_add_document()
 public function do_edit_document($id)
 {
   $this->load->database();
-  if($this->contact_model->do_editdocument($id))
+  if($this->document_model->do_editdocument($id))
   {
     /*$data['title']='View Company Details';
     $data['msg']="Successfully updated company details";
