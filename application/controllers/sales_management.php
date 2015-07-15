@@ -76,13 +76,85 @@ public function do_add_lead()
       $this->load->view('templates/footer.php');
   }
 
-  public function calendar()
+  
+public function calendar()
   {
       $data['title']='Manage Event';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/calendar.php');
       $this->load->view('templates/footer.php');
   }
+public function insert_calendar()
+{
+  $this->load->database();
+  if($this->sales_model->do_calendar())
+  {
+    redirect(base_url().'sales_management/calendar');
+  }
+  else{
+    echo "record not updated";
+  }
+
+}
+
+
+
+public function show_calendar()
+{
+  $this->load->database();
+    $data['title']="show calendar";
+   $data['show_date']=$this->sales_model->show_calendar();
+   $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/calendar_show.php',$data);
+  $this->load->view('templates/footer.php');
+}
+
+
+public function show_calendar_table()
+{
+  $this->load->database();
+    $data['title']="show calendar";
+   $data['show_date']=$this->sales_model->show_calendar();
+   $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/show_calender_table.php',$data);
+  $this->load->view('templates/footer.php');
+}
+
+
+public function update_calendar($id)
+{
+  $this->load->database();
+    $data['title']="show calendar";
+   $data['show_full_date']=$this->sales_model->update_calendar($id);
+   $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/calendar_show.php',$data);
+  $this->load->view('templates/footer.php');
+}
+
+public function delete_event($id)
+{
+  if($this->sales_model->delete_event($id))
+  {
+    $data['title']="show calendar";
+    $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/calendar.php');
+  $this->load->view('templates/footer.php');
+  }
+}
+
+public function update_event($id)
+{
+
+    $this->load->model("sales_model");
+    $data['h']=$this->sales_model->update_event($id);
+ 
+    $data['title']="show calendar";
+    $this->load->view('templates/header.php',$data);
+    $this->load->view('pages/show_calender.php',$data);
+    $this->load->view('templates/footer.php');
+  
+}
+
   public function manage_invoice()
   {
     $data['title']='Manage Invoice';
@@ -506,5 +578,80 @@ public function do_add_contractor()
     $this->load->view('templates/footer.php');
   }
 }
+
+
+
+public function automation_mgt()
+  {
+      $data['title']='Automation Management ';
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/automation_management.php');
+      $this->load->view('templates/footer.php');
+  }
+
+
+  public function automation_mgt_insert()
+  {
+     $this->load->database();
+     $this->sales_model->automation_mgt_insert();
+
+      $data['title']='Automation Management ';
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/automation_management.php');
+      $this->load->view('templates/footer.php');
+  }
+
+
+
+  public function automation_mgt_delete($id)
+{
+  if($this->sales_model->automation_mgt_delete($id))
+ 
+  {
+    $data['title']='Automation Management';
+    $data['h']=$this->sales_model->automation_mgt_select();
+    $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/automation_management_show.php',$data);
+  $this->load->view('templates/footer.php');
+  }
+}
+
+public function automation_mgt_update($id)
+{
+
+$this->load->model("sales_model");
+  $data['h']=$this->sales_model->automation_mgt_update($id);
+ 
+    $data['title']="Automation Management ";
+    $data['h']=$this->sales_model->automation_mgt_select();
+    $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/automation_management_show.php',$data);
+  $this->load->view('templates/footer.php');
+  
+}
+
+public function automation_mgt_update_select($id)
+{
+
+$this->load->model("sales_model");
+  $data['h']=$this->sales_model->automation_mgt_update_select($id);
+ 
+
+    $data['title']="Automation Management ";
+    $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/automation_management_update.php',$data);
+  $this->load->view('templates/footer.php');
+  
+}
+
+public function automation_mgt_show()
+  {
+      $data['title']='Automation Management ';
+      $data['h']=$this->sales_model->automation_mgt_select();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/automation_management_show.php',$data);
+      $this->load->view('templates/footer.php');
+  }
+
 
 }

@@ -357,5 +357,137 @@ parent::__construct();
 		return $query->result();	
 	}
 
+public function do_calendar()
+	{
+
+		$data=array(
+		'title'=>$this->input->post('title'),
+		'description'=>$this->input->post('description'),		
+		'date'=>$this->input->post('date1')
+		
+		);
+		
+		$this->db->insert('calendar',$data);
+		return true;
+			
+	}
+
+
+
+public function show_calendar()
+	{
+
+		 $start=$this->input->post('startdate');
+         $end=$this->input->post('enddate');
+
+       $startdate=date('Y-m-d', strtotime($start));
+        $enddate=date('Y-m-d', strtotime($end));
+    
+    $query=$this->db->query("select id, title, description, date from calendar where date between '$startdate' and '$enddate'");
+     
+      return  $query;
+			
+	}
+// ........................................................
+public function update_calendar($id)
+	{
+
+	
+
+   $data=array(
+		'title'=>$this->input->post('title'),
+		'description'=>$this->input->post('description'),
+		'date'=>$this->input->post('date2'));
+		$this->db->where('id', $id);
+		$this->db->update('calendar',$data);
+		return true;
+			
+	}
+
+public function delete_event($id)
+	{
+		$this->db->where("id",$id);
+  		if($this->db->delete("calendar"))
+  		{
+  			return true;
+  		}
+
+	}
+
+public function update_event($id)
+	{
+		
+		$this->db->where(array('id'=> $id));
+		$query=$this->db->query("select * from calendar where id=$id");
+		// echo '<pre />';
+		// print_r($query);
+		// die();  
+		return $query->result();
+	}
+
+
+	
+public function automation_mgt_insert()
+	{
+		$data=array(
+		'name_application'=>$this->input->post('application_name'),
+		'company_of_application'=>$this->input->post('application_company'),
+		'application_cost'=>$this->input->post('paid_cost'),
+		'next_due_date'=>$this->input->post('due_date'),
+		'subscribed'=>$this->input->post('subscription'),		
+		'description'=>$this->input->post('description')
+		
+		);
+		
+		$this->db->insert('software_mgt',$data);
+		return true;
+			
+	}
+
+public function automation_mgt_delete($id)
+	{
+		$this->db->where("application_id",$id);
+  		if($this->db->delete("software_mgt"))
+  		{
+  			return true;
+  		}
+
+	}
+
+	public function automation_mgt_update($id)
+	{
+		$data=array(
+		'name_application'=>$this->input->post('application_name'),
+		'company_of_application'=>$this->input->post('application_company'),
+		'application_cost'=>$this->input->post('paid_cost'),
+		'next_due_date'=>$this->input->post('due_date'),
+		'subscribed'=>$this->input->post('subscription'),		
+		'description'=>$this->input->post('description')
+		
+		);
+		$this->db->where('application_id', $id);
+		$this->db->update('software_mgt',$data);
+		return true;
+	}
+
+	public function automation_mgt_update_select($id)
+	{
+		
+		//$this->db->where(array('application_id'=> $id));
+		
+		$query=$this->db->query("select * from software_mgt where application_id=$id");
+		
+		return $query->result();
+	}
+
+
+public function automation_mgt_select()
+	{
+		
+		$query=$this->db->query("select * from software_mgt");
+		  
+		return $query;
+	}
+
 
 }
