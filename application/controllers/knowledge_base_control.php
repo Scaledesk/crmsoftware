@@ -61,33 +61,33 @@ public function view_knowledge_base()
       $this->load->view('templates/footer.php');
 }
 
-public function edit_ticket($id)
+public function edit_knowledge_base($id)
 {
-  $this->load->database();
-  $data['title']='Update Ticket Details';
-  $data['k']=$this->Ticket_model->edit_ticket($id);
-  $this->load->view('templates/header.php',$data);
-  $this->load->view('pages/add_ticket.php',$data);
-  $this->load->view('templates/footer.php');
+   $data['title']='Update Knowledge Base Details';
+    $data['h']=$this->Knowledge_base_model->get_category();
+    $data['k']=$this->Knowledge_base_model->edit_knowledge_base();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_knowledge_base.php',$data);
+      $this->load->view('templates/footer.php');
 }
-
-public function do_edit_ticket($id)
+public function do_edit_knowledge_base()
 {
   $this->load->database();
-  if($this->Ticket_model->do_edit_ticket($id))
+  if($this->Knowledge_base_model->do_edit_knowledge_base($id))
   {
-    redirect(base_url().'Ticket_control/view_ticket');
+    redirect(base_url().'Knowledge_base_control/view_knowledge_base');
   }
   else{
     echo "server error";
-  }
-
+  }  
 }
-public function delete_ticket($id)
+
+
+public function delete_knowledge_base($id)
 {
-  if($this->Ticket_model->delete_ticket($id))
+  if($this->Knowledge_base_control->delete_knowledge_base($id))
   {
-    redirect(base_url().'Ticket_control/view_ticket');
+    redirect(base_url().'Knowledge_base_control/view_knowledge_base');
   }
 }
 

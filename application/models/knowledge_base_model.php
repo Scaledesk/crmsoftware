@@ -49,6 +49,19 @@ $this->load->database();
   		$query=$this->db->get('knowledge_base');
   		return $query->result();
   	}
+  	public function do_edit_knowledge_base($id)
+  	{
+  		$data=array(
+		'knowledge_base_name'=>$this->input->post('knowledge_base_name'),
+		'knowledge_base_description'=>$this->input->post('knowledge_base_description'),
+		'knowledge_base_category_id'=>$this->input->post('knowledge_base_category_id'),
+		'knowledge_base_tags'=>$this->input->post('knowledge_base_tags'),
+		'knowledge_base_date'=>date('Y-m-d',time())
+		);
+		$this->db->where('knowledge_base_id',$id); 
+		$this->db->update('knowledge_base',$data);
+		return true;			
+  	}
 	public function delete_knowledge_base($id)
 	{
 		$this->db->where("knowledge_base_id",$id);
