@@ -82,7 +82,6 @@ public function do_edit_knowledge_base()
   }  
 }
 
-
 public function delete_knowledge_base($id)
 {
   if($this->Knowledge_base_control->delete_knowledge_base($id))

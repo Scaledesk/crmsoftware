@@ -6,7 +6,7 @@
                                     <h4 class="panel-title">Add Knowledge Base Details </h4>
                                 </div>
                                 <div class="panel-body">
-                <form action="" method="post">
+                <form action="<?=(base_url().'Knowledge_base_control/do_add_knowledge_base')?>" method="post">
 									<div class="form-group">
                                             <label>Name</label>
                                             <input type="text" class="form-control"name="knowledge_base_name"  id="" placeholder="Name" required="">
@@ -17,11 +17,12 @@
 										</div>
 									<label>Category</label>
 									<div class="form-group">
-                                            					<select  class="form-control" id="" name="knowledge_base_category" required="">
-                                                                <option value="select">Select</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                				</select>
+                                            					<select  class="form-control" id="" name="knowledge_base_category_id" required="">
+                                                                <option value="0">Select</option>
+                                                                 <?php foreach ($h->result() as $row) { ?>
+                                                                <option value="<?php echo $row->knowledge_base_category_id; ?>" ><?php echo $row->knowledge_base_category_name; ?></option>
+                                                                <?php } ?>
+                                                                </select>
 									</div>
 										<div class="form-group">
                                             <label>Tags</label>
