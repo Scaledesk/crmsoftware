@@ -9,7 +9,7 @@
                                     <h4 class="panel-title">Update Knowledge Base Details </h4>
                                 </div>
                                 <div class="panel-body">
-                <form action="<?=(base_url().'Knowledge_base_control/do_add_knowledge_base')?>" method="post">
+                <form action="<?=(base_url().'Knowledge_base_control/do_edit_knowledge_base/'.$k[0]->knowledge_base_id)?>" method="post">
                                 <?php }
                                 else
                                 { ?>
@@ -38,7 +38,7 @@
 									</div>
 										<div class="form-group">
                                             <label>Tags</label>
-                                            <input type="text" class="form-control"name="knowledge_base_tags"  id="" placeholder="Tags" required="" value="<?php echo $k[0]->knowledge_base_tag; ?>">
+                                            <input type="text" class="form-control"name="knowledge_base_tags"  id="" placeholder="Tags" required="" value="<?php echo $k[0]->knowledge_base_tags; ?>">
                                         </div>
 										<?php if($k!='')
                                         { ?>

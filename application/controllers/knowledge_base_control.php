@@ -70,7 +70,7 @@ public function edit_knowledge_base($id)
       $this->load->view('pages/add_knowledge_base.php',$data);
       $this->load->view('templates/footer.php');
 }
-public function do_edit_knowledge_base()
+public function do_edit_knowledge_base($id)
 {
   $this->load->database();
   if($this->Knowledge_base_model->do_edit_knowledge_base($id))
