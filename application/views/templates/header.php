@@ -370,11 +370,23 @@
                                 <li><a href="<?php echo base_url().'Knowledge_base_control/view_knowledge_base';?>">View Knowledge Base</a></li>
                             </ul>
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calendar</p><span class="arrow"></span></a>
+                       <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calender</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'sales_management/calendar';?>">event calendar</a></li>
                             </ul>
                         </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Automation Management</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo base_url().'sales_management/automation_mgt';?>">Automation Management</a></li>
+                                <li><a href="<?php echo base_url().'sales_management/automation_mgt_show';?>">Automation Management Show</a></li>
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Employee Details</p><span class="arrow"></span></a>
+                             <ul class="sub-menu">
+                                <li><a href="<?php echo base_url().'Employee/employee';?>">Add Employee</a></li>
+                                <li><a href="<?php echo base_url().'Employee/employee_show';?>">Show Employee</a></li>
+                            </ul>
+                     </li>
                         
                     </ul>
                 </div><!-- Page Sidebar Inner -->
