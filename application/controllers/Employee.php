@@ -13,10 +13,12 @@ class Employee extends CI_Controller {
 public function add_employee()
 {
       $data['title']='Add order';
-      $this->Employee_model->add_employee();
+     if( $this->Employee_model->add_employee()){
+      echo "successful add Employee";
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/show_employee.php',$data);
+      $this->load->view('pages/add_employee.php');
       $this->load->view('templates/footer.php');  
+}
 }
 
 public function employee()
@@ -31,19 +33,20 @@ public function employee()
 {
   if($this->Employee_model->delete_employee($id))
   {
-    redirect(base_url().'sales_management/view_lead');
+    $this->employee_show();
   }
 }
 
-public function employee_update($id)
+public function update_employee($id)
 {
 
     $this->load->model("sales_model");
-    $data['h']=$this->Employee_model->employee_update($id);
+    $data['h']=$this->Employee_model->update_employee($id);
  
     $data['title']="show calendar";
+    $data['show_emp']=$this->Employee_model->employee_show();
     $this->load->view('templates/header.php',$data);
-    $this->load->view('pages/show_calender.php',$data);
+    $this->load->view('pages/show_employee.php',$data);
     $this->load->view('templates/footer.php');
   
 }
@@ -51,9 +54,28 @@ public function employee_update($id)
 public function employee_show()
   {
       $data['title']='Manage Event';
-      $data['h']=$this->Employee_model->employee_show();
+      $data['show_emp']=$this->Employee_model->employee_show();
+
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/show_employee.php');
+      $this->load->view('pages/show_employee.php',$data);
       $this->load->view('templates/footer.php');
   }
+
+
+public function update_employee_select($id)
+{
+
+  $this->load->database();
+    $data['title']="show calendar";
+    $data['select_emp']=$this->Employee_model->update_employee_select($id);
+
+    
+
+    //$this->calendar();
+   $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/update_employee.php',$data);
+  $this->load->view('templates/footer.php');
+
+}
+
 }

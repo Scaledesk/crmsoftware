@@ -36,4 +36,47 @@ public function delete_employee($id)
   			return true;
   		}		
 	}
+
+	public function employee_show()
+	{
+		
+		
+		$query=$this->db->query("select * from employee");
+		// echo '<pre />';
+		// print_r($query);
+		// die();  
+		
+		return $query->result();
+	}
+
+	public function update_employee_select($id)
+	{
+		
+		$this->db->where("emp_id",$id);
+		$query=$this->db->query("select * from employee where emp_id=$id");
+		// echo '<pre />';
+		// print_r($query);
+		// die();  
+		return $query->result();
+	}
+
+
+public function update_employee($id)
+{
+
+ $data=array(
+'emp_name'=>$this->input->post('e_name'),
+'emp_mobile_no'=>$this->input->post('e_mobile'),
+'emp_email'=>$this->input->post('e_email'),
+'emp_address'=>$this->input->post('e_address'),
+'gender'=>$this->input->post('gender'),
+'emp_joining_date'=>$this->input->post('e_date'),
+'emp_sallery'=>$this->input->post('sallary')
+
+);
+$this->db->where(array('emp_id'=> $id));
+$this->db->update('employee',$data);
+return true;
+}
+
 }

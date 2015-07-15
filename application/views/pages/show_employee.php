@@ -21,8 +21,9 @@
                                                 <th>Emp. Address</th>
                                                 <th>Emp. Joining Date</th>
                                                 <th>Emp. Gender</th>
-                                                <th>Emp. Joining Date</th>
+                                                
                                                 <th>Emp.Sallary</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -33,22 +34,38 @@
                                                 <th>Emp. Address</th>
                                                 <th>Emp. Joining Date</th>
                                                 <th>Emp. Gender</th>
-                                                <th>Emp. Joining Date</th>
+                                                
                                                 <th>Emp.Sallary</th>
+                                                <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>2011/04/25</td>
-                                                <td>2011/04/25</td>
-                                                <td>2011/04/25</td>
-                                            </tr>
+
                                             
+                                            <?php 
+
+                                           foreach($show_emp as $row)
+                                            {
+                                               
+                                               //$sdate=date('d-m-Y',strtotime($row->date)); 
+                                             ?>
+                                                      
+
+                                                    <tr class="active">
+                                                    
+                                                    <td><?php echo $row->emp_name; ?></td>
+                                                    <td><?php echo $row->emp_mobile_no; ?></td>
+                                                    <td><?php echo $row->emp_email; ?></td>
+                                                    <td><?php echo $row->emp_address; ?></td>
+                                                    <td><?php echo $row->emp_joining_date; ?></td>
+                                                    <td><?php echo $row->gender; ?></td>
+                                                    <td><?php echo $row->emp_sallery; ?></td>
+                                                    <td><a href="<?=(base_url().'Employee/update_employee_select/')?><?php echo $row->emp_id; ?>">Update</a>/<a href="<?=(base_url().'Employee/employee_delete/')?><?php echo $row->emp_id; ?>">Delete</a></td>
+                                                </tr>
+                                                <?php } ?>
+                                            
+
+
                                             </tbody>
                                        </table>  
                                     </div>
