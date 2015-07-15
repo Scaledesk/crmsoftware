@@ -65,7 +65,7 @@ public function edit_knowledge_base($id)
 {
    $data['title']='Update Knowledge Base Details';
     $data['h']=$this->Knowledge_base_model->get_category();
-    $data['k']=$this->Knowledge_base_model->edit_knowledge_base();
+    $data['k']=$this->Knowledge_base_model->edit_knowledge_base($id);
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_knowledge_base.php',$data);
       $this->load->view('templates/footer.php');
