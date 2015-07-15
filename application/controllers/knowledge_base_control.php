@@ -55,7 +55,7 @@ public function do_add_knowledge_base()
 public function view_knowledge_base()
 {
       $data['title']='View  Knowledge Base Details';
-      $data['h']=$this->Ticket_model->get_knowledge_base();
+      $data['h']=$this->Knowledge_base_model->get_knowledge_base();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_knowledge_base.php',$data);
       $this->load->view('templates/footer.php');

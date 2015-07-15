@@ -10,31 +10,45 @@
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
+                                                <th>Sr. No.</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>Category</th>
                                                 <th>Tags</th>
+                                                <th>Date</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
+                                                <th>Sr. No.</th>
 												<th>Name</th>
                                                 <th>Description</th>
                                                 <th>Category</th>
                                                 <th>Tags</th>
+                                                <th>Date</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
+                                            <?php $i=0;
+                                                foreach ($h->result() as $row)  
+                                                 {  
+                                                    $i++;
+                                                 ?>
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $row->knowledge_base_name; ?></td>
+                                                <td><?php echo $row->knowledge_base_description; ?></td>
+                                                <td><?php echo $row->knowledge_base_category_id; ?></td>
+                                                <td><?php echo $row->knowledge_base_tags; ?></td>
+                                                <td><?php echo date('d/m/Y',strtotime($row->knowledge_base_date)); ?></td>
+                                                <td>
+                                                    <a href="<?php echo base_url().'Knowledge_base_control/edit_knowledge_base/'.$row->knowledge_base_id; ?> ">Edit</a>|
+                                                    <a href="<?php echo base_url().'Knowledge_base_control/delete_knowledge_base/'.$row->knowledge_base_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                                </td>
                                             </tr>
-                                            
+                                            <?php } ?>
                                             </tbody>
                                        </table>  
                                     </div>
