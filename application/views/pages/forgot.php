@@ -3,7 +3,7 @@
     <head>
         
         <!-- Title -->
-        <title>Modern | Login - Forgot Password</title>
+        <title>C R M</title>
         
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <meta charset="UTF-8">
