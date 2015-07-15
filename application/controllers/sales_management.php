@@ -30,6 +30,7 @@ public function do_add_order()
   if($this->sales_model->add_order())
   {
           $data['msg']=" Order saved";
+          $data['k']=$this->sales_model->getleadname();
            $this->load->view('templates/header.php');
            $this->load->view('pages/add_order.php',$data);
            $this->load->view('templates/footer.php');
