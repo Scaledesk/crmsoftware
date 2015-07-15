@@ -358,12 +358,15 @@ parent::__construct();
 	}
 
 public function do_calendar()
-	{
 
+	{
+         $date=$this->input->post('date9');
+       $sdate=date('Y-m-d', strtotime($date));
+        
 		$data=array(
 		'title'=>$this->input->post('title'),
 		'description'=>$this->input->post('description'),		
-		'date'=>$this->input->post('date1')
+		'date'=>$sdate
 		
 		);
 		
@@ -391,13 +394,14 @@ public function show_calendar()
 // ........................................................
 public function update_calendar($id)
 	{
-
-	
+  //echo $this->input->post('id');
+	$date=$this->input->post('date2');
+       $sdate=date('Y-m-d', strtotime($date));
 
    $data=array(
 		'title'=>$this->input->post('title'),
 		'description'=>$this->input->post('description'),
-		'date'=>$this->input->post('date2'));
+		'date'=>$sdate);
 		$this->db->where('id', $id);
 		$this->db->update('calendar',$data);
 		return true;

@@ -32,7 +32,7 @@
                                                     <td><?php echo $row->title; ?></td>
                                                     
                                                     <td><?php echo $row->description; ?></td>
-                                                    <td><a href="<?=(base_url().'sales_management/automation_mgt_update_select/')?><?php echo $row->application_id; ?>">Update</a>/<a href="<?=(base_url().'sales_management/automation_mgt_delete/')?><?php echo $row->application_id; ?>">Delete</a></td>
+                                                    <td><a href="<?=(base_url().'sales_management/update_event/')?><?php echo $row->id; ?>">Update</a>/<a href="<?=(base_url().'sales_management/delete_event/')?><?php echo $row->id; ?>">Delete</a></td>
                                                 </tr>
                                                 <?php } ?>
                                             

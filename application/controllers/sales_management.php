@@ -124,12 +124,17 @@ public function show_calendar_table()
 
 public function update_calendar($id)
 {
+
   $this->load->database();
     $data['title']="show calendar";
-   $data['show_full_date']=$this->sales_model->update_calendar($id);
+  if( $this->sales_model->update_calendar($id)){
+
+    echo"Successful Update";
+    //$this->calendar();
    $this->load->view('templates/header.php',$data);
-  $this->load->view('pages/calendar_show.php',$data);
+  $this->load->view('pages/calendar.php');
   $this->load->view('templates/footer.php');
+}
 }
 
 public function delete_event($id)

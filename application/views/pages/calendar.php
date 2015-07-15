@@ -17,7 +17,7 @@
                                     
                                         <div class="form-group col-md-12">
                                             <label> Date</label>
-                                            <input type="text"   class="form-control date-picker" name="date1" placeholder="DD/MM/YYYY" required>
+                                            <input type="text"   class="form-control date-picker" name="date9" placeholder="DD/MM/YYYY" required>
                                         </div>
                                         
                                         
