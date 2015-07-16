@@ -79,4 +79,64 @@ $this->db->update('employee',$data);
 return true;
 }
 
+
+public function leave_employee()
+{
+  
+ $data=array(
+'emp_name'=>$this->input->post('start_date'),
+'emp_mobile_no'=>$this->input->post('end_date'),
+'emp_email'=>$this->input->post('resion_leave'));
+
+$this->db->insert('leave',$data);
+return true;
+}
+
+
+public function leave_delete($id)
+	{
+		$this->db->where("emp_id",$id);
+  		if($this->db->delete("employee"))
+  		{
+  			return true;
+  		}		
+	}
+
+	public function leave_show()
+	{
+		
+		
+		$query=$this->db->query("select * from employee");
+		// echo '<pre />';
+		// print_r($query);
+		// die();  
+		
+		return $query->result();
+	}
+
+	public function update_leave_select($id)
+	{
+		
+		$this->db->where("emp_id",$id);
+		$query=$this->db->query("select * from employee where emp_id=$id");
+		// echo '<pre />';
+		// print_r($query);
+		// die();  
+		return $query->result();
+	}
+
+
+public function update_leave($id)
+{
+
+ $data=array(
+'emp_name'=>$this->input->post('start_date'),
+'emp_mobile_no'=>$this->input->post('end_date'),
+'emp_email'=>$this->input->post('resion_leave'));
+ 
+$this->db->where(array('emp_id'=> $id));
+$this->db->update('employee',$data);
+return true;
+}
+
 }

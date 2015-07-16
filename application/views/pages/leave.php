@@ -6,7 +6,7 @@
                                                               
                                 <center><label><h2>Leave Form</h2></label></center>  
                                 <div class="row">
-                                    <form id="wizardForm" action="" method="post">
+                                    <form id="wizardForm" action="<?=(base_url().'Employee/leave_employee/'?>" method="post">
                            
                                 <div class="col-md-8 center">
 								

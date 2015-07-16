@@ -82,7 +82,7 @@ public function update_employee_select($id)
 public function leave_employee()
 {
       $data['title']='Add order';
-     if( $this->Employee_model->add_employee()){
+     if( $this->Employee_model->leave_employee()){
       echo "successful add Employee";
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_employee.php');
