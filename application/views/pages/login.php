@@ -46,7 +46,7 @@
                             <div class="login-box">
                                 <a href="#" class="logo-name text-lg text-center">C R M</a>
                                 <p class="text-center m-t-md">Please login into your account.</p>
-                                <form class="m-t-md" action="">
+                                <form class="m-t-md" action="<?=(base_url().'Login_control/do_login')?>">
                                     <div class="form-group">
                                         <input type="email" class="form-control" placeholder="Email" required="">
                                     </div>
