@@ -46,18 +46,19 @@
                             <div class="login-box">
                                 <a href="#" class="logo-name text-lg text-center">C R M</a>
                                 <p class="text-center m-t-md">Please login into your account.</p>
-                                <form class="m-t-md" action="<?=(base_url().'Login_control/do_login')?>">
+                                <form class="m-t-md" action="<?=(base_url().'Login_control/do_login')?>" method="post">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email" required="">
+                                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password" required="">
+                                        <input type="password" class="form-control" name="password" placeholder="Password" required="">
                                     </div>
                                     <input type="submit" class="btn btn-success btn-block" value="Login">
+                                      </form>
                                     <a href="forgot.php" class="display-block text-center m-t-md text-sm">Forgot Password?</a>
                                     <p class="text-center m-t-xs text-sm">Do not have an account?</p>
                                     <a href="register.php" class="btn btn-default btn-block m-t-md">Create an account</a>
-                                </form>
+
 
                             </div>
                         </div>

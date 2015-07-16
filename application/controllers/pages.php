@@ -1,7 +1,7 @@
 <?php
 class Pages extends CI_Controller {
 
-        public function view($page = 'home')
+        public function view($page = 'login')
         {
                         $this->load->helper(array('form','url'));
 			if ( ! file_exists(APPPATH.'/views/pages/'.$page.'.php'))
@@ -12,8 +12,8 @@ class Pages extends CI_Controller {
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
 
-        $this->load->view('templates/header', $data);
+        //$this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page, $data);
-        $this->load->view('templates/footer', $data);
+        //$this->load->view('templates/footer', $data);
         }
 }

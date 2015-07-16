@@ -7,6 +7,48 @@ $this->load->library('session');
 	$this->load->database();
 }
 
+public function login($email,$password)
+{
+  $this->db->where("admin_email",$email);
+  $this->db->where("admin_password",$password);
+  $query=$this->db->get("admin_details");
+  if($query->num_rows()>0)
+  {
+   foreach($query->result() as $rows)
+   {
+       $newdata = array(
+      'admin_id'  => $rows->admin_id,
+      'admin_name'  => $rows->admin_name,
+      'admin_email'    => $rows->admin_email,
+      'logged_in'  => TRUE,
+    );
+    $this->session->set_userdata($newdata);
+    return true;
+   }
+  }
+  else
+  {
+   $this->db->where("email",$email);
+   $this->db->where("password",$password);
+   $query=$this->db->get("users");
+   if($query->num_rows()>0)
+   {
+    foreach($query->result() as $rows)
+    {
+     $newdata = array(
+      'user_id'  => $rows->user_id,
+      'user_name'  => $rows->username,
+      'user_email'    => $rows->email,
+      'logged_in'  => TRUE,
+     );
+     $this->session->set_userdata($newdata);
+    return true;
+    }
+    return false;
+   }
+  }
+}
+
 
 	public function add_document($rename)
 	{
