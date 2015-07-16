@@ -385,6 +385,7 @@
                              <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'Employee/employee';?>">Add Employee</a></li>
                                 <li><a href="<?php echo base_url().'Employee/employee_show';?>">Show Employee</a></li>
+                                <li><a href="<?php echo base_url().'Employee/leave';?>"> Employee Leave</a></li>
                             </ul>
                      </li>
                         
