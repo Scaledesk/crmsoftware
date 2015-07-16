@@ -113,16 +113,20 @@ public function leave_update_employee($id)
 {
 
     
-    if($this->Employee_model->update_leave($id)){
-    echo "successful leave update ";
+    if($this->Employee_model->update_leave($id))
+    {
+      redirect(base_url().'Employee/leave_employee_show');
+    }
 
-    $data['title']="Manage Leave";
-    $data['show_leave']=$this->Employee_model->leave_show();
-    
-    $this->load->view('templates/header.php',$data);
-    $this->load->view('pages/leave_table.php',$data);
-    $this->load->view('templates/footer.php');
-  }
+   // echo 'successful leave update';
+
+ //   $data['title']='Manage Leave';
+   // $data['show_leave']=$this->Employee_model->leave_show();
+
+    //$this->load->view('templates/header.php',$data);
+    //$this->load->view('pages/leave_table.php',$data);
+    //$this->load->view('templates/footer.php');
+  
 }
 
 public function leave_employee_show()
