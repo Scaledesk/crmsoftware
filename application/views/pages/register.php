@@ -46,7 +46,7 @@
                             <div class="login-box">
                                 <a href="#" class="logo-name text-lg text-center">C R M</a>
                                 <p class="text-center m-t-md">Create C R M account</p>
-                                <form class="m-t-md" action="login.html">
+                                <form class="m-t-md" action="<?=(base_url().'Login_control/do_register')?>">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Name" required="">
                                     </div>
