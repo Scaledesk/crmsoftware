@@ -83,20 +83,28 @@ return true;
 public function leave_employee()
 {
   
- $data=array(
-'emp_name'=>$this->input->post('start_date'),
-'emp_mobile_no'=>$this->input->post('end_date'),
-'emp_email'=>$this->input->post('resion_leave'));
+    $date1=$this->input->post('start_date');
 
-$this->db->insert('leave',$data);
+       $date2=date('Y-m-d', strtotime($date1));
+
+       $date3=$this->input->post('end_date');
+
+       $date4=date('Y-m-d', strtotime($date3));
+
+ $data=array(   
+'leave_start_date'=>$date2,
+'leave_end_date'=>$date4,
+'leave_reason'=>$this->input->post('resion_leave'));
+
+$this->db->insert('leave_details',$data);
 return true;
 }
 
 
-public function leave_delete($id)
+public function delete_leave($id)
 	{
-		$this->db->where("emp_id",$id);
-  		if($this->db->delete("employee"))
+		$this->db->where("leave_id",$id);
+  		if($this->db->delete("leave_details"))
   		{
   			return true;
   		}		
@@ -106,7 +114,7 @@ public function leave_delete($id)
 	{
 		
 		
-		$query=$this->db->query("select * from employee");
+		$query=$this->db->query("select * from leave_details");
 		// echo '<pre />';
 		// print_r($query);
 		// die();  
@@ -117,25 +125,34 @@ public function leave_delete($id)
 	public function update_leave_select($id)
 	{
 		
-		$this->db->where("emp_id",$id);
-		$query=$this->db->query("select * from employee where emp_id=$id");
+		$this->db->where("leave_id",$id);
+		$query=$this->db->query("select * from leave_details where leave_id=$id");
 		// echo '<pre />';
 		// print_r($query);
-		// die();  
+		// die(); 
+		//print_r($query->result()); 
+		//die();
 		return $query->result();
 	}
 
 
 public function update_leave($id)
 {
+$date1=$this->input->post('start_date');
 
- $data=array(
-'emp_name'=>$this->input->post('start_date'),
-'emp_mobile_no'=>$this->input->post('end_date'),
-'emp_email'=>$this->input->post('resion_leave'));
+       $date2=date('Y-m-d', strtotime($date1));
+
+       $date3=$this->input->post('end_date');
+
+       $date4=date('Y-m-d', strtotime($date3));
+
+ $data=array(   
+'leave_start_date'=>$date2,
+'leave_end_date'=>$date4,
+'leave_reason'=>$this->input->post('resion_leave'));
  
-$this->db->where(array('emp_id'=> $id));
-$this->db->update('employee',$data);
+$this->db->where(array('leave_id'=> $id));
+$this->db->update('leave_details',$data);
 return true;
 }
 

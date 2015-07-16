@@ -81,9 +81,9 @@ public function update_employee_select($id)
 
 public function leave_employee()
 {
-      $data['title']='Add order';
+      $data['title']='Manage Leave';
      if( $this->Employee_model->leave_employee()){
-      echo "successful add Employee";
+      echo "successful  Employee Leave";
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_employee.php');
       $this->load->view('templates/footer.php');  
@@ -92,7 +92,8 @@ public function leave_employee()
 
 public function leave()
   {
-      $data['title']='Manage Event';
+
+      $data['title']='Manage Leave';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/leave.php');
       $this->load->view('templates/footer.php');
@@ -100,33 +101,37 @@ public function leave()
 
   public function leave_employee_delete($id)
 {
-  if($this->Employee_model->delete_employee($id))
+  if($this->Employee_model->delete_leave($id))
   {
-    $this->employee_show();
+    echo "successful leave delete ";
+
+    $this->leave_employee_show();
   }
 }
 
 public function leave_update_employee($id)
 {
 
-    $this->load->model("sales_model");
-    $data['h']=$this->Employee_model->update_employee($id);
- 
-    $data['title']="show calendar";
-    $data['show_emp']=$this->Employee_model->employee_show();
+    
+    if($data['h']=$this->Employee_model->update_leave($id)){
+    echo "successful leave update ";
+
+    $data['title']="Manage Leave";
+    $data['show_leave']=$this->Employee_model->leave_show();
+    
     $this->load->view('templates/header.php',$data);
-    $this->load->view('pages/show_employee.php',$data);
+    $this->load->view('pages/leave_table.php',$data);
     $this->load->view('templates/footer.php');
-  
+  }
 }
 
 public function leave_employee_show()
   {
-      $data['title']='Manage Event';
-      $data['show_emp']=$this->Employee_model->employee_show();
+      $data['title']='Manage Leave';
+      $data['show_leave']=$this->Employee_model->leave_show();
 
       $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/show_employee.php',$data);
+      $this->load->view('pages/leave_table.php',$data);
       $this->load->view('templates/footer.php');
   }
 
@@ -135,14 +140,15 @@ public function leave_update_employee_select($id)
 {
 
   $this->load->database();
-    $data['title']="show calendar";
-    $data['select_emp']=$this->Employee_model->update_employee_select($id);
+    $data['title']="Manage Leave";
+    $data['show_leave']=$this->Employee_model->update_leave_select($id);
 
     
-
+   //print_r($data['select_emp']);
+   //die();
     //$this->calendar();
    $this->load->view('templates/header.php',$data);
-  $this->load->view('pages/update_employee.php',$data);
+  $this->load->view('pages/leave_update.php',$data);
   $this->load->view('templates/footer.php');
 
 }
