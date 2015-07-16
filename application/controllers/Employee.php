@@ -113,7 +113,7 @@ public function leave_update_employee($id)
 {
 
     
-    if($data['h']=$this->Employee_model->update_leave($id)){
+    if($this->Employee_model->update_leave($id)){
     echo "successful leave update ";
 
     $data['title']="Manage Leave";
