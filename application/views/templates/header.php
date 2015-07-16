@@ -386,6 +386,7 @@
                                 <li><a href="<?php echo base_url().'Employee/employee';?>">Add Employee</a></li>
                                 <li><a href="<?php echo base_url().'Employee/employee_show';?>">Show Employee</a></li>
                                 <li><a href="<?php echo base_url().'Employee/leave';?>"> Employee Leave</a></li>
+                                <li><a href="<?php echo base_url().'Employee/leave_employee_show';?>"> Employee Leave Show</a></li>
                             </ul>
                      </li>
                         
