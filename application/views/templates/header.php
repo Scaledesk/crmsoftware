@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+
         <!-- Title -->
         <title><?php error_reporting(0);
                 echo $title;?>
         </title>
-        
+
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <meta charset="UTF-8">
         <meta name="description" content="Admin Dashboard Template">
         <meta name="keywords" content="admin,dashboard">
         <meta name="author" content="Steelcoders">
-        
+
         <!-- Styles -->
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
         <link href="<?php echo base_url().'assets\plugins\pace-master\themes\blue\pace-theme-flash.css';?>" rel="stylesheet">
         <link href="<?php echo base_url().'assets\plugins\uniform\css\uniform.default.min.css';?>" rel="stylesheet">
         <link href="<?php echo base_url().'assets\plugins\bootstrap\css\bootstrap.min.css';?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets\plugins\fontawesome\css\font-awesome.css';?>" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url().'assets\plugins\line-icons\simple-line-icons.css';?>" rel="stylesheet" type="text/css">   
-        <link href="<?php echo base_url().'assets\plugins\waves\waves.min.css';?>" rel="stylesheet" type="text/css">    
+        <link href="<?php echo base_url().'assets\plugins\line-icons\simple-line-icons.css';?>" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url().'assets\plugins\waves\waves.min.css';?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets\plugins\switchery\switchery.min.css';?>" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url().'assets\plugins\3d-bold-navigation\css\style.css';?>" rel="stylesheet" type="text/css">   
+        <link href="<?php echo base_url().'assets\plugins\3d-bold-navigation\css\style.css';?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets\plugins\slidepushmenus\css\component.css';?>" rel="stylesheet" type="text/css">
         <!--dashboard-->
-        <link href="assets\plugins\weather-icons-master\css\weather-icons.min.css" rel="stylesheet" type="text/css">    
-        <link href="assets\plugins\metrojs\MetroJs.min.css" rel="stylesheet" type="text/css">   
+        <link href="assets\plugins\weather-icons-master\css\weather-icons.min.css" rel="stylesheet" type="text/css">
+        <link href="assets\plugins\metrojs\MetroJs.min.css" rel="stylesheet" type="text/css">
         <link href="assets\plugins\toastr\toastr.min.css" rel="stylesheet" type="text/css">
         <!--end dashboard-->
         <!--data table css-->
-        <link href="<?php echo base_url().'assets\plugins\datatables\css\jquery.datatables.min.css';?>" rel="stylesheet" type="text/css">  
-        <link href="<?php echo base_url().'assets\plugins\datatables\css\jquery.datatables_themeroller.css';?>" rel="stylesheet" type="text/css">  
+        <link href="<?php echo base_url().'assets\plugins\datatables\css\jquery.datatables.min.css';?>" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url().'assets\plugins\datatables\css\jquery.datatables_themeroller.css';?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets\plugins\x-editable\bootstrap3-editable\css\bootstrap-editable.css';?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets\plugins\bootstrap-datepicker\css\datepicker3.css';?>" rel="stylesheet" type="text/css">
         <!--data table css-End-->
 
-        
+
         <!-- Theme Styles -->
         <link href="<?php echo base_url().'assets\css\modern.min.css';?>" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url().'assets\css\custom.css';?>" rel="stylesheet" type="text/css">
-        
+
         <script src="<?php echo base_url().'assets\plugins\3d-bold-navigation\js\modernizr.js';?>"></script>
-        
-        
+
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
+
     </head>
     <body class="page-header-fixed compact-menu page-horizontal-bar">
         <div class="overlay"></div>
@@ -141,16 +141,16 @@
                     <div class="topmenu-outer">
                         <div class="top-menu">
                             <ul class="nav navbar-nav navbar-left">
-                                
-                                
-                                <li>        
+
+
+                                <li>
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
                                 </li>
                                 <!--
                                 <li>
                                     <a href="#cd-nav" class="waves-effect waves-button waves-classic cd-nav-trigger"><i class="fa fa-diamond"></i></a>
                                 </li>
-                                <li>        
+                                <li>
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic toggle-fullscreen"><i class="fa fa-expand"></i></a>
                                 </li>-->
                                 <li class="dropdown">
@@ -161,7 +161,7 @@
                                         <li class="li-group">
                                             <ul class="list-unstyled">
                                                 <li class="no-link" role="presentation">
-                                                    Fixed Header 
+                                                    Fixed Header
                                                     <div class="ios-switch pull-right switch-md">
                                                         <input type="checkbox" class="js-switch pull-right fixed-header-check" checked="">
                                                     </div>
@@ -171,19 +171,19 @@
                                         <li class="li-group">
                                             <ul class="list-unstyled">
                                                 <li class="no-link" role="presentation">
-                                                    Fixed Sidebar 
+                                                    Fixed Sidebar
                                                     <div class="ios-switch pull-right switch-md">
                                                         <input type="checkbox" class="js-switch pull-right fixed-sidebar-check">
                                                     </div>
                                                 </li>
                                                 <li class="no-link" role="presentation">
-                                                    Toggle Sidebar 
+                                                    Toggle Sidebar
                                                     <div class="ios-switch pull-right switch-md">
                                                         <input type="checkbox" class="js-switch pull-right toggle-sidebar-check">
                                                     </div>
                                                 </li>
                                                 <li class="no-link" role="presentation">
-                                                    Compact Menu 
+                                                    Compact Menu
                                                     <div class="ios-switch pull-right switch-md">
                                                         <input type="checkbox" class="js-switch pull-right compact-menu-check" checked="">
                                                     </div>
@@ -195,7 +195,7 @@
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li>    
+                                <li>
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
                                 </li>
                                 <li class="dropdown">
@@ -300,7 +300,7 @@
                                         <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li>
                                         <li role="presentation" class="divider"></li>
                                         <li role="presentation"><a href="lock-screen.html"><i class="fa fa-lock"></i>Lock screen</a></li>
-                                        <li role="presentation"><a href="login.html"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
+                                        <li role="presentation"><a href="<?=(base_url().'Login_control/logout')?>"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -318,7 +318,7 @@
                     <ul class="menu accordion-menu">
                         <li class="nav-heading"><span>Navigation</span></li>
                         <li><a href="<?php echo base_url();?>"><span class="menu-icon icon-speedometer"></span><p>Dashboard</p></a></li>
-                       
+
                         <li class="droplink"><a href="#"><span class="menu-icon icon-briefcase"></span><p>Company Details</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'company_control/add_company';?>">Add Company</a></li>
@@ -329,7 +329,7 @@
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'contact_control/add_contact';?>">Add Contact</a></li>
                                 <li><a href="<?php echo base_url().'contact_control/view_contact';?>">View Contact</a></li>
-                               
+
                             </ul>
                         </li>
                         <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Document Details</p><span class="arrow"></span></a>
@@ -340,7 +340,7 @@
                         </li>
                         <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Sales Management</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
-                                
+
                                 <li><a href="<?php echo base_url().'sales_management/add_lead';?>">Add Lead</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/view_lead';?>">View Lead</a></li>
                                 <li><a href="<?php echo base_url().'sales_management/add_order';?>">Add Order</a></li>
@@ -393,7 +393,7 @@
                                 <li><a href="<?php echo base_url().'Employee/leave_employee_show';?>"> Employee Leave Show</a></li>
                             </ul>
                      </li>
-                        
+
                     </ul>
                 </div><!-- Page Sidebar Inner -->
             </div><!-- Page Sidebar -->

@@ -57,7 +57,7 @@
                                       </form>
                                     <a href="forgot.php" class="display-block text-center m-t-md text-sm">Forgot Password?</a>
                                     <p class="text-center m-t-xs text-sm">Do not have an account?</p>
-                                    <a href="register.php" class="btn btn-default btn-block m-t-md">Create an account</a>
+                                    <a href="<?php echo base_url().'Login_control/register'; ?>" class="btn btn-default btn-block m-t-md">Create an account</a>
 
 
                             </div>

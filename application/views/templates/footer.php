@@ -62,7 +62,7 @@
             </ul>
         </nav>
         <div class="cd-overlay"></div>
-    
+
 
         <!-- Javascripts -->
         <script src="<?php echo base_url().'assets\plugins\jquery\jquery-2.1.3.min.js';?>"></script>
@@ -97,10 +97,10 @@
         <script src="<?php echo base_url().'assets\plugins\datatables\js\jquery.datatables.min.js';?>"></script>
         <script src="<?php echo base_url().'assets\plugins\x-editable\bootstrap3-editable\js\bootstrap-editable.js';?>"></script>
         <script src="<?php echo base_url().'assets\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js';?>"></script>
-        
+
         <script src="<?php echo base_url().'assets\js\pages\table-data.js';?>"></script>
         <!--data table jquery-end-->
 
-        
+
     </body>
 </html>

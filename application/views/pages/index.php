@@ -1,7 +1,4 @@
 
-
-
-
 <div class="page-inner">
                 <div class="page-breadcrumb">
                     <ol class="breadcrumb container">
@@ -297,7 +294,7 @@
                                     <h4 class="panel-title">Project Stats</h4>
                                 </div>
                                 <div class="panel-body">
-                                    <div class="table-responsive project-stats">  
+                                    <div class="table-responsive project-stats">
                                        <table class="table">
                                            <thead>
                                                <tr>
@@ -390,5 +387,3 @@
                     </div>
                 </div><!-- Main Wrapper -->
 </div><!--end page inner-->
-				
-				

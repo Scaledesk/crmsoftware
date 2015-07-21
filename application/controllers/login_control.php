@@ -43,9 +43,13 @@ class Login_control extends CI_Controller {
    $this->load->view('templates/footer.php');
  }
  else{
- $this->load->view('pages/home.php');
+ $this->load->view('pages/login.php');
   }
 
+}
+public function register()
+{
+    $this->load->view('pages/register.php');
 }
 
 public function do_login()
@@ -62,7 +66,7 @@ public function welcome()
   $data['title']= 'Welcome';
   if($this->session->userdata('admin_name')!="")
   {  $this->load->view('templates/header.php');
-    $this->load->view('pages/home.php', $data);
+    $this->load->view('pages/index.php', $data);
     $this->load->view('templates/footer.php');
 
   }
@@ -72,5 +76,18 @@ public function welcome()
     $this->load->view('pages/userpage.php', $data);
     $this->load->view('templates/footer.php');
   }
+}
+public function logout()
+{
+  /*$newdata = array(
+  'user_id'   =>'',
+  'user_name'  =>'',
+  'user_email'     => '',
+  'logged_in' => FALSE,
+  );
+  $this->session->unset_userdata($newdata );*/
+  $this->session->sess_destroy();
+  redirect(base_url());
+
 }
 }
