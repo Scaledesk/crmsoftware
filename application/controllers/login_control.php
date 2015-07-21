@@ -18,7 +18,7 @@ class Login_control extends CI_Controller {
    else if($this->session->userdata('user_name')!="")
    {
      $this->load->view('templates/header.php');
-     $this->load->view('pages/userpage.php');
+     $this->load->view('pages/home.php');
      $this->load->view('templates/footer.php');
    }
    else{
@@ -39,7 +39,7 @@ class Login_control extends CI_Controller {
  else if($this->session->userdata('user_name')!="")
  {
    $this->load->view('templates/header.php');
-   $this->load->view('pages/userpage.php');
+   $this->load->view('pages/home.php');
    $this->load->view('templates/footer.php');
  }
  else{
@@ -72,7 +72,7 @@ public function welcome()
   else
   {
     $this->load->view('templates/header.php');
-    $this->load->view('pages/userpage.php', $data);
+    $this->load->view('pages/home.php', $data);
     $this->load->view('templates/footer.php');
   }
 }
