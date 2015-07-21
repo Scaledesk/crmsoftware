@@ -1,7 +1,4 @@
-<?php
-				include_once("header.php")
-				
-				?>
+
 
 
 
@@ -394,7 +391,4 @@
                 </div><!-- Main Wrapper -->
 </div><!--end page inner-->
 				
-				<?php
-				include_once("footer.php")
 				
-				?>
