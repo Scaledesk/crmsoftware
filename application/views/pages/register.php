@@ -56,6 +56,18 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control" placeholder="Password" required="">
                                     </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Confirm Password" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="description" id="description" maxlength='500' placeholder="Address" required=""></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Telephone Number" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Fax Number" required="">
+                                    </div>
 
                                     <input type="submit" class="btn btn-success btn-block m-t-xs" value="Submit">
                                     <p class="text-center m-t-xs text-sm">Already have an account?</p>
