@@ -43,12 +43,16 @@ $data = array(
 $this->db->where('user_id', $user_id);
 $this->db->update('users_details', $data);
 return true;
-
 }
 public function view_user()
 {
   $query=$this->db->get("users_details");
   return $query;
 }
-
+public function delete_user($id)
+{
+  $this->db->where("user_id",$id);
+  $this->db->delete('users_details');
+  return true;
+}
 }

@@ -5,7 +5,9 @@
                         <li><a href="index.html">Home</a></li>
                         <li class="active">Dashboard</li>
                     </ol>
+                    <a href="<?php echo base_url().'User_control/view_user'; ?>">View User</a>
                 </div>
+
                 <div class="page-title">
                     <div class="container">
                         <h3>Dashboard</h3>

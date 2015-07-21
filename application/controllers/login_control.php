@@ -51,7 +51,6 @@ public function register()
 {
     $this->load->view('pages/register.php');
 }
-
 public function do_login()
 {
   $email=$this->input->post('email');

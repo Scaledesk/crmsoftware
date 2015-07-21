@@ -45,28 +45,36 @@
                         <div class="col-md-3 center">
                             <div class="login-box">
                                 <a href="#" class="logo-name text-lg text-center">C R M</a>
+                                <?php
+                                if($h!='')
+                                { ?>
+                                  <p class="text-center m-t-md">Update C R M account</p>
+                                  <form class="m-t-md" action="<?=(base_url().'User_control/do_edit_user'.$h[0]->user_id)?>" method="post">
+                                <?php }
+                                else{ ?>
                                 <p class="text-center m-t-md">Create C R M account</p>
-                                <form class="m-t-md" action="<?=(base_url().'Login_control/do_register')?>">
+                                <form class="m-t-md" action="<?=(base_url().'User_control/do_register')?>" method="post">
+                                  <?php } ?>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name" required="">
+                                        <input type="text" class="form-control" name="user_name" value="<?php echo $h[0]->user_name; ?>" placeholder="Name" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email" required="">
+                                        <input type="email" class="form-control" name="user_email" placeholder="Email" value="<?php echo $h[0]->user_email; ?>" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password" required="">
+                                        <input type="password" class="form-control" name="user_password" placeholder="Password" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Confirm Password" required="">
+                                        <input type="password" class="form-control"  placeholder="Confirm Password" name="cpassword" required="">
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" name="description" id="description" maxlength='500' placeholder="Address" required=""></textarea>
+                                        <textarea class="form-control" name="user_address" id="description" maxlength='500' placeholder="Address" required=""><?php echo $h[0]->user_address; ?></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Telephone Number" required="">
+                                        <input type="text" class="form-control" placeholder="Telephone Number" name="user_phone_number" value="<?php echo $h[0]->user_phone_number; ?>" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Fax Number" required="">
+                                        <input type="text" class="form-control" name="user_fax_number" placeholder="Fax Number" value="<?php echo $h[0]->user_fax_number; ?>" required="">
                                     </div>
 
                                     <input type="submit" class="btn btn-success btn-block m-t-xs" value="Submit">

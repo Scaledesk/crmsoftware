@@ -45,8 +45,8 @@
                                                 <td><?php echo $row->user_phone_number; ?></td>
                                                 <td><?php echo $row->user_fax_number; ?></td>
                                                 <td>
-                                                  <a href="<?php echo base_url().'sales_management/editsupplier/'.$row->supplier_id; ?> ">Edit</a>|
-                                                  <a href="<?php echo base_url().'sales_management/deletesupplier/'.$row->supplier_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                                  <a href="<?php echo base_url().'User_control/edit_user/'.$row->user_id; ?> ">Edit</a>|
+                                                  <a href="<?php echo base_url().'User_control/delete_user/'.$row->user_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                                                 </td>
                                             </tr>
                                             <?php } ?>

@@ -5,7 +5,6 @@ class User_control extends CI_Controller {
  {
   parent::__construct();
   $this->load->model('User_model');
-  $this->load->model('menu');
   $this->load->helper(array('form','url'));
  }
 
@@ -32,10 +31,17 @@ class User_control extends CI_Controller {
  }
  public function view_user()
  {
-   $data['k']=$this->User_model->view_user();
+   $data['h']=$this->User_model->view_user();
    $data['title']='user_details';
-   $this->load->view('template/header.php',$data);
+   $this->load->view('templates/header.php',$data);
    $this->load->view('pages/view_user.php',$data);
-   $this->load->view('template/footer.php');
+   $this->load->view('templates/footer.php');
+}
+public function delete_user($id)
+{
+  if($this->User_model->delete_user($id))
+  {
+    redirect(base_url().'User_control/view_user');
+  }
 }
 }
