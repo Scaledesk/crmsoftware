@@ -13,7 +13,6 @@
                                                 <th>Start Date</th>
                                                 <th>End Date</th>
                                                 <th>Reasion for Leave</th>
-                                                <th>Status</th>
                                                 <th>Action</th>
                                                </tr>
                                         </thead>
@@ -22,30 +21,17 @@
 												<th>Start Date</th>
                                                 <th>End Date</th>
                                                 <th>Reasion for Leave</th>
-                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <?php 
-
-                                           foreach($show_leave as $row)
-                                            {
-                                               
-                                               //$sdate=date('d-m-Y',strtotime($row->date)); 
-                                             ?>
-                                                      
-                      
-                                                    <tr class="active">
-                                                    
-                                                    <td><?php echo $row->leave_start_date; ?></td>
-                                                    <td><?php echo $row->leave_end_date; ?></td>
-                                                    <td><?php echo $row->leave_reason; ?></td>
-                                                    <td><?php echo $row->leave_status; ?></td>
-                                                    
-                                                    <td><a href="<?=(base_url().'Employee/leave_update_employee_select/')?><?php echo $row->leave_id; ?>">Update</a>/<a href="<?=(base_url().'Employee/leave_employee_delete/')?><?php echo $row->leave_id; ?>">Delete</a></td>
-                                                </tr>
-                                                <?php } ?>
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                                <td>61</td>
+                                                
+                                            </tr>
                                             
                                             </tbody>
                                        </table>  
