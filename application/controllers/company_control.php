@@ -5,12 +5,15 @@ class company_control extends CI_Controller {
  {
   parent::__construct();
   $this->load->model('company_model');
+  $this->load->model('menu_models');
   $this->load->helper(array('form','url'));
  }
-  
+
 
   public function add_company()
   {
+    $menus = $this->menu_models->menus();
+    $data = array('menus' => $menus);
       $data['title']='Add Company Details';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_company.php');
@@ -34,7 +37,7 @@ class company_control extends CI_Controller {
       $data['h']=$this->company_model->view_company_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_company.php',$data);
-      $this->load->view('templates/footer.php'); 
+      $this->load->view('templates/footer.php');
   }
 
   public function editcompany($id)
@@ -77,7 +80,7 @@ public function deletecompany($id)
     $data['h']=$this->company_model->view_company_details();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/view_company.php',$data);
-    $this->load->view('templates/footer.php'); 
+    $this->load->view('templates/footer.php');
     */
     redirect(base_url().'company_control/view_company');
   }

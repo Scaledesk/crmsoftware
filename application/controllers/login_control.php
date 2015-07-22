@@ -5,6 +5,7 @@ class Login_control extends CI_Controller {
  {
   parent::__construct();
   $this->load->model('Login_model');
+  $this->load->model('menu_models');
   $this->load->helper(array('form','url'));
  }
  public function index()
@@ -32,13 +33,17 @@ class Login_control extends CI_Controller {
 
  if($this->session->userdata('admin_name')!="")
  {
-   $this->load->view('templates/header.php');
-   $this->load->view('Admin/index.php');
+   $menus = $this->menu_models->menus();
+   $data = array('menus' => $menus);
+   $this->load->view('templates/header.php',$data);
+   $this->load->view('pages/index.php');
    $this->load->view('templates/footer.php');
  }
  else if($this->session->userdata('user_name')!="")
  {
-   $this->load->view('templates/header.php');
+   $menus = $this->menu_models->menus();
+   $data = array('menus' => $menus);
+   $this->load->view('templates/header.php',$data);
    $this->load->view('pages/home.php');
    $this->load->view('templates/footer.php');
  }
@@ -65,7 +70,6 @@ public function welcome()
   $data['title']= 'Welcome';
   if($this->session->userdata('admin_name')!="")
   {
-    $this->load->model('menu_models');
     $menus = $this->menu_models->menus();
     $data = array('menus' => $menus);
     $this->load->view('templates/header.php',$data);
