@@ -64,7 +64,15 @@ public function welcome()
 {
   $data['title']= 'Welcome';
   if($this->session->userdata('admin_name')!="")
-  {  $this->load->view('templates/header.php');
+  {
+    $this->load->model('menu_models');
+    $menus = $this->menu_models->menus();
+    $data = array('menus' => $menus);
+
+   echo '<prev />';
+   print_r($data['menus']);
+   die;
+     $this->load->view('templates/header.php');
     $this->load->view('pages/index.php', $data);
     $this->load->view('templates/footer.php');
 
