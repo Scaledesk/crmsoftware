@@ -319,21 +319,12 @@
                         <li class="nav-heading"><span>Navigation</span></li>
                         <li><a href="<?php echo base_url();?>"><span class="menu-icon icon-speedometer"></span><p>Dashboard</p></a></li>
 
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-briefcase"></span><p>Company Details</p><span class="arrow"></span></a>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-briefcase"></span><p>General Functions</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'company_control/add_company';?>">Add Company</a></li>
                                 <li><a href="<?php echo base_url().'company_control/view_company';?>">View Company</a></li>
-                            </ul>
-                        </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Contact Details</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'contact_control/add_contact';?>">Add Contact</a></li>
                                 <li><a href="<?php echo base_url().'contact_control/view_contact';?>">View Contact</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Document Details</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
                                 <li><a href="<?php echo base_url().'document_control/add_document';?>">Add Document</a></li>
                                 <li><a href="<?php echo base_url().'document_control/view_document';?>">View Document</a></li>
                             </ul>
