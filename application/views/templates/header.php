@@ -317,7 +317,7 @@
                 <div class="page-sidebar-inner">
                     <ul class="menu accordion-menu">
                         <li class="nav-heading"><span>Navigation</span></li>
-                        <li><a href="<?php echo base_url();?>"><span class="menu-icon icon-speedometer"></span><p>Dashboard</p></a></li>
+                        <li><a href="<?php echo base_url().'Login_control/login';?>"><span class="menu-icon icon-speedometer"></span><p>Dashboard</p></a></li>
 
                         <li class="droplink"><a href="#"><span class="menu-icon icon-briefcase"></span><p>General Functions</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
