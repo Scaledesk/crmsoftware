@@ -319,71 +319,29 @@
                         <li class="nav-heading"><span>Navigation</span></li>
                         <li><a href="<?php echo base_url().'Login_control/login';?>"><span class="menu-icon icon-speedometer"></span><p>Dashboard</p></a></li>
 
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-briefcase"></span><p>General Functions</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'company_control/add_company';?>">Add Company</a></li>
-                                <li><a href="<?php echo base_url().'company_control/view_company';?>">View Company</a></li>
-                                <li><a href="<?php echo base_url().'contact_control/add_contact';?>">Add Contact</a></li>
-                                <li><a href="<?php echo base_url().'contact_control/view_contact';?>">View Contact</a></li>
-                                <li><a href="<?php echo base_url().'document_control/add_document';?>">Add Document</a></li>
-                                <li><a href="<?php echo base_url().'document_control/view_document';?>">View Document</a></li>
-                            </ul>
-                        </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Sales Management</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
+            <?php foreach ($menus as $menu) { ?>
+            <li class="droplink"><a href="#"><span class="menu-icon icon-briefcase"></span><p><?php echo $menu->text; ?></p><span class="arrow"></span></a>
+            <?php
+            if (isset($menu->children)) { ?>
 
-                                <li><a href="<?php echo base_url().'sales_management/add_lead';?>">Add Lead</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/view_lead';?>">View Lead</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/add_order';?>">Add Order</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/view_order';?>">View Order</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/manage_invoice';?>">Manage Invoice</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/add_invoice';?>">Add Invoice</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/view_reminder';?>">View Reminder</a></li>
-                            </ul>
-                        </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Supplier Management</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'sales_management/add_supplier_category';?>">Add Supplier Category</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/add_supplier';?>">Add Supplier Details</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/view_supplier';?>">View Supplier Details</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/add_quote_details';?>">Add Quote Details</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/view_quote_details';?>">View Quote Details</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/add_contractor';?>">Add Contractor</a></li>
+              <ul class="sub-menu">
+                <?php
+                foreach ($menu->children as $child) {
+                    ?>
 
-                            </ul>
+
+                                <li><a href="<?php echo base_url().$child->link;?>"> <?php echo $child->text; ?> </a></li>
+
+
+            <?php } ?>
+            </ul>
+<?php
+}
+?>
+<?php } ?>
+
                         </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-layers"></span><p>Ticket Management</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'Ticket_control/add_ticket';?>">Add Ticket</a></li>
-                                <li><a href="<?php echo base_url().'Ticket_control/view_ticket';?>">View Ticket</a></li>
-                            </ul>
-                        </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Knowledge</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'Knowledge_base_control/add_category';?>">Add category</a></li>
-                                <li><a href="<?php echo base_url().'Knowledge_base_control/add_knowledge_base';?>">Add Knowledge Base</a></li>
-                                <li><a href="<?php echo base_url().'Knowledge_base_control/view_knowledge_base';?>">View Knowledge Base</a></li>
-                            </ul>
-                        </li>
-                       <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Calender</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'sales_management/calendar';?>">event calendar</a></li>
-                            </ul>
-                        </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Automation Management</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'sales_management/automation_mgt';?>">Automation Management</a></li>
-                                <li><a href="<?php echo base_url().'sales_management/automation_mgt_show';?>">Automation Management Show</a></li>
-                            </ul>
-                        </li>
-                        <li class="droplink"><a href="#"><span class="menu-icon icon-note"></span><p>Employee Details</p><span class="arrow"></span></a>
-                             <ul class="sub-menu">
-                                <li><a href="<?php echo base_url().'Employee/employee';?>">Add Employee</a></li>
-                                <li><a href="<?php echo base_url().'Employee/employee_show';?>">Show Employee</a></li>
-                                <li><a href="<?php echo base_url().'Employee/leave';?>"> Employee Leave</a></li>
-                                <li><a href="<?php echo base_url().'Employee/leave_employee_show';?>"> Employee Leave Show</a></li>
-                            </ul>
-                     </li>
+
 
                     </ul>
                 </div><!-- Page Sidebar Inner -->

@@ -68,11 +68,7 @@ public function welcome()
     $this->load->model('menu_models');
     $menus = $this->menu_models->menus();
     $data = array('menus' => $menus);
-
-   echo '<prev />';
-   print_r($data['menus']);
-   die;
-     $this->load->view('templates/header.php');
+    $this->load->view('templates/header.php',$data);
     $this->load->view('pages/index.php', $data);
     $this->load->view('templates/footer.php');
 
