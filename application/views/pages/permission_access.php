@@ -19,27 +19,23 @@
 																</select>
 															</div>
 
+                                     </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+                                    
+                                        <div class="col-md-12">     
+                                            <div class="form-group col-md-6">
+                                                                <label>Access permission</label></br>
+                                                             <input type="checkbox"  id="" name="">
+                                            </div>
+                                            
+                                                <div class="form-group col-md-6">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                            <label>Remove permission</label></br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                            <input type="checkbox"  id="" name="">
+                                                </div>
+                                        </div>
+                                        <center> <input type="submit" class="btn btn-info" value="Submit"><center>
                                      </div>
-
-
-                                    <table class="table">
-
-                                        <tbody>
-
-                                            <tr class="success">
-
-                                                <th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-												&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-												<input type="checkbox" name="" id="">Acess permission</th>
-                                                <th><input type="checkbox" name="" id="">Remove Permission</th>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-
-
-									<center> <input type="submit" class="btn btn-info" value="Submit"><center>
 
 								</form>
 
