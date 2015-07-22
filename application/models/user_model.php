@@ -54,6 +54,11 @@ public function view_permission()
   $query=$this->db->get("perm_data");
   return $query;
 }
+public function get_menu()
+{
+  $query=$this->db->get("menu_children");
+  return $query;
+}
 public function delete_user($id)
 {
   $this->db->where("user_id",$id);
