@@ -6,6 +6,8 @@
                         <li class="active">Dashboard</li>
                     </ol>
                     <a href="<?php echo base_url().'User_control/view_user'; ?>">View User</a>
+                    <a href="<?php echo base_url().'User_control/view_permission'; ?>">Manage Permission</a>
+
                 </div>
 
                 <div class="page-title">

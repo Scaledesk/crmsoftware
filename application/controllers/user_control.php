@@ -5,6 +5,7 @@ class User_control extends CI_Controller {
  {
   parent::__construct();
   $this->load->model('User_model');
+  $this->load->model('menu_models');
   $this->load->helper(array('form','url'));
  }
 
@@ -36,6 +37,16 @@ class User_control extends CI_Controller {
    $this->load->view('templates/header.php',$data);
    $this->load->view('pages/view_user.php',$data);
    $this->load->view('templates/footer.php');
+}
+public function view_permission()
+{
+  $data['h']=$this->User_model->view_permission();
+  $data['title']='Manage Permission';
+  $menus = $this->menu_models->menus();
+  $data = array('menus' => $menus);
+  $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/manage_permission.php',$data);
+  $this->load->view('templates/footer.php');
 }
 public function delete_user($id)
 {
