@@ -6,19 +6,32 @@ parent::__construct();
 $this->load->library('session');
 $this->load->database();
 }
-
+public function get_user_permission($id)
+{
+  $this->db->where('user_id',$id);
+  $query=$this->db->get("user_permission");
+  return $query->result();
+}
 public function add_permission()
 {
-  echo '<pre/>';
-  print_r(serialize($this->input->post('page')));
-  //print_r($this->input->post());
-  die;
+
+  //$page=implode(',',serialize($this->input->post('page')));
+  $page=implode(',',$this->input->post('page'));
+  //die;
   $data=array(
   'user_id'=>$this->input->post('user_id'),
-  'page_id'=>$pid
+  'page_id'=>$page
   );
-  $this->db->insert('user_permission',$data);
-  return true;
+  if($this->input->post('submit')=='Update')
+  {
+    $this->db->update('user_permission',$data);
+    return true;
+  }
+  else {
+    $this->db->insert('user_permission',$data);
+    return true;
+  }
+
 }
 
 public function register()

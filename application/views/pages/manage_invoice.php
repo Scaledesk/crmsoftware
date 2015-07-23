@@ -3,24 +3,24 @@
                         <div class="col-md-12">
                             <div class="panel panel-white">
                                 <div class="panel-body">
-                                  <center><label><h2>Manage invoice</h2></label></center>  
+                                  <center><label><h2>Manage invoice</h2></label></center>
                                 <div class="row m-b-lg">
-        
+
                                 <div class="col-md-8 center">
-                                    
+
                                         <div class="form-group col-md-12">
                                             <label>Select order invoice</label>
                                             <select  class="form-control" id="exampleInputEmail1" name="order_id" required="" onchange="loadinvoice(this)">
                                                 <option value="">Select</option>
                                             <?php
-                                       foreach ($k->result() as $row) 
+                                       foreach ($k->result() as $row)
                                             { ?>
                                                    <option value="<?php echo $row->order_id; ?>"><?php echo $row->order_title; ?></option>
                                         <?php } ?>
                                             </select>
                                         </div>
-                                        </div> 
-                                  
+                                        </div>
+
 
 
 
@@ -32,12 +32,12 @@
 
                                         <div class="col-md-12 center">
 
-                                            
+
                                         <div class="form-group col-md-12" id="invoiceview">
 
-                                            
+
                                         </div>
-                                            
+
                                         </div>
 
 
@@ -45,7 +45,7 @@
 
 
                                         <!--container-end-->
-                                                           
+
 
                                     </div>
                                     </div>

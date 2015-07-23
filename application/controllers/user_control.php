@@ -58,6 +58,13 @@ public function access_permission()
   $this->load->view('pages/permission_access.php',$data);
   $this->load->view('templates/footer.php');
 }
+public function loadpermission()
+{
+  $id=$this->input->post('id');
+  $data['k']=$this->User_model->get_menu();
+  $data['user_perm']=$this->User_model->get_user_permission($id);
+  $this->load->view('pages/permission_access_load.php',$data);
+}
 public function add_permission()
 {/*
 echo "<pre/>";
@@ -67,9 +74,11 @@ die;*/
   {
    $data['msg']='Permission added to user';
    $data['h']=$this->User_model->view_user();
-   $data['title']='user_details';
+   $data['k']=$this->User_model->get_menu();
+   $data['menus']=$this->menu_models->menus();
+ // $data["cds"] = array('menus' => $menus);
    $this->load->view('templates/header.php',$data);
-   $this->load->view('pages/view_user.php',$data);
+   $this->load->view('pages/permission_access.php',$data);
    $this->load->view('templates/footer.php');
   }
 }
