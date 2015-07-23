@@ -79,8 +79,10 @@ public function welcome()
   }
   else
   {
-    $this->load->view('templates/header.php');
-    $this->load->view('pages/home.php', $data);
+    $menus = $this->menu_models->menus();
+    $data = array('menus' => $menus);
+    $this->load->view('templates/header.php',$data);
+    $this->load->view('pages/home.php');
     $this->load->view('templates/footer.php');
   }
 }
