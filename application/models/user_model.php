@@ -7,6 +7,20 @@ $this->load->library('session');
 $this->load->database();
 }
 
+public function add_permission()
+{
+  echo '<pre/>';
+  print_r(serialize($this->input->post('page')));
+  //print_r($this->input->post());
+  die;
+  $data=array(
+  'user_id'=>$this->input->post('user_id'),
+  'page_id'=>$pid
+  );
+  $this->db->insert('user_permission',$data);
+  return true;
+}
+
 public function register()
 {
 $data=array(

@@ -58,6 +58,21 @@ public function access_permission()
   $this->load->view('pages/permission_access.php',$data);
   $this->load->view('templates/footer.php');
 }
+public function add_permission()
+{/*
+echo "<pre/>";
+print_r($this->input->post());
+die;*/
+  if($this->User_model->add_permission())
+  {
+   $data['msg']='Permission added to user';
+   $data['h']=$this->User_model->view_user();
+   $data['title']='user_details';
+   $this->load->view('templates/header.php',$data);
+   $this->load->view('pages/view_user.php',$data);
+   $this->load->view('templates/footer.php');
+  }
+}
 public function delete_user($id)
 {
   if($this->User_model->delete_user($id))
