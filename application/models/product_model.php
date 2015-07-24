@@ -72,7 +72,7 @@ parent::__construct();
 		return true;
 	}
 
-	public function view_product_details()
+	public function view_progress_details()
 	{
 		$query = $this->db->get('product_progress');
     	return $query;
