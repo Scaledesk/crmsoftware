@@ -58,7 +58,24 @@ parent::__construct();
   		{
   			return true;
   		}
-
-
 	}
+
+  public function add_progress()
+	{
+		$data=array(
+		'date'=>date('Y-m-d', strtotime($this->input->post('date'))),
+		'title'=>$this->input->post('title'),
+		'description'=>$this->input->post('description'),
+		'product_id'=>$this->input->post('product_id')
+		);
+		$this->db->insert('product_progress',$data);
+		return true;
+	}
+
+	public function view_product_details()
+	{
+		$query = $this->db->get('product_progress');
+    	return $query;
+	}
+
 }
