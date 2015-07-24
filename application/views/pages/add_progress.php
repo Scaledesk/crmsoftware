@@ -16,35 +16,33 @@
                                                     <div class="row m-b-lg">
                                                         <div class="col-md-12">
                                                             <div class="row">
-                    <form id="" name="formselct" action="" method="Post">
-                                                        <div class="form-group col-md-12">
+                                                                <form id="" name="formselct" action="" method="Post">
+                                                                        <div class="form-group col-md-12">
                                 
                                            
-                              <select  class="form-control" id="name" name="select1" onchange="checkValue(this)">
-                                                                <option value="select">Select</option>
-                                                                <option value="0">1</option>
-                                                                <option>2</option>
+                                                                            <select  class="form-control" id="name" name="select1" onchange="checkValue(this)">
+                                                                              <option value="select">Select</option>
+                                                                                  <option value="0">1</option>
+                                                                                      <option>2</option>
                                                 
-                                                                </select>
-                            </div>
-                                                             <div id="ifpaid" style="display:none"> 
-                                                             <div class="form-group col-md-12">
-                                                                    <label for="exampleInputPassword1">Title</label>
-                                                                    <input type="text" class="form-control" name="" id="" placeholder="title" required="">
-                                                                </div>  
-                                                                
-                                                                
-                                                                <div class="form-group col-md-12">
-                                                                    <label for="exampleInputName">Description</label>
-                                                                    <textarea class="form-control" name="description" id="description" maxlength='500' placeholder="Description" required=""></textarea>
-                                </div>
-                              </div>  
+                                                                            </select>
+                                                                        </div>
+                                                                                <div id="ifpaid" style="display:none">   
+                                                                                
+                                                                                      <div class="form-group col-md-12">
+                                                                                             <label for="exampleInputPassword1">Title</label>
+                                                                                                <input type="text" class="form-control" name="" id="" placeholder="Title" required="">
+                                                                                      </div>
+                                                                                              <div class="form-group col-md-12">
+                                                                                                <label for="exampleInputName">Description</label>
+                                                                                                    <textarea class="form-control" name="description" id="description" maxlength='500' placeholder="Description" required=""></textarea>
+                                                                                              </div>
+                                                                                                          <div class="form-group col-md-12">
+                                                                                                              <label>Date</label>
+                                                                                                              <input type="text" class="form-control date-picker" id="date" name="" placeholder="Date" required="">
+                                                                                                          </div>
+                                                                                </div>  
                                                             </div>
-                                                            <div class="form-group col-md-12">
-                                                                    <label>Date</label>
-                                                                    <input type="text" class="form-control date-picker" id="date" name="" placeholder="Date" required="">
-                                                                </div>
-
                                                         </div>
                                                         
                                                     </div>
