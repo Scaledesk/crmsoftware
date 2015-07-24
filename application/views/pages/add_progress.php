@@ -42,20 +42,16 @@
                                                                                                               <input type="text" class="form-control date-picker" id="date" name="" placeholder="Date" required="">
                                                                                                           </div>
                                                                                 </div>
-                                                                                <div class="form-group col-md-6">
 
 
-                                                      <center>  <input type="submit" value="Add" class="btn btn-primary btn-block"></center
-                                                          </div>
+
+                                                      <center>  <input type="submit" value="Add" class="btn btn-primary"></center
+
                                                             </div>
                                                         </div>
 
                                                     </div>
                                                 </div>
-
-
-
-
                                             </div>
                                         </form>
                                     </div>

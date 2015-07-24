@@ -71,11 +71,61 @@ parent::__construct();
 		$this->db->insert('product_progress',$data);
 		return true;
 	}
-
 	public function view_progress_details()
 	{
 		$query = $this->db->get('product_progress');
     	return $query;
+	}
+
+
+  public function add_milesstone()
+	{
+		$data=array(
+		'milesstone_name'=>$this->input->post('milesstone_name'),
+		'milesstone_description'=>$this->input->post('milesstone_description'),
+		'milesstone_expected_date'=>date('Y-m-d', strtotime($this->input->post('milesstone_expected_date'))),
+		'milesstone_end_date'=>date('Y-m-d', strtotime($this->input->post('milesstone_end_date')))
+		);
+		$this->db->insert('product_milesstone',$data);
+		return true;
+	}
+
+	public function view_milesstone_details()
+	{
+		$query = $this->db->get('product_milesstone');
+    	return $query;
+	}
+
+	public function editmilesstone($id)
+	{
+
+		$this->db->where("milesstone_id",$id);
+  		$query=$this->db->get("product_milesstone");
+  		return $query->result();
+	}
+
+	public function do_editmilesstone($id)
+	{
+
+    $data=array(
+		'milesstone_name'=>$this->input->post('milesstone_name'),
+		'milesstone_description'=>$this->input->post('milesstone_description'),
+		'milesstone_expected_date'=>date('Y-m-d', strtotime($this->input->post('milesstone_expected_date'))),
+		'milesstone_end_date'=>date('Y-m-d', strtotime($this->input->post('milesstone_end_date')))
+		);
+		$this->db->where('milesstone_id', $id);
+		$this->db->update('product_milesstone',$data);
+		return true;
+
+	}
+
+	public function deletemilesstone($id)
+	{
+		$this->db->where("milesstone_id",$id);
+  		if($this->db->delete("product_milesstone"))
+  		{
+  			return true;
+  		}
 	}
 
 }
