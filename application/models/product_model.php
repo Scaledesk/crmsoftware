@@ -84,7 +84,8 @@ parent::__construct();
 		'milesstone_name'=>$this->input->post('milesstone_name'),
 		'milesstone_description'=>$this->input->post('milesstone_description'),
 		'milesstone_expected_date'=>date('Y-m-d', strtotime($this->input->post('milesstone_expected_date'))),
-		'milesstone_end_date'=>date('Y-m-d', strtotime($this->input->post('milesstone_end_date')))
+		'milesstone_end_date'=>date('Y-m-d', strtotime($this->input->post('milesstone_end_date'))),
+    	'product_id'=>$this->input->post('product_id')
 		);
 		$this->db->insert('product_milesstone',$data);
 		return true;

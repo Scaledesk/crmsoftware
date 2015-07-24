@@ -123,6 +123,7 @@ class Product_control extends CI_Controller {
         {
           $data['msg']="Product Milesstone Record Added";
           $data['menus'] = $this->menu_models->menus();
+            $data['k']=$this->Product_model->view_product_details();
           $this->load->view('templates/header.php',$data);
           $this->load->view('pages/add_milesstone.php',$data);
           $this->load->view('templates/footer.php');
@@ -146,6 +147,7 @@ class Product_control extends CI_Controller {
       $data['title']='Edit Milesstone Details';
       $data['h']=$this->Product_model->editmilesstone($id);
       $data['menus'] = $this->menu_models->menus();
+      $data['k']=$this->Product_model->view_product_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_milesstone.php',$data);
       $this->load->view('templates/footer.php');
