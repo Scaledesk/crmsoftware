@@ -11,11 +11,11 @@ parent::__construct();
 	public function add_product()
 	{
 		$data=array(
-		'product_name'=>$this->input->post('name'),
-		'product_description'=>$this->input->post('description'),
+		'product_name'=>$this->input->post('product_name'),
+		'product_description'=>$this->input->post('product_description'),
 		'product_status'=>$this->input->post('product_status'),
-		'product_start_date'=>$this->input->post('product_start_date'),
-		'product_end_date'=>$this->input->post('product_end_date')
+		'product_start_date'=>date('Y-m-d', strtotime($this->input->post('product_start_date'))),
+		'product_end_date'=>date('Y-m-d', strtotime($this->input->post('product_start_date')))
 		);
 		$this->db->insert('product_details',$data);
 		return true;
@@ -39,12 +39,12 @@ parent::__construct();
 	{
 
     $data=array(
-		'product_name'=>$this->input->post('name'),
-		'product_description'=>$this->input->post('description'),
-		'product_status'=>$this->input->post('product_status'),
-		'product_start_date'=>$this->input->post('product_start_date'),
-		'product_end_date'=>$this->input->post('product_end_date')
-		);
+    'product_name'=>$this->input->post('product_name'),
+    'product_description'=>$this->input->post('product_description'),
+    'product_status'=>$this->input->post('product_status'),
+    'product_start_date'=>date('Y-m-d', strtotime($this->input->post('product_start_date'))),
+    'product_end_date'=>date('Y-m-d', strtotime($this->input->post('product_start_date')))
+    );
 		$this->db->where('product_id', $id);
 		$this->db->update('product_details',$data);
 		return true;
