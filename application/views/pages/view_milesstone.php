@@ -10,39 +10,48 @@
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
-                                                <th>Product</th>
+                                                <th>S. No.</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>Expected Date</th>
                                                 <th>End Date</th>
                                                 <th>Action</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Product</th>
+                                                <th>S. No.</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>Expected Date</th>
                                                 <th>End Date</th>
                                                 <th>Action</th>
-                                                
+
                                             </tr>
                                         </tfoot>
                                         <tbody>
+                                          <?php $i=0;
+                                              foreach ($h->result() as $row)
+                                               {
+                                                  $i++;
+                                               ?>
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>2011/04/25</td>
-                                                
-                                                
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $row->milesstone_name; ?></td>
+                                                <td><?php echo $row->milesstone_description; ?></td>
+                                                <td><?php echo $row->milesstone_expected_date; ?></td>
+                                                <td><?php echo $row->milesstone_end_date; ?></td>
+                                                <td>
+                                                  <a href="<?php echo base_url().'Product_control/editmilesstone/'.$row->milesstone_id; ?> ">Edit</a>|
+                                                      <a href="<?php echo base_url().'Product_control/deletemilesstone/'.$row->milesstone_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                                </td>
+
+
                                             </tr>
+                                            <?php } ?>
                                         </tbody>
-                                       </table>  
+                                       </table>
                                     </div>
                                 </div>
                             </div>
