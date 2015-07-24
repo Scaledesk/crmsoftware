@@ -5,9 +5,10 @@ class document_control extends CI_Controller {
  {
   parent::__construct();
   $this->load->model('document_model');
+  $this->load->model('menu_models');
   $this->load->helper(array('form','url'));
  }
-  
+
  public function add_document()
 {
 
@@ -20,7 +21,7 @@ class document_control extends CI_Controller {
 }
 public function do_add_document()
 {
-   $config['upload_path'] = APPPATH.'/upload/'; 
+   $config['upload_path'] = APPPATH.'/upload/';
   $config['allowed_types'] = 'pdf';
   $config['max_size'] = '1024';
   $this->load->library('upload',$config);
@@ -37,7 +38,7 @@ public function do_add_document()
         }
         else
         {
-          
+
           if($this->document_model->add_document($rename))
          {
            $data['msg']="Document Added";
@@ -47,7 +48,7 @@ public function do_add_document()
          }
 
        }
-  
+
 }
 
 
@@ -57,7 +58,7 @@ public function do_add_document()
       $data['h']=$this->document_model->view_document_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_document.php',$data);
-      $this->load->view('templates/footer.php'); 
+      $this->load->view('templates/footer.php');
   }
 
   public function editdocument($id)
@@ -101,7 +102,7 @@ public function deletedocument($id)
     $data['h']=$this->company_model->view_company_details();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/view_company.php',$data);
-    $this->load->view('templates/footer.php'); 
+    $this->load->view('templates/footer.php');
     */
     redirect(base_url().'document_control/view_document');
   }

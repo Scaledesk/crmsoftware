@@ -18,6 +18,7 @@ class User_control extends CI_Controller {
    }
  }
  public function edit_user($id)
+
  {
    $data['h']=$this->User_model->edituser($id);
    $this->load->view('pages/register.php',$data);
