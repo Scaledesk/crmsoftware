@@ -42,10 +42,10 @@ class Product_control extends CI_Controller {
 
     public function editproduct($id)
   {
-    $data['menus'] = $this->menu_models->menus();
     $this->load->database();
     $data['title']='Edit Product Details';
     $data['h']=$this->Product_model->editproduct($id);
+    $data['menus'] = $this->menu_models->menus();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/add_product.php',$data);
     $this->load->view('templates/footer.php');
@@ -72,5 +72,38 @@ class Product_control extends CI_Controller {
       redirect(base_url().'Product_control/view_product');
     }
   }
+
+  public function add_progress()
+  {
+       $data['menus'] = $this->menu_models->menus();
+        $data['title']='Add Progress Details';
+        $data['k']=$this->Product_model->view_product_details();
+        $this->load->view('templates/header.php',$data);
+        $this->load->view('pages/add_progress.php');
+        $this->load->view('templates/footer.php');
+
+  }
+  public function do_add_progress()
+  {
+    if($this->Product_model->add_progress())
+      {
+        $data['msg']="Product Progress Record Added";
+        $data['menus'] = $this->menu_models->menus();
+        $this->load->view('templates/header.php',$data);
+        $this->load->view('pages/add_progress.php',$data);
+        $this->load->view('templates/footer.php');
+      }
+  }
+
+
+    public function view_progress()
+    {
+        $data['menus'] = $this->menu_models->menus();
+        $data['title']='Product Details';
+        $data['h']=$this->Product_model->view_progress_details();
+        $this->load->view('templates/header.php',$data);
+        $this->load->view('pages/view_progress.php',$data);
+        $this->load->view('templates/footer.php');
+    }
 
 }
