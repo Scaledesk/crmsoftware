@@ -22,22 +22,5 @@ class admin extends CI_Controller {
     }
   }
 
-  public function add_company()
-  {
-      $this->load->view('templates/header.php');
-      $this->load->view('admin/addcompany.php',$data);
-      $this->load->view('templates/footer.php',$data);
-
-  }
-  public function do_add_company()
-  {
-    if($this->admin_model->add_company())
-    {
-      $data['msg']="Company Record Added";
-      $this->load->view('templates/header.php');
-      $this->load->view('admin/index.php',$data);
-      $this->load->view('templates/footer.php');
-    }
-  }
 
 }
