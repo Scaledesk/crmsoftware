@@ -16,22 +16,23 @@
                                                     <div class="row m-b-lg">
                                                         <div class="col-md-12">
                                                             <div class="row">
-                                                                <form id="" name="formselct" action="" method="Post">
+                                                                <form id="" name="formselct" action="<?=(base_url().'Product_control/do_add_progress')?>" method="Post">
                                                                         <div class="form-group col-md-12">
 
 
-                                                                            <select  class="form-control" id="name" name="select1" onchange="checkValue(this)">
+                                                                            <select  class="form-control" id="name" name="product_id" onchange="checkValue(this)">
                                                                               <option value="select">Select</option>
-                                                                                  <option value="0">1</option>
-                                                                                      <option>2</option>
+                                                                              <?php foreach ($k->result() as $row) { ?>
+                                                                                  <option value="<?php echo $row->product_id; ?>"><?php echo $row->product_name; ?></option>
+                                                                                      <?php } ?>
 
                                                                             </select>
                                                                         </div>
-                                                                                <div id="ifpaid" style="display:none">
+                                                                                <div id="ifpaid" style="display:">
 
                                                                                       <div class="form-group col-md-12">
                                                                                              <label for="exampleInputPassword1">Title</label>
-                                                                                                <input type="text" class="form-control" name="" id="" placeholder="Title" required="">
+                                                                                                <input type="text" class="form-control" name="title" id="" placeholder="Title" required="">
                                                                                       </div>
                                                                                               <div class="form-group col-md-12">
                                                                                                 <label for="exampleInputName">Description</label>
@@ -39,7 +40,7 @@
                                                                                               </div>
                                                                                                           <div class="form-group col-md-12">
                                                                                                               <label>Date</label>
-                                                                                                              <input type="text" class="form-control date-picker" id="date" name="" placeholder="Date" required="">
+                                                                                                              <input type="text" class="form-control date-picker" id="date" name="date" placeholder="Date" required="">
                                                                                                           </div>
                                                                                 </div>
 

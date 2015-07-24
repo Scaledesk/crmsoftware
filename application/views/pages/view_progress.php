@@ -10,36 +10,42 @@
                                     <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
-                                                <th>Product</th>
-                                                <th>Date</th>
+                                                <th>S. No.</th>
                                                 <th>Title</th>
                                                 <th>Description</th>
+                                                <th>Date</th>
                                                 <th>Action</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                                <th>Product</th>
-                                                <th>Date</th>
+                                                <th>S. No.</th>
                                                 <th>Title</th>
                                                 <th>Description</th>
+                                                <th>Date</th>
                                                 <th>Action</th>
-                                                
+
                                             </tr>
                                         </tfoot>
                                         <tbody>
+                                          <?php $i=0;
+                                              foreach ($h->result() as $row)
+                                               {
+                                                  $i++;
+                                               ?>
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                
-                                                
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $row->title; ?></td>
+                                                <td><?php echo $row->description; ?></td>
+                                                <td><?php echo $row->date; ?></td>
+                                                <td> </td>
+
+
                                             </tr>
+                                            <?php } ?>
                                         </tbody>
-                                       </table>  
+                                       </table>
                                     </div>
                                 </div>
                             </div>
