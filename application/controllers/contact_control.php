@@ -10,7 +10,7 @@ class contact_control extends CI_Controller {
   $this->load->helper(array('form','url'));
  }
 
- public function add_contact()
+public function add_contact()
 {
     $data['menus'] = $this->menu_models->menus();
       $data['title']='Add Contact Details';
