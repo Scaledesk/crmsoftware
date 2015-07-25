@@ -4,6 +4,7 @@ class Product_control extends CI_Controller {
  {
   parent::__construct();
   $this->load->model('Product_model');
+  $this->load->model('document_model');
   $this->load->model('menu_models');
   $this->load->helper(array('form','url'));
   }
@@ -173,5 +174,52 @@ class Product_control extends CI_Controller {
         redirect(base_url().'Product_control/view_milesstone');
       }
     }
+
+    public function add_document()
+    {
+         $data['menus'] = $this->menu_models->menus();
+          $data['title']='Add Product Document Details';
+          $data['k']=$this->document_model->getcategory();
+          $data['h']=$this->Product_model->view_product_details();
+          $this->load->view('templates/header.php',$data);
+          $this->load->view('pages/add_product_document.php');
+          $this->load->view('templates/footer.php');
+
+    }
+    public function do_add_document()
+    {
+      $config['upload_path'] = APPPATH.'/product_document/';
+     $config['allowed_types'] = 'pdf';
+     $config['max_size'] = '1024';
+     $this->load->library('upload',$config);
+     //echo APPPATH;
+     //echo $_FILES['document_file']['name'];
+     //echo "<pre/>";
+     //print_r($_FILES);
+     //die;
+      $rename=time().$_FILES['document_file']['name'];
+      $_FILES['document_file']['name']=$rename;
+     if ($this->upload->do_upload('document_file')==False)
+           {
+              echo 'upload error';
+           }
+           else
+           {
+
+             if($this->Product_model->add_document($rename))
+               {
+                 $data['menus'] = $this->menu_models->menus();
+                  $data['title']='Add Product Document Details';
+                  $data['msg']="Document Details Saved";
+                  $data['k']=$this->document_model->getcategory();
+                  $data['h']=$this->Product_model->view_product_details();
+                  $this->load->view('templates/header.php',$data);
+                  $this->load->view('pages/add_product_document.php',$data);
+                  $this->load->view('templates/footer.php');
+               }
+
+         }
+    }
+
 
 }
