@@ -64,7 +64,7 @@ $data = array(
   'user_email'=>$this->input->post('user_email'),
   'user_password'=>$this->input->post('user_password'),
   'user_address'=>$this->input->post('user_address'),
-  'user_phone_number'=>md5($this->input->post('user_phone_number')),
+  'user_phone_number'=>$this->input->post('user_phone_number'),
   'user_fax_number'=>$this->input->post('user_fax_number')
             );
 $this->db->where('user_id', $user_id);

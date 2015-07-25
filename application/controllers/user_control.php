@@ -28,7 +28,7 @@ class User_control extends CI_Controller {
    if($this->User_model->do_edituser($id))
    {
     $data['msg']='user details updated';
-    $this->load->view('pages/login.php',$data);
+    redirect(base_url().'User_control/view_user');
    }
  }
  public function view_user()

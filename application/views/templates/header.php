@@ -57,14 +57,14 @@
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
             <h3><span class="pull-left">Chat</span><a href="javascript:void(0);" class="pull-right" id="closeRight"><i class="fa fa-times"></i></a></h3>
             <div class="slimscroll">
-                <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="assets\images\avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="<?php echo base_url().'assets\images\avatar2.png';?>" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="<?php base_url().'assets\images\avatar3.png';?>" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="<?php base_url().'assets\images\avatar4.png';?>" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="<?php base_url().'assets\images\avatar5.png';?>" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="<?php base_url().'assets\images\avatar2.png';?>" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="<?php base_url().'assets\images\avatar3.png';?>" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="<?php base_url().'assets\images\avatar4.png';?>" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="<?php base_url().'assets\images\avatar5.png';?>" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
             </div>
         </nav>
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
@@ -72,7 +72,7 @@
             <div class="slimscroll chat">
                 <div class="chat-item chat-item-left">
                     <div class="chat-image">
-                        <img src="assets\images\avatar2.png" alt="">
+                        <img src="<?php base_url().'assets\images\avatar2.png';?>" alt="">
                     </div>
                     <div class="chat-message">
                         Hi There!
@@ -85,7 +85,7 @@
                 </div>
                 <div class="chat-item chat-item-left">
                     <div class="chat-image">
-                        <img src="assets\images\avatar2.png" alt="">
+                        <img src="<?php base_url().'assets\images\avatar2.png';?>" alt="">
                     </div>
                     <div class="chat-message">
                         Fine! do you like my project?
@@ -98,7 +98,7 @@
                 </div>
                 <div class="chat-item chat-item-left">
                     <div class="chat-image">
-                        <img src="assets\images\avatar2.png" alt="">
+                        <img src="<?php base_url().'assets\images\avatar2.png';?>" alt="">
                     </div>
                     <div class="chat-message">
                         Thanks, I tried!
@@ -206,7 +206,7 @@
                                             <ul class="list-unstyled">
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets\images\avatar2.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="<?php base_url().'assets\images\avatar2.png';?>" alt=""></div>
                                                         <p class="msg-name">Sandra Smith</p>
                                                         <p class="msg-text">Hey ! I'm working on your project</p>
                                                         <p class="msg-time">3 minutes ago</p>
@@ -214,7 +214,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="assets\images\avatar4.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="<?php base_url().'assets\images\avatar4.png';?>" alt=""></div>
                                                         <p class="msg-name">Amily Lee</p>
                                                         <p class="msg-text">Hi David !</p>
                                                         <p class="msg-time">8 minutes ago</p>
@@ -222,7 +222,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="assets\images\avatar3.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="<?php base_url().'assets\images\avatar3.png';?>" alt=""></div>
                                                         <p class="msg-name">Christopher Palmer</p>
                                                         <p class="msg-text">See you soon !</p>
                                                         <p class="msg-time">56 minutes ago</p>
@@ -230,7 +230,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets\images\avatar5.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="<?php base_url().'assets\images\avatar5.png';?>" alt=""></div>
                                                         <p class="msg-name">Nick Doe</p>
                                                         <p class="msg-text">Nice to meet you</p>
                                                         <p class="msg-time">2 hours ago</p>
@@ -238,7 +238,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets\images\avatar2.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="<?php base_url().'assets\images\avatar2.png';?>" alt=""></div>
                                                         <p class="msg-name">Sandra Smith</p>
                                                         <p class="msg-text">Hey ! I'm working on your project</p>
                                                         <p class="msg-time">5 hours ago</p>
@@ -246,7 +246,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="assets\images\avatar4.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="<?php base_url().'assets\images\avatar4.png';?>" alt=""></div>
                                                         <p class="msg-name">Amily Lee</p>
                                                         <p class="msg-text">Hi David !</p>
                                                         <p class="msg-time">9 hours ago</p>
@@ -292,7 +292,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
                                         <span class="user-name">David<i class="fa fa-angle-down"></i></span>
-                                        <img class="img-circle avatar" src="assets\images\avatar1.png" width="40" height="40" alt="">
+                                        <img class="img-circle avatar" src="<?php echo base_url().'assets\images\avatar1.png';?>" width="40" height="40" alt="">
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
                                         <li role="presentation"><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>

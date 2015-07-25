@@ -46,10 +46,11 @@
                             <div class="login-box">
                                 <a href="#" class="logo-name text-lg text-center">C R M</a>
                                 <?php
+                                error_reporting(0);
                                 if($h!='')
                                 { ?>
                                   <p class="text-center m-t-md">Update C R M account</p>
-                                  <form class="m-t-md" action="<?=(base_url().'User_control/do_edit_user'.$h[0]->user_id)?>" method="post">
+                                  <form class="m-t-md" action="<?=(base_url().'User_control/do_edit_user/'.$h[0]->user_id)?>" method="post">
                                 <?php }
                                 else{ ?>
                                 <p class="text-center m-t-md">Create C R M account</p>

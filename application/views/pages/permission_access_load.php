@@ -3,6 +3,7 @@
     <div class="form-group col-md-6">
         <label>Access permission</label></br>
             <?php
+            error_reporting(0);
             if($user_perm!='')
             {
               $arr=explode(',',$user_perm[0]->page_id);

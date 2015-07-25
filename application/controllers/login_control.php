@@ -12,18 +12,22 @@ class Login_control extends CI_Controller {
  {
    if($this->session->userdata('admin_name')!="")
    {
+     $data['menus'] = $this->menu_models->menus();
+     $data['title']='Welcome CRM';
      $this->load->view('templates/header.php');
-     $this->load->view('Admin/index.php');
+     $this->load->view('pages/index.php');
      $this->load->view('templates/footer.php');
    }
    else if($this->session->userdata('user_name')!="")
    {
+     $data['menus'] = $this->menu_models->menus();
+     $data['title']='Welcome CRM';
      $this->load->view('templates/header.php');
      $this->load->view('pages/home.php');
      $this->load->view('templates/footer.php');
    }
    else{
-   $this->load->view('pages/home.php');
+   $this->load->view('pages/login.php');
     }
  }
 

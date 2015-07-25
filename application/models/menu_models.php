@@ -1,4 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+error_reporting(0);
 class Menu_models extends CI_Model {
 public function __construct()
 {
@@ -22,6 +23,8 @@ function menus() {
 					$query=$this->db->query("select * from user_permission where user_id='$uid'");
 					$res=$query->result();
 					//$str=$res[0]->page_id;
+					if($res[0]->page_id!='')
+					 {
 				  $arr=explode(',',$res[0]->page_id);
 					$l=end($arr);
 					$st=implode(',',$arr);
@@ -32,7 +35,7 @@ function menus() {
 	              $row->children = $q->result();
 							}
 						}
-					}
+					}}
 					else {
 							$q=$this->db->query("select * from menu_children where parent_id='$row->parent_id'");
 							if ($q->num_rows() > 0) {
