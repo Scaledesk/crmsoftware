@@ -33,11 +33,11 @@
 
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword1">Name</label>
-                                                                    <input type="text" class="form-control" name="" id="" placeholder="Name" required="">
+                                                                    <input type="text" class="form-control" name="document_name" id="" placeholder=" Document Name" required="">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Description</label>
-                                                                    <textarea class="form-control" name="description" id="description" maxlength='500' placeholder="Description" required=""></textarea>
+                                                                    <textarea class="form-control" name="document_description" id="description" maxlength='500' placeholder="Description" required=""></textarea>
 																</div>
 																<div class="form-group col-md-12">
                                   <select  class="form-control" id="" name="document_category_id">
@@ -51,8 +51,8 @@
 														</div>
 																<div class="form-group col-md-12">
                                                                     <label>Upload File</label>
-                                                                    <input type="file" class="form-control" id="date" name="" placeholder="Upload File" required="">
-                                                                </div>
+                                                                    <input type="file" class="form-control" id="" name="document_file" required="">
+                                  </div>
 
 
                                                     <center><button type="submit" class="btn btn-primary">Add</button></center>
