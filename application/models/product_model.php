@@ -128,5 +128,18 @@ parent::__construct();
   			return true;
   		}
 	}
+  public function add_document($rename)
+  {
+    $document_file = base_url().'application/product_document/'.$rename;
+    $data=array(
+		'document_name'=>$this->input->post('document_name'),
+		'document_description'=>$this->input->post('document_description'),
+		'document_category_id'=>$this->input->post('document_category_id'),
+    'product_id'=>$this->input->post('product_id')
+		);
+    $this->db->insert('product_document',$data);
+		return true;
+
+  }
 
 }
