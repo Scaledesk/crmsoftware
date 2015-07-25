@@ -135,11 +135,50 @@ parent::__construct();
 		'document_name'=>$this->input->post('document_name'),
 		'document_description'=>$this->input->post('document_description'),
 		'document_category_id'=>$this->input->post('document_category_id'),
-    'product_id'=>$this->input->post('product_id')
+    'product_id'=>$this->input->post('product_id'),
+    'upload'=>$document_file
 		);
     $this->db->insert('product_document',$data);
 		return true;
 
   }
+
+  public function view_document_details()
+	{
+		$query = $this->db->get('product_document');
+    	return $query;
+	}
+
+	public function editdocument($id)
+	{
+
+		$this->db->where("document_id",$id);
+  		$query=$this->db->get("product_document");
+  		return $query->result();
+	}
+
+	public function do_editdocument($id)
+	{
+
+    $data=array(
+		'document_name'=>$this->input->post('document_name'),
+		'document_description'=>$this->input->post('document_description'),
+		'document_category_id'=>$this->input->post('document_category_id'),
+    'product_id'=>$this->input->post('product_id')
+  );
+		$this->db->where('document_id', $id);
+		$this->db->update('product_document',$data);
+		return true;
+
+	}
+
+	public function deletedocument($id)
+	{
+		$this->db->where("document_id",$id);
+  		if($this->db->delete("product_document"))
+  		{
+  			return true;
+  		}
+	}
 
 }

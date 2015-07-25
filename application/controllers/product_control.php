@@ -220,6 +220,49 @@ class Product_control extends CI_Controller {
 
          }
     }
+    public function view_document()
+    {
+        $data['menus'] = $this->menu_models->menus();
+        $data['title']='Product Document Details';
+        $data['h']=$this->Product_model->view_document_details();
+        $this->load->view('templates/header.php',$data);
+        $this->load->view('pages/view_product_document.php',$data);
+        $this->load->view('templates/footer.php');
+    }
+
+    public function editdocument($id)
+  {
+      $data['menus'] = $this->menu_models->menus();
+      $data['title']='Add Product Document Details';
+      $data['msg']="Update Document Details";
+      $data['m']=$this->Product_model->editdocument($id);
+      $data['k']=$this->document_model->getcategory();
+      $data['h']=$this->Product_model->view_product_details();
+      $this->load->view('templates/header.php',$data);
+      $this->load->view('pages/add_product_document.php',$data);
+      $this->load->view('templates/footer.php');
+  }
+
+  public function do_edit_document($id)
+  {
+    $this->load->database();
+    if($this->Product_model->do_editdocument($id))
+    {
+      redirect(base_url().'Product_control/view_document');
+    }
+    else{
+      echo "record not updated";
+    }
+
+  }
+
+  public function deletedocument($id)
+  {
+    if($this->Product_model->deletedocument($id))
+    {
+      redirect(base_url().'Product_control/view_document');
+    }
+  }
 
 
 }
