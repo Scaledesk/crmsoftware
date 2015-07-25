@@ -12,8 +12,8 @@ class document_control extends CI_Controller {
  public function add_document()
 {
 
-    $data['title']='Add Document';
-    $data['k']=$this->document_model->getcategory();
+      $data['title']='Add Document';
+      $data['k']=$this->document_model->getcategory();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_document.php',$data);
       $this->load->view('templates/footer.php');
