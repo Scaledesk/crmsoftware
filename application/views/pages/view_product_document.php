@@ -13,10 +13,10 @@
                                                 <th>S.No</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Category</th>
-                                                <th>Upload File</th>
+                                                <th>Product</th>
+                                                <th>Document</th>
                                                 <th>Action</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -24,25 +24,34 @@
                                                 <th>S.No</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Category</th>
-                                                <th>Upload File</th>
+                                                <th>Product</th>
+                                                <th>Document</th>
                                                 <th>Action</th>
-                                                
+
                                             </tr>
                                         </tfoot>
                                         <tbody>
+                                          <?php $i=0;
+                                              foreach ($h->result() as $row)
+                                               {
+                                                  $i++;
+                                               ?>
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>2011/04/25</td>
-                                                
-                                                
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $row->document_name; ?></td>
+                                                <td><?php echo $row->document_description; ?></td>
+                                                <td><?php echo $row->product_id; ?></td>
+                                                <td><a href="<?php echo $row->upload; ?>">Download</a></td>
+                                                <td>
+                                                  <a href="<?php echo base_url().'Product_control/editdocument/'.$row->document_id; ?> ">Edit</a>|
+                                                      <a href="<?php echo base_url().'Product_control/deletedocument/'.$row->document_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                                </td>
+
+
                                             </tr>
+                                            <?php } ?>
                                         </tbody>
-                                       </table>  
+                                       </table>
                                     </div>
                                 </div>
                             </div>

@@ -233,7 +233,7 @@ class Product_control extends CI_Controller {
     public function editdocument($id)
   {
       $data['menus'] = $this->menu_models->menus();
-      $data['title']='Add Product Document Details';
+      $data['title']='Update Product Document Details';
       $data['msg']="Update Document Details";
       $data['m']=$this->Product_model->editdocument($id);
       $data['k']=$this->document_model->getcategory();
