@@ -144,7 +144,7 @@
 
 
                                 <li>
-                                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
+                                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"></a>
                                 </li>
                                 <!--
                                 <li>
