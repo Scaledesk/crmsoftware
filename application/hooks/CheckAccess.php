@@ -26,7 +26,7 @@ class CheckAccess extends CI_Controller
 
             //echo 'vsdgdgfgdsgdgv';
 
-    
+
           /*  else {
               /*$this->session->set_flashdata(
                   'error',

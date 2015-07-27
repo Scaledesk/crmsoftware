@@ -35,6 +35,7 @@ class User_control extends CI_Controller {
  {
    $data['h']=$this->User_model->view_user();
    $data['title']='user_details';
+   $data['menus'] = $this->menu_models->menus();
    $this->load->view('templates/header.php',$data);
    $this->load->view('pages/view_user.php',$data);
    $this->load->view('templates/footer.php');
@@ -43,8 +44,7 @@ public function view_permission()
 {
   $data['h']=$this->User_model->view_permission();
   $data['title']='Manage Permission';
-  $menus = $this->menu_models->menus();
-  $data = array('menus' => $menus);
+  $data['menus'] = $this->menu_models->menus();
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/manage_permission.php',$data);
   $this->load->view('templates/footer.php');
@@ -77,7 +77,6 @@ die;*/
    $data['h']=$this->User_model->view_user();
    $data['k']=$this->User_model->get_menu();
    $data['menus']=$this->menu_models->menus();
- // $data["cds"] = array('menus' => $menus);
    $this->load->view('templates/header.php',$data);
    $this->load->view('pages/permission_access.php',$data);
    $this->load->view('templates/footer.php');

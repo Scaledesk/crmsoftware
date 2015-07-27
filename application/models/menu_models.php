@@ -10,6 +10,8 @@ $this->load->library('session');
 
 
 function menus() {
+	if($this->session->userdata('logged_in'))
+	{
     $this->db->select("*");
     $this->db->from("menu_parent");
     $q = $this->db->get();
@@ -47,6 +49,12 @@ function menus() {
         }
     }
     return $final;
+	}
+	else {
+		redirect(base_url());
+		//echo 'access denied';
+		//die;
+	}
 }
 
 

@@ -7,11 +7,13 @@ class sales_management extends CI_Controller {
   $this->load->model('sales_model');
   $this->load->helper(array('form','url'));
   $this->load->library('email');
+  $this->load->model('menu_models');
  }
 public function add_lead()
 {
 
     $data['title']='Add Leads';
+    $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_lead.php');
       $this->load->view('templates/footer.php');
@@ -21,6 +23,7 @@ public function add_order()
 {
       $data['title']='Add order';
       $data['k']=$this->sales_model->getleadname();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_order.php',$data);
       $this->load->view('templates/footer.php');
@@ -31,6 +34,7 @@ public function do_add_order()
   {
           $data['msg']=" Order saved";
           $data['k']=$this->sales_model->getleadname();
+          $data['menus'] = $this->menu_models->menus();
            $this->load->view('templates/header.php');
            $this->load->view('pages/add_order.php',$data);
            $this->load->view('templates/footer.php');
@@ -42,6 +46,7 @@ public function do_add_comment()
     if($this->sales_model->add_comment())
          {
            $data['msg']="comment saved";
+           $data['menus'] = $this->menu_models->menus();
            $this->load->view('templates/header.php');
            $this->load->view('pages/view_lead.php',$data);
            $this->load->view('templates/footer.php');
@@ -53,6 +58,7 @@ public function do_add_lead()
           if($this->sales_model->add_lead())
          {
            $data['msg']="Lead Aded Added";
+           $data['menus'] = $this->menu_models->menus();
            $this->load->view('templates/header.php');
            $this->load->view('pages/add_lead.php',$data);
            $this->load->view('templates/footer.php');
@@ -63,6 +69,7 @@ public function do_add_lead()
   {
       $data['title']='Lead  Details';
       $data['h']=$this->sales_model->view_lead_details();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_lead.php',$data);
       $this->load->view('templates/footer.php');
@@ -72,15 +79,17 @@ public function do_add_lead()
   {
       $data['title']='Order  Details';
       $data['h']=$this->sales_model->view_order_details();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_order.php',$data);
       $this->load->view('templates/footer.php');
   }
 
-  
+
 public function calendar()
   {
       $data['title']='Manage Event';
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/calendar.php');
       $this->load->view('templates/footer.php');
@@ -105,6 +114,7 @@ public function show_calendar()
   $this->load->database();
     $data['title']="show calendar";
    $data['show_date']=$this->sales_model->show_calendar();
+   $data['menus'] = $this->menu_models->menus();
    $this->load->view('templates/header.php',$data);
   $this->load->view('pages/calendar_show.php',$data);
   $this->load->view('templates/footer.php');
@@ -116,6 +126,7 @@ public function show_calendar_table()
   $this->load->database();
     $data['title']="show calendar";
    $data['show_date']=$this->sales_model->show_calendar();
+   $data['menus'] = $this->menu_models->menus();
    $this->load->view('templates/header.php',$data);
   $this->load->view('pages/show_calender_table.php',$data);
   $this->load->view('templates/footer.php');
@@ -131,6 +142,7 @@ public function update_calendar($id)
 
     echo"Successful Update";
     //$this->calendar();
+    $data['menus'] = $this->menu_models->menus();
    $this->load->view('templates/header.php',$data);
   $this->load->view('pages/calendar.php');
   $this->load->view('templates/footer.php');
@@ -142,6 +154,7 @@ public function delete_event($id)
   if($this->sales_model->delete_event($id))
   {
     $data['title']="show calendar";
+    $data['menus'] = $this->menu_models->menus();
     $this->load->view('templates/header.php',$data);
   $this->load->view('pages/calendar.php');
   $this->load->view('templates/footer.php');
@@ -153,18 +166,20 @@ public function update_event($id)
 
     $this->load->model("sales_model");
     $data['h']=$this->sales_model->update_event($id);
- 
+
     $data['title']="show calendar";
+    $data['menus'] = $this->menu_models->menus();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/show_calender.php',$data);
     $this->load->view('templates/footer.php');
-  
+
 }
 
   public function manage_invoice()
   {
     $data['title']='Manage Invoice';
     $data['k']=$this->sales_model->getorder();
+    $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/manage_invoice.php',$data);
       $this->load->view('templates/footer.php');
@@ -180,6 +195,7 @@ public function add_invoice()
   {
       $data['title']='Add Invoice';
       $data['k']=$this->sales_model->getorder();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_invoice.php',$data);
       $this->load->view('templates/footer.php');
@@ -196,6 +212,7 @@ public function editinvoice($id)
   $data['title']='Update Invoice';
    // $data['k']=$this->sales_model->getorder();
     $data['h']=$this->sales_model->getinvoice($id);
+    $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/update_invoice.php',$data);
       $this->load->view('templates/footer.php');
@@ -223,6 +240,7 @@ public function editlead($id)
   $this->load->database();
   $data['title']='Update Lead Details';
   $data['h']=$this->sales_model->editlead($id);
+  $data['menus'] = $this->menu_models->menus();
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/add_lead.php',$data);
   $this->load->view('templates/footer.php');
@@ -234,6 +252,7 @@ public function editorder($id)
   $data['title']='Update Order Details';
   $data['k']=$this->sales_model->getleadname();
   $data['h']=$this->sales_model->editorder($id);
+  $data['menus'] = $this->menu_models->menus();
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/add_order.php',$data);
   $this->load->view('templates/footer.php');
@@ -284,6 +303,7 @@ public function addreminder($id)
 {
       $data['title']='Add reminder';
       $data['k']=$this->sales_model->getinvoice($id);
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/reminder.php',$data);
       $this->load->view('templates/footer.php');
@@ -293,6 +313,7 @@ public function editreminder($id)
  $data['title']='Update reminder';
       $data['k']=$this->sales_model->getinvoice($id);
       $data['h']=$this->sales_model->get_reminder($id);
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/reminder.php',$data);
       $this->load->view('templates/footer.php');
@@ -303,6 +324,7 @@ public function do_addreminder()
   {
           $data['title']='Manage Invoice';
           $data['k']=$this->sales_model->getorder();
+          $data['menus'] = $this->menu_models->menus();
            $this->load->view('templates/header.php');
            $this->load->view('pages/manage_invoice.php',$data);
            $this->load->view('templates/footer.php');
@@ -314,6 +336,7 @@ public function do_editreminder($id)
   {
           $data['title']='Manage Invoice';
           $data['k']=$this->sales_model->getorder();
+          $data['menus'] = $this->menu_models->menus();
            $this->load->view('templates/header.php');
            $this->load->view('pages/manage_invoice.php',$data);
            $this->load->view('templates/footer.php');
@@ -368,6 +391,7 @@ public function view_reminder()
 {
       $data['title']='View  Reminder';
       $data['h']=$this->sales_model->getorder();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_reminder.php',$data);
       $this->load->view('templates/footer.php');
@@ -388,6 +412,7 @@ public function loadreminder()
 public function add_supplier_category()
 {
       $data['title']='Add Supplier Category';
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier_category.php');
       $this->load->view('templates/footer.php');
@@ -398,6 +423,7 @@ public function do_add_supplier_category()
   {
     $data['title']='Add Supplier Category';
     $data['msg']='Supplier category saved';
+    $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier_category.php',$data);
       $this->load->view('templates/footer.php');
@@ -409,6 +435,7 @@ public function add_supplier()
 {
       $data['title']='Add Supplier';
       $data['h']=$this->sales_model->getsupplier_category();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier.php',$data);
       $this->load->view('templates/footer.php');
@@ -420,6 +447,7 @@ public function do_add_supplier()
     $data['title']='Add Supplier';
     $data['msg']='Supplier details saved';
     $data['h']=$this->sales_model->getsupplier_category();
+    $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_supplier.php',$data);
       $this->load->view('templates/footer.php');
@@ -429,6 +457,7 @@ public function view_supplier()
 {
       $data['title']='View  Supplier';
       $data['h']=$this->sales_model->getsupplier();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_supplier.php',$data);
       $this->load->view('templates/footer.php');
@@ -440,6 +469,7 @@ public function editsupplier($id)
   $data['title']='Update Supplier Details';
   $data['h']=$this->sales_model->getsupplier_category();
   $data['k']=$this->sales_model->editsupplier($id);
+  $data['menus'] = $this->menu_models->menus();
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/add_supplier.php',$data);
   $this->load->view('templates/footer.php');
@@ -470,6 +500,7 @@ public function add_quote_details()
 {
       $data['title']='Add Quote Details';
       $data['h']=$this->sales_model->getsupplier();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_quote_details.php',$data);
       $this->load->view('templates/footer.php');
@@ -477,7 +508,7 @@ public function add_quote_details()
 public function do_add_quote_details()
 {
 
-  $config['upload_path'] = APPPATH.'/quote/'; 
+  $config['upload_path'] = APPPATH.'/quote/';
   $config['allowed_types'] = 'pdf';
   $config['max_size'] = '1024';
   $this->load->library('upload',$config);
@@ -508,6 +539,7 @@ public function editquote($id)
   $data['title']='Update Quote Details';
   $data['h']=$this->sales_model->getsupplier();
   $data['k']=$this->sales_model->editquote($id);
+  $data['menus'] = $this->menu_models->menus();
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/add_quote_details.php',$data);
   $this->load->view('templates/footer.php');
@@ -518,7 +550,7 @@ public function do_editquote($id)
   $this->load->database();
   if($_FILES!='')
   {
-  $config['upload_path'] = APPPATH.'/quote/'; 
+  $config['upload_path'] = APPPATH.'/quote/';
   $config['allowed_types'] = 'pdf';
   $config['max_size'] = '1024';
   $this->load->library('upload',$config);
@@ -535,16 +567,16 @@ public function do_editquote($id)
              redirect(base_url().'sales_management/view_quote');
            }
         }
-  
+
   }
   else{
     if($this->sales_model->do_editquote($id))
     {
      redirect(base_url().'sales_management/view_quote');
     }
-   }  
+   }
 
-  
+
 
 }
 
@@ -559,6 +591,7 @@ public function view_quote_details()
 {
   $data['title']='View  Quote Details';
       $data['h']=$this->sales_model->getquote();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_quote.php',$data);
       $this->load->view('templates/footer.php');
@@ -568,9 +601,10 @@ public function add_contractor()
 {
   $data['title']='Add  Contractor Details';
       $data['h']=$this->sales_model->getsupplier();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_contractor.php',$data);
-      $this->load->view('templates/footer.php'); 
+      $this->load->view('templates/footer.php');
 }
 public function do_add_contractor()
 {
@@ -579,6 +613,7 @@ public function do_add_contractor()
     $data['title']='Add Contractor Details';
     $data['msg']='Contractor details saved';
     $data['h']=$this->sales_model->getsupplier();
+    $data['menus'] = $this->menu_models->menus();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/add_contractor.php',$data);
     $this->load->view('templates/footer.php');
@@ -590,6 +625,7 @@ public function do_add_contractor()
 public function automation_mgt()
   {
       $data['title']='Automation Management ';
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/automation_management.php');
       $this->load->view('templates/footer.php');
@@ -602,6 +638,7 @@ public function automation_mgt()
      $this->sales_model->automation_mgt_insert();
 
       $data['title']='Automation Management ';
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/automation_management.php');
       $this->load->view('templates/footer.php');
@@ -612,10 +649,11 @@ public function automation_mgt()
   public function automation_mgt_delete($id)
 {
   if($this->sales_model->automation_mgt_delete($id))
- 
+
   {
     $data['title']='Automation Management';
     $data['h']=$this->sales_model->automation_mgt_select();
+    $data['menus'] = $this->menu_models->menus();
     $this->load->view('templates/header.php',$data);
   $this->load->view('pages/automation_management_show.php',$data);
   $this->load->view('templates/footer.php');
@@ -627,13 +665,14 @@ public function automation_mgt_update($id)
 
 $this->load->model("sales_model");
   $data['h']=$this->sales_model->automation_mgt_update($id);
- 
+
     $data['title']="Automation Management ";
     $data['h']=$this->sales_model->automation_mgt_select();
+    $data['menus'] = $this->menu_models->menus();
     $this->load->view('templates/header.php',$data);
   $this->load->view('pages/automation_management_show.php',$data);
   $this->load->view('templates/footer.php');
-  
+
 }
 
 public function automation_mgt_update_select($id)
@@ -641,19 +680,21 @@ public function automation_mgt_update_select($id)
 
 $this->load->model("sales_model");
   $data['h']=$this->sales_model->automation_mgt_update_select($id);
- 
+
 
     $data['title']="Automation Management ";
+    $data['menus'] = $this->menu_models->menus();
     $this->load->view('templates/header.php',$data);
   $this->load->view('pages/automation_management_update.php',$data);
   $this->load->view('templates/footer.php');
-  
+
 }
 
 public function automation_mgt_show()
   {
       $data['title']='Automation Management ';
       $data['h']=$this->sales_model->automation_mgt_select();
+      $data['menus'] = $this->menu_models->menus();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/automation_management_show.php',$data);
       $this->load->view('templates/footer.php');

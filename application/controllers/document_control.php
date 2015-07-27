@@ -13,6 +13,7 @@ class document_control extends CI_Controller {
 {
 
       $data['title']='Add Document';
+      $data['menus'] = $this->menu_models->menus();
       $data['k']=$this->document_model->getcategory();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_document.php',$data);
@@ -42,6 +43,7 @@ public function do_add_document()
           if($this->document_model->add_document($rename))
          {
            $data['msg']="Document Added";
+           $data['menus'] = $this->menu_models->menus();
            $this->load->view('templates/header.php');
            $this->load->view('pages/add_document.php',$data);
            $this->load->view('templates/footer.php');
@@ -55,6 +57,7 @@ public function do_add_document()
   public function view_document()
   {
       $data['title']='View Document Details';
+      $data['menus'] = $this->menu_models->menus();
       $data['h']=$this->document_model->view_document_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_document.php',$data);
@@ -66,6 +69,7 @@ public function do_add_document()
 
   $this->load->database();
   $data['title']='Edit document Details';
+  $data['menus'] = $this->menu_models->menus();
   $data['k']=$this->document_model->getcategory();
   $data['h']=$this->document_model->editdocument($id);
   $this->load->view('templates/header.php',$data);
