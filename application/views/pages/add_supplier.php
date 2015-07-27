@@ -4,8 +4,8 @@
                             <div class="panel panel-white">
                                 <div class="panel-body">
                                      <div id="rootwizard">
-                                        
-                                        <?php 
+
+                                        <?php
                                         error_reporting(0);
                                         if($k!='')
                                             { ?>
@@ -13,7 +13,7 @@
                                             <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i><b>Update Supplier</b></a></li>
                                         </ul>
                                         <form id="wizardForm" method="post" action="<?=(base_url().'sales_management/do_editsupplier/'.$k[0]->supplier_id)?>">
-                                        <?php } 
+                                        <?php }
                                         else { ?>
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i><b>Add Supplier</b></a></li>
@@ -30,8 +30,8 @@
                                                                     <label>Supplier Name</label>
                                                                     <input type="text" class="form-control" name="supplier_name" id="supplier_Name" placeholder="Supplier Name" required="" value="<?php echo $k[0]->supplier_name; ?>">
                                                                 </div>
-                                                                
-                                                                
+
+
                                                                 <div class="form-group col-md-12">
 																	<label> Supplier Address</label>
 																	<textarea class="form-control" placeholder="Supplier Address" id="supplier_address" name="supplier_address" required="" style="margin: 0px -0.078125px 0px 0px; height: 100px; width: 420px;"><?php echo $k[0]->supplier_address; ?></textarea>
@@ -43,12 +43,12 @@
                                                                 <div class="form-group col-md-12">
                                                                     <label>Supplier Phone two</label>
                                                                     <input type="number" class="form-control" name="supplier_phone2" id="supplier_phone2" placeholder="Supplier Phone two" required="" value="<?php echo $k[0]->supplier_phone2; ?>">
-                                                                
+
 																</div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            
+
                                                                 <div class="form-group col-md-12">
                                                                     <label>Supplier Email Address</label>
                                                                     <input type="email" class="form-control" name="supplier_email" id="supplier_email" placeholder="Supplier Email Address" required="" value="<?php echo $k[0]->supplier_email; ?>">
@@ -66,38 +66,38 @@
                                                                     <select class="form-control" required="" name="category_id" >
 																	<option>Select Category</option>
 																	 <?php
-                                            foreach ($h->result() as $row) 
+                                            foreach ($h->result() as $row)
                                             { ?>
 
 																	<option value="<?php echo $row->category_id; ?>" <?php if($row->category_id==$k[0]->category_id) echo 'selected'; ?>><?php echo $row->category_name; ?></option>
 											<?php } ?>
 
 																	</select>
-																	
-																	
-																	
-																	
+
+
+
+
                                                                 </div>
-                                                                
-                                                                
-                                                            
-                                                            
+
+
+
+
                                                         </div>
-                                                        
+
 
 
                                                     </div>
 
                                                 </div>
-                                                
-                                                
-                                                
+
+
+
                                                 <div class="form-group col-md-4 center">
-                                            <?php 
+                                            <?php
                                             if($k!=''){
                                             ?>
-                                                    <button type="submit" class="btn btn-primary btn-block">Update Supplier</button>
-                                            <?php } 
+                                            <button type="submit" class="btn btn-primary btn-block">Update Supplier</button>
+                                            <?php }
                                             else
                                             { ?>
 
