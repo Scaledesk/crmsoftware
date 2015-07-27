@@ -31,7 +31,7 @@
                                                                                             <option value="select">Select Product</option>
                                                                                             <?php
                                                                                             foreach ($h->result() as $row) { ?>
-                                                                                            <option value="<?php echo $row->product_id; ?>" <?php if($m[0]->product_id==$row->product_id) echo 'checked'; ?>><?php echo $row->product_name;; ?></option>
+                                                                                            <option value="<?php echo $row->product_id; ?>" <?php if($m[0]->product_id==$row->product_id) echo 'selected'; ?>><?php echo $row->product_name;; ?></option>
                                                                                           <?php   } ?>
 
                                                           </select>
@@ -51,7 +51,7 @@
                                                                     <option value="select">Select categary</option>
                                                                     <?php
                                                                     foreach ($k->result() as $row) { ?>
-                                                                    <option value="<?php echo $row->document_category_id; ?>" <?php if($m[0]->document_category_id==$row->document_category_id) echo 'checked'; ?>><?php echo $row->document_category_name; ?></option>
+                                                                    <option value="<?php echo $row->document_category_id; ?>" <?php if($m[0]->document_category_id==$row->document_category_id) echo 'selected'; ?>><?php echo $row->document_category_name; ?></option>
                                                                   <?php   } ?>
 
                                     </select>

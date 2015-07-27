@@ -16,7 +16,14 @@
                                                     <div class="row m-b-lg">
                                                         <div class="col-md-12">
                                                             <div class="row">
+                      <?php if($h!='')
+                      { ?>
+                        <form id="" name="formselct" action="<?=(base_url().'Product_control/do_edit_milesstone/'.$h[0]->milesstone_id)?>" method="Post">
+                <?php }
+                else{ ?>
                     <form id="" name="formselct" action="<?=(base_url().'Product_control/do_add_milesstone')?>" method="Post">
+                  <?php } ?>
+
                                                         <div class="form-group col-md-12">
 
                                            <label for="exampleInputPassword1">Select Product</label>
@@ -24,7 +31,7 @@
                                 <option value="select">Select Product</option>
                                   <?php
                                   foreach ($k->result() as $row) { ?>
-                                  <option value="<?php echo $row->product_id; ?>"><?php echo $row->product_name; ?></option>
+                                  <option value="<?php echo $row->product_id; ?>" <?php if($row->product_id==$h[0]->product_id) echo 'selected'; ?>><?php echo $row->product_name; ?></option>
                                 <?php  }
                                   ?>
 
@@ -36,19 +43,19 @@
 
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword1">Name</label>
-                                                                    <input type="text" class="form-control" name="milesstone_name" id="" placeholder="Name" required="">
+                                                                    <input type="text" class="form-control" name="milesstone_name" value="<?php echo $h[0]->milesstone_name; ?>" id="" placeholder="Name" required="">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Description</label>
-                                                                    <textarea class="form-control" name="milesstone_description" id="description" maxlength='500' placeholder="Description" required=""></textarea>
+                                                                    <textarea class="form-control" name="milesstone_description" id="description" maxlength='500' placeholder="Description" required=""><?php echo $h[0]->milesstone_description; ?></textarea>
                                 </div>
                                 <div class="form-group col-md-12">
                                                                     <label>Expected Date</label>
-                                                                    <input type="text" class="form-control date-picker" id="date" name="milesstone_expected_date" placeholder="Expected Date" required="">
+                                                                    <input type="text" class="form-control date-picker" id="date" name="milesstone_expected_date" value="<?php echo strtotime(date('d/m/Y',$h[0]->milesstone_expected_date)); ?>" placeholder="Expected Date" required="">
                                                                 </div>
                                 <div class="form-group col-md-12">
                                                                     <label>End Date</label>
-                                                                    <input type="text" class="form-control date-picker" id="date" name="milesstone_end_date" placeholder="End Date" required="">
+                                                                    <input type="text" class="form-control date-picker" id="date" name="milesstone_end_date" value="<?php echo strtotime(date('d/m/Y',$h[0]->milesstone_end_date)); ?>" placeholder="End Date" required="">
                                                                 </div>
 
 

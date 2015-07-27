@@ -167,6 +167,14 @@ class Product_control extends CI_Controller {
 
     }
 
+    public function deleteprogress($id)
+    {
+      if($this->Product_model->deleteprogress($id))
+      {
+        redirect(base_url().'Product_control/view_progress');
+      }
+    }
+
     public function deletemilesstone($id)
     {
       if($this->Product_model->deletemilesstone($id))

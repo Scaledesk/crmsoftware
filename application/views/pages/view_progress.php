@@ -36,10 +36,12 @@
                                                ?>
                                             <tr>
                                                 <td><?php echo $i; ?></td>
-                                                <td><?php echo $row->title; ?></td>
-                                                <td><?php echo $row->description; ?></td>
-                                                <td><?php echo $row->date; ?></td>
-                                                <td> </td>
+                                                <td><?php echo $row->progress_title; ?></td>
+                                                <td><?php echo $row->progress_description; ?></td>
+                                                <td><?php echo $row->progress_date; ?></td>
+                                                <td>
+                                                <a href="<?php echo base_url().'Product_control/deleteprogress/'.$row->progress_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                                 </td>
 
 
                                             </tr>

@@ -42,7 +42,7 @@
 																	                          <select  class="form-control" id="" name="product_status" required="">
                                                                 <option value="select">Select</option>
                                                                 <?php for ($i=1; $i <= 10; $i++) { ?>
-                                                                <option value="<?php echo $i; ?>" <?php if($i==$h[0]->product_status) echo 'checked'; ?>><?php echo $i; ?></option>
+                                                                <option value="<?php echo $i; ?>" <?php if($i==$h[0]->product_status) echo 'selected'; ?>><?php echo $i; ?></option>
                                                                 <?php } ?>
 
 
