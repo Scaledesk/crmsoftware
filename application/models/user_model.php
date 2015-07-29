@@ -27,6 +27,7 @@ public function add_permission()
 
   if($q->num_rows() > 0)
   {
+    $this->db->where("user_id",$id);
     $this->db->update('user_permission',$data);
     return true;
   }
