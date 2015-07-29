@@ -18,11 +18,14 @@ public function add_permission()
   //$page=implode(',',serialize($this->input->post('page')));
   $page=implode(',',$this->input->post('page'));
   //die;
+  $id=$this->input->post('user_id');
   $data=array(
   'user_id'=>$this->input->post('user_id'),
   'page_id'=>$page
   );
-  if($this->input->post('submit')=='Update')
+  $q=$this->db->query("select * from user_permission where user_id='$id'");
+
+  if($q->num_rows() > 0)
   {
     $this->db->update('user_permission',$data);
     return true;
@@ -31,6 +34,16 @@ public function add_permission()
     $this->db->insert('user_permission',$data);
     return true;
   }
+
+/* if($this->input->post('submit')=='Update')
+   {
+    $this->db->update('user_permission',$data);
+    return true;
+   }
+  else {
+    $this->db->insert('user_permission',$data);
+    return true;
+  } */
 
 }
 

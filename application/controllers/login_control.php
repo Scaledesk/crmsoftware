@@ -77,7 +77,7 @@ public function welcome()
     $menus = $this->menu_models->menus();
     $data = array('menus' => $menus);
     $this->load->view('templates/header.php',$data);
-    $this->load->view('pages/index.php', $data);
+    $this->load->view('pages/index.php');
     $this->load->view('templates/footer.php');
 
   }

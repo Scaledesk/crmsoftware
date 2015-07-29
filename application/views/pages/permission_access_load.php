@@ -19,8 +19,8 @@
     </div>
 
         <div class="form-group col-md-6 left">
-                    <label>Remove permission</label></br>
-                    <input type="checkbox"  id="" name="">
+                    <!--<label>Remove permission</label></br>
+                    <input type="checkbox"  id="" name="">-->
        </div>
 </div>
 <?php if($user_perm!='')

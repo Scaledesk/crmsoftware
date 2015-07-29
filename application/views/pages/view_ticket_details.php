@@ -38,8 +38,8 @@
                                         </tfoot>
                                         <tbody>
                                             <?php $i=0;
-                                                foreach ($h->result() as $row)  
-                                                 {  
+                                                foreach ($h->result() as $row)
+                                                 {
                                                     $i++;
                                                  ?>
                                             <tr>
@@ -59,7 +59,7 @@
                                             </tr>
                                             <?php } ?>
                                             </tbody>
-                                       </table>  
+                                       </table>
                                     </div>
                                 </div>
                             </div>

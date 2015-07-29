@@ -1,10 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 //error_reporting(0);
-class company_control extends CI_Controller {
+class Company_control extends CI_Controller {
  public function __construct()
  {
   parent::__construct();
-  $this->load->model('company_model');
+  $this->load->model('Company_model');
   $this->load->model('menu_models');
   $this->load->helper(array('form','url'));
  }
@@ -21,7 +21,7 @@ class company_control extends CI_Controller {
   }
   public function do_add_company()
   {
-    if($this->company_model->add_company())
+    if($this->Company_model->add_company())
     {
       $data['menus'] = $this->menu_models->menus();
       $data['msg']="Company Record Added";
@@ -35,7 +35,7 @@ class company_control extends CI_Controller {
   {
       $data['title']='View Company Details';
       $data['menus'] = $this->menu_models->menus();
-      $data['h']=$this->company_model->view_company_details();
+      $data['h']=$this->Company_model->view_company_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_company.php',$data);
       $this->load->view('templates/footer.php');
@@ -47,7 +47,7 @@ class company_control extends CI_Controller {
   $this->load->database();
   $data['menus'] = $this->menu_models->menus();
   $data['title']='Edit Company Details';
-  $data['h']=$this->company_model->editcompany($id);
+  $data['h']=$this->Company_model->editcompany($id);
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/edit_company.php',$data);
   $this->load->view('templates/footer.php');
@@ -56,11 +56,11 @@ class company_control extends CI_Controller {
 public function do_edit_company($id)
 {
   $this->load->database();
-  if($this->company_model->do_editcompany($id))
+  if($this->Company_model->do_editcompany($id))
   {
     /*$data['title']='View Company Details';
     $data['msg']="Successfully updated company details";
-    $data['h']=$this->company_model->view_company_details();
+    $data['h']=$this->Company_model->view_company_details();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/view_company.php',$data);
     $this->load->view('templates/footer.php');
@@ -75,11 +75,11 @@ public function do_edit_company($id)
 
 public function deletecompany($id)
 {
-  if($this->company_model->deletecompany($id))
+  if($this->Company_model->deletecompany($id))
   {
     /*$data['title']='View Company Details';
     $data['msg']="Company deleted";
-    $data['h']=$this->company_model->view_company_details();
+    $data['h']=$this->Company_model->view_company_details();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/view_company.php',$data);
     $this->load->view('templates/footer.php');

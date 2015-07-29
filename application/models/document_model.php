@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class document_model extends CI_Model {
+class Document_model extends CI_Model {
 public function __construct()
 {
 parent::__construct();
@@ -7,7 +7,7 @@ parent::__construct();
 	$this->load->database();
 }
 
-	
+
 	public function add_document($rename)
 	{
 		$document_file = base_url().'application/upload/'.$rename;
@@ -19,23 +19,23 @@ parent::__construct();
 		'document_file'=>$document_file
 		);
 		$this->db->insert('document',$data);
-		return true;	
+		return true;
 	}
 	public function getcategory()
 	{
-		$query = $this->db->get('document_category');  
-    	return $query;	
+		$query = $this->db->get('document_category');
+    	return $query;
 	}
 
 	public function view_document_details()
 	{
-		$query = $this->db->get('document');  
+		$query = $this->db->get('document');
     	return $query;
 	}
 
 	public function editdocument($id)
 	{
-		
+
 		$this->db->where("document_id",$id);
   		$query=$this->db->get("document");
   		return $query->result();
@@ -55,7 +55,7 @@ parent::__construct();
 		$this->db->where('document_id', $id);
 		$this->db->update('document',$data);
 		return true;
-			
+
 	}
 
 	public function deletedocument($id)
@@ -69,7 +69,7 @@ parent::__construct();
 
 	}
 
-	
+
 
 
 

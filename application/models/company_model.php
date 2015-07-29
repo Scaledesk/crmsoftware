@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class company_model extends CI_Model {
+class Company_model extends CI_Model {
 public function __construct()
 {
 parent::__construct();
@@ -26,13 +26,13 @@ parent::__construct();
 
 	public function view_company_details()
 	{
-		$query = $this->db->get('company_details');  
+		$query = $this->db->get('company_details');
     	return $query;
 	}
 
 	public function editcompany($id)
 	{
-		
+
 		$this->db->where("company_id",$id);
   		$query=$this->db->get("company_details");
   		return $query->result();
@@ -55,7 +55,7 @@ parent::__construct();
 		$this->db->where('company_id', $id);
 		$this->db->update('company_details',$data);
 		return true;
-			
+
 	}
 
 	public function deletecompany($id)

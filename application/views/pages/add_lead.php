@@ -1,5 +1,5 @@
 
-		
+
 
 
 
@@ -12,13 +12,13 @@
                                      <div id="rootwizard">
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li role="presentation" class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i><b>Add Lead</b></a></li>
-                                            
+
                                         </ul>
-                                        <?php 
+                                        <?php
                                         error_reporting(0);
                                         if($h!='')
                                         { ?>
-                                        <form id="wizardForm" action="<?=(base_url().'sales_management/do_edit_lead'.$h[0]->lead_id)?>" method="post">    
+                                        <form id="wizardForm" action="<?=(base_url().'sales_management/do_edit_lead/'.$h[0]->lead_id)?>" method="post">    
                                         <?php }
                                         else
                                         {?>
@@ -33,7 +33,7 @@
                                                                     <label for="exampleInputName">Lead Name</label>
                                                                     <input type="text" class="form-control" id="exampleInputName" placeholder="Add Lead" required="" value="<?php echo $h[0]->lead_name;?>" name="lead_name">
                                                                 </div>
-                                                                
+
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputEmail">Lead Date</label>
                                                                     <input type="text" class="form-control date-picker" id="datepicker1" placeholder="Lead Date" required="" name="lead_generate_date" value="<?php echo $h[0]->lead_generate_date;?>">
@@ -53,7 +53,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            
+
                                                            <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Company Name</label>
                                                                     <input type="text" class="form-control" name="company_name" id="exampleInputPassword2" placeholder="Company Name" value="<?php echo $h[0]->lead_company_name;?>">
@@ -74,7 +74,7 @@
                                                                     <label for="exampleInputPassword2">Description</label>
                                                                     <input type="text" class="form-control" name="description" id="exampleInputPassword2" placeholder="Description" value="<?php echo $h[0]->lead_contact_description;?>">
                                                                 </div>
-                                                        
+
                                                         </div>
                                                         <div class="col-md-12" style="padding-left: 0px;padding-right: 15px;">
                                                             <div class="form-group col-md-12">
@@ -85,11 +85,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
-                                                
-                                                
+
+
+
                                                 <div class="form-group col-md-6 center">
-                                                    <?php 
+                                                    <?php
                                                     if($h!='')
                                                     { ?>
                                                         <button type="submit" class="btn btn-primary btn-block">Update Lead</button>

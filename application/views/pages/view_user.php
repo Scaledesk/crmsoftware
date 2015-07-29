@@ -13,6 +13,7 @@
                                                 <th>S. No.</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
+                                                <th>Password</th>
                                                 <th>Address</th>
                                                 <th>Telephone Number</th>
                                                 <th>Fax Number</th>
@@ -24,6 +25,7 @@
                                                 <th>S. No.</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
+                                                <th>Password</th>
                                                 <th>Address</th>
                                                 <th>Telephone Number</th>
                                                 <th>Fax Number</th>

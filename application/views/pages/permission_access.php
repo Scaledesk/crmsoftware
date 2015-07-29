@@ -37,7 +37,7 @@
 <script>
                 function loadpermission(obj)
                 {
-                    alert(obj.value);
+                    //alert(obj.value);
                      $.ajax({
                     'url' : "<?php echo base_url().'User_control/loadpermission'; ?>",
                     'type' : 'POST', //the way you want to send data to your URL

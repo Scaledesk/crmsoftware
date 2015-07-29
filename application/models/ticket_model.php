@@ -6,10 +6,10 @@ parent::__construct();
 $this->load->database();
 }
 
-	
+
 	public function add_ticket()
 	{
-		
+
 
 		$data=array(
 		'ticket_name'=>$this->input->post('ticket_name'),
@@ -22,7 +22,7 @@ $this->load->database();
 		'ticket_resolution'=>$this->input->post('ticket_resolution')
 		);
 		$this->db->insert('ticket_details',$data);
-		return true;	
+		return true;
 	}
 	public function get_ticket()
 	{
@@ -49,7 +49,7 @@ $this->load->database();
 		);
 		$this->db->where("ticket_id",$id);
 		$this->db->update('ticket_details',$data);
-		return true;		
+		return true;
 	}
 	public function delete_ticket($id)
 	{
@@ -57,7 +57,7 @@ $this->load->database();
   		if($this->db->delete("ticket_details"))
   		{
   			return true;
-  		}		
+  		}
 	}
-	
+
 }

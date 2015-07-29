@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 //error_reporting(0);
-class sales_management extends CI_Controller {
+class Sales_management extends CI_Controller {
  public function __construct()
  {
   parent::__construct();
@@ -35,7 +35,7 @@ public function do_add_order()
           $data['msg']=" Order saved";
           $data['k']=$this->sales_model->getleadname();
           $data['menus'] = $this->menu_models->menus();
-           $this->load->view('templates/header.php');
+           $this->load->view('templates/header.php',$data);
            $this->load->view('pages/add_order.php',$data);
            $this->load->view('templates/footer.php');
   }
@@ -47,7 +47,7 @@ public function do_add_comment()
          {
            $data['msg']="comment saved";
            $data['menus'] = $this->menu_models->menus();
-           $this->load->view('templates/header.php');
+           $this->load->view('templates/header.php',$data);
            $this->load->view('pages/view_lead.php',$data);
            $this->load->view('templates/footer.php');
          }
@@ -59,7 +59,7 @@ public function do_add_lead()
          {
            $data['msg']="Lead Aded Added";
            $data['menus'] = $this->menu_models->menus();
-           $this->load->view('templates/header.php');
+           $this->load->view('templates/header.php',$data);
            $this->load->view('pages/add_lead.php',$data);
            $this->load->view('templates/footer.php');
          }
@@ -220,7 +220,7 @@ public function editinvoice($id)
 public function do_edit_invoice($id)
 {
   $this->load->database();
-  if($this->sales_model->do_edit_invoice($id))
+  if($this->sales_model->edit_invoice($id))
   {
     redirect(base_url().'sales_management/manage_invoice');
   }
@@ -526,6 +526,7 @@ public function do_add_quote_details()
           {
             $data['title']='Add Quote Details';
             $data['msg']='Quote details saved';
+            $data['menus'] = $this->menu_models->menus();
             $data['h']=$this->sales_model->getsupplier();
             $this->load->view('templates/header.php',$data);
             $this->load->view('pages/add_quote_details.php',$data);

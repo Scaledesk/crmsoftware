@@ -5,11 +5,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li class="active">Dashboard</li>
                     </ol>
-                    <a href="<?php echo base_url().'User_control/view_user'; ?>">View User</a>
-                    <a href="<?php echo base_url().'User_control/view_permission'; ?>">Manage Permission</a>
-                    <a href="<?php echo base_url().'User_control/access_permission'; ?>">Permission Access</a>
-
-
+                    
                 </div>
                 <div class="page-title">
                     <div class="container">

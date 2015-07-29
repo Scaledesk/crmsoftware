@@ -63,10 +63,10 @@
                                         <input type="email" class="form-control" name="user_email" placeholder="Email" value="<?php echo $h[0]->user_email; ?>" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" name="user_password" placeholder="Password" required="">
+                                        <input type="password" class="form-control" name="user_password" placeholder="Password" value="<?php echo $h[0]->user_password; ?>" required="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control"  placeholder="Confirm Password" name="cpassword" required="">
+                                        <input type="password" class="form-control"  placeholder="Confirm Password" name="cpassword" value="<?php echo $h[0]->user_password; ?>" required="">
                                     </div>
                                     <div class="form-group">
                                         <textarea class="form-control" name="user_address" id="description" maxlength='500' placeholder="Address" required=""><?php echo $h[0]->user_address; ?></textarea>

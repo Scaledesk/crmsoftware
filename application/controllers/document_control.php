@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 //error_reporting(0);
-class document_control extends CI_Controller {
+class Document_control extends CI_Controller {
  public function __construct()
  {
   parent::__construct();
@@ -44,7 +44,8 @@ public function do_add_document()
          {
            $data['msg']="Document Added";
            $data['menus'] = $this->menu_models->menus();
-           $this->load->view('templates/header.php');
+           $data['k']=$this->document_model->getcategory();
+           $this->load->view('templates/header.php',$data);
            $this->load->view('pages/add_document.php',$data);
            $this->load->view('templates/footer.php');
          }

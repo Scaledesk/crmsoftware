@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class contact_model extends CI_Model {
+class Contact_model extends CI_Model {
 public function __construct()
 {
 parent::__construct();
@@ -7,7 +7,7 @@ parent::__construct();
 	$this->load->database();
 }
 
-	
+
 	public function add_contact()
 	{
 		$data=array(
@@ -21,18 +21,18 @@ parent::__construct();
 		'contact_company_relation'=>$this->input->post('company_relation')
 		);
 		$this->db->insert('contact_details',$data);
-		return true;	
+		return true;
 	}
 
 	public function view_contact_details()
 	{
-		$query = $this->db->get('contact_details');  
+		$query = $this->db->get('contact_details');
     	return $query;
 	}
 
 	public function editcontact($id)
 	{
-		
+
 		$this->db->where("contact_id",$id);
   		$query=$this->db->get("contact_details");
   		return $query->result();
@@ -54,7 +54,7 @@ parent::__construct();
 		$this->db->where('contact_id', $id);
 		$this->db->update('contact_details',$data);
 		return true;
-			
+
 	}
 
 	public function deletecontact($id)
@@ -68,7 +68,7 @@ parent::__construct();
 
 	}
 
-	
+
 
 
 
