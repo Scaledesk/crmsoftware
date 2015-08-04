@@ -6,6 +6,7 @@ class Login_control extends CI_Controller {
   parent::__construct();
   $this->load->model('Login_model');
   $this->load->model('menu_models');
+  $this->load->library('session');
   $this->load->helper(array('form','url'));
  }
  public function index()

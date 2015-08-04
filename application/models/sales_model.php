@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class sales_model extends CI_Model {
+class Sales_model extends CI_Model {
 public function __construct()
 {
 parent::__construct();
@@ -7,7 +7,7 @@ parent::__construct();
 	$this->load->database();
 }
 
-	
+
 	public function add_lead()
 	{
 		$data=array(
@@ -24,7 +24,7 @@ parent::__construct();
 		'lead_company_relation'=>$this->input->post('relation')
 		);
 		$this->db->insert('leads',$data);
-		return true;	
+		return true;
 	}
 	public function getorder()
 	{
@@ -62,11 +62,11 @@ parent::__construct();
 			);
 		$this->db->where("invoice_id",$id);
 		$this->db->update('crm_invoice',$data);
-		return true;		
+		return true;
 	}
 	public function add_order()
 	{
-		
+
 		$data=array(
 			'order_title'=>$this->input->post('order_title'),
 			'order_client_name'=>$this->input->post('client_name'),
@@ -84,7 +84,7 @@ parent::__construct();
   		if($this->db->delete("order_details"))
   		{
   			return true;
-  		}		
+  		}
 	}
 	public function deleteinvoice($id)
 	{
@@ -92,7 +92,7 @@ parent::__construct();
   		if($this->db->delete("crm_invoice"))
   		{
   			return true;
-  		}		
+  		}
 	}
 	public function editorder($id)
 	{
@@ -117,18 +117,18 @@ parent::__construct();
 
 	public function view_lead_details()
 	{
-		$query = $this->db->get('leads');  
+		$query = $this->db->get('leads');
     	return $query;
 	}
 	public function view_invoices($id)
 	{
 		$this->db->where('order_id',$id);
-		$query = $this->db->get('crm_invoice');  
+		$query = $this->db->get('crm_invoice');
     	return $query;
 	}
 	public function view_order_details()
 	{
-		$query = $this->db->get('order_details');  
+		$query = $this->db->get('order_details');
     	return $query;
 	}
 	public function getinvoice($id)
@@ -140,7 +140,7 @@ parent::__construct();
 
 	public function editlead($id)
 	{
-		
+
 		$this->db->where("lead_id",$id);
   		$query=$this->db->get("leads");
   		return $query->result();
@@ -158,7 +158,7 @@ parent::__construct();
 		$this->db->where('lead_id', $id);
 		$this->db->update('leads',$data);
 		return true;
-			
+
 	}
 
 	public function deletelead($id)
@@ -176,7 +176,7 @@ parent::__construct();
 			'invoice_id'=>$this->input->post('invoice_id'),
 			'reminder_title'=>$this->input->post('title'),
 			'reminder_description'=>$this->input->post('description'),
-			'reminder_date'=>$this->input->post('r_date')	
+			'reminder_date'=>$this->input->post('r_date')
 			);
 		$this->db->insert('invoice_reminder',$data);
 		return true;
@@ -187,11 +187,11 @@ parent::__construct();
 			'invoice_id'=>$this->input->post('invoice_id'),
 			'reminder_title'=>$this->input->post('title'),
 			'reminder_description'=>$this->input->post('description'),
-			'reminder_date'=>$this->input->post('r_date')	
+			'reminder_date'=>$this->input->post('r_date')
 			);
 		$this->db->where('reminder_id',$id);
 		$this->db->update('invoice_reminder',$data);
-		return true;	
+		return true;
 	}
 
 	public function getreminder()
@@ -203,7 +203,7 @@ parent::__construct();
 	{
 		$this->db->where('invoice_id',$id);
 		$query=$this->db->get("invoice_reminder");
-  		return $query;	
+  		return $query;
 	}
 	public function add_supplier_category()
 	{
@@ -212,7 +212,7 @@ parent::__construct();
 			'category_description'=>$this->input->post('category_description')
 			);
 		$this->db->insert('supplier_category',$data);
-		return true;	
+		return true;
 	}
 
 	public function add_supplier()
@@ -228,7 +228,7 @@ parent::__construct();
 			'category_id'=>$this->input->post('category_id')
 			);
 		$this->db->insert('supplier_details',$data);
-		return true;	 
+		return true;
 	}
 	public function getsupplier()
 	{
@@ -242,7 +242,7 @@ parent::__construct();
   		return $query->result();
 	}
 	public function do_editsupplier($id)
-	{	
+	{
 		$data=array(
 			'supplier_name'=>$this->input->post('supplier_name'),
 			'supplier_address'=>$this->input->post('supplier_address'),
@@ -278,7 +278,7 @@ parent::__construct();
 	}
 
 	public function add_quote_details($rename)
-	{	
+	{
 		$upload_quote= base_url().'application/quote/'.$rename;
 
 		$data=array(
@@ -288,7 +288,7 @@ parent::__construct();
 			'quote_description'=>$this->input->post('quote_description')
 			);
 		$this->db->insert('quote_details',$data);
-		return true;	
+		return true;
 	}
 	public function editquote($id)
 	{
@@ -307,7 +307,7 @@ parent::__construct();
 			);
 		$this->db->where("quote_id",$id);
 		$this->db->update('quote_details',$data);
-		return true;	
+		return true;
 	}
 
 	public function do_editquote($id)
@@ -320,7 +320,7 @@ parent::__construct();
 			);
 		$this->db->where("quote_id",$id);
 		$this->db->update('quote_details',$data);
-		return true;	
+		return true;
 	}
 	public function getquote()
 	{
@@ -338,7 +338,7 @@ parent::__construct();
   		else
   		{
   			return false;
-  		}		
+  		}
 	}
 
 	public function add_contractor()
@@ -354,7 +354,7 @@ parent::__construct();
 	{
 		$this->db->where("reminder_id",$id);
 		$query=$this->db->get('invoice_reminder');
-		return $query->result();	
+		return $query->result();
 	}
 
 public function do_calendar()
@@ -362,17 +362,17 @@ public function do_calendar()
 	{
          $date=$this->input->post('date9');
        $sdate=date('Y-m-d', strtotime($date));
-        
+
 		$data=array(
 		'title'=>$this->input->post('title'),
-		'description'=>$this->input->post('description'),		
+		'description'=>$this->input->post('description'),
 		'date'=>$sdate
-		
+
 		);
-		
+
 		$this->db->insert('calendar',$data);
 		return true;
-			
+
 	}
 
 
@@ -385,11 +385,11 @@ public function show_calendar()
 
        $startdate=date('Y-m-d', strtotime($start));
         $enddate=date('Y-m-d', strtotime($end));
-    
+
     $query=$this->db->query("select id, title, description, date from calendar where date between '$startdate' and '$enddate'");
-     
+
       return  $query;
-			
+
 	}
 // ........................................................
 public function update_calendar($id)
@@ -405,7 +405,7 @@ public function update_calendar($id)
 		$this->db->where('id', $id);
 		$this->db->update('calendar',$data);
 		return true;
-			
+
 	}
 
 public function delete_event($id)
@@ -420,17 +420,17 @@ public function delete_event($id)
 
 public function update_event($id)
 	{
-		
+
 		$this->db->where(array('id'=> $id));
 		$query=$this->db->query("select * from calendar where id=$id");
 		// echo '<pre />';
 		// print_r($query);
-		// die();  
+		// die();
 		return $query->result();
 	}
 
 
-	
+
 public function automation_mgt_insert()
 	{
 		$data=array(
@@ -438,14 +438,14 @@ public function automation_mgt_insert()
 		'company_of_application'=>$this->input->post('application_company'),
 		'application_cost'=>$this->input->post('paid_cost'),
 		'next_due_date'=>$this->input->post('due_date'),
-		'subscribed'=>$this->input->post('subscription'),		
+		'subscribed'=>$this->input->post('subscription'),
 		'description'=>$this->input->post('description')
-		
+
 		);
-		
+
 		$this->db->insert('software_mgt',$data);
 		return true;
-			
+
 	}
 
 public function automation_mgt_delete($id)
@@ -465,9 +465,9 @@ public function automation_mgt_delete($id)
 		'company_of_application'=>$this->input->post('application_company'),
 		'application_cost'=>$this->input->post('paid_cost'),
 		'next_due_date'=>$this->input->post('due_date'),
-		'subscribed'=>$this->input->post('subscription'),		
+		'subscribed'=>$this->input->post('subscription'),
 		'description'=>$this->input->post('description')
-		
+
 		);
 		$this->db->where('application_id', $id);
 		$this->db->update('software_mgt',$data);
@@ -476,20 +476,20 @@ public function automation_mgt_delete($id)
 
 	public function automation_mgt_update_select($id)
 	{
-		
+
 		//$this->db->where(array('application_id'=> $id));
-		
+
 		$query=$this->db->query("select * from software_mgt where application_id=$id");
-		
+
 		return $query->result();
 	}
 
 
 public function automation_mgt_select()
 	{
-		
+
 		$query=$this->db->query("select * from software_mgt");
-		  
+
 		return $query;
 	}
 

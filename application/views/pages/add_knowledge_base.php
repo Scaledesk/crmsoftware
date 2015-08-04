@@ -25,7 +25,7 @@
                                         </div>
 										<div class="form-group">
 										<label>Description</label>
-                                                <textarea class="form-control" name="knowledge_base_description" id="" placeholder="Description" maxlength="500"  style="margin: 0px -0.171875px 0px 0px; height: 109px; width: 511px;" required=""><?php echo $k[0]->knowledge_base_description; ?></textarea>
+                                                <textarea class="form-control" name="knowledge_base_description" id="" placeholder="Description" maxlength="1000"  style="margin: 0px -0.171875px 0px 0px; height: 109px; width: 511px;" required=""><?php echo $k[0]->knowledge_base_description; ?></textarea>
 										</div>
 									<label>Category</label>
 									<div class="form-group">
@@ -43,7 +43,7 @@
 										<?php if($k!='')
                                         { ?>
                                         <input type="submit" class="btn btn-primary" value="Update">
-                                        <?php } 
+                                        <?php }
                                         else
                                         { ?>
                                             <input type="submit" class="btn btn-primary" value="Submit">

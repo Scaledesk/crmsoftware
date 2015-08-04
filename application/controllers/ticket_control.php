@@ -12,9 +12,9 @@ class Ticket_control extends CI_Controller {
 
     $data['title']='Add Ticket';
     $data['menus'] = $this->menu_models->menus();
-      $this->load->view('templates/header.php',$data);
-      $this->load->view('pages/add_ticket.php');
-      $this->load->view('templates/footer.php');
+    $this->load->view('templates/header.php',$data);
+    $this->load->view('pages/add_ticket.php');
+    $this->load->view('templates/footer.php');
 
 }
 public function do_add_ticket()
