@@ -148,18 +148,33 @@ public function leave_employee_show()
 public function leave_update_employee_select($id)
 {
 
+ 
   $this->load->database();
     $data['title']="Manage Leave";
     $data['show_leave']=$this->Employee_model->update_leave_select($id);
-    $data['menus'] = $this->menu_models->menus();
 
-   //print_r($data['select_emp']);
-   //die();
+   //  print_r($data['show_leave']);
+   // die();
+    //$data['menus'] = $this->menu_models->menus();
+
+   
     //$this->calendar();
    $this->load->view('templates/header.php',$data);
   $this->load->view('pages/leave_update.php',$data);
   $this->load->view('templates/footer.php');
 
 }
+
+public function leave_employee_approve($id)
+{
+  if($this->Employee_model->leave_approve($id))
+  {
+    echo "successful leave Approve ";
+
+    redirect(base_url().'Employee/leave_employee_show');
+  }
+}
+
+
 
 }

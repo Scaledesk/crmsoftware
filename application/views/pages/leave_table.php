@@ -25,13 +25,35 @@
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                
-                                            </tr>
+                                           <?php
+                                           
+
+                                           foreach($show_leave as $row)
+                                            {
+                                             ?>
+                                                        
+                                                <tr>
+                                                    <td><?php echo $row->leave_start_date; ?></td>
+                                                    <td><?php echo $row->leave_end_date; ?></td>
+                                                    
+                                                    <td><?php echo $row->leave_reason; ?></td>
+                                                    
+                                                    <td><a href="<?=(base_url().'Employee/leave_update_employee_select/')?><?php echo $row->leave_id; ?>">Update</a>
+                                                    /<a href="<?=(base_url().'Employee/leave_employee_delete/')?><?php echo $row->leave_id; ?>">Delete</a>
+                                                    
+                                                    <?php if($row->leave_status=='') {?>/<a href="<?=(base_url().'Employee/leave_employee_approve/')?><?php echo $row->leave_id; ?>">Approve</a>
+                                                       <?php }else{
+                                                               ?>
+                                                               Approved
+
+                                                               <?php
+
+
+                                                        } ?>
+                                                    </td>
+                                                </tr>
+                                                <?php } ?>
+
                                             
                                             </tbody>
                                        </table>  

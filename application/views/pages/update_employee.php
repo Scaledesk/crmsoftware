@@ -46,7 +46,7 @@
                                                             
                                                              <div class="form-group col-md-12">
                                                                     <label for="exampleInputPassword2">Gender</label>
-                                                                    <input type="text" class="form-control " name="gender" id="" value="<?php echo $select_emp[0]->gender;?>">
+                                                                    <input type="text" class="form-control " name="gender" id="" value="<?php echo $select_emp[0]->emp_gender;?>">
                                                                 </div>
                                                         </div>
                                                         <div class="col-md-12" style="padding-left: 0px;padding-right: 15px;">

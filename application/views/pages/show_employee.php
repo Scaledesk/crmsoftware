@@ -58,7 +58,7 @@
                                                     <td><?php echo $row->emp_email; ?></td>
                                                     <td><?php echo $row->emp_address; ?></td>
                                                     <td><?php echo $row->emp_joining_date; ?></td>
-                                                    <td><?php echo $row->gender; ?></td>
+                                                    <td><?php echo $row->emp_gender; ?></td>
                                                     <td><?php echo $row->emp_sallery; ?></td>
                                                     <td><a href="<?=(base_url().'Employee/update_employee_select/')?><?php echo $row->emp_id; ?>">Update</a>/<a href="<?=(base_url().'Employee/employee_delete/')?><?php echo $row->emp_id; ?>">Delete</a></td>
                                                 </tr>

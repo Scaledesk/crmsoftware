@@ -17,7 +17,7 @@ public function add_employee()
 'emp_mobile_no'=>$this->input->post('e_mobile'),
 'emp_email'=>$this->input->post('e_email'),
 'emp_address'=>$this->input->post('e_address'),
-'gender'=>$this->input->post('gender'),
+'emp_gender'=>$this->input->post('gender'),
 'emp_joining_date'=>$this->input->post('e_date'),
 'emp_sallery'=>$this->input->post('sallary')
 
@@ -69,7 +69,7 @@ public function update_employee($id)
 'emp_mobile_no'=>$this->input->post('e_mobile'),
 'emp_email'=>$this->input->post('e_email'),
 'emp_address'=>$this->input->post('e_address'),
-'gender'=>$this->input->post('gender'),
+'emp_gender'=>$this->input->post('gender'),
 'emp_joining_date'=>$this->input->post('e_date'),
 'emp_sallery'=>$this->input->post('sallary')
 
@@ -125,12 +125,14 @@ public function delete_leave($id)
 	public function update_leave_select($id)
 	{
 		
+
+
 		$this->db->where("leave_id",$id);
 		$query=$this->db->query("select * from leave_details where leave_id=$id");
-		// echo '<pre />';
-		// print_r($query);
-		// die(); 
-		//print_r($query->result()); 
+		//  echo '<pre />';
+		//  print_r($query->result());
+		//  die(); 
+		// //print_r($query->result()); 
 		//die();
 		return $query->result();
 	}
@@ -155,5 +157,17 @@ $this->db->where(array('leave_id'=> $id));
 $this->db->update('leave_details',$data);
 return true;
 }
+
+public function leave_approve($id)
+	{
+		$approve='1';
+          
+		$data=array('leave_status'=>$approve);
+		$this->db->where("leave_id",$id);
+  		if($this->db->update('leave_details',$data))
+  		{
+  			return true;
+  		}		
+	}
 
 }
