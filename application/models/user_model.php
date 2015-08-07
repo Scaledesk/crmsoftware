@@ -178,4 +178,26 @@ public function changePassword()
     }
   }
 
+  public function getCompanyProfile()
+  {
+    $query=$this->db->get("company_profile");
+    return $query->result();
+  }
+  public function upload_company_logo($logoImg)
+  {
+    $logo='application/companyLogo/'.$logoImg;
+    $data=array(
+      'logo_url'=>$logo
+    );
+    $this->db->insert('company_logo', $data);
+
+    $d=array(
+      'name'=>$this->input->post('company_nmae'),
+      'logo'=>$logo
+    );
+    $this->db->update('company_profile', $d);
+
+    return true;
+  }
+
 }

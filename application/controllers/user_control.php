@@ -145,4 +145,36 @@ public function do_upload_image()
    }
 
  }
+
+ public function upload_company_logo()
+ {
+   $data['menus'] = $this->menu_models->menus();
+   $data['title']='Change Company Logo';
+   $data['c']= $this->User_model->getCompanyProfile();
+   $this->load->view('templates/header.php',$data);
+   $this->load->view('pages/addCompanyLogo.php',$data);
+   $this->load->view('templates/footer.php');
+ }
+ public function do_upload_company_logo()
+ {
+   $config['upload_path'] = APPPATH.'/companyLogo/';
+   $config['allowed_types'] = 'png|jpeg|gif|jpg';
+   $config['max_size'] = '2048000';
+   $this->load->library('upload',$config);
+   $logoImg=time().$_FILES['image']['name'];
+
+    $_FILES['image']['name']=$logoImg;
+
+    if($this->upload->do_upload('image')==true)
+    {
+      if($this->User_model->upload_company_logo($logoImg))
+      {
+        $data['msg']="Logo uploaded";
+        redirect(base_url().'Login_control/login',$data);
+      }
+    }
+    else {
+      echo "upload error";
+    }
+ }
 }
