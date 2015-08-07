@@ -89,4 +89,24 @@ public function delete_user($id)
     redirect(base_url().'User_control/view_user');
   }
 }
+public function changePassword()
+{
+  $data['menus'] = $this->menu_models->menus();
+  $data['title']='Change Your Password';
+  $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/changePassword.php');
+  $this->load->view('templates/footer.php');
+}
+
+public function do_change_password()
+{
+  if($this->User_model->changePassword())
+  {
+    $data['menus'] = $this->menu_models->menus();
+    $data['title']='Change Your Password';
+    $this->load->view('templates/header.php',$data);
+    $this->load->view('pages/changePassword.php');
+    $this->load->view('templates/footer.php');
+  }
+}
 }

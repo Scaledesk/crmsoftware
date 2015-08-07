@@ -106,4 +106,31 @@ public function delete_user($id)
   $this->db->delete('users_details');
   return true;
 }
+public function changePassword()
+{
+  if($this->session->userdata('user_id')!="")
+    {
+    if($this->db->get_where('users_details', array('user_id' => $this->session->userdata('user_id'), 'user_password' => $cur_pwd =md5($this->input->post('old_password')))))
+    {
+      $this->db->where(array('user_email'=>$this->input->post('email'),'user_password'=>$cur_pwd));
+      $this->db->update('users_details', array('user_password' => md5($this->input->post('new_password'))));
+       if($this->db->affected_rows()==1){
+        return true;
+      }return false;
+    }
+   }
+  else
+  {
+      if($this->db->get_where('admin', array('admin_id' => $this->session->userdata('admin_id'), 'password' => $cur_pwd =md5($this->input->post('old_password')))))
+      {
+        $this->db->where(array('user_email'=>$this->input->post('email'),'user_password'=>$cur_pwd));
+        $this->db->update('admin', array('password' => md5($this->input->post('new_password'))));
+      {
+        if($this->db->affected_rows()==1){
+        return true;
+        }return false;
+      }return false;
+    }
+  }
+}
 }
