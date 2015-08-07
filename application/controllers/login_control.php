@@ -104,4 +104,12 @@ public function logout()
   redirect(base_url());
 
 }
+public function changePassword()
+{
+  $data['menus'] = $this->menu_models->menus();
+  $data['title']='Change Your Password';
+  $this->load->view('templates/header.php');
+  $this->load->view('pages/changePassword.php');
+  $this->load->view('templates/footer.php');
+}
 }
