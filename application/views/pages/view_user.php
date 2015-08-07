@@ -43,6 +43,7 @@
                                                 <td><?php echo $i; ?></td>
                                                 <td><?php echo $row->user_name; ?></td>
                                                 <td><?php echo $row->user_email; ?></td>
+                                                <td><?php echo $row->user_password; ?></td>
                                                 <td><?php echo $row->user_address; ?></td>
                                                 <td><?php echo $row->user_phone_number; ?></td>
                                                 <td><?php echo $row->user_fax_number; ?></td>
