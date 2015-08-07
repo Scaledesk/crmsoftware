@@ -57,5 +57,10 @@ function menus() {
 	}
 }
 
+public function getCompanyLogo()
+{
+	return $this->db->get('company_profile')->result();
+
+}
 
 }

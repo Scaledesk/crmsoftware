@@ -161,11 +161,11 @@ public function do_upload_image()
    $config['allowed_types'] = 'png|jpeg|gif|jpg';
    $config['max_size'] = '2048000';
    $this->load->library('upload',$config);
-   $logoImg=time().$_FILES['image']['name'];
+   $logoImg=time().$_FILES['logo']['name'];
 
-    $_FILES['image']['name']=$logoImg;
+    $_FILES['image']['logo']=$logoImg;
 
-    if($this->upload->do_upload('image')==true)
+    if($this->upload->do_upload('logo')==true)
     {
       if($this->User_model->upload_company_logo($logoImg))
       {
