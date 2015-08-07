@@ -133,7 +133,7 @@
                         </a>
                     </div>
                     <div class="logo-box">
-                      
+
                         <a href="#" class="logo-text"><span>Modern</span></a>
                     </div><!-- Logo Box -->
 
@@ -271,6 +271,7 @@
                                          ?>
                                         <li role="presentation"><a href="<?php echo base_url().'User_control/view_user'; ?>"><i class="fa fa-lock"></i>View Employee</a></li>
                                         <li role="presentation"><a href="<?php echo base_url().'User_control/access_permission'; ?>"><i class="fa fa-sign-out m-r-xs"></i>Manage Permission</a></li>
+                                        <li role="presentation"><a href="<?php echo base_url().'User_control/upload_company_logo'; ?>"><i class="fa fa-lock"></i>Upload Company Logo</a></li>
                                         <?php } ?>
                                         <li role="presentation"><a href="<?=(base_url().'Login_control/logout')?>"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                                     </ul>
