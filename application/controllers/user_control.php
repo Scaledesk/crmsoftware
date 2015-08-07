@@ -102,11 +102,47 @@ public function do_change_password()
 {
   if($this->User_model->changePassword())
   {
+    $data['msg']="password changed";
+    redirect(base_url().'Login_control/login',$data);
+    /*
     $data['menus'] = $this->menu_models->menus();
     $data['title']='Change Your Password';
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/changePassword.php');
     $this->load->view('templates/footer.php');
+    */
   }
 }
+public function ChangeImage()
+{
+  $data['menus'] = $this->menu_models->menus();
+  $data['title']='Change Profile Picture';
+  $this->load->view('templates/header.php',$data);
+  $this->load->view('pages/uploadProfilePicture.php');
+  $this->load->view('templates/footer.php');
+}
+
+public function do_upload_image()
+{
+  $config['upload_path'] = APPPATH.'/profile/';
+  $config['allowed_types'] = 'png|jpeg|gif|jpg';
+  $config['max_size'] = '2048000';
+  $this->load->library('upload',$config);
+  $imgName=time().$_FILES['image']['name'];
+
+   $_FILES['image']['name']=$imgName;
+
+   if($this->upload->do_upload('image')==true)
+   {
+     if($this->User_model->ChangeImage($imgName))
+     {
+       $data['msg']="image uploaded";
+       redirect(base_url().'Login_control/login',$data);
+     }
+   }
+   else {
+     echo "upload error";
+   }
+
+ }
 }

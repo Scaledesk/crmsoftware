@@ -20,6 +20,7 @@ public function login($email,$password)
       'admin_id'  => $rows->admin_id,
       'admin_name'  => $rows->admin_name,
       'admin_email'    => $rows->admin_email,
+			'imgName'    => $rows->imgName,
       'logged_in'  => TRUE,
     );
     $this->session->set_userdata($newdata);
@@ -39,6 +40,7 @@ public function login($email,$password)
       'user_id'  => $rows->user_id,
       'user_name'  => $rows->user_name,
       'user_email'    => $rows->user_email,
+			'imgName'    => $rows->imgName,
       'logged_in'  => TRUE,
      );
      $this->session->set_userdata($newdata);

@@ -110,27 +110,72 @@ public function changePassword()
 {
   if($this->session->userdata('user_id')!="")
     {
-    if($this->db->get_where('users_details', array('user_id' => $this->session->userdata('user_id'), 'user_password' => $cur_pwd =md5($this->input->post('old_password')))))
+    if($this->db->get_where('users_details', array('user_id' => $this->session->userdata('user_id'), 'user_password' => $cur_pwd =$this->input->post('old_password'))))
     {
       $this->db->where(array('user_email'=>$this->input->post('email'),'user_password'=>$cur_pwd));
-      $this->db->update('users_details', array('user_password' => md5($this->input->post('new_password'))));
+      $this->db->update('users_details', array('user_password' =>$this->input->post('new_password')));
        if($this->db->affected_rows()==1){
         return true;
-      }return false;
+      }
+      else {
+        return false;
+      }
     }
    }
   else
   {
-      if($this->db->get_where('admin', array('admin_id' => $this->session->userdata('admin_id'), 'password' => $cur_pwd =md5($this->input->post('old_password')))))
+      if($this->db->get_where('admin_details', array('admin_id' => $this->session->userdata('admin_id'), 'admin_password' => $cur_pwd =$this->input->post('old_password'))))
       {
-        $this->db->where(array('user_email'=>$this->input->post('email'),'user_password'=>$cur_pwd));
-        $this->db->update('admin', array('password' => md5($this->input->post('new_password'))));
-      {
+        $this->db->where(array('admin_email'=>$this->input->post('email'),'admin_password'=>$cur_pwd));
+        $this->db->update('admin_details', array('admin_password' =>$this->input->post('new_password')));
         if($this->db->affected_rows()==1){
         return true;
-        }return false;
-      }return false;
+        }
+        else {
+          return false;
+        }
+      }
     }
   }
-}
+
+  public function ChangeImage($imgName)
+  {
+    $imgName='application/profile/'.$imgName;
+    if($this->session->userdata('user_id')!="")
+    {
+      $id=$this->session->userdata('user_id');
+      $data=array(
+        'imgName'=>$imgName
+      );
+      $this->db->where('user_id',$id);
+      $this->db->update('user_details', $data);
+      $this->session->set_userdata($data);
+    //  $this->session->userdata('image')=$imgName;
+
+      $d=array(
+        'profile_image_name'=>$imgName,
+        'user_id'=>$id
+      );
+      $this->db->insert('profile_image', $d);
+
+      return true;
+    }
+    else
+    {
+      $id=$this->session->userdata('admin_id');
+      $data=array(
+        'imgName'=>$imgName
+      );
+      $this->db->where('admin_id',$id);
+      $this->db->update('admin_details', $data);
+      $this->session->set_userdata($data);
+      $d=array(
+        'profile_image_name'=>$imgName,
+        'user_id'=>$id
+      );
+      $this->db->insert('profile_image', $d);
+      return true;
+    }
+  }
+
 }
