@@ -254,7 +254,8 @@
                                         <img class="img-circle avatar" src="<?php echo base_url().$this->session->userdata('imgName'); ?>" width="40" height="40" alt="">
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
-                                        <li role="presentation"><a href="<?php echo base_url().'User_control/changePassword'; ?>"><i class="fa fa-user"></i>Setting</a></li>
+                                      <li role="presentation"><a href="<?php echo base_url().'User_control/settingAccount'; ?>"><i class="fa fa-user"></i>Setting</a></li>
+                                        <!--<li role="presentation"><a href="<?php echo base_url().'User_control/changePassword'; ?>"><i class="fa fa-user"></i>Setting</a></li>-->
                                         <li role="presentation"><a href="<?php echo base_url().'sales_management/calendar';?>"><i class="fa fa-calendar"></i>Calendar</a></li>
                                         <!--<li role="presentation" class="divider"></li>-->
                                         <?php

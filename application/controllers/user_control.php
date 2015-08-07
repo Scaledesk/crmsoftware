@@ -33,6 +33,7 @@ class User_control extends CI_Controller {
  }
  public function view_user()
  {
+   $data['company']=$this->menu_models->getCompanyLogo();
    $data['h']=$this->User_model->view_user();
    $data['title']='user_details';
    $data['menus'] = $this->menu_models->menus();
@@ -42,6 +43,7 @@ class User_control extends CI_Controller {
 }
 public function view_permission()
 {
+  $data['company']=$this->menu_models->getCompanyLogo();
   $data['h']=$this->User_model->view_permission();
   $data['title']='Manage Permission';
   $data['menus'] = $this->menu_models->menus();
@@ -51,6 +53,7 @@ public function view_permission()
 }
 public function access_permission()
 {
+  $data['company']=$this->menu_models->getCompanyLogo();
   $data['h']=$this->User_model->view_user();
   $data['k']=$this->User_model->get_menu();
   $data['menus']=$this->menu_models->menus();
@@ -73,6 +76,7 @@ print_r($this->input->post());
 die;*/
   if($this->User_model->add_permission())
   {
+    $data['company']=$this->menu_models->getCompanyLogo();
    $data['msg']='Permission added to user';
    $data['h']=$this->User_model->view_user();
    $data['k']=$this->User_model->get_menu();
@@ -176,5 +180,16 @@ public function do_upload_image()
     else {
       echo "upload error";
     }
+ }
+
+ public function settingAccount()
+ {
+   $data['menus'] = $this->menu_models->menus();
+   $data['title']='Settings';
+   $data['company']=$this->menu_models->getCompanyLogo();
+   $data['c']= $this->User_model->getCompanyProfile();
+   $this->load->view('templates/header.php',$data);
+   $this->load->view('pages/setting.php',$data);
+   $this->load->view('templates/footer.php');
  }
 }

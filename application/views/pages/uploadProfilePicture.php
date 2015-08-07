@@ -22,7 +22,7 @@
                 </div><!-- Main Wrapper -->
             </div><!-- Page Inner -->
         </main><!-- Page Content -->
-<<script type="text/javascript">
+<script type="text/javascript">
 
 function readUrl()
 {
