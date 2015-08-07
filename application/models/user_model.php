@@ -185,14 +185,14 @@ public function changePassword()
   }
   public function upload_company_logo($logoImg)
   {
-    $logo='application/companyLogo/'.$logoImg;
+    $logo='application/companylogo/'.$logoImg;
     $data=array(
       'logo_url'=>$logo
     );
     $this->db->insert('company_logo', $data);
 
     $d=array(
-      'name'=>$this->input->post('company_nmae'),
+      'name'=>$this->input->post('company_name'),
       'logo'=>$logo
     );
     $this->db->update('company_profile', $d);

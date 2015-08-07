@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-
         <!-- Title -->
         <title><?php error_reporting(0);
-                echo $title; ?>
+                echo $title;
+
+                 ?>
         </title>
 
         <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -116,14 +117,6 @@
                 </form>
             </div>
         </nav>
-        <form class="search-form" action="#" method="GET">
-            <div class="input-group">
-                <input type="text" name="search" class="form-control search-input" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i class="fa fa-times"></i></button>
-                </span>
-            </div><!-- Input Group -->
-        </form><!-- Search Form -->
         <main class="page-content content-wrap">
             <div class="navbar">
                 <div class="navbar-inner container">
@@ -133,14 +126,12 @@
                         </a>
                     </div>
                     <div class="logo-box">
-
-                        <a href="#" class="logo-text"><span>Modern</span></a>
+                        <a href="#" class="logo-text"><span><img class="img-circle avatar" src="<?php echo base_url().$company[0]->logo; ?>" height="50px" width="80px" /> <?php echo $company[0]->name; ?> </span></a>
                     </div><!-- Logo Box -->
 
                     <div class="topmenu-outer">
                         <div class="top-menu">
                             <ul class="nav navbar-nav navbar-left">
-
 
                                 <li>
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"></a>

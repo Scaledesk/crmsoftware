@@ -12,11 +12,9 @@
                                    </div>
 
                                     <div class="form-group">
-                                        <input type="file" class="form-control" name="logo" id="image" onchange="readUrl()" placeholder="profile picture" required="">
+                                        <input type="file" class="form-control" name="logo" placeholder="profile picture" required="">
                                     </div>
-                                    <div class="form-group">
-                                      <img src="" id="img_id" height="100px" width="100px"/>
-                                    </div>
+
                                     <button type="submit" class="btn btn-primary btn-block">Upload</button>
 
                                 </form>

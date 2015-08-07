@@ -157,13 +157,13 @@ public function do_upload_image()
  }
  public function do_upload_company_logo()
  {
-   $config['upload_path'] = APPPATH.'/companyLogo/';
+   $config['upload_path'] = APPPATH.'/companylogo/';
    $config['allowed_types'] = 'png|jpeg|gif|jpg';
    $config['max_size'] = '2048000';
    $this->load->library('upload',$config);
    $logoImg=time().$_FILES['logo']['name'];
 
-    $_FILES['image']['logo']=$logoImg;
+    $_FILES['logo']['name']=$logoImg;
 
     if($this->upload->do_upload('logo')==true)
     {
