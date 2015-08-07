@@ -133,6 +133,7 @@
                         </a>
                     </div>
                     <div class="logo-box">
+                       <img src="" height="50px" alt="" />
                         <a href="#" class="logo-text"><span>Modern</span></a>
                     </div><!-- Logo Box -->
                     <div class="search-button">
@@ -264,7 +265,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
                                         <span class="user-name"><?php if($this->session->userdata('user_name')!=""){echo $this->session->userdata('user_name');}else{echo $this->session->userdata('admin_name');} ?><i class="fa fa-angle-down"></i></span>
-                                        <img class="img-circle avatar" src="assets\images\avatar1.png" width="40" height="40" alt="">
+                                        <img class="img-circle avatar" src="<?php echo base_url().$this->session->userdata('imgName'); ?>" width="40" height="40" alt="">
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
                                         <li role="presentation"><a href="<?php echo base_url().'User_control/changePassword'; ?>"><i class="fa fa-user"></i>Setting</a></li>

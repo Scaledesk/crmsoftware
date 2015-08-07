@@ -16,10 +16,16 @@
                                         <input type="password" class="form-control" name="new_password" placeholder="New Password" required="">
                                     </div>
                                     <div class="form-group">
-                                    </div>
-                                        <input type="password" class="form-control" name="confirm_new_password" placeholder="Confirm Password" required="">
-                                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
 
+                                        <input type="password" class="form-control" name="confirm_new_password" placeholder="Confirm Password" required="">
+                                    </div>
+                                        <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                  </div>
+                                  <div class="form-group">
+
+                                      <a href="<?php echo base_url().'User_control/ChangeImage'; ?>">Change Profile Picture</a>
+                                  </div>
                                 </form>
 
                             </div>
