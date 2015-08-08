@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <div class="row mailbox-header">
                 <div class="col-md-2">
-                    <a href="inbox.html" class="btn btn-success btn-block">Back to Inbox</a>
+                    <a href="<?php echo base_url().'Message_control/inbox' ?>" class="btn btn-success btn-block">Back to Inbox</a>
                 </div>
                 <div class="col-md-6">
                     <h2>Compose</h2>
@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <label for="to" class="col-sm-2 control-label">To</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" name="recipient" id="recipient">
+                                    <select class="form-control" name="recipients" id="recipient">
                                       <?php
                                       foreach($h->result() as $row){
                                        ?>

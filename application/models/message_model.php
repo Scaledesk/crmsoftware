@@ -3,11 +3,10 @@ class Message_model extends CI_Model {
 public function __construct()
 {
 parent::__construct();
-	$this->load->library('session');
-	$this->load->database();
+$this->load->library('session');
+$this->load->database();
 }
-
-public function send_new_message()
+public function send_message()
 {
   if($this->session->userdata('user_id')!=''){
    $sender_id=$this->session->userdata('user_id');
@@ -15,20 +14,45 @@ public function send_new_message()
  else{
   $sender_id=$this->session->userdata('admin_id');
  }
-$reciever_id=$this->input->post('recipients');
-$title=$this->input->post('subject');
-$body=$this->input->post('body');
+
 $status=0;
+$time=date('Y-m-d H:i:s',time());
 $data=array(
-  'reciever_id'=>$reciever_id,
+  'reciever_id'=>$this->input->post('recipients'),
   'sender_id'=>$sender_id,
-  'message_title'=>$title,
-  'message_body'=>$body,
-  'message_status'=>$status
-)
+  'message_title'=>$this->input->post('subject'),
+  'message_body'=>$this->input->post('body'),
+  'message_status'=>$status,
+  'message_time'=>$time
+);
 $this->db->insert('message_details',$data);
 return true;
 }
 
+public function getMessage()
+{
+  if($this->session->userdata('user_id')!=''){
+   $id=$this->session->userdata('user_id');
+ }
+ else{
+  $id=$this->session->userdata('admin_id');
+ }
+ $this->db->where('reciever_id',$id);
+ $query=$this->db->get('message_details');
+ return $query;
+}
+
+public function getSentMessage()
+{
+  if($this->session->userdata('user_id')!=''){
+   $id=$this->session->userdata('user_id');
+ }
+ else{
+  $id=$this->session->userdata('admin_id');
+ }
+ $this->db->where('sender_id',$id);
+ $query=$this->db->get('message_details');
+ return $query;
+}
 
 }

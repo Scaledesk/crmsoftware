@@ -148,7 +148,7 @@ public function changePassword()
         'imgName'=>$imgName
       );
       $this->db->where('user_id',$id);
-      $this->db->update('user_details', $data);
+      $this->db->update('users_details', $data);
       $this->session->set_userdata($data);
     //  $this->session->userdata('image')=$imgName;
 
@@ -199,5 +199,7 @@ public function changePassword()
 
     return true;
   }
+
+
 
 }
