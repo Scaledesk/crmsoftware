@@ -4,7 +4,7 @@
 
 define('USER_TABLE_TABLENAME', 'users_details u');
 define('USER_TABLE_ID', 'u.user_id');
-define('USER_TABLE_USERNAME', 'u.user_name');
+define('USER_TABLE_USERNAME', 'u.user_name as user_name');
 
 // message statuses
 define('MSG_STATUS_UNREAD', 0);
