@@ -13,7 +13,6 @@ class Message_control extends CI_Controller {
   $this->load->helper(array('form','url'));
  }
       public function compose_msg(){
-
           $this->load->view("compose");
        }
        public function send_msg(){

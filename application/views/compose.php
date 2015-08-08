@@ -2,7 +2,7 @@
       <head>Compose Message</head>
       <body>
             <?php
-            echo form_open(base_url()."Send_message/send_msg/");
+            echo form_open(base_url()."Message_control/send_msg");
             ?>
                   <lable for="sender">From</label><input type="text" name="sender" id="sender"/><br/>
                   <lable for="recipient">to</label><input type="text" name="recipient" id="recipient"/><br/>

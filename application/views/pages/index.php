@@ -5,13 +5,15 @@
                         <li><a href="index.html">Home</a></li>
                         <li class="active">Dashboard</li>
                     </ol>
-                    
+
                 </div>
                 <div class="page-title">
                     <div class="container">
                         <h3>Dashboard</h3>
                     </div>
+
                 </div>
+                <a href="<?php echo base_url().'Message_control/compose_msg';?>"> send messege</a>
                 <div id="main-wrapper" class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
