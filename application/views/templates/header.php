@@ -131,7 +131,7 @@
                                         <li class="dropdown-menu-list slimscroll messages">
                                             <ul class="list-unstyled">
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="<?php echo base_url().'Message_control/inbox'; ?>">
                                                         <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets\images\avatar2.png" alt=""></div>
                                                         <p class="msg-name">Sandra Smith</p>
                                                         <p class="msg-text">Hey ! I'm working on your project</p>
