@@ -9,6 +9,7 @@ class Message_control extends CI_Controller {
   $this->load->model('User_model');
   $this->load->model('Message_model');
   $this->load->library('session');
+  $this->load->library('pagination');
   //$this->load->library('mahana_messaging');
 	//$msg = $this->mahana_messaging->get_message($msg_id, $sender_id);
   $this->load->helper(array('form','url'));
@@ -38,11 +39,23 @@ class Message_control extends CI_Controller {
         }
          public function inbox()
          {
+
           $data['title']='Inbox';
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
-          $data['m']=$this->Message_model->getMessage();
-          //$data['count']=mysql_num_rows($data['m']);
+          $data['count']=$this->Message_model->count_message();
+          $config['base_url'] = base_url().'Message_control/inbox';
+          $config['total_rows'] = $data['count'];
+          $config['enable_query_strings']=true;
+          $config['per_page'] = 3;
+          $config['num_links'] = 2;
+          //$config['display_pages'] = FALSE;
+          $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+          $this->pagination->initialize($config);
+          $data['m']=$this->Message_model->getMessage($config["per_page"],$page);
+          $str_links = $this->pagination->create_links();
+          $data["links"] = explode('&nbsp;',$str_links );
+
           $this->load->view('templates/header.php',$data);
           $this->load->view('pages/inbox.php',$data);
           $this->load->view('templates/footer.php');

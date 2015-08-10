@@ -29,7 +29,7 @@ $this->db->insert('message_details',$data);
 return true;
 }
 
-public function getMessage()
+public function getMessage($limit,$start)
 {
   if($this->session->userdata('user_id')!=''){
    $id=$this->session->userdata('user_id');
@@ -37,12 +37,15 @@ public function getMessage()
  else{
   $id=$this->session->userdata('admin_id');
  }
+// $this->db->where('message_id',$p);
+ //$this->db->limit($limit);
+ $this->db->limit($limit, $start);
  $this->db->where('reciever_id',$id);
  $query=$this->db->get('message_details');
  return $query;
 }
 
-public function getSentMessage()
+public function getSentMessage($limit,$p)
 {
   if($this->session->userdata('user_id')!=''){
    $id=$this->session->userdata('user_id');
@@ -50,7 +53,11 @@ public function getSentMessage()
  else{
   $id=$this->session->userdata('admin_id');
  }
+
+
+ $this->db->where('message_id',$p);
  $this->db->where('sender_id',$id);
+ $this->db->limit($limit);
  $query=$this->db->get('message_details');
  return $query;
 }
@@ -64,6 +71,18 @@ public function delMessage()
   //die;
 //  if(mysql_affected_rows($query))
   return true;
+
+}
+public function count_message()
+{
+  if($this->session->userdata('user_id')!=''){
+   $id=$this->session->userdata('user_id');
+ }
+ else{
+  $id=$this->session->userdata('admin_id');
+ }
+  $this->db->where('reciever_id',$id);
+  return $this->db->count_all("message_details");
 
 }
 
