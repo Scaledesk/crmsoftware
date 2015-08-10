@@ -43,35 +43,57 @@ class Message_control extends CI_Controller {
           $data['title']='Inbox';
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
-          $data['count']=$this->Message_model->count_message();
+          $data['count']=$this->Message_model->getMessageCount();
+          $data['countSentbox']=$this->Message_model->getSentMessageCount();
           $config['base_url'] = base_url().'Message_control/inbox';
           $config['total_rows'] = $data['count'];
           $config['enable_query_strings']=true;
           $config['per_page'] = 3;
           $config['num_links'] = 2;
-          //$config['display_pages'] = FALSE;
           $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
           $this->pagination->initialize($config);
           $data['m']=$this->Message_model->getMessage($config["per_page"],$page);
           $str_links = $this->pagination->create_links();
           $data["links"] = explode('&nbsp;',$str_links );
-
           $this->load->view('templates/header.php',$data);
           $this->load->view('pages/inbox.php',$data);
           $this->load->view('templates/footer.php');
         }
         public function sentbox()
         {
-          $data['title']='sentbox';
+
+          $data['title']='Inbox';
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
-          $data['s']=$this->Message_model->getSentMessage();
-          //$data['count']=mysql_num_rows($data['s']);
+          $data['count']=$this->Message_model->getSentMessageCount();
+            $data['countInbox']=$this->Message_model->getMessageCount();
+          $data['countSentbox']=$this->Message_model->getSentMessageCount();
+          $config['base_url'] = base_url().'Message_control/sentbox';
+          $config['total_rows'] = $data['count'];
+          $config['enable_query_strings']=true;
+          $config['per_page'] = 3;
+          $config['num_links'] = 2;
+          $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+          $this->pagination->initialize($config);
+          $data['s']=$this->Message_model->getSentMessage($config["per_page"],$page);
+          $str_links = $this->pagination->create_links();
+          $data["links"] = explode('&nbsp;',$str_links );
           $this->load->view('templates/header.php',$data);
           $this->load->view('pages/sentbox.php',$data);
           $this->load->view('templates/footer.php');
-        }
 
+          /*
+          $data['title']='sentbox';
+          $data['menus'] = $this->menu_models->menus();
+          $data['company']=$this->menu_models->getCompanyLogo();
+          $data['countInbox']=$this->Message_model->getMessageCount();
+          $data['s']=$this->Message_model->getSentMessage();
+          $data['count']=$data['s']->num_rows();
+          $this->load->view('templates/header.php',$data);
+          $this->load->view('pages/sentbox.php',$data);
+          $this->load->view('templates/footer.php');
+          */
+        }
 
   /*
         public function send_new_message()

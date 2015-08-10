@@ -23,8 +23,8 @@
 
                         <div class="col-md-2">
                             <ul class="list-unstyled mailbox-nav">
-                                <li class="active"><a href="<?php echo base_url().'Message_control/inbox'; ?>"><i class="fa fa-inbox"></i>Inbox <span class="badge badge-success pull-right">4</span></a></li>
-                                <li><a href="<?php echo base_url().'Message_control/sentbox'; ?>"><i class="fa fa-sign-out"></i>Sent</a></li>
+                                <li class="active"><a href="<?php echo base_url().'Message_control/inbox'; ?>"><i class="fa fa-inbox"></i>Inbox <span class="badge badge-success pull-right"><?php echo $countInbox; ?></span></a></li>
+                                <li><a href="<?php echo base_url().'Message_control/sentbox'; ?>"><i class="fa fa-sign-out"></i>Sent <span class="badge badge-success pull-right"><?php echo $count; ?></span></a></li>
                             </ul>
                         </div>
                         <div class="col-md-10">
@@ -43,21 +43,18 @@
                                         </div> </a>
                                         </th>
                                         <th class="text-right" colspan="5">
-                                            <span class="text-muted m-r-sm">Showing 20 of 346 </span>
+                                            <!--<span class="text-muted m-r-sm">Showing 20 of 346 </span>
                                             <a class="btn btn-default m-r-sm" data-toggle="tooltip" data-placement="top" title="Refresh"><i class="fa fa-refresh"></i></a>
-                                            <div class="btn-group m-r-sm mail-hidden-options">
-                                                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
-                                                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Report Spam"><i class="fa fa-exclamation-circle"></i></a>
-                                                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Mark as Important"><i class="fa fa-star"></i></a>
-                                                <a class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Mark as Read"><i class="fa fa-pencil"></i></a>
-                                            </div>
-                                            <div class="btn-group m-r-sm mail-hidden-options">
-
-                                            </div>
                                             <div class="btn-group">
                                                 <a class="btn btn-default"><i class="fa fa-angle-left"></i></a>
                                                 <a class="btn btn-default"><i class="fa fa-angle-right"></i></a>
-                                            </div>
+                                            </div>-->
+
+                                            <?php foreach ($links as $link) {
+                                              echo "<li>". $link."</li>";
+                                              } ?>
+
+
                                         </th>
                                     </tr>
                                 </thead>

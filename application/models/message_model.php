@@ -45,7 +45,7 @@ public function getMessage($limit,$start)
  return $query;
 }
 
-public function getSentMessage($limit,$p)
+public function getSentMessage($limit,$start)
 {
   if($this->session->userdata('user_id')!=''){
    $id=$this->session->userdata('user_id');
@@ -55,9 +55,9 @@ public function getSentMessage($limit,$p)
  }
 
 
- $this->db->where('message_id',$p);
+ //$this->db->where('message_id',$p);
+ $this->db->limit($limit, $start);
  $this->db->where('sender_id',$id);
- $this->db->limit($limit);
  $query=$this->db->get('message_details');
  return $query;
 }
@@ -73,7 +73,7 @@ public function delMessage()
   return true;
 
 }
-public function count_message()
+public function getMessageCount()
 {
   if($this->session->userdata('user_id')!=''){
    $id=$this->session->userdata('user_id');
@@ -82,7 +82,22 @@ public function count_message()
   $id=$this->session->userdata('admin_id');
  }
   $this->db->where('reciever_id',$id);
-  return $this->db->count_all("message_details");
+  $query = $this->db->get("message_details");
+  return $query->num_rows();
+
+
+}
+public function getSentMessageCount()
+{
+  if($this->session->userdata('user_id')!=''){
+   $id=$this->session->userdata('user_id');
+ }
+ else{
+  $id=$this->session->userdata('admin_id');
+ }
+  $this->db->where('sender_id',$id);
+  $query = $this->db->get("message_details");
+  return $query->num_rows();
 
 }
 

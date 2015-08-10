@@ -26,7 +26,7 @@
                         <div class="col-md-2">
                             <ul class="list-unstyled mailbox-nav">
                                 <li class="active"><a href="<?php echo base_url().'Message_control/inbox'; ?>"><i class="fa fa-inbox"></i>Inbox <span class="badge badge-success pull-right"><?php echo $count; ?></span></a></li>
-                                <li><a href="<?php echo base_url().'Message_control/sentbox'; ?>"><i class="fa fa-sign-out"></i>Sent</a></li>
+                                <li><a href="<?php echo base_url().'Message_control/sentbox'; ?>"><i class="fa fa-sign-out"></i>Sent <span class="badge badge-success pull-right"><?php echo $countSentbox; ?></span></a></li>
                             </ul>
                         </div>
                         <div class="col-md-10">
@@ -45,6 +45,7 @@
                                         </div> </a>
                                         </th>
                                         <th class="text-right" colspan="5">
+
                                           <?php foreach ($links as $link) {
                                             echo "<li>". $link."</li>";
                                             } ?>
