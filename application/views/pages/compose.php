@@ -9,22 +9,15 @@
                     <h2>Compose</h2>
                 </div>
                 <div class="col-md-4">
-                    <div class="compose-options">
-                        <div class="pull-right">
-                            <a href="inbox.html" class="btn btn-default"><i class="fa fa-file-text-o m-r-xs"></i>Draft</a>
-                            <a href="inbox.html" class="btn btn-danger"><i class="fa fa-trash m-r-xs"></i>Discard</a>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-2">
             <ul class="list-unstyled mailbox-nav">
-                <li><a href="inbox.html"><i class="fa fa-inbox"></i>Inbox <span class="badge badge-success pull-right">4</span></a></li>
-                <li><a href="#"><i class="fa fa-sign-out"></i>Sent</a></li>
-                <li><a href="#"><i class="fa fa-file-text-o"></i>Draft</a></li>
-                <li><a href="#"><i class="fa fa-exclamation-circle"></i>Spam</a></li>
-                <li><a href="#"><i class="fa fa-trash"></i>Trash</a></li>
+                <li><a href="<?php echo base_url().'Message_control/inbox'; ?>"><i class="fa fa-inbox"></i>Inbox <span class="badge badge-success pull-right">4</span></a></li>
+                <li><a href="<?php echo base_url().'Message_control/sentbox'; ?>"><i class="fa fa-sign-out"></i>Sent</a></li>
             </ul>
         </div>
         <div class="col-md-10">

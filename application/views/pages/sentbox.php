@@ -30,6 +30,7 @@
                         <div class="col-md-10">
                             <div class="panel panel-white">
                             <div class="panel-body mailbox-content">
+                              <form name="form1" id="form1" method="post">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -37,8 +38,9 @@
                                             <span><input type="checkbox" class="check-mail-all"></span>
                                         </th>
                                         <th colspan="1" class="hidden-xs">
-                                          <div class="fa-item col-md-3 col-sm-6"><i class="fa fa-trash"></i>
-                                        </div>
+
+                                          <a href="#" onclick="delmessage()"><div class="fa-item col-md-3 col-sm-8"><i class="fa fa-trash"></i>
+                                        </div> </a>
                                         </th>
                                         <th class="text-right" colspan="5">
                                             <span class="text-muted m-r-sm">Showing 20 of 346 </span>
@@ -64,10 +66,10 @@
                                   <?php foreach ($s->result() as $row) { ?>
                                     <tr class="unread">
                                         <td class="hidden-xs">
-                                            <span><input type="checkbox" class="checkbox-mail"></span>
+                                            <span><input type="checkbox" id="chk[]" name="chk[]" value="<?php echo $row->message_id; ?>" class="checkbox-mail"></span>
                                         </td>
                                         <td class="hidden-xs">
-                                            <i class="fa fa-star icon-state-warning"></i>
+
                                         </td>
                                         <td class="hidden-xs">
                                             <?php echo $row->reciever_id; echo $row->message_title; ?>
@@ -87,8 +89,37 @@
 
                                 </tbody>
                             </table>
+                            </form>
                             </div>
                             </div>
                         </div>
                     </div>
                 </div>
+<script>
+function delmessage()
+{
+   var l=document.form1.elements.length;
+   var ele=document.form1.elements;
+   var f=0;
+   for(i=0;i<l;i++)
+   {
+     if(ele[i].type=="checkbox" && ele[i].name=="chk[]" && ele[i].checked==true)
+	 f=1;
+   }
+   if(f==0)
+   {
+     alert("Please Select Any One Record.!");
+	 return false;
+   }
+   else
+   {
+     if(confirm("Do You want to delete.!"))
+	 {
+	   //document.form1.act.value="delMultiple";
+	   document.form1.action="<?php echo base_url().'Message_control/deleteMessage'; ?>";
+	   document.form1.submit();
+	 }
+   }
+
+}
+</script>
