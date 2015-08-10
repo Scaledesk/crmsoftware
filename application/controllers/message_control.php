@@ -84,4 +84,19 @@ class Message_control extends CI_Controller {
         return true;
         }
 */
+public function deleteMessage($checkbox)
+{
+  if($this->Message_model->delMessage())
+  {
+    $data['title']='sentbox';
+    $data['menus'] = $this->menu_models->menus();
+    $data['company']=$this->menu_models->getCompanyLogo();
+    $data['s']=$this->Message_model->getSentMessage();
+    //$data['count']=mysql_num_rows($data['s']);
+    $this->load->view('templates/header.php',$data);
+    $this->load->view('pages/sentbox.php',$data);
+    $this->load->view('templates/footer.php');
+  }
+}
+
 }

@@ -54,5 +54,17 @@ public function getSentMessage()
  $query=$this->db->get('message_details');
  return $query;
 }
+public function delMessage()
+{
+  $message=implode(',',$this->input->post('chk'));
+ $arr=explode(',',$message);
+  foreach ($arr as $k => $v) {
+    $query=$this->db->query("delete from message_details where message_id='$v'");
+  }
+  //die;
+//  if(mysql_affected_rows($query))
+  return true;
+
+}
 
 }
