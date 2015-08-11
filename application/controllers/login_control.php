@@ -23,8 +23,8 @@ class Login_control extends CI_Controller {
    else if($this->session->userdata('user_name')!="")
    {
      $data['menus'] = $this->menu_models->menus();
-     $data['title']='Welcome';
      $data['company']=$this->menu_models->getCompanyLogo();
+     $data['title']='Welcome';
      $this->load->view('templates/header.php',$data);
      $this->load->view('pages/home.php');
      $this->load->view('templates/footer.php');
@@ -41,8 +41,8 @@ class Login_control extends CI_Controller {
  if($this->session->userdata('admin_name')!="")
  {
    $data['menus'] = $this->menu_models->menus();
-   $data['title'] = "Welcome Admin";
    $data['company']=$this->menu_models->getCompanyLogo();
+   $data['title'] = "Welcome Admin";
    $this->load->view('templates/header.php',$data);
    $this->load->view('pages/index.php');
    $this->load->view('templates/footer.php');
@@ -79,8 +79,7 @@ public function welcome()
   $data['title']= 'Welcome';
   if($this->session->userdata('admin_name')!="")
   {
-    $menus = $this->menu_models->menus();
-    $data = array('menus' => $menus);
+    $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/index.php');
