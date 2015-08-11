@@ -38,12 +38,12 @@
                                                                     <textarea class="form-control" placeholder="Enter the Address" name="address" required="" ></textarea>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label for="exampleInputPassword1">Phone Number one</label>
-                                                                    <input type="text" class="form-control" name="phone1" id="exampleInputPassword1" placeholder="Phone Number one" required="">
+                                                                    <label for="phone1">Phone Number one</label>
+                                                                    <input type="text" class="form-control" name="phone1" id="phone1" placeholder="Phone Number one" required oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
-                                                                    <label for="exampleInputPassword2">Phone Number two</label>
-                                                                    <input type="text" class="form-control" name="phone2" id="exampleInputPassword2" placeholder="Phone Number two" required="">
+                                                                    <label for="phone2">Phone Number two</label>
+                                                                    <input type="text" class="form-control" name="phone2" id="phone2" placeholder="Phone Number two" required oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
                                                                 </div>
                                                             </div>
                                                         </div>
