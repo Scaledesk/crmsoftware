@@ -12,6 +12,7 @@ class Product_control extends CI_Controller {
   public function add_product()
   {
        $data['menus'] = $this->menu_models->menus();
+       $data['company']=$this->menu_models->getCompanyLogo();
         $data['title']='Add Product Details';
         $this->load->view('templates/header.php',$data);
         $this->load->view('pages/add_product.php');
@@ -24,6 +25,7 @@ class Product_control extends CI_Controller {
       {
         $data['msg']="Product Record Added";
         $data['menus'] = $this->menu_models->menus();
+        $data['company']=$this->menu_models->getCompanyLogo();
         $this->load->view('templates/header.php',$data);
         $this->load->view('pages/add_product.php',$data);
         $this->load->view('templates/footer.php');
@@ -34,6 +36,7 @@ class Product_control extends CI_Controller {
     public function view_product()
     {
         $data['menus'] = $this->menu_models->menus();
+        $data['company']=$this->menu_models->getCompanyLogo();
         $data['title']='Product Details';
         $data['h']=$this->Product_model->view_product_details();
         $this->load->view('templates/header.php',$data);
@@ -47,6 +50,7 @@ class Product_control extends CI_Controller {
     $data['title']='Edit Product Details';
     $data['h']=$this->Product_model->editproduct($id);
     $data['menus'] = $this->menu_models->menus();
+    $data['company']=$this->menu_models->getCompanyLogo();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/add_product.php',$data);
     $this->load->view('templates/footer.php');
@@ -77,6 +81,7 @@ class Product_control extends CI_Controller {
   public function add_progress()
   {
        $data['menus'] = $this->menu_models->menus();
+       $data['company']=$this->menu_models->getCompanyLogo();
         $data['title']='Add Progress Details';
         $data['k']=$this->Product_model->view_product_details();
         $this->load->view('templates/header.php',$data);
@@ -90,6 +95,7 @@ class Product_control extends CI_Controller {
       {
         $data['msg']="Product Progress Record Added";
         $data['menus'] = $this->menu_models->menus();
+        $data['company']=$this->menu_models->getCompanyLogo();
         $data['k']=$this->Product_model->view_product_details();
         $this->load->view('templates/header.php',$data);
         $this->load->view('pages/add_progress.php',$data);
@@ -101,6 +107,7 @@ class Product_control extends CI_Controller {
     public function view_progress()
     {
         $data['menus'] = $this->menu_models->menus();
+        $data['company']=$this->menu_models->getCompanyLogo();
         $data['title']='Product Details';
         $data['h']=$this->Product_model->view_progress_details();
         $this->load->view('templates/header.php',$data);
@@ -111,6 +118,7 @@ class Product_control extends CI_Controller {
     public function add_milesstone()
     {
          $data['menus'] = $this->menu_models->menus();
+         $data['company']=$this->menu_models->getCompanyLogo();
           $data['title']='Add Milesstone Details';
           $data['k']=$this->Product_model->view_product_details();
           $this->load->view('templates/header.php',$data);
@@ -124,6 +132,7 @@ class Product_control extends CI_Controller {
         {
           $data['msg']="Product Milesstone Record Added";
           $data['menus'] = $this->menu_models->menus();
+          $data['company']=$this->menu_models->getCompanyLogo();
             $data['k']=$this->Product_model->view_product_details();
           $this->load->view('templates/header.php',$data);
           $this->load->view('pages/add_milesstone.php',$data);
@@ -135,6 +144,7 @@ class Product_control extends CI_Controller {
       public function view_milesstone()
       {
           $data['menus'] = $this->menu_models->menus();
+          $data['company']=$this->menu_models->getCompanyLogo();
           $data['title']='Product Milesstone Details';
           $data['h']=$this->Product_model->view_milesstone_details();
           $this->load->view('templates/header.php',$data);
@@ -148,6 +158,7 @@ class Product_control extends CI_Controller {
       $data['title']='Edit Milesstone Details';
       $data['h']=$this->Product_model->editmilesstone($id);
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $data['k']=$this->Product_model->view_product_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_milesstone.php',$data);
@@ -186,6 +197,7 @@ class Product_control extends CI_Controller {
     public function add_document()
     {
          $data['menus'] = $this->menu_models->menus();
+         $data['company']=$this->menu_models->getCompanyLogo();
           $data['title']='Add Product Document Details';
           $data['k']=$this->document_model->getcategory();
           $data['h']=$this->Product_model->view_product_details();
@@ -217,6 +229,7 @@ class Product_control extends CI_Controller {
              if($this->Product_model->add_document($rename))
                {
                  $data['menus'] = $this->menu_models->menus();
+                 $data['company']=$this->menu_models->getCompanyLogo();
                   $data['title']='Add Product Document Details';
                   $data['msg']="Document Details Saved";
                   $data['k']=$this->document_model->getcategory();
@@ -231,6 +244,7 @@ class Product_control extends CI_Controller {
     public function view_document()
     {
         $data['menus'] = $this->menu_models->menus();
+        $data['company']=$this->menu_models->getCompanyLogo();
         $data['title']='Product Document Details';
         $data['h']=$this->Product_model->view_document_details();
         $this->load->view('templates/header.php',$data);
@@ -241,6 +255,7 @@ class Product_control extends CI_Controller {
     public function editdocument($id)
   {
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $data['title']='Update Product Document Details';
       $data['msg']="Update Document Details";
       $data['m']=$this->Product_model->editdocument($id);

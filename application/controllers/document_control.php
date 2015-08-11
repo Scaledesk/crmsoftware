@@ -14,6 +14,7 @@ class Document_control extends CI_Controller {
 
       $data['title']='Add Document';
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $data['k']=$this->document_model->getcategory();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_document.php',$data);
@@ -44,6 +45,7 @@ public function do_add_document()
          {
            $data['msg']="Document Added";
            $data['menus'] = $this->menu_models->menus();
+           $data['company']=$this->menu_models->getCompanyLogo();
            $data['k']=$this->document_model->getcategory();
            $this->load->view('templates/header.php',$data);
            $this->load->view('pages/add_document.php',$data);
@@ -59,6 +61,7 @@ public function do_add_document()
   {
       $data['title']='View Document Details';
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $data['h']=$this->document_model->view_document_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_document.php',$data);
@@ -71,6 +74,7 @@ public function do_add_document()
   $this->load->database();
   $data['title']='Edit document Details';
   $data['menus'] = $this->menu_models->menus();
+  $data['company']=$this->menu_models->getCompanyLogo();
   $data['k']=$this->document_model->getcategory();
   $data['h']=$this->document_model->editdocument($id);
   $this->load->view('templates/header.php',$data);

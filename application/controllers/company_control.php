@@ -13,6 +13,7 @@ class Company_control extends CI_Controller {
   public function add_company()
   {
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $data['title']='Add Company Details';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_company.php');
@@ -23,7 +24,9 @@ class Company_control extends CI_Controller {
   {
     if($this->Company_model->add_company())
     {
+      $data['title']='Add Company Details';
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $data['msg']="Company Record Added";
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_company.php',$data);
@@ -35,6 +38,7 @@ class Company_control extends CI_Controller {
   {
       $data['title']='View Company Details';
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $data['h']=$this->Company_model->view_company_details();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_company.php',$data);
@@ -46,6 +50,7 @@ class Company_control extends CI_Controller {
 
   $this->load->database();
   $data['menus'] = $this->menu_models->menus();
+  $data['company']=$this->menu_models->getCompanyLogo();
   $data['title']='Edit Company Details';
   $data['h']=$this->Company_model->editcompany($id);
   $this->load->view('templates/header.php',$data);

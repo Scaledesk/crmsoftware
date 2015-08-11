@@ -13,6 +13,7 @@ class Contact_control extends CI_Controller {
 public function add_contact()
 {
     $data['menus'] = $this->menu_models->menus();
+    $data['company']=$this->menu_models->getCompanyLogo();
       $data['title']='Add Contact Details';
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_contact.php');
@@ -25,6 +26,7 @@ public function do_add_contact()
     {
       $data['msg']="Contact Record Added";
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_contact.php',$data);
       $this->load->view('templates/footer.php');
@@ -35,6 +37,7 @@ public function do_add_contact()
   public function view_contact()
   {
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $data['title']='Contact Details';
       $data['h']=$this->contact_model->view_contact_details();
       $this->load->view('templates/header.php',$data);
@@ -45,6 +48,7 @@ public function do_add_contact()
   public function editcontact($id)
 {
   $data['menus'] = $this->menu_models->menus();
+  $data['company']=$this->menu_models->getCompanyLogo();
   $this->load->database();
   $data['title']='Edit Contact Details';
   $data['h']=$this->contact_model->editcontact($id);

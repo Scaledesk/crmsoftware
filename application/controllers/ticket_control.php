@@ -12,6 +12,7 @@ class Ticket_control extends CI_Controller {
 
     $data['title']='Add Ticket';
     $data['menus'] = $this->menu_models->menus();
+    $data['company']=$this->menu_models->getCompanyLogo();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/add_ticket.php');
     $this->load->view('templates/footer.php');
@@ -24,6 +25,7 @@ public function do_add_ticket()
     $data['title']='Add Ticket';
     $data['msg']='Ticket details saved';
     $data['menus'] = $this->menu_models->menus();
+    $data['company']=$this->menu_models->getCompanyLogo();
 	$this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_ticket.php',$data);
       $this->load->view('templates/footer.php');
@@ -35,6 +37,7 @@ public function view_ticket()
       $data['title']='View  Ticket';
       $data['h']=$this->Ticket_model->get_ticket();
       $data['menus'] = $this->menu_models->menus();
+      $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/view_ticket_details.php',$data);
       $this->load->view('templates/footer.php');
@@ -46,6 +49,7 @@ public function edit_ticket($id)
   $data['title']='Update Ticket Details';
   $data['k']=$this->Ticket_model->edit_ticket($id);
   $data['menus'] = $this->menu_models->menus();
+  $data['company']=$this->menu_models->getCompanyLogo();
   $this->load->view('templates/header.php',$data);
   $this->load->view('pages/add_ticket.php',$data);
   $this->load->view('templates/footer.php');
