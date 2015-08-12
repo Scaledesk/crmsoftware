@@ -67,7 +67,6 @@ public function do_add_document()
       $this->load->view('pages/view_document.php',$data);
       $this->load->view('templates/footer.php');
   }
-
   public function editdocument($id)
 {
 
