@@ -129,6 +129,7 @@ class Formigniter extends CI_Controller
 			$view = $this->build_view($field_total);
 			$controller = $this->build_controller($field_total);
 			$sql =  $this->build_sql($field_total);
+		//	$viewpage =  $this->build_sql($field_total);
 
 			if ($view == FALSE || $controller == FALSE || $model == FALSE || $sql == FALSE) // not correct syntax
 			{
