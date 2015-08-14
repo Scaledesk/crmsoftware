@@ -13,7 +13,7 @@
                     </div>
 
                 </div>
-                <a href="<?php echo base_url().'Message_control/compose_msg';?>"> send messege</a>
+
                 <div id="main-wrapper" class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
