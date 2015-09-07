@@ -64,4 +64,18 @@ public function getCompanyLogo()
 
 }
 
+public function createNewModelLink($controller)
+{
+	// $data = array(
+	// 	'text' => 'added module',
+	// 	'link' => $controller.'/index',
+	// 	'parent_id' => '10'
+	// );
+	$text = 'Added Module';
+	$link = $controller.'/index';
+	$parent = 10;
+	$this->db->query("insert into menu_children values('','$text','$link','$parent')");
+
+}
+
 }

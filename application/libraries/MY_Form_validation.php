@@ -21,9 +21,9 @@ class MY_Form_validation extends CI_Form_validation
 
 		$this->CI =& get_instance();
     }
-	
+
 	// --------------------------------------------------------------------
-	
+
 	/**
 	* Required if another field has a value (related fields)
 	*
@@ -31,16 +31,16 @@ class MY_Form_validation extends CI_Form_validation
 	* @param	string
 	* @return	bool
 	*/
-	
+
 	function requiredif($str, $field)
 	{
 		if ($_POST[$field] == '')
 		{
-			return TRUE; // the related form is blank			
+			return TRUE; // the related form is blank
 		}
-		
+
 		// the related form is set proceed with normal required
-		
+
 		if (!is_array($str))
 		{
 			return (trim($str) == '') ? FALSE : TRUE;
@@ -50,7 +50,7 @@ class MY_Form_validation extends CI_Form_validation
 			return ( ! empty($str));
     	}
 	}
-	
+
 	// --------------------------------------------------------------------
 }
 ?>

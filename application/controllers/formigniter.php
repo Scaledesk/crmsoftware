@@ -1,5 +1,5 @@
 <?php
-
+//error_reporting(0);
 /**
  * FormIgniter
  *
@@ -15,7 +15,6 @@
  */
 
 define('DB', TRUE);
-
 class Formigniter extends CI_Controller
 {
 	function Formigniter()
@@ -34,6 +33,8 @@ class Formigniter extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('file');
 		$this->load->helper('download');
+		$this->load->helper('security');
+		$this->load->model('menu_models');
 		//$this->output->enable_profiler(TRUE);
 
 		$this->load->model('formigniter_model');
@@ -62,7 +63,8 @@ class Formigniter extends CI_Controller
 	                        'model' 		=> $this->modelname,
 	                        'view' 			=> $this->formname.'_view',
 	                        'controller' 	=> $this->controllername,
-	                        'sql'  			=> 'sql'
+	                        'sql'  			=> 'sql',
+													'viewPage'  => $this->formname.'_view_page'
 	                        );
 
 		// $this->load->helper('date_helper'); not required for v1
@@ -129,9 +131,8 @@ class Formigniter extends CI_Controller
 			$view = $this->build_view($field_total);
 			$controller = $this->build_controller($field_total);
 			$sql =  $this->build_sql($field_total);
-		//	$viewpage =  $this->build_sql($field_total);
-
-			if ($view == FALSE || $controller == FALSE || $model == FALSE || $sql == FALSE) // not correct syntax
+			$viewPage = $this->build_view_page($field_total);
+			if ($view == FALSE || $controller == FALSE || $model == FALSE || $sql == FALSE || $viewPage == FALSE ) // not correct syntax
 			{
 				// something went wrong when trying to build the form
 				log_message('error', "The form was not built. There was an error with one of the build_() functions. Probably caused by total fields variable not being set");
@@ -207,7 +208,7 @@ class Formigniter extends CI_Controller
 
 			if($i==4)
 			{
-		if ( ! write_file("./forms/{$id}/{$value}.php", ${$key}))
+			if ( ! write_file("./forms/{$id}/{$value}.php", ${$key}))
 			{
 				log_message('error', "failed to write file ./forms/{$id}/{$value}/");
 				$data['error'] = $error_msg;
@@ -217,15 +218,25 @@ class Formigniter extends CI_Controller
 			//die;
 			if($this->formigniter_model->createTable(${$key}))
 			{
-				echo "table created";
+				//echo "table created";
 			}
-			else
+			else{
 				echo "table can't created";
-			{
 			}
 		}
-
-					}
+		if($i==5)
+		{
+			//var_dump(${$key});
+			//die;
+		if ( ! write_file("./application/views/{$value}.php", ${$key}))
+		{
+			log_message('error', "failed to write file ./forms/{$id}/{$value}/");
+			$data['error'] = $error_msg;
+			break;		}
+	}
+		//var_dump(${$key});
+		//die;
+   	}
 				}
 
                         // make the variables available to the view file
@@ -233,7 +244,7 @@ class Formigniter extends CI_Controller
 			$data['controller'] = $controller;
 			$data['model'] = $model;
 			$data['sql'] = $sql;
-
+			//$data['viewPage'] = $viewPage;
 			$data['count'] = FALSE;
 
 			if (DB)
@@ -241,7 +252,13 @@ class Formigniter extends CI_Controller
 				$data['count'] = $this->formigniter_model->get_form_count();
 			}
 			//redirect(base_url().'index.php/'.$c)
-			$this->build_page('built_form','Your form', $data);
+			//$this->build_page('built_form','Your form', $data);
+
+			$this->menu_models->createNewModelLink($this->controllername);
+			  echo "New Module Created Successfully";
+				echo $this->formname;
+
+			// giv url
 		}
 	}
 
@@ -309,7 +326,7 @@ class Formigniter extends CI_Controller
 	    $view = '<?php // Change the css classes to suit your needs
 
 $attributes = array(\'class\' => \'\', \'id\' => \'\');
-echo form_open(\''.$this->controllername.'\', $attributes); ?>
+echo form_open(\''.$this->controllername.'\index\', $attributes); ?>
 ';
 
                 for($counter=1; $field_total >= $counter; $counter++)
@@ -386,7 +403,7 @@ EOT;
 	<?php echo form_error('$field_name'); ?>
 	<br />
 
-	<?php echo form_textarea( array( 'name' => '$field_name', 'rows' => '5', 'cols' => '80', 'value' => set_value('$field_name') ) )?>
+	<?php echo form_textarea( array( 'name' => '$field_name', 'class' => 'form-control' 'rows' => '5', 'cols' => '80', 'value' => set_value('$field_name') ) )?>
 </p>";
 						break;
 
@@ -396,10 +413,10 @@ EOT;
         <?php echo form_error(\''.$field_name.'\'); ?>
         <br />
                 <?php // Change or Add the radio values/labels/css classes to suit your needs ?>
-                <input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="" value="option1" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option1\'); ?> />
+                <input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="option1" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option1\'); ?> />
         		<label for="'.$field_name.'" class="">Radio option 1</label>
 
-        		<input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="" value="option2" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option2\'); ?> />
+        		<input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="option2" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option2\'); ?> />
         		<label for="'.$field_name.'" class="">Radio option 2</label>
 </p>
 
@@ -432,18 +449,16 @@ EOT;
                         $view .= <<<EOT
 
         <?php echo form_error('{$field_name}'); ?>
-
         <?php // Change the values/css classes to suit your needs ?>
-        <br /><input type="checkbox" id="{$field_name}" name="{$field_name}" value="enter_value_here" class="" <?php echo set_checkbox('{$field_name}', 'enter_value_here'); ?>>
+        <br /><input type="checkbox" id="{$field_name}" name="{$field_name}" value="enter_value_here" class="form-control" <?php echo set_checkbox('{$field_name}', 'enter_value_here'); ?>>
 
 	<label for="{$field_name}">{$field_label}</label>
 </p>
 EOT;
                         break;
-
                        	case('input'):
-						case('password'):
                         default: // input.. added bit of error detection setting select as default
+						case('password'):
 
 						if ($field_type == 'input')
 						{
@@ -461,7 +476,7 @@ EOT;
                         $view .= <<<EOT
 </label>
         <?php echo form_error('{$field_name}'); ?>
-        <br /><input id="{$field_name}" type="{$type}" name="{$field_name}" {$maxlength} value="<?php echo set_value('{$field_name}'); ?>"  />
+        <br /><input id="{$field_name}" type="{$type}" name="{$field_name}" {$maxlength} value="<?php echo set_value('{$field_name}'); ?>" class="form-control"  />
 </p>
 
 EOT;
@@ -516,12 +531,12 @@ class '.ucfirst($this->controllername).' extends CI_Controller {
 		$this->load->database();
 		$this->load->helper(\'form\');
 		$this->load->helper(\'url\');
+		$this->load->helper(\'security\');
+		$this->load->model(\'menu_models\');
 		$this->load->model(\''.$this->modelname.'\');
 	}
 	function index()
 	{';
-
-
 		// loop to set form validation rules
 		$last_field = 0;
 		for($counter=1; $field_total >= $counter; $counter++)
@@ -588,7 +603,12 @@ class '.ucfirst($this->controllername).' extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE) // validation hasn\'t been passed
 		{
-			$this->load->view(\''.$this->formname.'_view\');
+			$data["title"]=\''.$this->formname.'\';
+      $data["menus"] = $this->menu_models->menus();
+      $data["company"]=$this->menu_models->getCompanyLogo();
+      $this->load->view("templates/header.php",$data);
+      $this->load->view(\''.$this->formname.'_view\');
+			$this->load->view("templates/footer.php");
 		}
 		else // passed validation proceed to post success logic
 		{
@@ -633,10 +653,30 @@ class '.ucfirst($this->controllername).' extends CI_Controller {
 			}
 		}
 	}
+ public function deleteRecord($id)
+ {
+	 if($this->'.$this->modelname.'->deleteRecord($id))
+	 {
+		 $data["title"]=\''.$this->formname.'\';
+		 $data["menus"] = $this->menu_models->menus();
+		 $data["company"]=$this->menu_models->getCompanyLogo();
+		 $this->load->view("templates/header.php",$data);
+		 $data[\'h\'] = $this->'.$this->modelname.'->view_form_details();
+ 		   $this->load->view(\''.$this->formname.'_view_page\',$data);
+			 $this->load->view("templates/footer.php");
+	 }
+ }
 	function success()
 	{
-			echo \'this form has been successfully submitted with all validation being passed. All messages or logic here. Please note
-			sessions have not been used and would need to be added in to suit your app\';
+		$data["title"]=\''.$this->formname.'\';
+		$data["menus"] = $this->menu_models->menus();
+		$data["company"]=$this->menu_models->getCompanyLogo();
+		$this->load->view("templates/header.php",$data);
+		$data[\'h\'] = $this->'.$this->modelname.'->view_form_details();
+		   $this->load->view(\''.$this->formname.'_view_page\',$data);
+			 $this->load->view("templates/footer.php");
+			/*echo \'this form has been successfully submitted with all validation being passed. All messages or logic here. Please note
+			sessions have not been used and would need to be added in to suit your app\';*/
 	}
 }
 ?>';
@@ -690,6 +730,19 @@ class '.ucfirst($this->modelname).' extends CI_Model {
 
 		return FALSE;
 	}
+	function deleteRecord($id)
+	{
+		$this->db->where(\'id\',$id);
+		$this->db->delete(\''.$this->tablename.'\');
+		return true;
+	}
+	function view_form_details()
+	{
+		$query=$this->db->get(\''.$this->tablename.'\');
+		return $query;
+	}
+
+
 }
 ?>';
 		return $model;
@@ -750,6 +803,98 @@ class '.ucfirst($this->modelname).' extends CI_Model {
 		// user_data text NOT NULL,
 	}
 
+	//........................................................................
+	// build display record page
+
+
+
+	private function build_view_page($field_total = NULL)
+	{
+		if ($field_total == NULL)
+		{
+			return FALSE;
+		}
+
+		$viewPage = '<div id="main-wrapper" class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                         <div class="panel panel-white">
+                                <div class="panel-heading clearfix">
+                                    <h4 class="panel-title">Lists</h4>
+                                </div>
+                                <div class="panel-body">
+                               <div class="table-responsive">
+                                    <table id="example" class="display table">
+                                        <thead>
+                                            <tr>';
+																						$viewPage .= "<th>Sr. No.</th>";
+																						for($counter=1; $field_total >= $counter; $counter++)
+																						{
+																							if (set_value("view_field_label{$counter}") == NULL)
+																							{
+																								continue; 	// move onto next iteration of the loop
+																							}
+																					        	$viewPage .= '<th>'.set_value("view_field_name{$counter}").'</th>';
+																				    }
+
+																					$viewPage .= "<th>Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tfoot>
+																						<tr>";
+																						$viewPage .= "<th>Sr. No.</th>";
+																						for($counter=1; $field_total >= $counter; $counter++)
+																						{
+																							if (set_value("view_field_label{$counter}") == NULL)
+																							{
+																								continue; 	// move onto next iteration of the loop
+																							}
+																							$viewPage .= '<th>'.set_value("view_field_name{$counter}").'</th>';
+
+																						}
+
+																					$viewPage .= "<th>Action</th>
+                                              </tr>
+                                        </tfoot>
+                                        <tbody> <?php
+                                            $".'i=0;
+                                            foreach ($h->result() as $row)
+                                                 {
+																									   $i++;
+
+
+                                          ?> <tr>
+                                                <td> <?php echo $i; ?></td>';
+																								for($counter=1; $field_total >= $counter; $counter++)
+																								{
+																									//Due to the requiredif rule if the first field is set the the others must be
+																									if (set_value("view_field_label{$counter}") == NULL)
+																									{
+																										continue; 	// move onto next iteration of the loop
+																									}
+																							 $viewPage .= '<td> <?php echo $row->'.set_value("view_field_name{$counter}").' ?></td>';
+
+																						 }
+
+
+																						 $viewPage .= '<td> <a href="<?php echo base_url()'.'.\'index.php/'.$this->controllername.'/deleteRecord/\'.'.'$row->id;  ?>">Delete </a>';
+																							$viewPage .= '</td>';
+																								// delete record button
+																							/*	$viewPage .= '<td>
+																									<a href="<?php echo base_url()." '.ucfirst($this->controllername).'/deleterecord/.$row->id;?>';
+																								$viewPage .= '</td>';
+																							}*/
+																					$viewPage .= '</tr><?php } ?>	</tbody>
+                                       </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- Row -->
+                </div><!-- Main Wrapper -->';
+								return $viewPage;
+
+      }
 	// --------------------------------------------------------------------
 
    	/**
