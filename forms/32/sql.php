@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS  `testTable` (
+ id int(40) NOT NULL auto_increment,
+ Allahabad VARCHAR(50) NOT NULL,
+ PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

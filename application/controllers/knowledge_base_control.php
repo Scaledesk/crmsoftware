@@ -13,7 +13,7 @@ class Knowledge_base_control extends CI_Controller {
     $data['title']='Add Category';
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
-    $data['h']=$this->Knowledge_base_model->get_category();
+      $data['h']=$this->Knowledge_base_model->get_category();
       $this->load->view('templates/header.php',$data);
       $this->load->view('pages/add_knowledge_category.php',$data);
       $this->load->view('templates/footer.php');

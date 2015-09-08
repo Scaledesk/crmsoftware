@@ -1,27 +1,27 @@
-<script type="text/javascript"> 
-           
+<script type="text/javascript">
+
         /** ------------------------------------
         /**  Live URL Title Function
         /**     Code from ExpressionEngine v 1.6.3
         /**     Slightly modified to accept the parameter fieldcount
         /** -------------------------------------*/
-        
+
         function liveUrlTitle(fieldcount)
         {
         	var defaultTitle = '';
 			var NewText = document.getElementById("view_field_label" + fieldcount).value;
-			
+
 			if (defaultTitle != '')
 			{
 				if (NewText.substr(0, defaultTitle.length) == defaultTitle)
 				{
 					NewText = NewText.substr(defaultTitle.length)
-				}	
+				}
 			}
-			
+
 			NewText = NewText.toLowerCase();
 			var separator = "_";
-			
+
 			if (separator != "_")
 			{
 				NewText = NewText.replace(/\_/g, separator);
@@ -30,14 +30,14 @@
 			{
 				NewText = NewText.replace(/\-/g, separator);
 			}
-	
+
 			// Foreign Character Attempt
-			
+
 			var NewTextTemp = '';
 			for(var pos=0; pos<NewText.length; pos++)
 			{
 				var c = NewText.charCodeAt(pos);
-				
+
 				if (c >= 32 && c < 128)
 				{
 					NewTextTemp += NewText.charAt(pos);
@@ -94,12 +94,12 @@
 				if (c == '352') {NewTextTemp += 'sh'; continue;}
 				if (c == '362') {NewTextTemp += 'uu'; continue;}
 				if (c == '381') {NewTextTemp += 'zh'; continue;}
-				
+
 				}
 			}
-    
+
 			NewText = NewTextTemp;
-			
+
 			NewText = NewText.replace('/<(.*?)>/g', '');
 			NewText = NewText.replace('/\&#\d+\;/g', '');
 			NewText = NewText.replace('/\&\#\d+?\;/g', '');
@@ -115,41 +115,36 @@
 			NewText = NewText.replace(/_$/g,'');
 			NewText = NewText.replace(/^_/g,'');
 			NewText = NewText.replace(/^-/g,'');
-			
-			
-				document.getElementById("view_field_name" + fieldcount).value = "" + NewText;			
-				
+
+
+				document.getElementById("view_field_name" + fieldcount).value = "" + NewText;
+
 		}
 </script>
 
-<div class="top_right">
-
-Maximum number of fields 
+<div class="top_right" style="color:black">
+Maximum number of fields
 <?php
 for ($count = 5; $count <= 50; $count = $count * 2) // loop to build 10 form boxes
 {
 ?>
-<a href="<?php echo base_url()."formigniter/index/{$count}"; ?>/" 
+<a href="<?php echo base_url()."formigniter/index/{$count}"; ?>/"
 <?php if ($count == $field_total)
 {
-     echo 'class="current"';   
+     echo 'class="current"';
 } ?>
 ><?php echo $count; ?>
-</a> | 
+</a> |
 <?php } // end loop ?>
- 
+
 </div></div>
 
 <div id="content">
 
-<?php if ($count != FALSE): ?>
-<?php if (DB):?><p><?php echo $form_count?> forms ignited so far.</p><?php endif; ?>
-<?php endif; ?>
 
 <?php if ($this->session->flashdata('error')): ?>
 <div class="top_error"><?php echo $this->session->flashdata('error')?></div>
 <?php endif; ?>
-
 <?php // echo validation_errors(); for debuggging only ?>
 
 <?php echo form_open( "formigniter/index/$field_total/" ) ?>
@@ -160,11 +155,11 @@ for ($count = 5; $count <= 50; $count = $count * 2) // loop to build 10 form box
 </div>
 <?php endif; ?>
 
-<h3>Fill out the fields you want in your form, with field types, database type, and your validation rules and FormIgniter will output the code for the MVC + a database schema. Give it a go!</h3>
+<h3>Fill out the fields you want in your form, with field types, database type, and your validation rules.</h3>
 
 <div class="names">
 	<h4>MVC + db names (optional)</h4>
-	<label for="formname">Form name </label><input type="text" id="formname" name="formname" />
+	<label for="formname">Module Name </label><input type="text" id="formname" name="formname" />
 	<label for="controllername">Controller name </label><input type="text" id="controllername" name="controllername" />
 	<label for="modelname">Model name </label><input type="text" id="modelname" name="modelname" />
 	<label for="tablename">Table name </label><input type="text" id="tablename" name="tablename" />
@@ -184,13 +179,13 @@ if (form_error("view_field_label{$count}") != NULL || form_error("view_field_nam
 }
 
 // this checks to see if the number is odd
-if ($count % 2): 
+if ($count % 2):
 ?>
-<div class="container_blue" style="margin-right: 10px;<?php echo $box_error; ?>">  
+<div class="container_blue" style="margin-right: 10px;<?php echo $box_error; ?>">
 <?php else: ?>
-<div class="container_blue" style="<?php echo $box_error; ?>">  	
+<div class="container_blue" style="<?php echo $box_error; ?>">
 <?php endif; ?>
-<div class="field_heading"><?php echo $count; ?></div> 
+<div class="field_heading"><?php echo $count; ?></div>
 <div class="type_heading">Field details <?php if ($box_error != NULL) { echo ' - <b>Error needs fixing!</b>'; } ?></div>
 
 <?php echo form_error("view_field_label{$count}"); ?>
@@ -201,12 +196,12 @@ if ($count % 2):
 
 <label for="view_field_label<?php echo $count; ?>">Label <span class="required">*</span></label>
 
-<br /><input name="view_field_label<?php echo $count; ?>" id="view_field_label<?php echo $count; ?>" type="text" value="<?php echo set_value("view_field_label{$count}"); ?>" onkeyup="liveUrlTitle(<?php echo $count; ?>);" />
+<br /><input name="view_field_label<?php echo $count; ?>" id="view_field_label<?php echo $count; ?>" type="text" value="<?php echo set_value("view_field_label{$count}"); ?>" onkeyup="liveUrlTitle(<?php echo $count; ?>);" class="form-control" />
 </div>
 
 <div class="input_box">
 <label for="view_field_name">Name (no spaces) <span class="required">*</span></label>
-<br /><input name="view_field_name<?php echo $count; ?>" id="view_field_name<?php echo $count; ?>" type="text" value="<?php echo set_value("view_field_name{$count}"); ?>" maxlength="30" />
+<br /><input name="view_field_name<?php echo $count; ?>" id="view_field_name<?php echo $count; ?>" type="text" value="<?php echo set_value("view_field_name{$count}"); ?>" maxlength="30" class="form-control" />
 </div>
 
 <div class="input_box">
@@ -222,7 +217,7 @@ $view_field_types = array(
 						'password' 	=> 'PASSWORD'
                         );
 ?>
-<br /><?php echo form_dropdown("view_field_type{$count}", $view_field_types, set_value("view_field_type{$count}")); ?>
+<br /><?php echo form_dropdown("view_field_type{$count}", $view_field_types, set_value("view_field_type{$count}"), "class='form-control'" "onchange='checkRadio()'"); ?>
 </div>
 
 <div class="type_heading">Database Schema</div>
@@ -266,31 +261,31 @@ $db_field_types = array(
 						'VARBINARY' 	=> 'VARBINARY'
                         );
 ?>
-<br /><?php echo form_dropdown("db_field_type{$count}", $db_field_types, set_value("db_field_type{$count}")); ?>
+<br /><?php echo form_dropdown("db_field_type{$count}", $db_field_types, set_value("db_field_type{$count}"), "class='form-control'"); ?>
 
 </div>
 <div class="input_box">
 <label for="db_field_length_value<?php echo $count; ?>">Length/Values</label>
-<br /><input name="db_field_length_value<?php echo $count; ?>" type="text" value="<?php echo set_value("db_field_length_value{$count}"); ?>" />
+<br /><input name="db_field_length_value<?php echo $count; ?>" type="text" value="<?php echo set_value("db_field_length_value{$count}"); ?>" class="form-control" />
 </div>
 
 <div class="type_heading">Validation Rules (optional)</div>
 
 <?php echo form_error('cont_validation_rules'.$count.'[]'); ?>
 
-<input type="checkbox" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="required" <?php echo set_checkbox('validation_rules'.$count.'[]', 'required'); ?>  /> 
+<input type="checkbox" class="form-control" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="required" <?php echo set_checkbox('validation_rules'.$count.'[]', 'required'); ?>  />
 <label for="cont_validation_rules<?php echo $count; ?>[]">required</label>
 
-<input type="checkbox" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="trim" <?php echo set_checkbox('validation_rules'.$count.'[]', 'trim'); ?> /> 
+<input type="checkbox" class="form-control" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="trim" <?php echo set_checkbox('validation_rules'.$count.'[]', 'trim'); ?> />
 <label for="cont_validation_rules[]">trim</label>
 
-<input type="checkbox" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="xss_clean" <?php echo set_checkbox('validation_rules'.$count.'[]', 'xss_clean'); ?> /> 
+<input type="checkbox" class="form-control" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="xss_clean" <?php echo set_checkbox('validation_rules'.$count.'[]', 'xss_clean'); ?> />
 <label for="cont_validation_rules<?php echo $count?>[]">xss_clean</label>
 
-<input type="checkbox" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="valid_email" <?php echo set_checkbox('validation_rules'.$count.'[]', 'valid_email'); ?> /> 
+<input type="checkbox" class="form-control" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="valid_email" <?php echo set_checkbox('validation_rules'.$count.'[]', 'valid_email'); ?> />
 <label for="cont_validation_rules<?php echo $count?>[]">valid_email</label>
 
-<input type="checkbox" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="is_numeric" <?php echo set_checkbox('validation_rules'.$count.'[]', 'is_numeric'); ?> /> 
+<input type="checkbox" class="form-control" name="validation_rules<?php echo $count; ?>[]" id="validation_rules<?php echo $count; ?>[]" value="is_numeric" <?php echo set_checkbox('validation_rules'.$count.'[]', 'is_numeric'); ?> />
 <label for="cont_validation_rules<?php echo $count; ?>[]">is_numeric</label>
 
 </div>
@@ -299,7 +294,19 @@ $db_field_types = array(
 ?>
 
 <div style="clear:both"></div>
-<p><?php echo form_submit('submit', 'Build this form'); ?></p>
+<p><?php echo form_submit('submit', 'Build this form', "class='btn btn-success'"); ?></p>
 
 <?php echo form_close()?>
 </div>
+
+<script>
+
+var val = document.getElementById('').value = radio;
+
+</script>
+
+</div>
+</div>
+</div>
+</div><!-- Row -->
+</div><!-- Main Wrapper -->

@@ -254,7 +254,7 @@ class Formigniter extends CI_Controller
 			//redirect(base_url().'index.php/'.$c)
 			//$this->build_page('built_form','Your form', $data);
 
-			$this->menu_models->createNewModelLink($this->controllername);
+			$this->menu_models->createNewModelLink($this->controllername, $this->formname);
 			  echo "New Module Created Successfully";
 				echo $this->formname;
 
@@ -323,7 +323,13 @@ class Formigniter extends CI_Controller
 	              return FALSE;
 	      }
 
-	    $view = '<?php // Change the css classes to suit your needs
+	    $view = '<div id="main-wrapper" class="container">
+			                    <div class="row">
+			                        <div class="col-md-10 center">
+			                            <div class="panel panel-white">
+			                                <div class="panel-body">
+			                                     <div id="rootwizard">
+			<?php // Change the css classes to suit your needs
 
 $attributes = array(\'class\' => \'\', \'id\' => \'\');
 echo form_open(\''.$this->controllername.'\index\', $attributes); ?>
@@ -403,7 +409,7 @@ EOT;
 	<?php echo form_error('$field_name'); ?>
 	<br />
 
-	<?php echo form_textarea( array( 'name' => '$field_name', 'class' => 'form-control' 'rows' => '5', 'cols' => '80', 'value' => set_value('$field_name') ) )?>
+	<?php echo form_textarea( array( 'name' => '$field_name', 'class' => 'form-control', 'rows' => '5', 'cols' => '80', 'value' => set_value('$field_name') ) );?>
 </p>";
 						break;
 
@@ -413,11 +419,11 @@ EOT;
         <?php echo form_error(\''.$field_name.'\'); ?>
         <br />
                 <?php // Change or Add the radio values/labels/css classes to suit your needs ?>
-                <input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="option1" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option1\'); ?> />
-        		<label for="'.$field_name.'" class="">Radio option 1</label>
+                <input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="0" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option1\'); ?> />
+        		<label for="'.$field_name.'" class="">Option 1</label>
 
-        		<input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="option2" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option2\'); ?> />
-        		<label for="'.$field_name.'" class="">Radio option 2</label>
+        		<input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="1" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option2\'); ?> />
+        		<label for="'.$field_name.'" class="">Option 2</label>
 </p>
 
 ';
@@ -433,7 +439,6 @@ EOT;
 
 EOT;
                          $view .= '<?php $options = array(';
-
                          $view .= '
                                                   \'\'  => \'Please Select\',
                                                   \'example_value1\'    => \'example option 1\'
@@ -450,9 +455,10 @@ EOT;
 
         <?php echo form_error('{$field_name}'); ?>
         <?php // Change the values/css classes to suit your needs ?>
-        <br /><input type="checkbox" id="{$field_name}" name="{$field_name}" value="enter_value_here" class="form-control" <?php echo set_checkbox('{$field_name}', 'enter_value_here'); ?>>
+	        <label for="{$field_name}">{$field_label}</label>
+        <br /><input type="checkbox" id="{$field_name}" name="{$field_name}" value="{$field_name}" class="form-control" <?php echo set_checkbox('{$field_name}', '{$field_name}'); ?>>
 
-	<label for="{$field_name}">{$field_label}</label>
+	<label for="{$field_name}">{$field_name}</label>
 </p>
 EOT;
                         break;
@@ -491,12 +497,18 @@ EOT;
 
 
 <p>
-        <?php echo form_submit( 'submit', 'Submit'); ?>
+        <?php echo form_submit( 'submit', 'Submit', "class='btn btn-success'" ); ?>
 </p>
 
 <?php echo form_close(); ?>
 
 EOT;
+
+$view.= '  </div></div>
+</div>
+</div>
+</div><!-- Row -->
+</div><!-- Main Wrapper -->';
         return $view;
 
 	}
@@ -840,22 +852,6 @@ class '.ucfirst($this->modelname).' extends CI_Model {
 																					$viewPage .= "<th>Action</th>
                                           </tr>
                                         </thead>
-                                        <tfoot>
-																						<tr>";
-																						$viewPage .= "<th>Sr. No.</th>";
-																						for($counter=1; $field_total >= $counter; $counter++)
-																						{
-																							if (set_value("view_field_label{$counter}") == NULL)
-																							{
-																								continue; 	// move onto next iteration of the loop
-																							}
-																							$viewPage .= '<th>'.set_value("view_field_name{$counter}").'</th>';
-
-																						}
-
-																					$viewPage .= "<th>Action</th>
-                                              </tr>
-                                        </tfoot>
                                         <tbody> <?php
                                             $".'i=0;
                                             foreach ($h->result() as $row)
@@ -910,6 +906,8 @@ class '.ucfirst($this->modelname).' extends CI_Model {
 
 	private function build_page($page, $title,$data = null)
 	{
+		$data["menus"] = $this->menu_models->menus();
+		$data["company"]=$this->menu_models->getCompanyLogo();
 		$data['title'] = $title;
 		$data['page'] = $page;
 		$this->load->vars($data);

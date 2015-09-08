@@ -16,17 +16,20 @@ class TestController extends CI_Controller {
 	function index()
 	{
 		$this->form_validation->set_rules('name', 'Name', 'required|max_length[100]');
-		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[250]');
+		$this->form_validation->set_rules('email', 'Email', 'valid_email|max_length[150]');
+		$this->form_validation->set_rules('address', 'Address', 'max_length[500]');
+		$this->form_validation->set_rules('Allahabad', 'City', 'max_length[250]');
+		$this->form_validation->set_rules('gender', 'Gender', 'max_length[50]');
 
 		$this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 
 		if ($this->form_validation->run() == FALSE) // validation hasn't been passed
 		{
-			$data["title"]='testModule';
+			$data["title"]='TestModule';
       $data["menus"] = $this->menu_models->menus();
       $data["company"]=$this->menu_models->getCompanyLogo();
       $this->load->view("templates/header.php",$data);
-      $this->load->view('testModule_view');
+      $this->load->view('TestModule_view');
 			$this->load->view("templates/footer.php");
 		}
 		else // passed validation proceed to post success logic
@@ -35,7 +38,10 @@ class TestController extends CI_Controller {
 
 			$form_data = array(
 					       	'name' => set_value('name'),
-					       	'email' => set_value('email')
+					       	'email' => set_value('email'),
+					       	'address' => set_value('address'),
+					       	'Allahabad' => set_value('Allahabad'),
+					       	'gender' => set_value('gender')
 						);
 
 			// run insert model to write data to db
@@ -55,23 +61,23 @@ class TestController extends CI_Controller {
  {
 	 if($this->TestModel->deleteRecord($id))
 	 {
-		 $data["title"]='testModule';
+		 $data["title"]='TestModule';
 		 $data["menus"] = $this->menu_models->menus();
 		 $data["company"]=$this->menu_models->getCompanyLogo();
 		 $this->load->view("templates/header.php",$data);
 		 $data['h'] = $this->TestModel->view_form_details();
- 		   $this->load->view('testModule_view_page',$data);
+ 		   $this->load->view('TestModule_view_page',$data);
 			 $this->load->view("templates/footer.php");
 	 }
  }
 	function success()
 	{
-		$data["title"]='testModule';
+		$data["title"]='TestModule';
 		$data["menus"] = $this->menu_models->menus();
 		$data["company"]=$this->menu_models->getCompanyLogo();
 		$this->load->view("templates/header.php",$data);
 		$data['h'] = $this->TestModel->view_form_details();
-		   $this->load->view('testModule_view_page',$data);
+		   $this->load->view('TestModule_view_page',$data);
 			 $this->load->view("templates/footer.php");
 			/*echo 'this form has been successfully submitted with all validation being passed. All messages or logic here. Please note
 			sessions have not been used and would need to be added in to suit your app';*/
