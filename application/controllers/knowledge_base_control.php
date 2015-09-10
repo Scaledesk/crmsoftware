@@ -5,12 +5,15 @@ class Knowledge_base_control extends CI_Controller {
   parent::__construct();
   $this->load->model('Knowledge_base_model');
   $this->load->model('menu_models');
+  $this->load->model('Message_model');
   $this->load->helper(array('form','url'));
  }
  public function add_category()
 {
 
     $data['title']='Add Category';
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $data['h']=$this->Knowledge_base_model->get_category();
@@ -24,7 +27,9 @@ public function do_add_category()
   if($this->Knowledge_base_model->add_category())
   {
     $data['title']='Add Category';
-    $data['msg']='Category detail saved';
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
+    $data['cAddMsg']='Category detail saved';
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
     $data['h']=$this->Knowledge_base_model->get_category();
@@ -38,6 +43,8 @@ public function add_knowledge_base()
 {
 
     $data['title']='Add Knowledge Base Details';
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['h']=$this->Knowledge_base_model->get_category();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -51,7 +58,9 @@ public function do_add_knowledge_base()
   if($this->Knowledge_base_model->add_knowledge_base())
   {
     $data['title']='Add Knowledge Base Details';
-    $data['msg']='Knowledge Base detail saved';
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
+    $data['kBaseMsg']='Knowledge Base detail saved';
     $data['h']=$this->Knowledge_base_model->get_category();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -64,6 +73,8 @@ public function do_add_knowledge_base()
 public function view_knowledge_base()
 {
       $data['title']='View  Knowledge Base Details';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->Knowledge_base_model->get_knowledge_base();
         $data['menus'] = $this->menu_models->menus();
         $data['company']=$this->menu_models->getCompanyLogo();
@@ -75,6 +86,8 @@ public function view_knowledge_base()
 public function edit_knowledge_base($id)
 {
    $data['title']='Update Knowledge Base Details';
+   $data['countMsg']= $this->Message_model->getNewMessageCount();
+   $data['msg']= $this->Message_model->getNewMessage();
     $data['h']=$this->Knowledge_base_model->get_category();
     $data['k']=$this->Knowledge_base_model->edit_knowledge_base($id);
       $data['menus'] = $this->menu_models->menus();

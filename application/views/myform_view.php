@@ -7,19 +7,7 @@
 			<?php // Change the css classes to suit your needs
 
 $attributes = array('class' => '', 'id' => '');
-echo form_open('TestController\index', $attributes); ?>
-
-<p>
-        <label for="name">Name <span class="required">*</span></label>
-        <?php echo form_error('name'); ?>
-        <br /><input id="name" type="text" name="name" maxlength="100" value="<?php echo set_value('name'); ?>" class="form-control"  />
-</p>
-
-<p>
-        <label for="email">Email <span class="required">*</span></label>
-        <?php echo form_error('email'); ?>
-        <br /><input id="email" type="text" name="email" maxlength="150" value="<?php echo set_value('email'); ?>" class="form-control"  />
-</p>
+echo form_open('MyformController\index', $attributes); ?>
 
 <p>
         <label for="gendar">Gendar</label>
@@ -39,14 +27,26 @@ echo form_open('TestController\index', $attributes); ?>
         <?php echo form_error('category'); ?>
         <br />
                 <?php // Change or Add the radio values/labels/css classes to suit your needs ?>
-                <input id="category" name="category" type="radio" class="form-control" value="GENERAL" <?php echo $this->form_validation->set_radio('category', 'option1'); ?> />
-        		<label for="category" class="">GENERAL</label>
+                <input id="category" name="category" type="radio" class="form-control" value="General" <?php echo $this->form_validation->set_radio('category', 'option1'); ?> />
+        		<label for="category" class="">General</label>
 
         		<input id="category" name="category" type="radio" class="form-control" value="OBC" <?php echo $this->form_validation->set_radio('category', 'option2'); ?> />
         		<label for="category" class="">OBC</label>
 </p>
 
 
+<p>
+
+        <?php echo form_error('qualification'); ?>
+        <?php // Change the values/css classes to suit your needs ?>
+	        <label for="qualification">Qualification</label>
+        <br />
+				<input type="checkbox" name="qualification[]" value="Graduate" class="form-control"> Graduate<br/>
+				<input type="checkbox" name="qualification[]" value=" 10 or below 10" class="form-control"> 10 or below 10 <br/>
+				<input type="checkbox" name="qualification[]" value="10+2" class="form-control">10+2
+
+	<label for="qualification">qualification</label>
+</p>
 
 <p>
         <?php echo form_submit( 'submit', 'Submit', "class='btn btn-success'" ); ?>

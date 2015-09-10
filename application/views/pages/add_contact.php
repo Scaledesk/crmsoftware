@@ -5,8 +5,8 @@
                         <div class="col-md-6 center">
                             <h4><?php
                             error_reporting(0);
-                            if($msg!=''){
-                                echo $msg;
+                            if($Cmsg!=''){
+                                echo $Cmsg;
                             }
                              ?></h4>
 

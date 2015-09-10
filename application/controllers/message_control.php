@@ -16,6 +16,8 @@ class Message_control extends CI_Controller {
  }
       public function compose_msg(){
         $data['title']='Inbox';
+        $data['countMsg']= $this->Message_model->getNewMessageCount();
+        $data['msg']= $this->Message_model->getNewMessage();
         $data['menus'] = $this->menu_models->menus();
         $data['company']=$this->menu_models->getCompanyLogo();
         $data['h']=$this->User_model->view_user();
@@ -28,7 +30,9 @@ class Message_control extends CI_Controller {
            if($this->Message_model->send_message())
            {
              $data['title']='Inbox';
-             $data['msg']="Message sent";
+             $data['massage']="Message sent";
+             $data['countMsg']= $this->Message_model->getNewMessageCount();
+             $data['msg']= $this->Message_model->getNewMessage();
              $data['m']=$this->Message_model->getMessage();
              $data['menus'] = $this->menu_models->menus();
              $data['company']=$this->menu_models->getCompanyLogo();
@@ -41,6 +45,8 @@ class Message_control extends CI_Controller {
          {
 
           $data['title']='Inbox';
+          $data['countMsg']= $this->Message_model->getNewMessageCount();
+          $data['msg']= $this->Message_model->getNewMessage();
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
           $data['count']=$this->Message_model->getMessageCount();
@@ -63,6 +69,8 @@ class Message_control extends CI_Controller {
         {
 
           $data['title']='Inbox';
+          $data['countMsg']= $this->Message_model->getNewMessageCount();
+          $data['msg']= $this->Message_model->getNewMessage();
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
           $data['count']=$this->Message_model->getSentMessageCount();
@@ -128,6 +136,8 @@ public function deleteMessage($checkbox)
     $data['company']=$this->menu_models->getCompanyLogo();
     $data['s']=$this->Message_model->getSentMessage();
     //$data['count']=mysql_num_rows($data['s']);
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/sentbox.php',$data);
     $this->load->view('templates/footer.php');

@@ -35,6 +35,7 @@ class Formigniter extends CI_Controller
 		$this->load->helper('download');
 		$this->load->helper('security');
 		$this->load->model('menu_models');
+		$this->load->model('Message_model');
 		//$this->output->enable_profiler(TRUE);
 
 		$this->load->model('formigniter_model');
@@ -44,6 +45,7 @@ class Formigniter extends CI_Controller
 		$this->controllername = $this->input->post("controllername");
 		$this->modelname = $this->input->post("modelname");
 		$this->tablename = $this->input->post("tablename");
+
 
 		//set default values if needed
 		if($this->formname == "") {
@@ -415,15 +417,20 @@ EOT;
 
                         case('radio'):
 
+													$op1 = 'option1'.$counter;
+													$op2 = 'option2'.$counter;
+												$option1 = $this->input->post($op1);
+												$option2 = $this->input->post($op2);
+
 		$view .= '</label>
         <?php echo form_error(\''.$field_name.'\'); ?>
         <br />
                 <?php // Change or Add the radio values/labels/css classes to suit your needs ?>
-                <input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="0" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option1\'); ?> />
-        		<label for="'.$field_name.'" class="">Option 1</label>
+                <input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="'.$option1.'" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option1\'); ?> />
+        		<label for="'.$field_name.'" class="">'.$option1.'</label>
 
-        		<input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="1" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option2\'); ?> />
-        		<label for="'.$field_name.'" class="">Option 2</label>
+        		<input id="'.$field_name.'" name="'.$field_name.'" type="radio" class="form-control" value="'.$option2.'" <?php echo $this->form_validation->set_radio(\''.$field_name.'\', \'option2\'); ?> />
+        		<label for="'.$field_name.'" class="">'.$option2.'</label>
 </p>
 
 ';
@@ -451,12 +458,22 @@ EOT;
 
                         case('checkbox'):
 
+												$val1 = 'value1'.$counter;
+												$val2 = 'value2'.$counter;
+												$val3 = 'value3'.$counter;
+											$value1 = $this->input->post($val1);
+											$value2 = $this->input->post($val2);
+											$value2 = $this->input->post($val3);
+
                         $view .= <<<EOT
 
         <?php echo form_error('{$field_name}'); ?>
         <?php // Change the values/css classes to suit your needs ?>
 	        <label for="{$field_name}">{$field_label}</label>
-        <br /><input type="checkbox" id="{$field_name}" name="{$field_name}" value="{$field_name}" class="form-control" <?php echo set_checkbox('{$field_name}', '{$field_name}'); ?>>
+        <br />
+				<input type="checkbox" name="{$field_name}[]" value="{$value1}" class="form-control">{$value1}<br/>
+				<input type="checkbox" name="{$field_name}[]" value="{$value2}" class="form-control">{$value2}<br/>
+				<input type="checkbox" name="{$field_name}[]" value="{$value3}" class="form-control">{$value2}
 
 	<label for="{$field_name}">{$field_name}</label>
 </p>
@@ -545,6 +562,7 @@ class '.ucfirst($this->controllername).' extends CI_Controller {
 		$this->load->helper(\'url\');
 		$this->load->helper(\'security\');
 		$this->load->model(\'menu_models\');
+		$this->load->model(\'Message_model\');
 		$this->load->model(\''.$this->modelname.'\');
 	}
 	function index()
@@ -617,6 +635,8 @@ class '.ucfirst($this->controllername).' extends CI_Controller {
 		{
 			$data["title"]=\''.$this->formname.'\';
       $data["menus"] = $this->menu_models->menus();
+			$data["countMsg"]= $this->Message_model->getNewMessageCount();
+	    $data["msg"]= $this->Message_model->getNewMessage();
       $data["company"]=$this->menu_models->getCompanyLogo();
       $this->load->view("templates/header.php",$data);
       $this->load->view(\''.$this->formname.'_view\');
@@ -671,6 +691,8 @@ class '.ucfirst($this->controllername).' extends CI_Controller {
 	 {
 		 $data["title"]=\''.$this->formname.'\';
 		 $data["menus"] = $this->menu_models->menus();
+		 $data["countMsg"]= $this->Message_model->getNewMessageCount();
+		 $data["msg"]= $this->Message_model->getNewMessage();
 		 $data["company"]=$this->menu_models->getCompanyLogo();
 		 $this->load->view("templates/header.php",$data);
 		 $data[\'h\'] = $this->'.$this->modelname.'->view_form_details();
@@ -682,6 +704,8 @@ class '.ucfirst($this->controllername).' extends CI_Controller {
 	{
 		$data["title"]=\''.$this->formname.'\';
 		$data["menus"] = $this->menu_models->menus();
+		$data["countMsg"]= $this->Message_model->getNewMessageCount();
+		$data["msg"]= $this->Message_model->getNewMessage();
 		$data["company"]=$this->menu_models->getCompanyLogo();
 		$this->load->view("templates/header.php",$data);
 		$data[\'h\'] = $this->'.$this->modelname.'->view_form_details();
@@ -908,6 +932,8 @@ class '.ucfirst($this->modelname).' extends CI_Model {
 	{
 		$data["menus"] = $this->menu_models->menus();
 		$data["company"]=$this->menu_models->getCompanyLogo();
+		$data['countMsg']= $this->Message_model->getNewMessageCount();
+		$data['msg']= $this->Message_model->getNewMessage();
 		$data['title'] = $title;
 		$data['page'] = $page;
 		$this->load->vars($data);

@@ -6,6 +6,7 @@ class Employee extends CI_Controller {
   parent::__construct();
   $this->load->model('Employee_model');
   $this->load->model('menu_models');
+  $this->load->model('Message_model');
   $this->load->helper(array('form','url'));
  }
 
@@ -14,6 +15,8 @@ class Employee extends CI_Controller {
 public function add_employee()
 {
       $data['title']='Add Employee';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
      if( $this->Employee_model->add_employee()){
       //echo "successful add Employee";
       $data['menus'] = $this->menu_models->menus();
@@ -27,6 +30,8 @@ public function add_employee()
 public function employee()
   {
       $data['title']='Manage Event';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
@@ -51,6 +56,8 @@ public function update_employee($id)
     $data['company']=$this->menu_models->getCompanyLogo();
     $data['title']="show calendar";
     $data['show_emp']=$this->Employee_model->employee_show();
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/show_employee.php',$data);
     $this->load->view('templates/footer.php');
@@ -60,6 +67,8 @@ public function update_employee($id)
 public function employee_show()
   {
       $data['title']='Manage Event';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['show_emp']=$this->Employee_model->employee_show();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -81,6 +90,8 @@ public function update_employee_select($id)
     //$this->calendar();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
    $this->load->view('templates/header.php',$data);
   $this->load->view('pages/update_employee.php',$data);
   $this->load->view('templates/footer.php');
@@ -91,6 +102,8 @@ public function update_employee_select($id)
 public function leave_employee()
 {
       $data['title']='Manage Leave';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
      if( $this->Employee_model->leave_employee()){
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -104,6 +117,8 @@ public function leave()
   {
 
       $data['title']='Manage Leave';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
@@ -144,6 +159,8 @@ public function leave_update_employee($id)
 public function leave_employee_show()
   {
       $data['title']='Manage Leave';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['show_leave']=$this->Employee_model->leave_show();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -168,6 +185,8 @@ public function leave_update_employee_select($id)
 
 
     //$this->calendar();
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
    $this->load->view('templates/header.php',$data);
   $this->load->view('pages/leave_update.php',$data);
   $this->load->view('templates/footer.php');

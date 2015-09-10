@@ -101,4 +101,32 @@ public function getSentMessageCount()
 
 }
 
+public function getNewMessageCount()
+{
+  if($this->session->userdata('user_id')!=''){
+   $id=$this->session->userdata('user_id');
+ }
+ else{
+  $id=$this->session->userdata('admin_id');
+ }
+  $this->db->where('reciever_id',$id);
+  $this->db->where('message_status',0);
+  $query = $this->db->get("message_details");
+  return $query->num_rows();
+}
+
+public function getNewMessage()
+{
+  if($this->session->userdata('user_id')!=''){
+   $id=$this->session->userdata('user_id');
+ }
+ else{
+  $id=$this->session->userdata('admin_id');
+ }
+  $this->db->where('reciever_id',$id);
+  $this->db->where('message_status',0);
+  $query = $this->db->get("message_details");
+  return $query;
+}
+
 }

@@ -125,22 +125,24 @@
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success pull-right">4</span></a>
+                                    <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success pull-right"><?php echo $countMsg; ?></span></a>
                                     <ul class="dropdown-menu title-caret dropdown-lg" role="menu">
-                                        <li><p class="drop-title">You have 4 new  messages !</p></li>
+                                        <li><p class="drop-title">You have <?php echo $countMsg; ?> new  messages !</p></li>
                                         <li class="dropdown-menu-list slimscroll messages">
                                             <ul class="list-unstyled">
+                                            <?php foreach($msg->result() as $row){ ?>
                                                 <li>
                                                     <a href="<?php echo base_url().'Message_control/inbox'; ?>">
                                                         <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets\images\avatar2.png" alt=""></div>
-                                                        <p class="msg-name">Sandra Smith</p>
-                                                        <p class="msg-text">Hey ! I'm working on your project</p>
-                                                        <p class="msg-time">3 minutes ago</p>
+                                                        <p class="msg-name"><?php echo $row->message_title; ?></p>
+                                                        <p class="msg-text"><?php echo $row->message_body; ?></p>
+                                                        <p class="msg-time"><?php echo $row->message_time; ?></p>
                                                     </a>
                                                 </li>
+                                                <?php } ?>
                                             </ul>
                                         </li>
-                                        <li class="drop-all"><a href="#" class="text-center">All Messages</a></li>
+                                        <li class="drop-all"><a href="<?php echo base_url().'Message_control/inbox'; ?>" class="text-center">All Messages</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">

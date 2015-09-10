@@ -21,7 +21,7 @@
                             </div>
                         </div>
                         <div align="center">
-                          <?php if($msg!='') echo $msg; ?>
+                          <?php if($massage!='') echo $massage; ?>
                         </div>
                         <div class="col-md-2">
                             <ul class="list-unstyled mailbox-nav">

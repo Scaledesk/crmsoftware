@@ -3,20 +3,20 @@
 <div id="main-wrapper" class="container">
                     <div class="row">
                         <div class="col-md-12">
-                         <div class="panel panel-white">
-                                <div class="panel-heading clearfix">
-                                    <h4 class="panel-title">List of Company</h4>
-                                </div>
-                                <div class="panel-body">
-                                   <div class="table-responsive">
-                                    <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
+                          <div class="panel panel-white">
+                              <div class="panel-heading clearfix">
+                                  <h4 style="align:center;" class="panel-title">Student Records</h4>
+                              </div>
+                              <div class="panel-body">
+                                 <div class="table-responsive">
+                                  <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
                                                 <th>S No.</th>
                                                 <th>Name</th>
                                                 <th>Address</th>
                                                 <th>Phone Number</th>
-                                                <th>&nbspEmail</th>
+                                                <th>Email</th>
                                                 <th>Fax</th>
                                                 <th>Domain Name</th>
                                                 <th>Company Description</th>
@@ -24,24 +24,10 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>S No.</th>
-                                                <th>Name</th>
-                                                <th>Address</th>
-                                                <th>Phone Number</th>
-                                                <th>&nbspEmail</th>
-                                                <th>Fax</th>
-                                                <th>Domain Name</th>
-                                                <th>Company Description</th>
-                                                <th>Relation</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </tfoot>
                                         <tbody>
                                             <?php $i=0;
-                                                foreach ($h->result() as $row)  
-                                                 {  
+                                                foreach ($h->result() as $row)
+                                                 {
                                                     $i++;
                                                  ?>
 
@@ -63,11 +49,10 @@
                                             <?php } ?>
 
                                         </tbody>
-                                       </table>  
+                                       </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
-

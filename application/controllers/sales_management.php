@@ -8,11 +8,14 @@ class Sales_management extends CI_Controller {
   $this->load->helper(array('form','url'));
   $this->load->library('email');
   $this->load->model('menu_models');
+  $this->load->model('Message_model');
  }
 public function add_lead()
 {
 
     $data['title']='Add Leads';
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
@@ -23,6 +26,8 @@ public function add_lead()
 public function add_order()
 {
       $data['title']='Add order';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['k']=$this->sales_model->getleadname();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -34,7 +39,9 @@ public function do_add_order()
 {
   if($this->sales_model->add_order())
   {
-          $data['msg']=" Order saved";
+          $data['oredrmsg']=" Order saved";
+          $data['countMsg']= $this->Message_model->getNewMessageCount();
+          $data['msg']= $this->Message_model->getNewMessage();
           $data['k']=$this->sales_model->getleadname();
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
@@ -48,7 +55,9 @@ public function do_add_comment()
 {
     if($this->sales_model->add_comment())
          {
-           $data['msg']="comment saved";
+           $data['commentmsg']="comment saved";
+           $data['countMsg']= $this->Message_model->getNewMessageCount();
+           $data['msg']= $this->Message_model->getNewMessage();
            $data['menus'] = $this->menu_models->menus();
            $data['company']=$this->menu_models->getCompanyLogo();
            $this->load->view('templates/header.php',$data);
@@ -61,7 +70,9 @@ public function do_add_lead()
 
           if($this->sales_model->add_lead())
          {
-           $data['msg']="Lead Aded Added";
+           $data['leadmsg']="Lead Aded Added";
+           $data['countMsg']= $this->Message_model->getNewMessageCount();
+           $data['msg']= $this->Message_model->getNewMessage();
            $data['menus'] = $this->menu_models->menus();
            $data['company']=$this->menu_models->getCompanyLogo();
            $this->load->view('templates/header.php',$data);
@@ -73,6 +84,8 @@ public function do_add_lead()
   public function view_lead()
   {
       $data['title']='Lead  Details';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->view_lead_details();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -84,6 +97,8 @@ public function do_add_lead()
   public function view_order()
   {
       $data['title']='Order  Details';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->view_order_details();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -96,6 +111,8 @@ public function do_add_lead()
 public function calendar()
   {
       $data['title']='Manage Event';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
@@ -121,6 +138,8 @@ public function show_calendar()
 {
   $this->load->database();
     $data['title']="show calendar";
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
    $data['show_date']=$this->sales_model->show_calendar();
    $data['menus'] = $this->menu_models->menus();
    $data['company']=$this->menu_models->getCompanyLogo();
@@ -134,6 +153,8 @@ public function show_calendar_table()
 {
   $this->load->database();
     $data['title']="show calendar";
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
    $data['show_date']=$this->sales_model->show_calendar();
    $data['menus'] = $this->menu_models->menus();
    $data['company']=$this->menu_models->getCompanyLogo();
@@ -151,6 +172,8 @@ public function update_calendar($id)
   if( $this->sales_model->update_calendar($id)){
 
     echo"Successful Update";
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     //$this->calendar();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
@@ -165,6 +188,8 @@ public function delete_event($id)
   if($this->sales_model->delete_event($id))
   {
     $data['title']="show calendar";
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
     $this->load->view('templates/header.php',$data);
@@ -180,6 +205,8 @@ public function update_event($id)
     $data['h']=$this->sales_model->update_event($id);
 
     $data['title']="show calendar";
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
     $this->load->view('templates/header.php',$data);
@@ -191,6 +218,8 @@ public function update_event($id)
   public function manage_invoice()
   {
     $data['title']='Manage Invoice';
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['k']=$this->sales_model->getorder();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
@@ -208,6 +237,8 @@ public function update_event($id)
 public function add_invoice()
   {
       $data['title']='Add Invoice';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['k']=$this->sales_model->getorder();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -225,6 +256,8 @@ public function do_add_invoice()
 public function editinvoice($id)
 {
   $data['title']='Update Invoice';
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
    // $data['k']=$this->sales_model->getorder();
     $data['h']=$this->sales_model->getinvoice($id);
     $data['menus'] = $this->menu_models->menus();
@@ -254,6 +287,8 @@ public function do_edit_invoice($id)
 public function editlead($id)
 {
   $this->load->database();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['title']='Update Lead Details';
   $data['h']=$this->sales_model->editlead($id);
   $data['menus'] = $this->menu_models->menus();
@@ -267,6 +302,8 @@ public function editorder($id)
 {
   $this->load->database();
   $data['title']='Update Order Details';
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['k']=$this->sales_model->getleadname();
   $data['h']=$this->sales_model->editorder($id);
   $data['menus'] = $this->menu_models->menus();
@@ -320,6 +357,8 @@ public function deleteorder($id)
 public function addreminder($id)
 {
       $data['title']='Add reminder';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['k']=$this->sales_model->getinvoice($id);
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -330,6 +369,8 @@ public function addreminder($id)
 public function editreminder($id)
 {
  $data['title']='Update reminder';
+ $data['countMsg']= $this->Message_model->getNewMessageCount();
+ $data['msg']= $this->Message_model->getNewMessage();
       $data['k']=$this->sales_model->getinvoice($id);
       $data['h']=$this->sales_model->get_reminder($id);
       $data['menus'] = $this->menu_models->menus();
@@ -343,6 +384,8 @@ public function do_addreminder()
   if($this->sales_model->add_reminder())
   {
           $data['title']='Manage Invoice';
+          $data['countMsg']= $this->Message_model->getNewMessageCount();
+          $data['msg']= $this->Message_model->getNewMessage();
           $data['k']=$this->sales_model->getorder();
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
@@ -356,6 +399,8 @@ public function do_editreminder($id)
   if($this->sales_model->editreminder($id))
   {
           $data['title']='Manage Invoice';
+          $data['countMsg']= $this->Message_model->getNewMessageCount();
+          $data['msg']= $this->Message_model->getNewMessage();
           $data['k']=$this->sales_model->getorder();
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
@@ -412,6 +457,8 @@ public function sendreminder()
 public function view_reminder()
 {
       $data['title']='View  Reminder';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->getorder();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -435,6 +482,8 @@ public function loadreminder()
 public function add_supplier_category()
 {
       $data['title']='Add Supplier Category';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
@@ -445,8 +494,10 @@ public function do_add_supplier_category()
 {
   if($this->sales_model->add_supplier_category())
   {
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['title']='Add Supplier Category';
-    $data['msg']='Supplier category saved';
+    $data['supplierCategoryAddmsg']='Supplier category saved';
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
@@ -459,6 +510,8 @@ public function do_add_supplier_category()
 public function add_supplier()
 {
       $data['title']='Add Supplier';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->getsupplier_category();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -471,7 +524,9 @@ public function do_add_supplier()
   if($this->sales_model->add_supplier())
   {
     $data['title']='Add Supplier';
-    $data['msg']='Supplier details saved';
+    $data['AddSuppliermsg']='Supplier details saved';
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['h']=$this->sales_model->getsupplier_category();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
@@ -483,6 +538,8 @@ public function do_add_supplier()
 public function view_supplier()
 {
       $data['title']='View  Supplier';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->getsupplier();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -494,6 +551,8 @@ public function view_supplier()
 public function editsupplier($id)
 {
   $this->load->database();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['title']='Update Supplier Details';
   $data['h']=$this->sales_model->getsupplier_category();
   $data['k']=$this->sales_model->editsupplier($id);
@@ -528,6 +587,8 @@ public function deletesupplier($id)
 public function add_quote_details()
 {
       $data['title']='Add Quote Details';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->getsupplier();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -554,8 +615,10 @@ public function do_add_quote_details()
         {
           if($this->sales_model->add_quote_details($rename))
           {
+            $data['countMsg']= $this->Message_model->getNewMessageCount();
+            $data['msg']= $this->Message_model->getNewMessage();
             $data['title']='Add Quote Details';
-            $data['msg']='Quote details saved';
+            $data['quotemsg']='Quote details saved';
             $data['menus'] = $this->menu_models->menus();
             $data['company']=$this->menu_models->getCompanyLogo();
             $data['h']=$this->sales_model->getsupplier();
@@ -568,6 +631,8 @@ public function do_add_quote_details()
 public function editquote($id)
 {
   $this->load->database();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['title']='Update Quote Details';
   $data['h']=$this->sales_model->getsupplier();
   $data['k']=$this->sales_model->editquote($id);
@@ -623,6 +688,8 @@ public function deletequote($id)
 public function view_quote_details()
 {
   $data['title']='View  Quote Details';
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->getquote();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -634,6 +701,8 @@ public function view_quote_details()
 public function add_contractor()
 {
   $data['title']='Add  Contractor Details';
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->getsupplier();
       $data['company']=$this->menu_models->getCompanyLogo();
       $data['menus'] = $this->menu_models->menus();
@@ -645,8 +714,10 @@ public function do_add_contractor()
 {
   if($this->sales_model->add_contractor())
   {
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['title']='Add Contractor Details';
-    $data['msg']='Contractor details saved';
+    $data['contractorAddmsg']='Contractor details saved';
     $data['h']=$this->sales_model->getsupplier();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
@@ -661,6 +732,8 @@ public function do_add_contractor()
 public function automation_mgt()
   {
       $data['title']='Automation Management ';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
@@ -673,7 +746,8 @@ public function automation_mgt()
   {
      $this->load->database();
      $this->sales_model->automation_mgt_insert();
-
+     $data['countMsg']= $this->Message_model->getNewMessageCount();
+     $data['msg']= $this->Message_model->getNewMessage();
       $data['title']='Automation Management ';
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -689,6 +763,8 @@ public function automation_mgt()
   if($this->sales_model->automation_mgt_delete($id))
 
   {
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
     $data['title']='Automation Management';
     $data['h']=$this->sales_model->automation_mgt_select();
     $data['menus'] = $this->menu_models->menus();
@@ -704,7 +780,8 @@ public function automation_mgt_update($id)
 
 $this->load->model("sales_model");
   $data['h']=$this->sales_model->automation_mgt_update($id);
-
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
     $data['title']="Automation Management ";
     $data['h']=$this->sales_model->automation_mgt_select();
     $data['menus'] = $this->menu_models->menus();
@@ -720,9 +797,10 @@ public function automation_mgt_update_select($id)
 
 $this->load->model("sales_model");
   $data['h']=$this->sales_model->automation_mgt_update_select($id);
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
 
-
-    $data['title']="Automation Management ";
+    $data['title']="Automation Management";
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
     $this->load->view('templates/header.php',$data);
@@ -734,6 +812,8 @@ $this->load->model("sales_model");
 public function automation_mgt_show()
   {
       $data['title']='Automation Management ';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['h']=$this->sales_model->automation_mgt_select();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
@@ -741,6 +821,4 @@ public function automation_mgt_show()
       $this->load->view('pages/automation_management_show.php',$data);
       $this->load->view('templates/footer.php');
   }
-
-
 }

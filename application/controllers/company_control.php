@@ -6,12 +6,15 @@ class Company_control extends CI_Controller {
   parent::__construct();
   $this->load->model('Company_model');
   $this->load->model('menu_models');
+  $this->load->model('Message_model');
   $this->load->helper(array('form','url'));
  }
 
 
   public function add_company()
   {
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $data['title']='Add Company Details';
@@ -25,6 +28,8 @@ class Company_control extends CI_Controller {
     if($this->Company_model->add_company())
     {
       $data['title']='Add Company Details';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $data['msg']="Company Record Added";
@@ -37,6 +42,8 @@ class Company_control extends CI_Controller {
   public function view_company()
   {
       $data['title']='View Company Details';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $data['h']=$this->Company_model->view_company_details();
@@ -49,6 +56,8 @@ class Company_control extends CI_Controller {
 {
 
   $this->load->database();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['menus'] = $this->menu_models->menus();
   $data['company']=$this->menu_models->getCompanyLogo();
   $data['title']='Edit Company Details';

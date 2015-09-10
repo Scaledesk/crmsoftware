@@ -9,7 +9,7 @@
                                <div class="table-responsive">
                                     <table id="example" class="display table">
                                         <thead>
-                                            <tr><th>Sr. No.</th><th>name</th><th>email</th><th>gendar</th><th>category</th><th>Action</th>
+                                            <tr><th>Sr. No.</th><th>qualification</th><th>Action</th>
                                           </tr>
                                         </thead>
                                         <tbody> <?php
@@ -20,7 +20,7 @@
 
 
                                           ?> <tr>
-                                                <td> <?php echo $i; ?></td><td> <?php echo $row->name ?></td><td> <?php echo $row->email ?></td><td> <?php echo $row->gendar ?></td><td> <?php echo $row->category ?></td><td> <a href="<?php echo base_url().'index.php/TestController/deleteRecord/'.$row->id;  ?>">Delete </a></td></tr><?php } ?>	</tbody>
+                                                <td> <?php echo $i; ?></td><td> <?php echo $row->qualification ?></td><td> <a href="<?php echo base_url().'index.php/jj/deleteRecord/'.$row->id;  ?>">Delete </a></td></tr><?php } ?>	</tbody>
                                        </table>
                                     </div>
                                 </div>

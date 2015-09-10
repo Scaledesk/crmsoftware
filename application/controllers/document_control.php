@@ -6,6 +6,7 @@ class Document_control extends CI_Controller {
   parent::__construct();
   $this->load->model('document_model');
   $this->load->model('menu_models');
+  $this->load->model('Message_model');
   $this->load->helper(array('form','url'));
  }
 
@@ -13,6 +14,8 @@ class Document_control extends CI_Controller {
 {
 
       $data['title']='Add Document';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $data['k']=$this->document_model->getcategory();
@@ -43,7 +46,9 @@ public function do_add_document()
 
           if($this->document_model->add_document($rename))
          {
-           $data['msg']="Document Added";
+           $data['Dmsg']="Document Added";
+           $data['countMsg']= $this->Message_model->getNewMessageCount();
+           $data['msg']= $this->Message_model->getNewMessage();
            $data['menus'] = $this->menu_models->menus();
            $data['company']=$this->menu_models->getCompanyLogo();
            $data['k']=$this->document_model->getcategory();
@@ -60,6 +65,8 @@ public function do_add_document()
   public function view_document()
   {
       $data['title']='View Document Details';
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $data['h']=$this->document_model->view_document_details();
@@ -72,6 +79,8 @@ public function do_add_document()
 
   $this->load->database();
   $data['title']='Edit document Details';
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['menus'] = $this->menu_models->menus();
   $data['company']=$this->menu_models->getCompanyLogo();
   $data['k']=$this->document_model->getcategory();

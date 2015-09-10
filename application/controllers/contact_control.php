@@ -7,11 +7,14 @@ class Contact_control extends CI_Controller {
   $this->load->model('company_model');
   $this->load->model('contact_model');
   $this->load->model('menu_models');
+  $this->load->model('Message_model');
   $this->load->helper(array('form','url'));
  }
 
 public function add_contact()
 {
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
       $data['title']='Add Contact Details';
@@ -24,7 +27,9 @@ public function do_add_contact()
 {
   if($this->contact_model->add_contact())
     {
-      $data['msg']="Contact Record Added";
+      $data['Cmsg']="Contact Record Added";
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['menus'] = $this->menu_models->menus();
       $data['company']=$this->menu_models->getCompanyLogo();
       $this->load->view('templates/header.php',$data);
@@ -37,6 +42,8 @@ public function do_add_contact()
   public function view_contact()
   {
       $data['menus'] = $this->menu_models->menus();
+      $data['countMsg']= $this->Message_model->getNewMessageCount();
+      $data['msg']= $this->Message_model->getNewMessage();
       $data['company']=$this->menu_models->getCompanyLogo();
       $data['title']='Contact Details';
       $data['h']=$this->contact_model->view_contact_details();
@@ -48,6 +55,8 @@ public function do_add_contact()
   public function editcontact($id)
 {
   $data['menus'] = $this->menu_models->menus();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['company']=$this->menu_models->getCompanyLogo();
   $this->load->database();
   $data['title']='Edit Contact Details';

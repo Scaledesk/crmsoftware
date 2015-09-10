@@ -6,6 +6,7 @@ class User_control extends CI_Controller {
   parent::__construct();
   $this->load->model('User_model');
   $this->load->model('menu_models');
+  $this->load->model('Message_model');
   $this->load->helper(array('form','url'));
  }
  public function do_register()
@@ -32,6 +33,8 @@ class User_control extends CI_Controller {
  }
  public function view_user()
  {
+   $data['countMsg']= $this->Message_model->getNewMessageCount();
+   $data['msg']= $this->Message_model->getNewMessage();
    $data['h']=$this->User_model->view_user();
    $data['title']='user_details';
    $data['menus'] = $this->menu_models->menus();
@@ -43,6 +46,8 @@ class User_control extends CI_Controller {
 public function view_permission()
 {
   $data['h']=$this->User_model->view_permission();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['title']='Manage Permission';
   $data['menus'] = $this->menu_models->menus();
   $data['company']=$this->menu_models->getCompanyLogo();
@@ -53,6 +58,8 @@ public function view_permission()
 public function access_permission()
 {
   $data['h']=$this->User_model->view_user();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['k']=$this->User_model->get_menu();
   $data['menus']=$this->menu_models->menus();
   $data['company']=$this->menu_models->getCompanyLogo();
@@ -75,7 +82,9 @@ print_r($this->input->post());
 die;*/
   if($this->User_model->add_permission())
   {
-   $data['msg']='Permission added to user';
+    $data['countMsg']= $this->Message_model->getNewMessageCount();
+    $data['msg']= $this->Message_model->getNewMessage();
+   $data['permissionMsg']='Permission added to user';
    $data['h']=$this->User_model->view_user();
    $data['k']=$this->User_model->get_menu();
    $data['menus']=$this->menu_models->menus();
@@ -95,6 +104,8 @@ public function delete_user($id)
 public function changePassword()
 {
   $data['menus'] = $this->menu_models->menus();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['company']=$this->menu_models->getCompanyLogo();
   $data['title']='Change Your Password';
   $this->load->view('templates/header.php',$data);
@@ -106,7 +117,7 @@ public function do_change_password()
 {
   if($this->User_model->changePassword())
   {
-    $data['msg']="password changed";
+    $data['message']="password changed";
     redirect(base_url().'Login_control/login',$data);
     /*
     $data['menus'] = $this->menu_models->menus();
@@ -120,6 +131,8 @@ public function do_change_password()
 public function ChangeImage()
 {
   $data['menus'] = $this->menu_models->menus();
+  $data['countMsg']= $this->Message_model->getNewMessageCount();
+  $data['msg']= $this->Message_model->getNewMessage();
   $data['company']=$this->menu_models->getCompanyLogo();
   $data['title']='Change Profile Picture';
   $this->load->view('templates/header.php',$data);
@@ -141,7 +154,7 @@ public function do_upload_image()
    {
      if($this->User_model->ChangeImage($imgName))
      {
-       $data['msg']="image uploaded";
+       $data['message']="image uploaded";
        redirect(base_url().'Login_control/login',$data);
      }
    }
@@ -154,6 +167,8 @@ public function do_upload_image()
  public function upload_company_logo()
  {
    $data['menus'] = $this->menu_models->menus();
+   $data['countMsg']= $this->Message_model->getNewMessageCount();
+   $data['msg']= $this->Message_model->getNewMessage();
    $data['company']=$this->menu_models->getCompanyLogo();
    $data['title']='Change Company Logo';
    $data['c']= $this->User_model->getCompanyProfile();
@@ -175,7 +190,7 @@ public function do_upload_image()
     {
       if($this->User_model->upload_company_logo($logoImg))
       {
-        $data['msg']="Logo uploaded";
+        $data['message']="Logo uploaded";
         redirect(base_url().'Login_control/login',$data);
       }
     }
@@ -186,6 +201,8 @@ public function do_upload_image()
 
  public function settingAccount()
  {
+   $data['countMsg']= $this->Message_model->getNewMessageCount();
+   $data['msg']= $this->Message_model->getNewMessage();
    $data['menus'] = $this->menu_models->menus();
    $data['title']='Settings';
    $data['company']=$this->menu_models->getCompanyLogo();

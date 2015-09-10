@@ -205,9 +205,13 @@ if ($count % 2):
 </div>
 
 <div class="input_box">
-<label for="view_field_type<?php echo $count; ?>">Type <span class="required">*</span></label>
+<label for="view_field_type<?php echo $count; ?>" align="left">Type <span class="required">*</span></label>
 
 <?php
+//$js = 'id="fieldType[]" onChange="checkFieldType();"';
+//$js = 'id="fieldType[$count]" onChange="checkFieldType();"';
+$js = 'id="fieldType'.$count.'" onChange="checkFieldType();"';
+//"id" =>"view_field_type{$count}"
 $view_field_types = array(
                         'input' 	=> 'INPUT',
 						'textarea' 	=> 'TEXTAREA',
@@ -217,8 +221,18 @@ $view_field_types = array(
 						'password' 	=> 'PASSWORD'
                         );
 ?>
-<br /><?php echo form_dropdown("view_field_type{$count}", $view_field_types, set_value("view_field_type{$count}"), "class='form-control'" "onchange='checkRadio()'"); ?>
-</div>
+<br /><?php echo form_dropdown("view_field_type{$count}", $view_field_types, set_value("view_field_type{$count}"), $js); ?>
+<span <?php echo 'id="span_radio'.$count.'"';?> style="display:none">Option1: <input type="text" <?php echo 'name="option1'.$count.'"'; ?> style="height:20px;width:90px" />
+Option2: <input type="text" <?php echo 'name="option2'.$count.'"'; ?> id="option2" style="height:20px;width:90px" /></span>
+
+<span <?php echo 'id="span_checkbox'.$count.'"';?> style="display:none" >
+<br />
+  Value 1: <input type="text" <?php echo 'name="value1'.$count.'"'; ?> style="height:25px;width:140px" /><br />
+  Value 2: <input type="text" <?php echo 'name="value2'.$count.'"'; ?> style="height:25px;width:140px" /><br />
+  Value 3: <input type="text" <?php echo 'name="value3'.$count.'"'; ?> style="height:25px;width:140px" />
+</span></div>
+
+
 
 <div class="type_heading">Database Schema</div>
 
@@ -301,9 +315,35 @@ $db_field_types = array(
 
 <script>
 
-var val = document.getElementById('').value = radio;
+function checkFieldType()
+{
+//view_field_name
+//view_field_type1
+var total = <?php echo $field_total; ?>;
+//alert(total);
+for(c = 1; c <= total; c++){
+    if(document.getElementById('fieldType'+c).value=='radio')
+    {
+      document.getElementById('span_radio'+c).style.display="";
 
-</script>
+    }
+    else {
+          document.getElementById('span_radio'+c).style.display="none";
+    }
+    if(document.getElementById('fieldType'+c).value=='checkbox')
+    {
+      document.getElementById('span_checkbox'+c).style.display="";
+
+    }
+    else {
+          document.getElementById('span_checkbox'+c).style.display="none";
+    }
+
+  }
+}
+
+
+</script>"
 
 </div>
 </div>
