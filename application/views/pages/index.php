@@ -172,13 +172,9 @@
                                                  <td><?php echo $row->supplier_description; ?></td>
                                                  <td><?php echo $row->category_id; ?></td>
                                               </tr>
-
                                              <?php } ?>
-
                                          </tbody>
                                         </table>
-
-
                                     </div>
                                 </div>
                                 <br> <br> <br>
