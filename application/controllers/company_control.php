@@ -38,6 +38,7 @@ class Company_control extends CI_Controller {
       $this->load->view('templates/footer.php');
     }
   }
+  ++
 
   public function view_company()
   {
