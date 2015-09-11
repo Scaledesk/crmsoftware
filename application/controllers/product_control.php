@@ -9,7 +9,6 @@ class Product_control extends CI_Controller {
   $this->load->model('menu_models');
   $this->load->helper(array('form','url'));
   }
-
   public function add_product()
   {
        $data['menus'] = $this->menu_models->menus();
@@ -152,7 +151,7 @@ class Product_control extends CI_Controller {
           $data['msg']= $this->Message_model->getNewMessage();
           $data['menus'] = $this->menu_models->menus();
           $data['company']=$this->menu_models->getCompanyLogo();
-            $data['k']=$this->Product_model->view_product_details();
+          $data['k']=$this->Product_model->view_product_details();
           $this->load->view('templates/header.php',$data);
           $this->load->view('pages/add_milesstone.php',$data);
           $this->load->view('templates/footer.php');
@@ -219,10 +218,10 @@ class Product_control extends CI_Controller {
 
     public function add_document()
     {
-         $data['menus'] = $this->menu_models->menus();
-         $data['countMsg']= $this->Message_model->getNewMessageCount();
-         $data['msg']= $this->Message_model->getNewMessage();
-         $data['company']=$this->menu_models->getCompanyLogo();
+          $data['menus'] = $this->menu_models->menus();
+          $data['countMsg']= $this->Message_model->getNewMessageCount();
+          $data['msg']= $this->Message_model->getNewMessage();
+          $data['company']=$this->menu_models->getCompanyLogo();
           $data['title']='Add Product Document Details';
           $data['k']=$this->document_model->getcategory();
           $data['h']=$this->Product_model->view_product_details();
@@ -253,10 +252,10 @@ class Product_control extends CI_Controller {
 
              if($this->Product_model->add_document($rename))
                {
-                 $data['menus'] = $this->menu_models->menus();
-                 $data['countMsg']= $this->Message_model->getNewMessageCount();
-                 $data['msg']= $this->Message_model->getNewMessage();
-                 $data['company']=$this->menu_models->getCompanyLogo();
+                  $data['menus'] = $this->menu_models->menus();
+                  $data['countMsg']= $this->Message_model->getNewMessageCount();
+                  $data['msg']= $this->Message_model->getNewMessage();
+                  $data['company']=$this->menu_models->getCompanyLogo();
                   $data['title']='Add Product Document Details';
                   $data['pDocumentMsg']="Document Details Saved";
                   $data['k']=$this->document_model->getcategory();
@@ -265,7 +264,6 @@ class Product_control extends CI_Controller {
                   $this->load->view('pages/add_product_document.php',$data);
                   $this->load->view('templates/footer.php');
                }
-
          }
     }
     public function view_document()

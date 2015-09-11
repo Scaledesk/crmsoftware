@@ -1,4 +1,11 @@
+<?php 
 
+if( ! ini_get('date.timezone') )
+{
+   date_default_timezone_set('GMT');
+} 
+
+?>
 <div class="page-inner">
                 <div class="page-breadcrumb">
                     <ol class="breadcrumb container">

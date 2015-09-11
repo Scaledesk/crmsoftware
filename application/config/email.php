@@ -1,4 +1,8 @@
 <?php
+if( ! ini_get('date.timezone') )
+{
+   date_default_timezone_set('GMT');
+} 
 $config['protocol']='smtp';                                      // Set mailer to use SMTP
 $config['smtp_host'] = 'md-64.webhostbox.net';//'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
 $config['smtp_user'] = 'javed@weboforce.com';                 // SMTP username
