@@ -156,7 +156,7 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
                                       <li role="presentation"><a href="<?php echo base_url().'User_control/settingAccount'; ?>"><i class="fa fa-user"></i>Setting</a></li>
-                                      <li role="presentation"><a href="<?php echo base_url().'Message_control/inbox'; ?>"><i class="fa fa-sign-out m-r-xs"></i>Inbox</a></li>s
+                                      <li role="presentation"><a href="<?php echo base_url().'Message_control/inbox'; ?>"><i class="fa fa-sign-out m-r-xs"></i>Inbox</a></li>
                                         <!--<li role="presentation"><a href="<?php echo base_url().'User_control/changePassword'; ?>"><i class="fa fa-user"></i>Setting</a></li>-->
                                         <li role="presentation"><a href="<?php echo base_url().'sales_management/calendar';?>"><i class="fa fa-calendar"></i>Calendar</a></li>
                                         <!--<li role="presentation" class="divider"></li>-->

@@ -39,8 +39,8 @@
                                         </th>
                                         <th colspan="1" class="hidden-xs">
 
-                                          <a href="#" onclick="delmessage()"><div class="fa-item col-md-3 col-sm-8"><i class="fa fa-trash"></i>
-                                        </div> </a>
+                                          <a href="#" onclick="delmessage()"><i class="fa fa-trash"> Delete</i>
+                                        </a>
                                         </th>
                                         <th class="text-right" colspan="5">
                                             <!--<span class="text-muted m-r-sm">Showing 20 of 346 </span>
@@ -69,10 +69,13 @@
 
                                         </td>
                                         <td class="hidden-xs">
-                                            <?php echo $row->reciever_id; echo $row->message_title; ?>
+                                            <?php echo $row->send_to; echo $row->message_title; ?>
                                         </td>
                                         <td>
-                                            <?php echo $row->message_body; ?>
+                                            <?php
+
+                                            $body =$row->message_body;
+                                            echo substr($body, 50); ?>
                                         </td>
                                         <td>
                                         </td>
@@ -113,7 +116,7 @@ function delmessage()
      if(confirm("Do You want to delete.!"))
 	 {
 	   //document.form1.act.value="delMultiple";
-	   document.form1.action="<?php echo base_url().'Message_control/deleteMessage'; ?>";
+	   document.form1.action="<?php echo base_url().'Message_control/deleteMessageOut/'; ?>";
 	   document.form1.submit();
 	 }
    }

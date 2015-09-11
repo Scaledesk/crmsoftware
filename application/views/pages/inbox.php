@@ -41,8 +41,8 @@
                                         </th>
                                         <th colspan="1" class="hidden-xs">
 
-                                          <a href="#" onclick="delmessage()"><div class="fa-item col-md-3 col-sm-8"><i class="fa fa-trash"></i>
-                                        </div> </a>
+                                          <a href="#" onclick="delmessage()"><i class="fa fa-trash"> Delete</i>
+                                         </a>
                                         </th>
                                         <th class="text-right" colspan="5">
 
@@ -55,18 +55,22 @@
                                 <tbody>
 
                                   <?php foreach ($m->result() as $row) { ?>
+
                                     <tr class="unread">
                                         <td class="hidden-xs">
-                                            <span><input type="checkbox" name="chk[]" id="chk[]" class="checkbox-mail"></span>
+                                            <span><input type="checkbox" name="chk[]" value="<?php echo $row->id ?>" id="chk[]" class="checkbox-mail"></span>
                                         </td>
                                         <td class="hidden-xs">
 
                                         </td>
                                         <td class="hidden-xs">
-                                            <?php echo $row->sender_id; echo $row->message_title; ?>
+                                            <?php echo $row->send_by; echo $row->message_title; ?>
                                         </td>
                                         <td>
-                                            <?php echo $row->message_body; ?>
+                                          <a href="<?php echo base_url().'Message_control/message_view/'.$row->id; ?>">  <?php $body =$row->message_body;
+                                            echo substr($body, 1, 50);
+                                             ?> </a>
+
                                         </td>
                                         <td>
                                         </td>
@@ -108,7 +112,7 @@
                      if(confirm("Do You want to delete.!"))
                 	 {
                 	   //document.form1.act.value="delMultiple";
-                	   document.form1.action="<?php echo base_url().'Message_control/deleteMessage'; ?>";
+                	   document.form1.action="<?php echo base_url().'Message_control/deleteMessageIn/'; ?>";
                 	   document.form1.submit();
                 	 }
                    }

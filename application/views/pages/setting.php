@@ -15,8 +15,10 @@
                                             <ul class="nav nav-tabs" role="tablist">
                                                 <li role="presentation" class="active"><a href="#tab9" role="tab" data-toggle="tab">Change Password</a></li>
                                                 <li role="presentation"><a href="#tab10" role="tab" data-toggle="tab">Upload Profile Picture</a></li>
+                                                <?php
+                                              if($this->session->userdata('admin_id')!=""){ ?>
                                                 <li role="presentation"><a href="#tab11" role="tab" data-toggle="tab">Upload Company Logo</a></li>
-
+                                            <?php  } ?>
                                             </ul>
                                             <!-- Tab panes -->
                                             <div class="tab-content">

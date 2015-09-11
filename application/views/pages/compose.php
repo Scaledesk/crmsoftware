@@ -16,8 +16,8 @@
         </div>
         <div class="col-md-2">
             <ul class="list-unstyled mailbox-nav">
-                <li><a href="<?php echo base_url().'Message_control/inbox'; ?>"><i class="fa fa-inbox"></i>Inbox <span class="badge badge-success pull-right">4</span></a></li>
-                <li><a href="<?php echo base_url().'Message_control/sentbox'; ?>"><i class="fa fa-sign-out"></i>Sent</a></li>
+                <li><a href="<?php echo base_url().'Message_control/inbox'; ?>"><i class="fa fa-inbox"></i>Inbox <span class="badge badge-success pull-right"><?php echo $count; ?></span></a></li>
+                <li><a href="<?php echo base_url().'Message_control/sentbox'; ?>"><i class="fa fa-sign-out"></i>Sent <span class="badge badge-success pull-right"><?php echo $countSentbox; ?></span></a></li>
             </ul>
         </div>
         <div class="col-md-10">
@@ -28,8 +28,11 @@
                             <div class="form-group">
                                 <label for="to" class="col-sm-2 control-label">To</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" name="recipients" id="recipient">
+                                    <select class="form-control" name="recipients" id="recipient" required>
+                                      <option value="">select</option>
+                                      <option value="0">Admin</option>
                                       <?php
+
                                       foreach($h->result() as $row){
                                        ?>
                                       <option value="<?php echo $row->user_id; ?>"><?php echo $row->user_name; ?></option>
@@ -40,13 +43,13 @@
                             <div class="form-group">
                                 <label for="subject" class="col-sm-2 control-label">Subject</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="subject" name="subject">
+                                    <input type="text" class="form-control" id="subject" name="subject" required="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="subject" class="col-sm-2 control-label">Body</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" name="body"></textarea>
+                                    <textarea class="form-control" name="body" required></textarea>
 
                                 </div>
                             </div>
