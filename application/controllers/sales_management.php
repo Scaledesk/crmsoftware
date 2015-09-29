@@ -429,8 +429,6 @@ public function sendreminder()
         $this->email->message('Dear sir, invoice due date come regarding invoice number  ');
         if($this->email->send())
         {
-          //echo "reminder send";
-          //$this->sales_model->deletereminder($row->reminder_id);
           $f=1;
         }
     }
@@ -445,13 +443,6 @@ public function sendreminder()
     echo "reminder not send";
   }
 
-  /*$data['invoice']=$this->sales_model->getinvoice();
-  $this->email->from('javed@weboforce.com', 'JavedAhamad');
-  $this->email->to('javedahamad4@gmail.com');
-  $this->email->subject('New Usre Registered');
-  $this->email->message('Testing the email class.');
-  $this->email->send();
-*/
 }
 
 public function view_reminder()

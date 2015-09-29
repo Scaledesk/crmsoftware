@@ -10,9 +10,11 @@ public function send_message()
 {
   if($this->session->userdata('user_id')!=''){
    $sender_id=$this->session->userdata('user_id');
+   $sendar_name = $this->session->userdata('user_name');
  }
  else{
   $sender_id=$this->session->userdata('admin_id');
+  $sendar_name = $this->session->userdata('admin_name');
  }
 $send_to = $this->input->post('recipients');
 $status=0;
@@ -22,6 +24,7 @@ $data=array(
   'message_body'=>$this->input->post('body'),
   'send_to'=>$send_to,
   'send_by'=>$sender_id,
+  'sendar_name'=>$sendar_name,
   'message_time'=>$time,
   'message_status'=>$status
 );
@@ -52,47 +55,33 @@ public function getMessage($limit,$start)
  else{
   $id=$this->session->userdata('admin_id');
  }
-// $this->db->where('message_id',$p);
- //$this->db->limit($limit);
+
  $this->db->limit($limit, $start);
- //$this->db->where('reciever_id',$id);
 
-// SELECT * FROM user_mailboxes LEFT JOIN mbox ON mbox.id = user_mailboxes.message_id WHERE user_mailboxes.user = "$user" AND user_mailboxes.mailbox = "Out";
-$query = $this->db->query("SELECT * FROM message_user LEFT JOIN messages ON messages.id = message_user.message_id
-  WHERE message_user.user = '$id' AND message_user.mailbox = 'In';");
+// $query = $this->db->query("SELECT * FROM message_user LEFT JOIN messages ON messages.id = message_user.message_id
+//  WHERE message_user.user = '$id' AND message_user.mailbox = 'In';");
 
-  // SELECT student.firstname,
-  //        student.lastname,
-  //        exam.name,
-  //        exam.date,
-  //        grade.grade
-  //   FROM grade
-  //  INNER JOIN student ON student.studentId = grade.fk_studentId
-  //  INNER JOIN exam ON exam.examId = grade.fk_examId
-  //  ORDER BY exam.date;
-  //
-  //
-/*
-    $d = $this->db->query("select messages.id,
+
+  $d = $this->db->query("select messages.id,
          messages.message_title,
          messages.message_body,
          messages.message_status,
          messages.message_time,
          messages.send_to,
          messages.send_by,
+         messages.sendar_name,
          message_user.user,
          message_user.mailbox,
          users_details.user_name
-         from message_user
-         LEFT JOIN messages ON messages.id = message_user.message_id AND
-         LEFT JOIN users_details ON users_details.user_name = message_user.user;");
-      var_dump($d->result());
-      die;
-*/
+         from messages
+         LEFT JOIN message_user ON messages.id = message_user.message_id
+         LEFT JOIN users_details ON users_details.user_id = message_user.user WHERE message_user.user = '$id' AND message_user.mailbox = 'In' ;");
+
+
 
 
  //$query=$this->db->get('message_details');
- return $query;
+ return $d;
 }
 
 public function getSentMessage($limit,$start)
@@ -109,10 +98,23 @@ public function getSentMessage($limit,$start)
  //$this->db->limit($limit, $start);
  //$this->db->where('sender_id',$id);
  //$query=$this->db->get('message_details');
- $query = $this->db->query("SELECT * FROM message_user LEFT JOIN messages ON messages.id = message_user.message_id
-   WHERE message_user.user = '$id' AND message_user.mailbox = 'Out';");
+ $d = $this->db->query("select messages.id,
+        messages.message_title,
+        messages.message_body,
+        messages.message_status,
+        messages.message_time,
+        messages.send_to,
+        messages.send_by,
+        messages.sendar_name,
+        message_user.user,
+        message_user.mailbox,
+        users_details.user_name
+        from messages
+        LEFT JOIN message_user ON messages.id = message_user.message_id
+        LEFT JOIN users_details ON users_details.user_id = message_user.user WHERE message_user.user = '$id' AND message_user.mailbox = 'Out' ;");
 
- return $query;
+
+ return $d;
 
 }
 public function delMessageIn($type)

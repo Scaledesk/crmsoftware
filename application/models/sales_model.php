@@ -128,7 +128,10 @@ parent::__construct();
 	}
 	public function view_order_details()
 	{
-		$query = $this->db->get('order_details');
+
+		$query = $this->db->query("select * from order_details left join leads on leads.lead_id = order_details.lead_id;");
+
+		//$query = $this->db->get('order_details');
     	return $query;
 	}
 	public function getinvoice($id)

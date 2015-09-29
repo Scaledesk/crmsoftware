@@ -29,7 +29,8 @@ parent::__construct();
 
 	public function view_document_details()
 	{
-		$query = $this->db->get('document');
+$query = $this->db->query("select * from document left join document_category on document_category.document_category_id = document.document_category_id;");
+		//$query = $this->db->get('document');
     	return $query;
 	}
 
