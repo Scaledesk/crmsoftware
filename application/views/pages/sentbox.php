@@ -69,7 +69,7 @@
 
                                         </td>
                                         <td class="hidden-xs">
-                                            <?php echo $row->send_to; echo $row->message_title; ?>
+                                            <?php echo $row->user_name.'&nbsp&nbsp&nbsp&nbsp'; echo $row->message_title; ?>
                                         </td>
                                         <td>
                                             <?php

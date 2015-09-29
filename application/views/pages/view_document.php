@@ -34,8 +34,8 @@
                                         </tfoot>
                                         <tbody>
                                             <?php $i=0;
-                                                foreach ($h->result() as $row)  
-                                                 {  
+                                                foreach ($h->result() as $row)
+                                                 {
                                                     $i++;
                                                  ?>
 
@@ -44,7 +44,7 @@
                                                 <td><?php echo $row->document_name; ?></td>
                                                 <td><?php echo $row->document_type; ?></td>
                                                 <td><?php echo $row->document_description; ?></td>
-                                                <td><?php echo $row->document_categary_id; ?></td>
+                                                <td><?php echo $row->document_category_name; ?></td>
                                                 <td><a href="<?php echo $row->document_file; ?>">Download</a></td>
                                                 <td><a href="<?php echo base_url().'document_control/editdocument/'.$row->document_id; ?> ">Edit</a>|
                                                     <a href="<?php echo base_url().'document_control/deletedocument/'.$row->document_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
@@ -54,11 +54,10 @@
                                             <?php } ?>
 
                                         </tbody>
-                                       </table>  
+                                       </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
-

@@ -34,8 +34,8 @@
                                         </tfoot>
                                         <tbody>
                                             <?php $i=0;
-                                                foreach ($h->result() as $row)  
-                                                 {  
+                                                foreach ($h->result() as $row)
+                                                 {
                                                     $i++;
                                                  ?>
 
@@ -46,23 +46,22 @@
                                                 <td><?php echo $row->order_cost; ?></td>
                                                 <td><?php echo $row->order_start_date; ?></td>
                                                 <td><?php echo $row->order_proposed_end_date; ?></td>
-                                                <td><?php echo $row->lead_id; ?></td>
+                                                <td><?php echo $row->lead_name; ?></td>
                                                 <td><a href="<?php echo base_url().'sales_management/editorder/'.$row->order_id; ?> ">Edit</a>|
                                                     <a href="<?php echo base_url().'sales_management/deleteorder/'.$row->order_id; ?>" OnClick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                                                 </td>
 
 
-                                                
+
                                             </tr>
 
                                             <?php } ?>
 
                                         </tbody>
-                                       </table>  
+                                       </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
-

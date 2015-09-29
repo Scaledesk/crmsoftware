@@ -64,7 +64,7 @@
 
                                         </td>
                                         <td class="hidden-xs">
-                                            <?php echo $row->send_by; echo $row->message_title; ?>
+                                            <?php echo $row->sendar_name.'&nbsp&nbsp&nbsp&nbsp'; echo $row->message_title; ?>
                                         </td>
                                         <td>
                                           <a href="<?php echo base_url().'Message_control/message_view/'.$row->id; ?>">  <?php $body =$row->message_body;
