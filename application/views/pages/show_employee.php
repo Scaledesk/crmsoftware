@@ -21,7 +21,6 @@
                                                 <th>Emp. Address</th>
                                                 <th>Emp. Joining Date</th>
                                                 <th>Emp. Gender</th>
-                                                
                                                 <th>Emp.Sallary</th>
                                                 <th>Action</th>
                                             </tr>
@@ -34,44 +33,43 @@
                                                 <th>Emp. Address</th>
                                                 <th>Emp. Joining Date</th>
                                                 <th>Emp. Gender</th>
-                                                
+
                                                 <th>Emp.Sallary</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
 
-                                            
-                                            <?php 
+
+                                            <?php
 
                                            foreach($show_emp as $row)
                                             {
-                                               
-                                               //$sdate=date('d-m-Y',strtotime($row->date)); 
+
+                                               //$sdate=date('d-m-Y',strtotime($row->date));
                                              ?>
-                                                      
+
 
                                                     <tr class="active">
-                                                    
-                                                    <td><?php echo $row->emp_name; ?></td>
-                                                    <td><?php echo $row->emp_mobile_no; ?></td>
-                                                    <td><?php echo $row->emp_email; ?></td>
-                                                    <td><?php echo $row->emp_address; ?></td>
-                                                    <td><?php echo $row->emp_joining_date; ?></td>
-                                                    <td><?php echo $row->emp_gender; ?></td>
-                                                    <td><?php echo $row->emp_sallery; ?></td>
-                                                    <td><a href="<?=(base_url().'Employee/update_employee_select/')?><?php echo $row->emp_id; ?>">Update</a>/<a href="<?=(base_url().'Employee/employee_delete/')?><?php echo $row->emp_id; ?>">Delete</a></td>
+
+                                                    <td><?php echo $row->user_name; ?></td>
+                                                    <td><?php echo $row->user_phone_number; ?></td>
+                                                    <td><?php echo $row->user_email; ?></td>
+                                                    <td><?php echo $row->user_address; ?></td>
+                                                    <td><?php echo $row->user_joining_date; ?></td>
+                                                    <td><?php echo $row->user_gender; ?></td>
+                                                    <td><?php echo $row->user_sallery; ?></td>
+                                                    <td><a href="<?=(base_url().'Employee/update_employee_select/')?><?php echo $row->user_id; ?>">Update</a>/<a href="<?=(base_url().'Employee/employee_delete/')?><?php echo $row->user_id; ?>">Delete</a></td>
                                                 </tr>
                                                 <?php } ?>
-                                            
+
 
 
                                             </tbody>
-                                       </table>  
+                                       </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
-

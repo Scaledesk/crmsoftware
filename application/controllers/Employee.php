@@ -51,7 +51,8 @@ public function update_employee($id)
 {
 
     $this->load->model("sales_model");
-    $data['h']=$this->Employee_model->update_employee($id);
+    if($this->Employee_model->update_employee($id))
+    {
     $data['menus'] = $this->menu_models->menus();
     $data['company']=$this->menu_models->getCompanyLogo();
     $data['title']="show calendar";
@@ -61,6 +62,7 @@ public function update_employee($id)
     $this->load->view('templates/header.php',$data);
     $this->load->view('pages/show_employee.php',$data);
     $this->load->view('templates/footer.php');
+  }
 
 }
 

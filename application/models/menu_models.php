@@ -12,9 +12,9 @@ $this->load->library('session');
 function menus() {
 	if($this->session->userdata('logged_in'))
 	{
-    $this->db->select("*");
-    $this->db->from("menu_parent");
-    $q = $this->db->get();
+    //$this->db->select("*");
+    //$this->db->from("menu_parent");
+    $q = $this->db->query("select * from menu_parent");
 
     $final = array();
     if ($q->num_rows() > 0) {
@@ -59,7 +59,7 @@ function menus() {
 
 public function getCompanyLogo()
 {
-	$query=$this->db->get('company_profile');
+	$query=$this->db->query('select * from company_profile');
 	return $query->result();
 
 }

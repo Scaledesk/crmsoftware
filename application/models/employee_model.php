@@ -10,25 +10,27 @@ public function add_employee()
 {
 
  $data=array(
-'emp_name'=>$this->input->post('e_name'),
-'emp_mobile_no'=>$this->input->post('e_mobile'),
-'emp_email'=>$this->input->post('e_email'),
-'emp_address'=>$this->input->post('e_address'),
-'emp_gender'=>$this->input->post('gender'),
-'emp_joining_date'=>$this->input->post('e_date'),
-'emp_sallery'=>$this->input->post('sallary')
+'user_name'=>$this->input->post('e_name'),
+'user_phone_number'=>$this->input->post('e_mobile'),
+'user_email'=>$this->input->post('e_email'),
+'user_address'=>$this->input->post('e_address'),
+'user_gendar'=>$this->input->post('gender'),
+'user_password'=>$this->input->post('password'),
+'user_fax_number'=>$this->input->post('fax_num'),
+'user_joining_date'=>$this->input->post('e_date'),
+'user_sallery'=>$this->input->post('sallary')
 
 );
 
-$this->db->insert('employee',$data);
+$this->db->insert('users_details',$data);
 return true;
 }
 
 
 public function delete_employee($id)
 	{
-		$this->db->where("emp_id",$id);
-  		if($this->db->delete("employee"))
+		$this->db->where("user_id",$id);
+  		if($this->db->delete("users_details"))
   		{
   			return true;
   		}
@@ -38,7 +40,7 @@ public function delete_employee($id)
 	{
 
 
-		$query=$this->db->query("select * from employee");
+		$query=$this->db->query("select * from users_details");
 		// echo '<pre />';
 		// print_r($query);
 		// die();
@@ -49,8 +51,8 @@ public function delete_employee($id)
 	public function update_employee_select($id)
 	{
 
-		$this->db->where("emp_id",$id);
-		$query=$this->db->query("select * from employee where emp_id=$id");
+		$this->db->where("user_id",$id);
+		$query=$this->db->query("select * from users_details where user_id=$id");
 		// echo '<pre />';
 		// print_r($query);
 		// die();
@@ -61,18 +63,18 @@ public function delete_employee($id)
 public function update_employee($id)
 {
 
- $data=array(
-'emp_name'=>$this->input->post('e_name'),
-'emp_mobile_no'=>$this->input->post('e_mobile'),
-'emp_email'=>$this->input->post('e_email'),
-'emp_address'=>$this->input->post('e_address'),
-'emp_gender'=>$this->input->post('gender'),
-'emp_joining_date'=>$this->input->post('e_date'),
-'emp_sallery'=>$this->input->post('sallary')
-
+	$data=array(
+ 'user_name'=>$this->input->post('e_name'),
+ 'user_phone_number'=>$this->input->post('e_mobile'),
+ 'user_email'=>$this->input->post('e_email'),
+ 'user_address'=>$this->input->post('e_address'),
+ 'user_gendar'=>$this->input->post('gender'),
+ 'user_fax_number'=>$this->input->post('fax_num'),
+ 'user_joining_date'=>$this->input->post('e_date'),
+ 'user_sallery'=>$this->input->post('sallary')
 );
-$this->db->where(array('emp_id'=> $id));
-$this->db->update('employee',$data);
+$this->db->where(array('user_id'=> $id));
+$this->db->update('users_details',$data);
 return true;
 }
 
